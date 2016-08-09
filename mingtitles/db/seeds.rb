@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
+first_user = User.new(is_admin: true, approved: true, user_handle: "Claire", user_email: "clairewoods@gmail.com")
+first_user.save!
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Titles-Court-Ladies.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 
@@ -28,18 +31,23 @@ csv.each do |row|
   t = Title.new
   t.pinyin_title = row["official_pinyin"]
   t.chinese_title = row["official_Chinese"]
+  t.save!
   if row["official_translation"]
-    Translation.create(translation: row["official_translation"],
+    trans = Translation.new(translation: row["official_translation"],
                         user_id: 1,
                         title_id: t.id)
+    trans.save!
   end
   institution_ids = [
     row["Institution 1"], row["Institution 2"], row["Institution 3"]
   ]
   institution_ids.each do |inst|
     institution = Institution.find_by_name(inst)
-    t.institutions << institution
-    institution << t
+    relation = InstitutionsAndTitle.new(
+      institution_id: institution.id,
+      title_id: t.id
+    )
+    relation.save!
+    p "IN HERE"
   end
-  t.save!
 end
