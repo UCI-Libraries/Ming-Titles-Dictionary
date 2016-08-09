@@ -9,6 +9,6 @@
 #
 
 class Institution < ApplicationRecord
-  has_and_belongs_to_many :titles
-  
+  has_many :institutions_and_titles
+  has_many :titles, through: :institutions_and_titles
 end

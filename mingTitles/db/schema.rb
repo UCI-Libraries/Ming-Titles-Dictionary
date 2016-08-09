@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809010642) do
+ActiveRecord::Schema.define(version: 20160809034031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,10 +32,8 @@ ActiveRecord::Schema.define(version: 20160809010642) do
   end
 
   create_table "institutions_and_titles", force: :cascade do |t|
-    t.integer "title_id"
-    t.integer "institution_id"
-    t.index ["institution_id"], name: "index_institutions_and_titles_on_institution_id", using: :btree
-    t.index ["title_id"], name: "index_institutions_and_titles_on_title_id", using: :btree
+    t.integer "title_id",       null: false
+    t.integer "institution_id", null: false
   end
 
   create_table "titles", force: :cascade do |t|
@@ -51,6 +49,8 @@ ActiveRecord::Schema.define(version: 20160809010642) do
     t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["title_id"], name: "index_translations_on_title_id", using: :btree
+    t.index ["user_id"], name: "index_translations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

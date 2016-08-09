@@ -10,7 +10,7 @@
 #
 
 class Title < ApplicationRecord
-  has_and_belongs_to_many :institutions
+  has_many :institutions_and_titles
+  has_many :institutions, through: :institutions_and_titles
   has_many :translations
-
 end
