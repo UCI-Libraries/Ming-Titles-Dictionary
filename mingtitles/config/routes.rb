@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   # devise_for :users
+
+  post 'auth_user' => 'authentication#authenticate_user'
+
   root to: "home#index"
 
   # devise_for :users

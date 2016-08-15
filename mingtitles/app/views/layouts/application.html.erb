@@ -8,12 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-ng-app="titlesApp" ng-cloak>
     <%= user_signed_in?%>
     <%= user_session %>
     <% if current_user %>
       <%= "current_user: " + current_user.user_handle %>
-      <%= "is_admin: " + current_user.is_admin %>
+      <%= current_user.is_admin %>
     <% end %>
     <%= yield %>
     <% if user_signed_in? %>
