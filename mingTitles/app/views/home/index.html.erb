@@ -1,5 +1,6 @@
 HELLO
-<div class="container" ng-controller="mainController">
+<div class="container" ng-init="init('<%= current_user.email %>')" ng-controller="mainController">
+  <h2> {{current_user}} </h2>
 
-{{title}}
- </div>
+  {{title}}
+</div>
