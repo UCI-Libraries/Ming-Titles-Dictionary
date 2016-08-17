@@ -1,1 +1,1 @@
-var titlesApp = angular.module('titlesApp', []);
+var titlesApp = angular.module('titlesApp', ['templates']);

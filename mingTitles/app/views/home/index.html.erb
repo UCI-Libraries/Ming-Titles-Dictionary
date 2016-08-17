@@ -1,6 +1,11 @@
 HELLO
-<div class="container" ng-init="init('<%= current_user.email %>')" ng-controller="mainController">
+<div class="container" ng-init="init('<% if user_signed_in? %>
+                                        <%= current_user.email %>
+                                      <%end%>')" ng-controller="mainController">
   <h2> {{current_user}} </h2>
 
   {{title}}
 </div>
+
+<signup-form>
+</signup-form>
