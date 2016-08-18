@@ -1,1 +1,1 @@
-var titlesApp = angular.module('titlesApp', ['templates']);
+var titlesApp = angular.module('titlesApp', ['templates', 'countrySelect', 'UserValidation']);

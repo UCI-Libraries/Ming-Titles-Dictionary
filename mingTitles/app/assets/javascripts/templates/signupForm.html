@@ -1,13 +1,47 @@
-<form ng-submit="submitUser()">
-  <div class="pin-details">
-    <input placeholder="Unicorn species" ng-change="updateTitle(title)" ng-model="title"><br/>
-    <textarea placeholder="Description" ng-change="updateDesc(desc)" ng-model="desc"></textarea><br/>
-  </div>
-  <div class="map-loc grow" ng-click="showLatLon()">Map Location</div>
-  <div class="pin-latlon grow">
-    <input type="text" class="latlon" ng-style="latInput" placeholder="LAT" ng-change="updateLat(pinData.lat)" ng-model="pinData.lat">
-    <input type="text" class="latlon" ng-style="lonInput" placeholder="LON" ng-change="updateLon(pinData.lon)" ng-model="pinData.lon">
-    <input type="button" class="button" ng-click="clearFormFields()" value="Clear">
-    <input type="submit" class="button" value="Submit" ng-class="{ disabled: latLonInvalid }" ng-disabled="latLonInvalid">
-  </div>
+<div class="form-headers">
+  <h2>
+    Ming Scholar Registration Form
+  </h2>
+  <h3>
+    Thank you for wanting to make contribution to this project! Please fill out this form.
+  </h3>
+</div>
+<form ng-submit="submitUser(formData)" name="myForm">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" ng-model="formData.email" required/>
+  <span ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+  <span ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span><br/>
+
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" ng-model="formData.fname" name="fname" required/>
+  <span ng-show="myForm.fname.$error.required && myForm.fname.$dirty">required</span><br/>
+
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" ng-model="formData.lname" name="lname" required/>
+  <span ng-show="myForm.lname.$error.required && myForm.lname.$dirty">required</span><br/>
+
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" ng-model="formData.username" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required/>
+  <span ng-show="myForm.username.$error.required && myForm.username.$dirty">required</span>
+  <span ng-show="!myForm.username.$error.minLength && !myForm.username.$error.maxLength && myForm.username.$error.pattern && myForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
+  <span ng-show="!myForm.username.$error.required && (myForm.username.$error.minlength || myForm.username.$error.maxlength) && myForm.username.$dirty">Username must be between 5 and 20 characters.</span><br/>
+
+  <label for="institution">Affiliated Institution (optional)</label>
+  <input type="text" ng-model="formData.institution" name="institution"><br/>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" ng-model="formData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+  <span ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+  <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+  <span ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span><br/>
+
+  <label for="password_c">Confirm Password</label>
+  <input type="password" id="password_c" name="password_c" ng-model="formData.password_c" valid-password-c required/>
+  <span ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
+  <span ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span><br/>
+
+  <button type="submit" class="btn" ng-disabled="!myForm.$valid">Submit</button>
+  <br/>
+  <input type="submit" class="button" value="Submit" ng-disabled="!myForm.$valid">
 </form>
+Thank you for your registration with us! We will contact you shortly with login information.

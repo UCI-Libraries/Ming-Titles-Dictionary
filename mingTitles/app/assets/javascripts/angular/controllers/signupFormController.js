@@ -48,8 +48,8 @@ titlesApp
 
   // $scope.latLonInvalid = true;
 
-  $scope.submitUser = function() {
-    console.log("HIIII");
+  $scope.submitUser = function(data) {
+    console.log("HIIII", data);
     // pinService.addMarker(pinService.newPermMarker());
     // pinService.clearTempMarker();
     // $scope.clearFormFields();
