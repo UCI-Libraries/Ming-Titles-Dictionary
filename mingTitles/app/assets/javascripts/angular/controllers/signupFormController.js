@@ -1,5 +1,5 @@
 titlesApp
-  .controller('signupFormController', ['$scope', '$timeout', 'User', function($scope, $timeout, User){
+  .controller('signupFormController', ['$scope', '$timeout', 'User', 'Auth', function($scope, $timeout, User, Auth){
 
   // var addItem = angular.element(document.getElementsByClassName('add-item'));
   // var latLon = angular.element(document.getElementsByClassName('pin-latlon'));
@@ -15,6 +15,8 @@ titlesApp
   init();
 
 
+
+
   $scope.$watch(
     // function() { return $scope.pinData.lat; },
     // function(newValue, oldValue) {
@@ -27,15 +29,6 @@ titlesApp
     //   }
     // }
   );
-
-  var resetDash = function() {
-    // pinInput.removeClass("pin-input-full");
-    // pinInput.addClass("collapse");
-    // mapLoc.removeClass("collapse");
-    // latLon.addClass("collapse");
-    // pinList.css("height", "calc(100% - 80px)");
-    // plusToggle.toggleClass('minus');
-  };
 
   $scope.clearFormFields = function() {
     // $scope.title = "";
@@ -51,36 +44,65 @@ titlesApp
 
     var user = new User();
 
-    user.data = {user_handle: "cucumber",
-                        email: "mustard@h.co ",
-                        fname: "CLAIRE",
-                        lname: "Friday",
-                        country: "safeway",
-                        institution: "UCI",
-                        research: "potatoes",
-                        is_admin: false,
-                        approved: false
-                        };
+    // user.data = {user_handle: "cucumber",
+    //                     email: "mustard@h.co ",
+    //                     fname: "CLAIRE",
+    //                     lname: "Friday",
+    //                     country: "safeway",
+    //                     institution: "UCI",
+    //                     research: "potatoes",
+    //                     is_admin: false,
+    //                     approved: false
+    //                     };
+
+    var credentials = {user_handle: "cucumber",
+                      email: "mustard@h.co ",
+                      fname: "CLAIRE",
+                      lname: "Friday",
+                      country: "safeway",
+                      institution: "UCI",
+                      research: "potatoes",
+                      is_admin: false,
+                      approved: false,
+                      password: "moooooo"
+                      };
+
+    var config = {
+        headers: {
+            'X-HTTP-Method-Override': 'POST'
+        }
+    };
+
+    Auth.register(credentials, config).then(function(registeredUser) {
+        console.log(registeredUser); // => {id: 1, ect: '...'}
+    }, function(error) {
+        console.log("FAILED", error);
+        // Registration failed...
+    });
+
+    $scope.$on('devise:new-registration', function(event, user) {
+        // ...
+    });
 
 
+    //   var AppController = function(Book) {
+    //   // to create a Book
+    //   var book = new Book();
+    //   book.name = 'AngularJS in nutshell';
+    //   book.create();
+    //
+    //   // to retrieve a book
+    //   var bookPromise = Book.get(123);
+    //   bookPromise.then(function(b) {
+    //     book = b;
+    //   });
+    // };
 
-//   var AppController = function(Book) {
-//   // to create a Book
-//   var book = new Book();
-//   book.name = 'AngularJS in nutshell';
-//   book.create();
-//
-//   // to retrieve a book
-//   var bookPromise = Book.get(123);
-//   bookPromise.then(function(b) {
-//     book = b;
-//   });
-// };
-
-    user.save($scope.user, function() {
-     //data saved. do something here.
-    }); //saves an entry. Assuming $scope.entry is the Entry object
+    // user.save($scope.user, function() {
+    //  //data saved. do something here.
+    // }); //saves an entry. Assuming $scope.entry is the Entry object
   };
+
 
 
 
