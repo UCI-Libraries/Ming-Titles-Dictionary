@@ -6,7 +6,6 @@
 #  approved               :boolean          default(FALSE), not null
 #  is_admin               :boolean          default(FALSE), not null
 #  user_handle            :string           not null
-#  user_email             :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string           default(""), not null
@@ -19,6 +18,11 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  institution            :text
+#  country                :text
+#  fname                  :text
+#  lname                  :text
+#  research               :text
 #
 
 class User < ApplicationRecord

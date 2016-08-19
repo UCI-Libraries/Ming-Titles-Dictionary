@@ -1,5 +1,5 @@
 titlesApp
-  .controller('signupFormController', ['$scope', '$timeout', function($scope, $timeout){
+  .controller('signupFormController', ['$scope', '$timeout', 'User', function($scope, $timeout, User){
 
   // var addItem = angular.element(document.getElementsByClassName('add-item'));
   // var latLon = angular.element(document.getElementsByClassName('pin-latlon'));
@@ -29,12 +29,12 @@ titlesApp
   );
 
   var resetDash = function() {
-    pinInput.removeClass("pin-input-full");
-    pinInput.addClass("collapse");
-    mapLoc.removeClass("collapse");
-    latLon.addClass("collapse");
-    pinList.css("height", "calc(100% - 80px)");
-    plusToggle.toggleClass('minus');
+    // pinInput.removeClass("pin-input-full");
+    // pinInput.addClass("collapse");
+    // mapLoc.removeClass("collapse");
+    // latLon.addClass("collapse");
+    // pinList.css("height", "calc(100% - 80px)");
+    // plusToggle.toggleClass('minus');
   };
 
   $scope.clearFormFields = function() {
@@ -46,13 +46,40 @@ titlesApp
     // $scope.setMap();
   };
 
-  // $scope.latLonInvalid = true;
+  $scope.submitUser = function(data, form) {
+    console.log("HIIII", data, form);
 
-  $scope.submitUser = function(data) {
-    console.log("HIIII", data);
-    // pinService.addMarker(pinService.newPermMarker());
-    // pinService.clearTempMarker();
-    // $scope.clearFormFields();
+    var user = new User();
+
+    user.data = {user_handle: "cucumber",
+                        email: "mustard@h.co ",
+                        fname: "CLAIRE",
+                        lname: "Friday",
+                        country: "safeway",
+                        institution: "UCI",
+                        research: "potatoes",
+                        is_admin: false,
+                        approved: false
+                        };
+
+
+
+//   var AppController = function(Book) {
+//   // to create a Book
+//   var book = new Book();
+//   book.name = 'AngularJS in nutshell';
+//   book.create();
+//
+//   // to retrieve a book
+//   var bookPromise = Book.get(123);
+//   bookPromise.then(function(b) {
+//     book = b;
+//   });
+// };
+
+    user.save($scope.user, function() {
+     //data saved. do something here.
+    }); //saves an entry. Assuming $scope.entry is the Entry object
   };
 
 

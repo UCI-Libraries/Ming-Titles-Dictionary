@@ -5,6 +5,7 @@ angular.module('UserValidation', []).directive('validPasswordC', function () {
             ctrl.$parsers.unshift(function (viewValue, $scope) {
                 var noMatch = viewValue != scope.myForm.password.$viewValue;
                 ctrl.$setValidity('noMatch', !noMatch);
+                return viewValue;
             });
         }
     };

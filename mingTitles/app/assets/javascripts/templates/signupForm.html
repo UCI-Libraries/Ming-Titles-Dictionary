@@ -12,7 +12,7 @@
         <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
       </div>
       <div class="modal-body">
-        <form class="signup-form" ng-submit="submitUser(formData)" name="myForm">
+        <form class="signup-form" ng-submit="submitUser(formData, myForm)" name="myForm">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" ng-model="formData.email" required/>
           <span ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
@@ -36,12 +36,12 @@
           <input type="text" ng-model="formData.institution" name="institution"/><br/>
 
           <label for="research">Areas of Research</label>
-          <textarea type="textarea" ng-model="formData.research" name="research"required></textarea><br/>
+          <textarea type="textarea" ng-model="formData.research" name="research" required></textarea><br/>
 
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" ng-model="formData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+          <input type="password" id="password" name="password" ng-model="formData.password" ng-minlength="6" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
           <span ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
-          <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+          <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 6 and 20 characters.</span>
           <span ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span><br/>
 
           <label for="password_c">Confirm Password</label>
