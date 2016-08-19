@@ -32,11 +32,15 @@
           <span ng-show="!myForm.username.$error.minLength && !myForm.username.$error.maxLength && myForm.username.$error.pattern && myForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
           <span ng-show="!myForm.username.$error.required && (myForm.username.$error.minlength || myForm.username.$error.maxlength) && myForm.username.$dirty">Username must be between 5 and 20 characters.</span><br/>
 
+          <label for="country">Country</label>
+          <country-select ng-model="form.country" name="country" required></country-select><span ng-show="myForm.country.$error.required && myForm.country.$dirty">required</span><br/>
+
           <label for="institution">Affiliated Institution (optional)</label>
           <input type="text" ng-model="formData.institution" name="institution"/><br/>
 
           <label for="research">Areas of Research</label>
-          <textarea type="textarea" ng-model="formData.research" name="research" required></textarea><br/>
+          <textarea type="textarea" ng-model="formData.research" name="research" required></textarea>
+          <span ng-show="myForm.research.$error.required && myForm.research.$dirty">required</span><br/>
 
           <label for="password">Password</label>
           <input type="password" id="password" name="password" ng-model="formData.password" ng-minlength="6" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />

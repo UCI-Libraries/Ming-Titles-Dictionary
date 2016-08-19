@@ -39,32 +39,18 @@ titlesApp
     // $scope.setMap();
   };
 
-  $scope.submitUser = function(data, form) {
-    console.log("HIIII", data, form);
-
+  $scope.submitUser = function(data) {
     var user = new User();
-
-    // user.data = {user_handle: "cucumber",
-    //                     email: "mustard@h.co ",
-    //                     fname: "CLAIRE",
-    //                     lname: "Friday",
-    //                     country: "safeway",
-    //                     institution: "UCI",
-    //                     research: "potatoes",
-    //                     is_admin: false,
-    //                     approved: false
-    //                     };
-
-    var credentials = {user_handle: "cucumber",
-                      email: "mustard@h.co ",
-                      fname: "CLAIRE",
-                      lname: "Friday",
-                      country: "safeway",
-                      institution: "UCI",
-                      research: "potatoes",
-                      is_admin: false,
-                      approved: false,
-                      password: "moooooo"
+    var credentials = {
+      user_handle: data.username,
+      email: data.email,
+      fname: data.fname,
+      lname: data.lname,
+      country: "France",
+      institution: data.institution,
+      research: data.research,
+      // approved: false,
+      password: data.password
                       };
 
     var config = {
