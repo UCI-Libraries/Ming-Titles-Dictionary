@@ -40,13 +40,14 @@ titlesApp
   };
 
   $scope.submitUser = function(data) {
+    console.log(data);
     var user = new User();
     var credentials = {
       user_handle: data.username,
       email: data.email,
       fname: data.fname,
       lname: data.lname,
-      country: "France",
+      country: data.country,
       institution: data.institution,
       research: data.research,
       // approved: false,
