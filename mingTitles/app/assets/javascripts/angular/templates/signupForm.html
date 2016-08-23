@@ -1,0 +1,13 @@
+<form ng-submit="submitUser()">
+  <div class="pin-details">
+    <input placeholder="Unicorn species" ng-change="updateTitle(title)" ng-model="title"><br/>
+    <textarea placeholder="Description" ng-change="updateDesc(desc)" ng-model="desc"></textarea><br/>
+  </div>
+  <div class="map-loc grow" ng-click="showLatLon()">Map Location</div>
+  <div class="pin-latlon grow">
+    <input type="text" class="latlon" ng-style="latInput" placeholder="LAT" ng-change="updateLat(pinData.lat)" ng-model="pinData.lat">
+    <input type="text" class="latlon" ng-style="lonInput" placeholder="LON" ng-change="updateLon(pinData.lon)" ng-model="pinData.lon">
+    <input type="button" class="button" ng-click="clearFormFields()" value="Clear">
+    <input type="submit" class="button" value="Submit" ng-class="{ disabled: latLonInvalid }" ng-disabled="latLonInvalid">
+  </div>
+</form>

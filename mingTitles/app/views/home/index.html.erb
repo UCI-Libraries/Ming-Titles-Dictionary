@@ -1,0 +1,55 @@
+<div id="Intro">
+  <h1>Ming Titles</h1>
+</div>
+<nav class="navbar navbar-fixed-top navbar-light bg-faded">
+  <!-- <a class="navbar-brand" href="#">Project Title Here</a> -->
+  <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contributors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
+          <!-- trigger signup modal -->
+          Sign Up
+        </a>
+      </li>
+    </ul>
+</nav>
+<div class="test"><%= user_signed_in?%>
+  <%= user_session %>
+  <% if current_user %>
+    <%= "current_user: " + current_user.user_handle %>
+    <%= current_user.is_admin %>
+  <% end %>
+</div>
+<signup-form>
+</signup-form>
+
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>
+  </li>
+<% end %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div class="container" ng-init="init('<% if user_signed_in? %>
+                                        <%= current_user.email %>
+                                      <%end%>')" ng-controller="mainController">
+  <h2> {{current_user}} </h2>
+
+  {{title}}
+</div>
