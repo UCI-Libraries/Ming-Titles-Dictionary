@@ -9,7 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   p "\n\nin the registration controller - CREATE\n\n"
   #   super
   # end
 
