@@ -2,13 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$greenblue: #277279;
-$ivory: #e4e6c4;
-$greenbluehl: #3c8f96;
-$goldenrod: #e7b322;
-$midnightblue: #231956;
-$crimson: #de0011;
-$deepgreen: #0f5f3a;
+$golden: rgba(219, 195, 92, 1);
+$raisinblue: rgba(30, 31, 38, 1);
+$whiteblue: rgba(212, 245, 245, 1);
+$forest: rgba(15, 58, 49, 1);
 
 #Intro {
   top: 0;
@@ -17,22 +14,27 @@ $deepgreen: #0f5f3a;
   width: 100%;
   line-height: 60px;
   z-index: 1000;
-  background-color: $greenblue;
+  background-color: $raisinblue;
   h1 {
     margin-left: 15px;
-    color: $ivory;
+    color: $golden;
   }
 }
 
 .navbar {
-  background-color: $greenblue;
+  background-color: $raisinblue;
   width: 100%;
   margin-top: 80px;
   .nav-link {
-    color: $ivory;
+    color: $golden;
   }
   .nav-link:hover {
-    background-color: $greenbluehl;
+    background-color: $golden;
+    color: $raisinblue;
+  }
+  .nav-link:focus {
+    background-color: $whiteblue;
+    color: $raisinblue;
   }
 }
 
@@ -69,6 +71,10 @@ $deepgreen: #0f5f3a;
 }
 
 .modal {
-  background-color: $ivory;
-  color: $greenblue;
+  // background-color: $golden;
+  color: $raisinblue;
+}
+
+.modal-content {
+  background-color: $whiteblue;
 }

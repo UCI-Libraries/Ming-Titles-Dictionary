@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-first_user = User.new(is_admin: true, approved: true, user_handle: "Claire", user_email: "clairewoods@gmail.com")
+first_user = User.new(is_admin: true, approved: true, user_handle: "Claire", user_email: "clairewoods@gmail.com", password: "moose")
 first_user.save!
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Titles-Court-Ladies.csv'))

@@ -8,7 +8,6 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    p "\n\nin the session controller\n\n"
     super
   end
 
