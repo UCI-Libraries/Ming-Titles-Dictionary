@@ -1,4 +1,4 @@
-titlesApp.controller('mainController', ['$scope', '$timeout', function($scope, $timeout){
+titlesApp.controller('mainController', ['$http', '$scope', '$timeout', function($http, $scope, $timeout){
 
   // var reset = angular.element(document.getElementsByClassName('reset-game'));
   // var start = angular.element(document.getElementsByClassName('new-game'));
@@ -12,6 +12,10 @@ titlesApp.controller('mainController', ['$scope', '$timeout', function($scope, $
     console.log(str);
     logSomeStuff(str);
   };
+
+  $http.get('api/institutions/all_trees').then(function(response) {
+    console.log(response.data);
+  });
 
   function logSomeStuff(str) {
     $scope.current_user = str;

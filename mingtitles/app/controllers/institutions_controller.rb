@@ -12,6 +12,10 @@ class InstitutionsController < ApplicationController
   def show
   end
 
+  def all_trees
+    render json: Institution.all_trees
+  end
+
   # GET /institutions/new
   def new
     @institution = Institution.new

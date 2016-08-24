@@ -2,11 +2,7 @@ titlesApp
   .controller('signupFormController', ['$scope', '$timeout', 'User', 'Auth', function($scope, $timeout, User, Auth){
 
   // var addItem = angular.element(document.getElementsByClassName('add-item'));
-  // var latLon = angular.element(document.getElementsByClassName('pin-latlon'));
-  // var mapLoc = angular.element(document.getElementsByClassName('map-loc'));
-  // var pinInput = angular.element(document.getElementsByClassName('pin-input'));
-  // var plusToggle = angular.element(document.getElementsByClassName('plus'));
-  // var pinList = angular.element(document.getElementsByClassName('pins-list'));
+  
 
   var init = function() {
 

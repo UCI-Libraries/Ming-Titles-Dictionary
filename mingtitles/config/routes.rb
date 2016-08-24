@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   resources :translations
   resources :institutions
   resources :titles
+
+  get 'api/institutions/all_trees' => 'institutions#all_trees'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
