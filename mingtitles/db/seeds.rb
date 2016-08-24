@@ -7,21 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-first_user = User.new(is_admin: true, approved: true, user_handle: "Claire", user_email: "clairewoods@gmail.com", password: "moose")
+first_user = User.new(is_admin: true, approved: true, user_handle: "Claire", email: "clwoods@uci.edu", password: "orange7A")
 first_user.save!
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'Titles-Court-Ladies.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'official_titles_examples.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 
 # add in institutions, check for any new
 csv.each do |row|
-  institution_ids = [
-    row["Institution 1"], row["Institution 2"], row["Institution 3"]
-  ]
-  institution_ids.each do |inst|
-    if Institution.find_by_name(inst) == nil
-      Institution.create(name: inst)
-    end
+
+  inst1 = row["Institution 1"]
+  inst2 = row["Institution 2"]
+  inst3 = row["Institution 3"]
+
+  inst1 = Institution.find_by_name(inst1) || Institution.create(name: inst1)
+  inst2 = Institution.find_by_name(inst2) || Institution.create(name: inst2, parent: inst1)
+
+  if inst3
+    inst3 = Institution.find_by_name(inst3) || Institution.create(name: inst3, parent: inst2)
   end
 
 end
@@ -43,11 +46,12 @@ csv.each do |row|
   ]
   institution_ids.each do |inst|
     institution = Institution.find_by_name(inst)
-    relation = InstitutionsAndTitle.new(
-      institution_id: institution.id,
-      title_id: t.id
-    )
-    relation.save!
-    p "IN HERE"
+    if institution
+      relation = InstitutionsAndTitle.new(
+        institution_id: institution.id,
+        title_id: t.id
+      )
+      relation.save!
+    end
   end
 end
