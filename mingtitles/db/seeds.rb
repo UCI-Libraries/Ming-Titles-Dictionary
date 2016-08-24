@@ -21,17 +21,10 @@ csv.each do |row|
   inst3 = row["Institution 3"]
 
   inst1 = Institution.find_by_name(inst1) || Institution.create(name: inst1)
-  inst2 = Institution.find_by_name(inst2) || Institution.create(name: inst2, parent_id: inst1.id)
+  inst2 = Institution.find_by_name(inst2) || Institution.create(name: inst2, parent: inst1)
 
   if inst3
-    if inst3 == "鹽課提舉司"
-      p "FOUND"
-      p inst3
-    end
-    inst3 = Institution.find_by_name(inst3) || Institution.create(name: inst3, parent_id: inst2.id)
-    p inst1
-    p inst2
-    p inst3
+    inst3 = Institution.find_by_name(inst3) || Institution.create(name: inst3, parent: inst2)
   end
 
 end

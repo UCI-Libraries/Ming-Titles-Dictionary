@@ -39,6 +39,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    ancestry (2.1.0)
+      activerecord (>= 3.0.0)
     angular-rails-templates (1.0.1)
       railties (>= 4.2, < 6)
       sprockets (>= 3.0, < 5)
@@ -184,6 +186,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   angular-rails-templates
   angularjs-rails
   annotate
