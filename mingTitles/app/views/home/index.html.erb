@@ -17,6 +17,9 @@
         <a class="nav-link" href="#">Login</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
           <!-- trigger signup modal -->
           Sign Up
@@ -24,17 +27,16 @@
       </li>
     </ul>
 </nav>
-<div class="test"><%= user_signed_in?%>
+<!-- <div class="test"><%= user_signed_in?%>
   <%= user_session %>
   <% if current_user %>
     <%= "current_user: " + current_user.user_handle %>
     <%= current_user.is_admin %>
   <% end %>
-</div>
-<signup-form>
-</signup-form>
-
-<% if user_signed_in? %>
+</div> -->
+<signup-form></signup-form>
+<institutions-menu></institutions-menu>
+<!-- <% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
   </li>
@@ -47,9 +49,11 @@
 <p class="alert"><%= alert %></p>
 
 <div class="container" ng-init="init('<% if user_signed_in? %>
-                                        <%= current_user.email %>
-                                      <%end%>')" ng-controller="mainController">
-  <h2> {{current_user}} </h2>
+                                        <%= {"email": current_user.email } %>
+                                      <% else %>
+                                        <%= { "logged_in": false }%>
+                                      <%end%>')" ng-controller="mainController"> -->
+  <!-- <h2> {{current_user}} </h2> -->
 
-  {{title}}
-</div>
+  <!-- {{title}} -->
+<!-- </div> -->

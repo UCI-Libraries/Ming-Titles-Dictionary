@@ -8,20 +8,16 @@ titlesApp.controller('mainController', ['$http', '$scope', '$timeout', function(
   $scope.badGuesses = 0;
   $scope.resetHangman = false;
   $scope.resetAlpha = false;
-  $scope.init = function(str) {
-    console.log(str);
-    logSomeStuff(str);
+  $scope.init = function(user) {
+    console.log(user);
+    logUser(user);
   };
 
-  $http.get('api/institutions/all_trees').then(function(response) {
-    console.log(response.data);
-  });
-
-  function logSomeStuff(str) {
+  function logUser(str) {
     $scope.current_user = str;
   }
 
-  $scope.$evalAsync(logSomeStuff());
+  $scope.$evalAsync(logUser());
 
 
 }]);

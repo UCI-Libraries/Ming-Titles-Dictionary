@@ -16,7 +16,7 @@ class Institution < ApplicationRecord
   def self.all_trees
     all_trees = []
     self.roots.each do |root|
-     all_trees << root.subtree.arrange_serializable
+     all_trees += root.subtree.arrange_serializable
     end
     all_trees
   end

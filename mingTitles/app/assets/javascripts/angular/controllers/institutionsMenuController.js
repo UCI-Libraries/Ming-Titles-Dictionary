@@ -1,15 +1,23 @@
 titlesApp
-  .controller('signupFormController', ['$scope', '$timeout', 'User', 'Auth', function($scope, $timeout, User, Auth){
+  .controller('institutionsMenuController', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
 
   // var addItem = angular.element(document.getElementsByClassName('add-item'));
 
 
   var init = function() {
-
+    getOffices();
   };
+
+  function getOffices() {
+      $http.get('api/institutions/all_trees').then(function(response) {
+        console.log(response.data);
+        $scope.offices = response.data;
+      });
+  }
 
   init();
 
+  $scope.offices = [];
 
   $scope.$watch(
     // function() { return $scope.pinData.lat; },
