@@ -1,4 +1,4 @@
-titlesApp.factory('User', function($http) {
+titlesApp.factory('User', ['$http', function($http) {
 
   var User = function(data) {
     angular.extend(this, data);
@@ -22,4 +22,4 @@ titlesApp.factory('User', function($http) {
   };
 
   return User;
-});
+}]);
