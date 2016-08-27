@@ -6,11 +6,14 @@ $golden: rgba(219, 195, 92, 1);
 $raisinblue: rgba(30, 31, 38, 1);
 $whiteblue: rgba(212, 245, 245, 1);
 $forest: rgba(15, 58, 49, 1);
+$uci-blue: #1966A2;
+$uci-secondary-blue: #1B3D6D;
+
 
 #Intro {
   top: 0;
   position: fixed;
-  height: 80px;
+  height: 60px;
   width: 100%;
   line-height: 60px;
   z-index: 1000;
@@ -24,7 +27,7 @@ $forest: rgba(15, 58, 49, 1);
 .navbar {
   background-color: $raisinblue;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 60px;
   .nav-link {
     color: $golden;
   }
@@ -38,6 +41,11 @@ $forest: rgba(15, 58, 49, 1);
   }
 }
 
+.container {
+  margin-top: 110px;
+
+}
+
 .test {
   position: relative;
   height: 80px;
@@ -49,6 +57,10 @@ $forest: rgba(15, 58, 49, 1);
 
 .navbar-right {
   margin-right: 20px;
+}
+
+.empty {
+  height: 0px;
 }
 
 .signup-form {
@@ -95,4 +107,12 @@ $forest: rgba(15, 58, 49, 1);
 
 .office-item {
   margin-bottom: 0;
+}
+
+.navbar-toggle {
+  border: 2px solid $golden;
+}
+
+.icon-bar {
+  border: 1px solid $golden;
 }

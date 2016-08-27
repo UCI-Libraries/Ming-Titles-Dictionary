@@ -1,59 +1,70 @@
 <div id="Intro">
-  <h1>Ming Titles</h1>
+  <h1>UC Irvine logo here</h1>
 </div>
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-  <!-- <a class="navbar-brand" href="#">Project Title Here</a> -->
-  <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contributors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">FAQ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
-          <!-- trigger signup modal -->
-          Sign Up
-        </a>
-      </li>
-    </ul>
-</nav>
-<!-- <div class="test"><%= user_signed_in?%>
-  <%= user_session %>
-  <% if current_user %>
-    <%= "current_user: " + current_user.user_handle %>
-    <%= current_user.is_admin %>
-  <% end %>
-</div> -->
+
+<header>
+  <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-right" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="nav-right">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="//www.lib.uci.edu">Ming Titles</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contributors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
+                <!-- trigger signup modal -->
+                Sign Up
+              </a>
+            </li>
+          </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+<div class="container">
+  <h1 style="padding-bottom:30px;">Ming Gov't Official Titles List</h1>
+
+  <div class="row">
+    <div class="col-md-2">
+      <institutions-menu></institutions-menu>
+    </div>
+
+    <div class="col-md-10">
+      <div class="row">
+        <%= render "dummy_table" %>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <%= render "footer" %>
+  </footer>
+</div><!-- /.container-->
 <signup-form></signup-form>
-<institutions-menu></institutions-menu>
-<!-- <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>
-  </li>
-<% end %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<div class="container" ng-init="init('<% if user_signed_in? %>
-                                        <%= {"email": current_user.email } %>
-                                      <% else %>
-                                        <%= { "logged_in": false }%>
-                                      <%end%>')" ng-controller="mainController"> -->
-  <!-- <h2> {{current_user}} </h2> -->
-
-  <!-- {{title}} -->
-<!-- </div> -->

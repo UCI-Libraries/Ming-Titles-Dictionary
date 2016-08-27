@@ -7,6 +7,7 @@ gem 'angular-rails-templates'
 gem 'sprockets', '3.6.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'ancestry'
+gem 'font-awesome-sass'
 
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"

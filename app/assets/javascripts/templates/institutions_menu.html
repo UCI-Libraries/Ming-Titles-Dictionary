@@ -1,42 +1,31 @@
-<!--
+<h2 style="font-size:18px; margin-top:0;"><span class="fa fa-list" style="color:#FFC522;"></span> Browse</h2>
 
-<div class="row inst-menu">
-  <div class="col-md-2">
-    menu
-    <div id="MainMenu">
-      <div class="list-group panel office-item" ng-repeat="office in offices">
-        <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{office.name}}<i class="fa fa-caret-down"></i></a>
-        <div class="collapse" id="demo3">
-          <a href="#SubMenu1" ng-repeat="child in office.children" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">{{child.name}}<i class="fa fa-caret-down"></i></a>
-          <div class="collapse list-group-submenu" id="SubMenu1">
-            <a href="#" class="list-group-item" ng-repeat="subchild in child.children" data-parent="#SubMenu1">{{subchild.name}}</a>
-            <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
+<v-accordion class="vAccordion--default">
 
+  <v-pane ng-repeat="office in offices" expanded="office.isExpanded">
+    <v-pane-header>
+      {{ ::office.name }}
+    </v-pane-header>
+    <v-pane-content>
+      <v-accordion ng-if="office.children">
+        <v-pane ng-repeat="suboffice in office.children" ng-disabled="suboffice.isDisabled">
+          <v-pane-header>
+            {{ ::suboffice.name }}
+          </v-pane-header>
+          <v-pane-content>
+            <v-accordion ng-if="suboffice.children.length > 0">
+              <v-pane ng-repeat="subsub in suboffice.children" ng-disabled="subsub.isDisabled">
+                <v-pane-header>
+                  {{ ::subsub.name }}
+                </v-pane-header>
+                <v-pane-content class="empty">
+                </v-pane-content>
+              </v-pane>
+            </v-accordion>
+          </v-pane-content>
+        </v-pane>
+      </v-accordion>
+    </v-pane-content>
+  </v-pane>
 
-
-
-<div class="row inst-menu">
-  <div class="col-md-2">
-    <!-- menu -->
-    <div id="MainMenu">
-      <div class="list-group panel office-item" ng-repeat="office in offices">
-        <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{office.name}}<i class="fa fa-caret-down"></i></a>
-        <div class="collapse" id="demo3">
-          <a href="#SubMenu" ng-repeat="child in office.children" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu{$index}">{{child.name}}<i class="fa fa-caret-down"></i></a>
-          <div class="collapse list-group-submenu" id="SubMenu{$index}">
-            <a href="#" class="list-group-item" ng-repeat="subchild in child.children" data-parent="#SubMenu{$index}">{{subchild.name}}</a>
-            <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu{$index}">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</v-accordion>
