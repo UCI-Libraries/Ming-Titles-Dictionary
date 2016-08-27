@@ -1,0 +1,70 @@
+<div id="Intro">
+  <h1>UC Irvine logo here</h1>
+</div>
+
+<header>
+  <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-right" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="nav-right">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="//www.lib.uci.edu">Ming Titles</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contributors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
+                <!-- trigger signup modal -->
+                Sign Up
+              </a>
+            </li>
+          </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+<div class="container">
+  <h1 style="padding-bottom:30px;">Ming Gov't Official Titles List</h1>
+
+  <div class="row">
+    <div class="col-md-2">
+      <institutions-menu></institutions-menu>
+    </div>
+
+    <div class="col-md-10">
+      <div class="row">
+        <%= render "dummy_table" %>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <%= render "footer" %>
+  </footer>
+</div><!-- /.container-->
+<signup-form></signup-form>
