@@ -1,0 +1,32 @@
+.signup-form {
+  input {
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+  button {
+    margin: 10px;
+  }
+  textarea {
+    height: 30px;
+    width: 100%;
+    border: none;
+  }
+}
+
+.modal-footer {
+  border: none;
+}
+
+.modal {
+  color: $raisinblue;
+}
+
+.modal-dialog {
+  width: 70%;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 0px;
+  width: 100%;
+}

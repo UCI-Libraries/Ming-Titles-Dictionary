@@ -19,115 +19,12 @@ body {
   font-family: Open Sans;
 }
 
-.uci-header {
-  height: $header-height;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  line-height: 60px;
-  z-index: 1000;
-  background-color: $uci-dark-blue;
-  h1 {
-    margin-left: 20px;
-    color: $uci-gold;
-    font-size: 2em;
-    font-weight: lighter;
-  }
-}
-
-.project-nav {
-  margin-top: $header-height;
-  background-color: $uci-blue;
-}
-
-.ming-title {
-  font-weight: 100;
-}
-
-.navbar {
-  width: 100%;
-  color: $uci-dark-blue;
-  border: none;
-  .about {
-    border-left: 1px solid $uci-border-blue;
-  }
-  .nav-link {
-    color: $uci-dark-blue;
-    font-size: 1em;
-    font-weight: 400;
-    border-bottom: 5px solid $uci-blue;
-    border-right: 1px solid $uci-border-blue;
-  }
-  .navbar-brand {
-    color: white;
-    font-weight: lighter;
-  }
-  .nav-link:hover {
-    background-color: $uci-blue;
-    border-bottom: 5px solid $uci-gold;
-  }
-  .nav-link:focus {
-    background-color: #0d5186;
-    border-bottom: 5px solid #0d5186;
-  }
-  .nav-link:focus:hover {
-    border-bottom: 5px solid $uci-gold;
-  }
-}
-
 .container {
   margin-top: 140px;
-
-}
-
-.test {
-  position: relative;
-  height: 80px;
-  margin-top: 120px;
-  width: 100%;
-  background-color: black;
-  color: white;
-}
-
-.navbar-right {
-  margin-right: 20px;
 }
 
 .empty {
   height: 0px;
-}
-
-.signup-form {
-  input {
-    margin-bottom: 10px;
-    margin-left: 5px;
-  }
-  button {
-    margin: 10px;
-  }
-  textarea {
-    height: 30px;
-    width: 100%;
-    border: none;
-  }
-}
-
-.modal-footer {
-  border: none;
-}
-
-.modal {
-  color: $raisinblue;
-}
-
-.modal-dialog {
-  width: 70%;
-}
-
-.modal-content {
-  background-color: white;
-  border-radius: 0px;
-  width: 100%;
 }
 
 .inst-menu {
