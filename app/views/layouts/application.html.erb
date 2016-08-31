@@ -3,8 +3,10 @@
   <head>
     <title>MingTitles</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= google_webfonts_link_tag :open_sans        => [300, 400, 600],
+                                 :open_sans_condensed => [300, 400] %>
   </head>
 
   <body data-ng-app="titlesApp" ng-cloak>

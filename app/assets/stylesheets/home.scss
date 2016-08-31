@@ -8,87 +8,23 @@ $whiteblue: rgba(212, 245, 245, 1);
 $forest: rgba(15, 58, 49, 1);
 $uci-blue: #1966A2;
 $uci-secondary-blue: #1B3D6D;
+$uci-dark-blue: #0A142F;
+$uci-gold: #FCD02F;
+$header-height: 90px;
+$uci-grey: #8F9FA9;
+$uci-dark-grey: #555759;
+$uci-border-blue: #3076AB;
 
-
-#Intro {
-  top: 0;
-  position: fixed;
-  height: 60px;
-  width: 100%;
-  line-height: 60px;
-  z-index: 1000;
-  background-color: $raisinblue;
-  h1 {
-    margin-left: 15px;
-    color: $golden;
-  }
-}
-
-.navbar {
-  background-color: $raisinblue;
-  width: 100%;
-  margin-top: 60px;
-  .nav-link {
-    color: $golden;
-  }
-  .nav-link:hover {
-    background-color: $golden;
-    color: $raisinblue;
-  }
-  .nav-link:focus {
-    background-color: $whiteblue;
-    color: $raisinblue;
-  }
+body {
+  font-family: Open Sans;
 }
 
 .container {
-  margin-top: 110px;
-
-}
-
-.test {
-  position: relative;
-  height: 80px;
-  margin-top: 120px;
-  width: 100%;
-  background-color: black;
-  color: white;
-}
-
-.navbar-right {
-  margin-right: 20px;
+  margin-top: 140px;
 }
 
 .empty {
   height: 0px;
-}
-
-.signup-form {
-  input {
-    margin-bottom: 10px;
-    margin-left: 5px;
-  }
-  button {
-    margin: 10px;
-  }
-  textarea {
-    height: 30px;
-    width: 100%;
-    border: none;
-  }
-}
-
-.modal-footer {
-  border: none;
-}
-
-.modal {
-  // background-color: $golden;
-  color: $raisinblue;
-}
-
-.modal-content {
-  background-color: $whiteblue;
 }
 
 .inst-menu {
@@ -110,9 +46,21 @@ $uci-secondary-blue: #1B3D6D;
 }
 
 .navbar-toggle {
-  border: 2px solid $golden;
+  border: 2px solid $uci-gold;
 }
 
 .icon-bar {
-  border: 1px solid $golden;
+  border: 1px solid $uci-gold;
+}
+
+.redfont {
+  color: red;
+}
+
+#grad {
+  background: $uci-dark-grey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* Standard syntax */
 }

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem 'devise'
 gem 'jwt'
@@ -8,6 +9,7 @@ gem 'sprockets', '3.6.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'ancestry'
 gem 'font-awesome-sass'
+gem 'google-webfonts'
 
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
