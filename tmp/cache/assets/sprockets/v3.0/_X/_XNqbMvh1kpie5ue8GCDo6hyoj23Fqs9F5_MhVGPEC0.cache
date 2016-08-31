@@ -1,0 +1,37 @@
+{:uriI"îfile://app/assets/javascripts/templates/institutions_menu.html?type=text/ng-html&id=e4bbd1bc093c6b21c47734cd77246f0a5bcf1878c8cf77bc537ac915fc39ff78:ET:load_pathI"app/assets/javascripts;T:filenameI"<app/assets/javascripts/templates/institutions_menu.html;T:	nameI" templates/institutions_menu;T:logical_pathI"%templates/institutions_menu.html;T:content_typeI"text/ng-html;T:sourceI"4<h2 style="font-size:18px; margin-top:0;"><span class="fa fa-list" style="color:#FFC522;"></span> Browse</h2>
+
+<v-accordion class="vAccordion--default">
+
+  <v-pane ng-repeat="office in offices" expanded="office.isExpanded">
+    <v-pane-header>
+      {{ ::office.name }}
+    </v-pane-header>
+    <v-pane-content>
+      <v-accordion ng-if="office.children">
+        <v-pane ng-repeat="suboffice in office.children" ng-disabled="suboffice.isDisabled">
+          <v-pane-header>
+            {{ ::suboffice.name }}
+          </v-pane-header>
+          <v-pane-content>
+            <v-accordion ng-if="suboffice.children.length > 0">
+              <v-pane ng-repeat="subsub in suboffice.children" ng-disabled="subsub.isDisabled">
+                <v-pane-header>
+                  {{ ::subsub.name }}
+                </v-pane-header>
+                <v-pane-content class="empty">
+                </v-pane-content>
+              </v-pane>
+            </v-accordion>
+          </v-pane-content>
+        </v-pane>
+      </v-accordion>
+    </v-pane-content>
+  </v-pane>
+
+</v-accordion>
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Jfile-digest://app/assets/javascripts/templates/institutions_menu.html;TT:charsetI"
+utf-8;F:digest"%‡8èíê2¥P©»®øjâ‰ ·m€ﬁuÍZ¨r¢:k€:lengthi4:dependencies_digest"%0tûë≠∫xÅ∑úHûhmÍ5Ï5çbû±ÌÃ¬q
+xΩ:idI"Ee4bbd1bc093c6b21c47734cd77246f0a5bcf1878c8cf77bc537ac915fc39ff78;F:
+mtimel+ˆ”¿W

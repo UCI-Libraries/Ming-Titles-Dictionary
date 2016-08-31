@@ -8,41 +8,75 @@ $whiteblue: rgba(212, 245, 245, 1);
 $forest: rgba(15, 58, 49, 1);
 $uci-blue: #1966A2;
 $uci-secondary-blue: #1B3D6D;
+$uci-dark-blue: #0A142F;
+$uci-gold: #FCD02F;
+$header-height: 90px;
+$uci-grey: #8F9FA9;
+$uci-dark-grey: #555759;
+$uci-border-blue: #3076AB;
 
+body {
+  font-family: Open Sans;
+}
 
-#Intro {
-  top: 0;
-  position: fixed;
-  height: 60px;
+.uci-header {
+  height: $header-height;
   width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
   line-height: 60px;
   z-index: 1000;
-  background-color: $raisinblue;
+  background-color: $uci-dark-blue;
   h1 {
-    margin-left: 15px;
-    color: $golden;
+    margin-left: 20px;
+    color: $uci-gold;
+    font-size: 2em;
+    font-weight: lighter;
   }
 }
 
+.project-nav {
+  margin-top: $header-height;
+  background-color: $uci-blue;
+}
+
+.ming-title {
+  font-weight: 100;
+}
+
 .navbar {
-  background-color: $raisinblue;
   width: 100%;
-  margin-top: 60px;
+  color: $uci-dark-blue;
+  border: none;
+  .about {
+    border-left: 1px solid $uci-border-blue;
+  }
   .nav-link {
-    color: $golden;
+    color: $uci-dark-blue;
+    font-size: 1em;
+    font-weight: 400;
+    border-bottom: 5px solid $uci-blue;
+    border-right: 1px solid $uci-border-blue;
+  }
+  .navbar-brand {
+    color: white;
+    font-weight: lighter;
   }
   .nav-link:hover {
-    background-color: $golden;
-    color: $raisinblue;
+    background-color: $uci-blue;
+    border-bottom: 5px solid $uci-gold;
   }
   .nav-link:focus {
-    background-color: $whiteblue;
-    color: $raisinblue;
+    background-color: #0d5186;
+    border-bottom: 5px solid #0d5186;
+  }
+  .nav-link:focus:hover {
+    border-bottom: 5px solid $uci-gold;
   }
 }
 
 .container {
-  margin-top: 110px;
+  margin-top: 140px;
 
 }
 
@@ -83,12 +117,17 @@ $uci-secondary-blue: #1B3D6D;
 }
 
 .modal {
-  // background-color: $golden;
   color: $raisinblue;
 }
 
+.modal-dialog {
+  width: 70%;
+}
+
 .modal-content {
-  background-color: $whiteblue;
+  background-color: white;
+  border-radius: 0px;
+  width: 100%;
 }
 
 .inst-menu {
@@ -110,9 +149,21 @@ $uci-secondary-blue: #1B3D6D;
 }
 
 .navbar-toggle {
-  border: 2px solid $golden;
+  border: 2px solid $uci-gold;
 }
 
 .icon-bar {
-  border: 1px solid $golden;
+  border: 1px solid $uci-gold;
+}
+
+.redfont {
+  color: red;
+}
+
+#grad {
+  background: $uci-dark-grey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, $uci-grey, $uci-dark-grey); /* Standard syntax */
 }

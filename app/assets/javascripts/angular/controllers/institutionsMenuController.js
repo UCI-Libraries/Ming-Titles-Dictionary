@@ -102,6 +102,7 @@ titlesApp
 titlesApp.controller('AccordionDemoCtrl', function ($scope) {
   $scope.oneAtATime = true;
 
+
   $scope.groups = [
     {
       title: 'Dynamic Group Header - 1',

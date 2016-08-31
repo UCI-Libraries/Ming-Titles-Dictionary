@@ -1,9 +1,16 @@
-<div id="Intro">
-  <h1>UC Irvine logo here</h1>
-</div>
-
 <header>
-  <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+  <div class="uci-header navbar navbar-fixed-top">
+
+    <div class="navbar-header navbar-left">
+      <a class="navbar-brand" href="//www.lib.uci.edu" style="padding-top:12px;">
+        <%= image_tag("uci-lib-logo-trans.png", alt: "UCI Libraries") %>
+  	  </a>
+    </div>
+    <div class="navbar-header navbar-right">
+      <a class="navbar-brand ming-title" href="//www.lib.uci.edu">Ming Dynasty Titles Dictionary</a>
+    </div>
+  </div>
+  <nav class="project-nav navbar navbar-fixed-top navbar-light bg-faded">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -17,12 +24,9 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="nav-right">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="//www.lib.uci.edu">Ming Titles</a>
-        </div>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item active">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link about" href="#">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contributors</a>
