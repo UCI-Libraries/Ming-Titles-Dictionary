@@ -4,7 +4,11 @@ class TitlesController < ApplicationController
   # GET /titles
   # GET /titles.json
   def index
-    @titles = Title.all
+    @titles = Title.includes(translations: :user).all
+
+    render json: @titles, include: [translations: {include: :user}]
+ # {:only => :name, :include =>
+    # :json @titles, include: {:translations => {:only => :name}}, :except => [:created_at, :updated_at]
   end
 
   # GET /titles/1

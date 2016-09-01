@@ -13,57 +13,73 @@
         <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
       </div>
       <div class="modal-body">
-        <form class="signup-form" ng-submit="submitUser(formData, myForm)" name="myForm">
+        <form class="signup-form form-horizontal" ng-submit="submitUser(formData, myForm)" name="myForm">
           <div class="form-group">
-            <span class="redfont">*&nbsp;</span><label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
-            <span ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
-            <span ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span><br/>
+            <label class="col-md-3 control-label" for="email"><span class="redfont">*&nbsp;</span>Email:&nbsp;</label>
+            <div class="col-md-9">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="fname"><span class="redfont">*&nbsp;</span>First Name:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" id="fname" ng-model="formData.fname" name="fname" required/>
+              <span class="form-error" ng-show="myForm.fname.$error.required && myForm.fname.$dirty">required</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="lname"><span class="redfont">*&nbsp;</span>Last Name:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" id="lname" ng-model="formData.lname" name="lname" required/>
+              <span class="form-error" ng-show="myForm.lname.$error.required && myForm.lname.$dirty">required</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="username"><span class="redfont">*&nbsp;</span>Username:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" class="form-control" id="username" name="username" ng-model="formData.username" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required/>
+              <span class="form-error" ng-show="myForm.username.$error.required && myForm.username.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.username.$error.minLength && !myForm.username.$error.maxLength && myForm.username.$error.pattern && myForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
+              <span class="form-error" ng-show="!myForm.username.$error.required && (myForm.username.$error.minlength || myForm.username.$error.maxlength) && myForm.username.$dirty">Username must be between 5 and 20 characters.</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="country"><span class="redfont">*&nbsp;</span>Country:&nbsp;</label>
+            <div class="col-md-9">
+              <country-select class="countries form-control" ng-model="formData.country" name="country" required></country-select><span class="form-error" ng-show="myForm.country.$error.required && myForm.country.$dirty">required</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="institution">Affiliated Institution:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" ng-model="formData.institution" name="institution"/>
+            </div>
+
+            <label class="col-md-3 control-label" for="research"><span class="redfont">*&nbsp;</span>Areas of Research:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" ng-model="formData.research" name="research" required></textarea>
+              <span class="form-error" ng-show="myForm.research.$error.required && myForm.research.$dirty">required</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="password"><span class="redfont">*&nbsp;</span>Password:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="password" id="password" name="password" ng-model="formData.password" ng-minlength="6" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+              <span class="form-error" ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 6 and 20 characters.</span>
+              <span class="form-error" ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="password_c"><span class="redfont">*&nbsp;</span>Confirm Password:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="password" id="password_c" name="password_c" ng-model="formData.password_c" valid-password-c required/>
+              <span class="form-error" ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
+              <span class="form-error" ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span>
+            </div>
+
+            <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
           </div>
-
-          <span class="redfont">*&nbsp;</span><label for="fname">First Name</label>
-          <input type="text" id="fname" ng-model="formData.fname" name="fname" required/>
-          <span ng-show="myForm.fname.$error.required && myForm.fname.$dirty">required</span><br/>
-
-          <span class="redfont">*&nbsp;</span><label for="lname">Last Name</label>
-          <input type="text" id="lname" ng-model="formData.lname" name="lname" required/>
-          <span ng-show="myForm.lname.$error.required && myForm.lname.$dirty">required</span><br/>
-
-          <span class="redfont">*&nbsp;</span><label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" ng-model="formData.username" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required/>
-          <span ng-show="myForm.username.$error.required && myForm.username.$dirty">required</span>
-          <span ng-show="!myForm.username.$error.minLength && !myForm.username.$error.maxLength && myForm.username.$error.pattern && myForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
-          <span ng-show="!myForm.username.$error.required && (myForm.username.$error.minlength || myForm.username.$error.maxlength) && myForm.username.$dirty">Username must be between 5 and 20 characters.</span><br/>
-
-          <span class="redfont">*&nbsp;</span><label for="country">Country</label>
-          <country-select ng-model="formData.country" name="country" required></country-select><span ng-show="myForm.country.$error.required && myForm.country.$dirty">required</span><br/>
-
-          <label for="institution">Affiliated Institution (optional)</label>
-          <input type="text" ng-model="formData.institution" name="institution"/><br/>
-
-          <span class="redfont">*&nbsp;</span><label for="research">Areas of Research</label>
-          <textarea type="textarea" ng-model="formData.research" name="research" required></textarea>
-          <span ng-show="myForm.research.$error.required && myForm.research.$dirty">required</span><br/>
-
-          <span class="redfont">*&nbsp;</span><label for="password">Password</label>
-          <input type="password" id="password" name="password" ng-model="formData.password" ng-minlength="6" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
-          <span ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
-          <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 6 and 20 characters.</span>
-          <span ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span><br/>
-
-          <span class="redfont">*&nbsp;</span><label for="password_c">Confirm Password</label>
-          <input type="password" id="password_c" name="password_c" ng-model="formData.password_c" valid-password-c required/>
-          <span ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
-          <span ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span><br/>
-
-          <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
-          <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
 
           <br/>
 
         </form>
-      </div>
-      <div class="modal-footer">
       </div>
     </div>
   </div>
