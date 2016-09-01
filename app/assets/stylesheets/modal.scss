@@ -13,20 +13,23 @@
   }
 }
 
-.modal-footer {
-  border: none;
-}
-
-.modal {
-  color: $raisinblue;
-}
-
-.modal-dialog {
-  width: 70%;
+.form-group {
+  margin-bottom: 0px;
 }
 
 .modal-content {
   background-color: white;
   border-radius: 0px;
   width: 100%;
+}
+
+.control-label {
+  padding-right: 0px;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 750px;
+    margin: 40px auto;
+  }
 }

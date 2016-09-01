@@ -3,7 +3,6 @@ titlesApp
 
   // var addItem = angular.element(document.getElementsByClassName('add-item'));
 
-
   var init = function() {
 
   };
