@@ -1,0 +1,14 @@
+{:uriI"èfile://app/assets/javascripts/templates/titles_table.html?type=text/ng-html&id=1ca9546b74a85cac20cc0c6b35e97bfc3ab010b2753ebe23fec2760d212359a2:ET:load_pathI"app/assets/javascripts;T:filenameI"7app/assets/javascripts/templates/titles_table.html;T:	nameI"templates/titles_table;T:logical_pathI" templates/titles_table.html;T:content_typeI"text/ng-html;T:sourceI"W<div>HI THERE</div>
+<table ng-table="vm.tableParams" class="table" show-filter="true">
+    <tr ng-repeat="user in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+            {{user.name}}</td>
+        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+            {{user.age}}</td>
+    </tr>
+</table>
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Efile-digest://app/assets/javascripts/templates/titles_table.html;TT:charsetI"
+utf-8;F:digest"%Öó≥â%Ÿ.›4(çﬂâπ†ºjS7£DıM-*°EU;:lengthiW:dependencies_digest"%Ÿ“p%y gÇÓØ∑°œ0–‘*îñ¥ïäÇF:©Á(g7:idI"E1ca9546b74a85cac20cc0c6b35e97bfc3ab010b2753ebe23fec2760d212359a2;F:
+mtimel+˝è»W
