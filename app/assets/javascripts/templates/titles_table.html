@@ -1,18 +1,12 @@
-<div>HI THERE</div>
-<!-- <div class="form-inline" style="margin-bottom: 20px">
- <div class="form-group">
-   <label for="datasets">Select dataset</label>
-   <select id="datasets" class="form-control" ng-model="demo.dataset" ng-options="ds for ds in demo.datasets"
-           ng-change="demo.changeDs()"></select>
- </div>
-</div> -->
 <table ng-table="tableParams" class="table" show-filter="true">
     <tr ng-repeat="title in $data">
         <td title="'Chinese Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'">
             {{title.chinese_title}}</td>
         <td title="'Pin Yin Title'" filter="{ pinyin_title: 'text'}" sortable="'pinyin_title'">
             {{title.pinyin_title}}</td>
-        <td title="'Translation'" filter="{ age: 'number'}" sortable="'age'">
+        <td title="'# of Translations'" filter="{ num_translations: 'number'}" sortable="'num_translations'">
+            {{title.num_translations}}</td>
+        <td title="'Translations'">
             {{title.translations[0].translation}}</td>
     </tr>
 </table>
