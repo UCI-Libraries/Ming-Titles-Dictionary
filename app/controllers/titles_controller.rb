@@ -8,6 +8,11 @@ class TitlesController < ApplicationController
     render json: @titles, include: [translations: {include: :user}]
   end
 
+  def titles_by_institution
+    @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user)
+    render json: @titles, include: [translations: {include: :user}]
+  end
+
   # GET /titles/1
   # GET /titles/1.json
   def show
