@@ -391,6 +391,9 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
         iElement.append(clone);
       });
 
+      // iElement.clickingCallback = function() {alert('clicked!');};
+      // iElement.bind('click', scope.clickingCallback);
+
       if (!angular.isDefined(scope.isExpanded)) {
         scope.isExpanded = (angular.isDefined(iAttrs.expanded) && (iAttrs.expanded === ''));
       }

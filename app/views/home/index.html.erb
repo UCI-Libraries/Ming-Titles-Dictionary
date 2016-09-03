@@ -35,7 +35,7 @@
               <a class="nav-link" href="#">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Logout</a>
@@ -62,7 +62,7 @@
 
     <div class="col-md-10">
       <div class="row">
-        <%= render "dummy_table" %>
+        <!-- <%= render "dummy_table" %> -->
         <titles-table></titles-table>
       </div>
     </div>
@@ -73,3 +73,4 @@
   </footer>
 </div><!-- /.container-->
 <signup-form></signup-form>
+<log-in></log-in>

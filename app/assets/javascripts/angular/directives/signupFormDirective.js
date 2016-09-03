@@ -6,6 +6,6 @@ titlesApp
      transclude: true,
      scope: {
      },
-     templateUrl: 'signupForm.html'
+     templateUrl: 'signup_form.html'
    };
  });

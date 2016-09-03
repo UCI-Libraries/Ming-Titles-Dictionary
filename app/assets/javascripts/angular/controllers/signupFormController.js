@@ -1,27 +1,11 @@
 titlesApp
   .controller('signupFormController', ['$scope', '$timeout', 'User', 'Auth', function($scope, $timeout, User, Auth){
 
-  // var addItem = angular.element(document.getElementsByClassName('add-item'));
-
   var init = function() {
 
   };
 
   init();
-
-
-  $scope.$watch(
-    // function() { return $scope.pinData.lat; },
-    // function(newValue, oldValue) {
-    //   if ( newValue !== oldValue ) {
-    //     if (newValue >= -90 && newValue <= 90) {
-    //       $scope.latInput = initValsService.latLonValidColor;
-    //     } else {
-    //       $scope.latInput = initValsService.latLonInvalidColor;
-    //     }
-    //   }
-    // }
-  );
 
   $scope.clearFormFields = function() {
     // $scope.title = "";
@@ -63,24 +47,6 @@ titlesApp
     $scope.$on('devise:new-registration', function(event, user) {
         // ...
     });
-
-
-    //   var AppController = function(Book) {
-    //   // to create a Book
-    //   var book = new Book();
-    //   book.name = 'AngularJS in nutshell';
-    //   book.create();
-    //
-    //   // to retrieve a book
-    //   var bookPromise = Book.get(123);
-    //   bookPromise.then(function(b) {
-    //     book = b;
-    //   });
-    // };
-
-    // user.save($scope.user, function() {
-    //  //data saved. do something here.
-    // }); //saves an entry. Assuming $scope.entry is the Entry object
   };
 
 

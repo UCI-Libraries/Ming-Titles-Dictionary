@@ -12,8 +12,8 @@ class InstitutionsController < ApplicationController
   def show
   end
 
-  def all_trees
-    render json: Institution.all_trees
+  def all_with_ancestry
+    render json: Institution.all_with_ancestry
   end
 
   # GET /institutions/new

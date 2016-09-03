@@ -13,7 +13,7 @@ class Institution < ApplicationRecord
   has_many :titles, through: :institutions_and_titles
   has_ancestry
 
-  def self.all_trees
+  def self.all_with_ancestry
     all_trees = []
     self.roots.each do |root|
      all_trees += root.subtree.arrange_serializable

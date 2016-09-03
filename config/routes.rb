@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources :institutions
   resources :titles
 
-  get 'api/institutions/all_trees' => 'institutions#all_trees'
+  get 'api/institutions/all_with_ancestry' => 'institutions#all_with_ancestry'
+  get 'api/titles' => 'titles#index'
+  get 'api/titles/institution/:id' => 'titles#titles_by_institution'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
