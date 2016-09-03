@@ -1,5 +1,5 @@
 titlesApp
-  .controller('titlesTableController', ['$scope', '$timeout', '$http', 'NgTableParams', function($scope, $timeout, $http, NgTableParams){
+  .controller('titlesTableController', ['$scope', '$timeout', '$http', 'NgTableParams', 'titlesService', function($scope, $timeout, $http, NgTableParams, titlesService){
   // var addItem = angular.element(document.getElementsByClassName('add-item'));
   var data = [];
   $scope.tableParams = new NgTableParams({}, { dataset: data});
@@ -25,6 +25,13 @@ titlesApp
 
     });
   }
+
+  $scope.$on('updateTitleTable', function() {
+    var inst = titlesService.getFocus();
+    getTitles(inst);
+  });
+
+
   init();
 
 

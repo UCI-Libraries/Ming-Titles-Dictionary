@@ -1,21 +1,27 @@
 <h2 style="font-size:18px; margin-top:0;"><span class="fa fa-list" style="color:#FFC522;"></span> Browse</h2>
 
-<v-accordion class="vAccordion--default">
-
+<v-accordion  class="vAccordion--default">
+  <v-pane class="is-expanded" expanded>
+    <v-pane-header ng-click="updateTitles()">
+      Select All
+    </v-pane-header>
+    <v-pane-content class="empty">
+    </v-pane-content>
+  </v-pane>
   <v-pane ng-repeat="office in offices" expanded="office.isExpanded">
-    <v-pane-header>
+    <v-pane-header ng-click="updateTitles(office.id)">
       {{ ::office.name }}
     </v-pane-header>
     <v-pane-content>
       <v-accordion ng-if="office.children">
         <v-pane ng-repeat="suboffice in office.children" ng-disabled="suboffice.isDisabled">
-          <v-pane-header>
+          <v-pane-header ng-click="updateTitles(suboffice.id)">
             {{ ::suboffice.name }}
           </v-pane-header>
           <v-pane-content>
             <v-accordion ng-if="suboffice.children.length > 0">
               <v-pane ng-repeat="subsub in suboffice.children" ng-disabled="subsub.isDisabled">
-                <v-pane-header>
+                <v-pane-header ng-click="updateTitles(subsub.id)">
                   {{ ::subsub.name }}
                 </v-pane-header>
                 <v-pane-content class="empty">

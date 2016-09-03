@@ -1,5 +1,5 @@
 titlesApp
-  .controller('institutionsMenuController', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
+  .controller('institutionsMenuController', ['$scope', '$timeout', '$http', 'titlesService', function($scope, $timeout, $http, titlesService){
 
   $scope.offices = [];
 
@@ -15,5 +15,10 @@ titlesApp
   }
 
   init();
+
+  $scope.updateTitles = function(inst) {
+    console.log("this is working", inst);
+    titlesService.setFocus(inst);
+  };
 
 }]);
