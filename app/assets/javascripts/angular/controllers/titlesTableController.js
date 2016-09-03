@@ -12,7 +12,6 @@ titlesApp
   function getTitles(inst) {
     var route = 'api/titles/';
     if(!!inst || inst === '') {
-      console.log("in here");
       route = 'api/titles/institution/' + inst;
     }
     $http.get(route).then(function(response) {

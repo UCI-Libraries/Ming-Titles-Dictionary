@@ -15,8 +15,4 @@ titlesApp.controller('mainController', ['$http', '$scope', '$timeout', function(
 
   $scope.$evalAsync(logUser());
 
-  // $scope.updateTitles = function() {
-  //   console.log("main controller");
-  // };
-
 }]);

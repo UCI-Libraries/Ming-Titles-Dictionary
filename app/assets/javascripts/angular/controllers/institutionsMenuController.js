@@ -17,7 +17,6 @@ titlesApp
   init();
 
   $scope.updateTitles = function(inst) {
-    console.log("this is working", inst);
     titlesService.setFocus(inst);
   };
 
