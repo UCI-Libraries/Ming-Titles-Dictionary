@@ -10,7 +10,7 @@ titlesApp.factory('User', ['$http', function($http) {
     });
   };
 
-  // an instance method to create a new Book
+  // an instance method to create a new User
   User.prototype.save = function() {
     var user = this;
     console.log(user);

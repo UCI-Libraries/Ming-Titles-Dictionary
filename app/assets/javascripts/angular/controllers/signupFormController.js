@@ -18,7 +18,7 @@ titlesApp
 
   $scope.submitUser = function(data) {
     console.log(data);
-    var user = new User();
+    // var user = new User();
     var credentials = {
       user_handle: data.username,
       email: data.email,
@@ -27,7 +27,6 @@ titlesApp
       country: data.country,
       institution: data.institution,
       research: data.research,
-      // approved: false,
       password: data.password
                       };
 

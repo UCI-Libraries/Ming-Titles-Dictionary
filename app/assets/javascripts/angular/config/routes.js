@@ -1,4 +1,7 @@
-titlesApp.config(function($stateProvider) {
+titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise('/');
+
   var mainState = {
     name: 'main',
     url: '/',
@@ -14,4 +17,6 @@ titlesApp.config(function($stateProvider) {
   $stateProvider.state(aboutState);
   $stateProvider.state(mainState);
 
-});
+}]);
+
+titlesApp.run(['$state', function ($state) {}]);
