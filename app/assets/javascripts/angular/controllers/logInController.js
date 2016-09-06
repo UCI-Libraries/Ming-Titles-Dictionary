@@ -9,18 +9,11 @@ titlesApp
 
   $scope.logInUser = function(data) {
     console.log(data);
-    var user = new User();
+
     var credentials = {
-      user_handle: data.username,
-      email: data.email,
-      fname: data.fname,
-      lname: data.lname,
-      country: data.country,
-      institution: data.institution,
-      research: data.research,
-      // approved: false,
-      password: data.password
-                      };
+    email: 'clwoods@uci.edu',
+    password: 'orange7A'
+    };
 
     var config = {
         headers: {
@@ -28,17 +21,26 @@ titlesApp
         }
     };
 
-    Auth.register(credentials, config).then(function(registeredUser) {
-        console.log(registeredUser); // => {id: 1, ect: '...'}
+    Auth.login(credentials, config).then(function(user) {
+        console.log(user); // => {id: 1, ect: '...'}
     }, function(error) {
-        console.log("FAILED", error);
-        // Registration failed...
+      console.log("FAIL STATE", error);
+        // Authentication failed...
     });
 
-    $scope.$on('devise:new-registration', function(event, user) {
-        // ...
+    $scope.$on('devise:login', function(event, currentUser) {
+        // after a login, a hard refresh, a new tab
+        console.log(currentUser, "LOGGED IN");
+    });
+
+    $scope.$on('devise:new-session', function(event, currentUser) {
+        // user logged in by Auth.login({...})
+        console.log(currentUser, "NEW SESSION");
+
     });
   };
+
+
 
 
 

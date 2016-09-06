@@ -1,0 +1,18 @@
+{:uriI"‡file://app/assets/javascripts/templates/main.html?type=text/ng-html&id=0ae3e652e123ec51a01f5abc259f5ee580f4f229396e067ab1c92d9592d1bdf4:ET:load_pathI"app/assets/javascripts;T:filenameI"/app/assets/javascripts/templates/main.html;T:	nameI"templates/main;T:logical_pathI"templates/main.html;T:content_typeI"text/ng-html;T:sourceI"<h1 style="padding-bottom:30px;">Ming Gov't Official Titles List</h1>
+
+<div class="row">
+  <div class="col-md-2">
+    <institutions-menu></institutions-menu>
+  </div>
+
+  <div class="col-md-10">
+    <div class="row">
+      <titles-table></titles-table>
+    </div>
+  </div>
+</div>
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"=file-digest://app/assets/javascripts/templates/main.html;TT:charsetI"
+utf-8;F:digest"%Ùx¿Œ<w¦¹¯Š@Ð|sì¨t%Ê‡½˜¡ÛÒ9:lengthi:dependencies_digest"%±£¾ƒIŒ¶T=£ÅIxÑ¦çÆ¥S7f#›ë/¶:idI"E0ae3e652e123ec51a01f5abc259f5ee580f4f229396e067ab1c92d9592d1bdf4;F:
+mtimel+ûÏW

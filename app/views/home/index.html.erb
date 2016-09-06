@@ -7,7 +7,7 @@
   	  </a>
     </div>
     <div class="navbar-header navbar-right">
-      <a class="navbar-brand ming-title" href="//www.lib.uci.edu">Ming Dynasty Titles Dictionary</a>
+      <a class="navbar-brand ming-title" ui-sref="main">Ming Dynasty Titles Dictionary</a>
     </div>
   </div>
   <nav class="project-nav navbar navbar-fixed-top navbar-light bg-faded">
@@ -23,50 +23,14 @@
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="nav-right">
-        <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item active">
-              <a class="nav-link about" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contributors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
-                <!-- trigger signup modal -->
-                Sign Up
-              </a>
-            </li>
-          </ul>
-
-      </div><!-- /.navbar-collapse -->
+      <titles-nav></titles-nav>
     </div><!-- /.container-fluid -->
   </nav>
 </header>
+
 <div class="container">
-  <h1 style="padding-bottom:30px;">Ming Gov't Official Titles List</h1>
-
-  <div class="row">
-    <div class="col-md-2">
-      <institutions-menu></institutions-menu>
-    </div>
-
-    <div class="col-md-10">
-      <div class="row">
-        <!-- <%= render "dummy_table" %> -->
-        <titles-table></titles-table>
-      </div>
-    </div>
-  </div>
+  <ui-view>
+  </ui-view>
 
   <footer>
     <!-- <%= render "footer" %> -->
@@ -74,3 +38,4 @@
 </div><!-- /.container-->
 <signup-form></signup-form>
 <log-in></log-in>
+<%= render "debugging" %>
