@@ -17,7 +17,9 @@ titlesApp
         // Log in user...
         // ...
         Auth.logout(config).then(function(oldUser) {
-            alert(oldUser.email + "you're signed out now.");
+          if (oldUser) {
+            alert(oldUser + "you're signed out now.");
+          }
 
         }, function(error) {
             console.log(Auth._current_user);
