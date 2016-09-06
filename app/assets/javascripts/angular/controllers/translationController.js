@@ -7,7 +7,7 @@ titlesApp
 
   function getPosts() {
     console.log("in translations controller", $stateParams);
-      $http.get('title/1').then(function(response) {
+      $http.get('api/titles/1').then(function(response) {
         console.log(response.data);
       });
   }
