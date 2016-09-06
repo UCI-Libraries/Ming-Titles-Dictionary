@@ -5,17 +5,16 @@ titlesApp
     getPosts();
   };
 
+  $scope.title = {};
+
   function getPosts() {
     console.log("in translations controller", $stateParams);
-      $http.get('api/titles/1').then(function(response) {
-        console.log(response.data);
+      $http.get('api/titles/'+ $stateParams.id).then(function(response) {
+        $scope.title = response.data;
       });
   }
 
   init();
 
-  // $scope.updateTitles = function(inst) {
-  //   titlesService.setFocus(inst);
-  // };
 
 }]);
