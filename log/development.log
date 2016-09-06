@@ -43427,3 +43427,8 @@ Processing by TitlesController#titles_by_institution as HTML
 Completed 200 OK in 115ms (Views: 108.7ms | ActiveRecord: 3.1ms)
 
 
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <class:ApplicationController> at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/controllers/application_controller.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <class:ApplicationController> at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/controllers/application_controller.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <class:ApplicationController> at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/controllers/application_controller.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <class:ApplicationController> at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/controllers/application_controller.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <class:ApplicationController> at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/controllers/application_controller.rb:5)
