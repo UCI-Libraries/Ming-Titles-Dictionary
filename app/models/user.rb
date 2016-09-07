@@ -36,7 +36,8 @@ class User < ApplicationRecord
   has_many :translations
   has_many :comments
 
-  after_create :send_admin_mail
+  # after_create :send_admin_mail
+  # TODO: set up admin mailer
   
   def send_admin_mail
     AdminMailer.new_user_waiting_for_approval(self).deliver

@@ -14,7 +14,7 @@ titlesApp
 
     var credentials = {
     email: 'clwoods@uci.edu',
-    password: 'orangeA'
+    password: 'orange7A'
     };
 
     var config = {

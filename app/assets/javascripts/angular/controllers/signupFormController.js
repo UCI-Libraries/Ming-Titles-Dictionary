@@ -7,13 +7,9 @@ titlesApp
 
   init();
 
-  $scope.clearFormFields = function() {
-    // $scope.title = "";
-    // $scope.pinData.lat = "";
-    // $scope.pinData.lon = "";
-    // $scope.desc = "";
-    // refreshPinSettings();
-    // $scope.setMap();
+  $scope.resetForm = function() {
+    console.log("Clearing form in sign up controller");
+    $scope.formData = null;
   };
 
   $scope.submitUser = function(data) {
@@ -44,6 +40,8 @@ titlesApp
 
     $scope.$on('devise:new-registration', function(event, user) {
       console.log("reg complete");
+      clearFormFields();
+      displayThankYou();
       // TODO: message that admin is being contacted
       // TODO: clear fields
     });
