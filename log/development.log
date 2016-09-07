@@ -49018,3 +49018,398 @@ puma (3.6.0) lib/puma/server.rb:415:in `process_client'
 puma (3.6.0) lib/puma/server.rb:275:in `block in run'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started DELETE "/auth/logout.json" for ::1 at 2016-09-06 17:49:36 -0700
+Processing by Users::SessionsController#destroy as JSON
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 62ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-06 17:50:29 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_footer.html.erb (0.8ms)
+  Rendered home/_debugging.html.erb (12.8ms)
+  Rendered home/index.html.erb within layouts/application (32.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::CSS` to `Mime[:css]`. (called from _app_views_layouts_application_html_erb___4295606461280230425_70278181226500 at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 931ms (Views: 926.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login.json" for ::1 at 2016-09-06 17:50:32 -0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/institutions/all_with_ancestry" for ::1 at 2016-09-06 17:50:32 -0700
+Processing by InstitutionsController#all_with_ancestry as HTML
+  [1m[36mInstitution Load (1.2ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE "institutions"."ancestry" IS NULL[0m
+Started GET "/api/titles/institution/6" for ::1 at 2016-09-06 17:50:32 -0700
+Processing by TitlesController#titles_by_institution as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mInstitution Load (6.4ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 1 OR "institutions"."ancestry" ILIKE '1/%') OR "institutions"."ancestry" = '1') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mInstitution Load (4.7ms)[0m  [1m[34mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mInstitution Load (5.8ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 4 OR "institutions"."ancestry" ILIKE '4/%') OR "institutions"."ancestry" = '4') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mTitle Load (4.8ms)[0m  [1m[34mSELECT "titles".* FROM "titles" INNER JOIN "institutions_and_titles" ON "titles"."id" = "institutions_and_titles"."title_id" WHERE "institutions_and_titles"."institution_id" = $1[0m  [["institution_id", 6]]
+  [1m[36mInstitution Load (6.9ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 10 OR "institutions"."ancestry" ILIKE '10/%') OR "institutions"."ancestry" = '10') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+Completed 200 OK in 55ms (Views: 14.7ms | ActiveRecord: 20.3ms)
+
+
+  [1m[36mTranslation Load (22.6ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."title_id" IN (35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56)[0m
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+Completed 200 OK in 100ms (Views: 57.0ms | ActiveRecord: 35.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modules/angular-animate.min.js.map"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/auth/login.json" for ::1 at 2016-09-06 17:50:46 -0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"clwoods@uci.edu", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"clwoods@uci.edu", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "clwoods@uci.edu"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-09-07 00:50:46 UTC], ["last_sign_in_at", 2016-09-07 00:28:59 UTC], ["sign_in_count", 9], ["updated_at", 2016-09-07 00:50:46 UTC], ["id", 1]]
+  [1m[35m (26.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 205ms (Views: 2.2ms | ActiveRecord: 33.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-06 17:50:55 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_footer.html.erb (0.5ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/_debugging.html.erb (8.3ms)
+  Rendered home/index.html.erb within layouts/application (16.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::CSS` to `Mime[:css]`. (called from _app_views_layouts_application_html_erb___4295606461280230425_70278097533300 at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 312ms (Views: 306.8ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/auth/login.json" for ::1 at 2016-09-06 17:50:57 -0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 201 Created in 27ms (Views: 5.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/institutions/all_with_ancestry" for ::1 at 2016-09-06 17:50:58 -0700
+Processing by InstitutionsController#all_with_ancestry as HTML
+Started GET "/api/titles/institution/6" for ::1 at 2016-09-06 17:50:58 -0700
+Processing by TitlesController#titles_by_institution as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mInstitution Load (6.3ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE "institutions"."ancestry" IS NULL[0m
+  [1m[36mInstitution Load (1.4ms)[0m  [1m[34mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mInstitution Load (2.6ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 1 OR "institutions"."ancestry" ILIKE '1/%') OR "institutions"."ancestry" = '1') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mTitle Load (2.4ms)[0m  [1m[34mSELECT "titles".* FROM "titles" INNER JOIN "institutions_and_titles" ON "titles"."id" = "institutions_and_titles"."title_id" WHERE "institutions_and_titles"."institution_id" = $1[0m  [["institution_id", 6]]
+  [1m[36mInstitution Load (2.7ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 4 OR "institutions"."ancestry" ILIKE '4/%') OR "institutions"."ancestry" = '4') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mTranslation Load (4.2ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."title_id" IN (35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56)[0m
+  [1m[36mInstitution Load (2.6ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 10 OR "institutions"."ancestry" ILIKE '10/%') OR "institutions"."ancestry" = '10') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+Completed 200 OK in 30ms (Views: 2.7ms | ActiveRecord: 14.3ms)
+
+
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+Completed 200 OK in 52ms (Views: 34.1ms | ActiveRecord: 14.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modules/angular-animate.min.js.map"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-06 17:51:28 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_footer.html.erb (0.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/_debugging.html.erb (13.5ms)
+  Rendered home/index.html.erb within layouts/application (30.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::CSS` to `Mime[:css]`. (called from _app_views_layouts_application_html_erb___4295606461280230425_70278099268540 at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 1023ms (Views: 1016.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/auth/login.json" for ::1 at 2016-09-06 17:51:31 -0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 201 Created in 30ms (Views: 4.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/institutions/all_with_ancestry" for ::1 at 2016-09-06 17:51:32 -0700
+Processing by InstitutionsController#all_with_ancestry as HTML
+Started GET "/api/titles/institution/6" for ::1 at 2016-09-06 17:51:32 -0700
+  [1m[36mInstitution Load (1.1ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE "institutions"."ancestry" IS NULL[0m
+Processing by TitlesController#titles_by_institution as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mInstitution Load (1.6ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 1 OR "institutions"."ancestry" ILIKE '1/%') OR "institutions"."ancestry" = '1') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mInstitution Load (4.1ms)[0m  [1m[34mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mInstitution Load (4.1ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 4 OR "institutions"."ancestry" ILIKE '4/%') OR "institutions"."ancestry" = '4') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mTitle Load (2.6ms)[0m  [1m[34mSELECT "titles".* FROM "titles" INNER JOIN "institutions_and_titles" ON "titles"."id" = "institutions_and_titles"."title_id" WHERE "institutions_and_titles"."institution_id" = $1[0m  [["institution_id", 6]]
+  [1m[36mInstitution Load (2.7ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 10 OR "institutions"."ancestry" ILIKE '10/%') OR "institutions"."ancestry" = '10') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+Completed 200 OK in 24ms (Views: 1.7ms | ActiveRecord: 9.5ms)
+
+
+  [1m[36mTranslation Load (6.5ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."title_id" IN (35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56)[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+Completed 200 OK in 46ms (Views: 27.1ms | ActiveRecord: 14.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modules/angular-animate.min.js.map"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-06 17:55:16 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_footer.html.erb (0.8ms)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/_debugging.html.erb (32.1ms)
+  Rendered home/index.html.erb within layouts/application (64.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::CSS` to `Mime[:css]`. (called from _app_views_layouts_application_html_erb___4295606461280230425_70278161237940 at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 1152ms (Views: 1141.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/auth/login.json" for ::1 at 2016-09-06 17:55:19 -0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 201 Created in 50ms (Views: 7.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/institutions/all_with_ancestry" for ::1 at 2016-09-06 17:55:19 -0700
+Processing by InstitutionsController#all_with_ancestry as HTML
+  [1m[36mInstitution Load (1.4ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE "institutions"."ancestry" IS NULL[0m
+Started GET "/api/titles/institution/6" for ::1 at 2016-09-06 17:55:19 -0700
+Processing by TitlesController#titles_by_institution as HTML
+  [1m[36mInstitution Load (3.6ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 1 OR "institutions"."ancestry" ILIKE '1/%') OR "institutions"."ancestry" = '1') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  Parameters: {"id"=>"6"}
+  [1m[36mInstitution Load (0.9ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 4 OR "institutions"."ancestry" ILIKE '4/%') OR "institutions"."ancestry" = '4') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mInstitution Load (3.2ms)[0m  [1m[34mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mInstitution Load (7.5ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 10 OR "institutions"."ancestry" ILIKE '10/%') OR "institutions"."ancestry" = '10') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+Completed 200 OK in 41ms (Views: 5.9ms | ActiveRecord: 13.4ms)
+
+
+  [1m[36mTitle Load (15.9ms)[0m  [1m[34mSELECT "titles".* FROM "titles" INNER JOIN "institutions_and_titles" ON "titles"."id" = "institutions_and_titles"."title_id" WHERE "institutions_and_titles"."institution_id" = $1[0m  [["institution_id", 6]]
+  [1m[36mTranslation Load (0.8ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."title_id" IN (35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56)[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+Completed 200 OK in 101ms (Views: 71.4ms | ActiveRecord: 21.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modules/angular-animate.min.js.map"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/api/titles/institution/6" for ::1 at 2016-09-06 17:56:01 -0700
+Started GET "/api/institutions/all_with_ancestry" for ::1 at 2016-09-06 17:56:01 -0700
+Processing by TitlesController#titles_by_institution as HTML
+  Parameters: {"id"=>"6"}
+Processing by InstitutionsController#all_with_ancestry as HTML
+  [1m[36mInstitution Load (1.4ms)[0m  [1m[34mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mInstitution Load (0.7ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE "institutions"."ancestry" IS NULL[0m
+  [1m[36mTitle Load (2.3ms)[0m  [1m[34mSELECT "titles".* FROM "titles" INNER JOIN "institutions_and_titles" ON "titles"."id" = "institutions_and_titles"."title_id" WHERE "institutions_and_titles"."institution_id" = $1[0m  [["institution_id", 6]]
+  [1m[36mInstitution Load (3.8ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 1 OR "institutions"."ancestry" ILIKE '1/%') OR "institutions"."ancestry" = '1') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mTranslation Load (13.3ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."title_id" IN (35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56)[0m
+  [1m[36mInstitution Load (39.9ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 4 OR "institutions"."ancestry" ILIKE '4/%') OR "institutions"."ancestry" = '4') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+Completed 200 OK in 94ms (Views: 70.3ms | ActiveRecord: 20.0ms)
+
+
+  [1m[36mInstitution Load (27.9ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 10 OR "institutions"."ancestry" ILIKE '10/%') OR "institutions"."ancestry" = '10') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+Completed 200 OK in 106ms (Views: 6.6ms | ActiveRecord: 72.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-06 17:56:35 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_footer.html.erb (0.4ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/_debugging.html.erb (5.3ms)
+  Rendered home/index.html.erb within layouts/application (11.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::CSS` to `Mime[:css]`. (called from _app_views_layouts_application_html_erb___4295606461280230425_70278181606600 at /Users/paigedestroy/Desktop/Ming-Titles-Dictionary/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 696ms (Views: 687.8ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/auth/login.json" for ::1 at 2016-09-06 17:56:37 -0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 201 Created in 28ms (Views: 2.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/institutions/all_with_ancestry" for ::1 at 2016-09-06 17:56:38 -0700
+Processing by InstitutionsController#all_with_ancestry as HTML
+  [1m[36mInstitution Load (1.6ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE "institutions"."ancestry" IS NULL[0m
+Started GET "/api/titles/institution/6" for ::1 at 2016-09-06 17:56:38 -0700
+Processing by TitlesController#titles_by_institution as HTML
+  [1m[36mInstitution Load (2.3ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 1 OR "institutions"."ancestry" ILIKE '1/%') OR "institutions"."ancestry" = '1') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  Parameters: {"id"=>"6"}
+  [1m[36mInstitution Load (0.4ms)[0m  [1m[34mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mInstitution Load (1.2ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 4 OR "institutions"."ancestry" ILIKE '4/%') OR "institutions"."ancestry" = '4') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+  [1m[36mTitle Load (2.7ms)[0m  [1m[34mSELECT "titles".* FROM "titles" INNER JOIN "institutions_and_titles" ON "titles"."id" = "institutions_and_titles"."title_id" WHERE "institutions_and_titles"."institution_id" = $1[0m  [["institution_id", 6]]
+  [1m[36mInstitution Load (3.2ms)[0m  [1m[34mSELECT "institutions".* FROM "institutions" WHERE (("institutions"."id" = 10 OR "institutions"."ancestry" ILIKE '10/%') OR "institutions"."ancestry" = '10') ORDER BY (case when institutions.ancestry is null then 0 else 1 end), institutions.ancestry[0m
+Completed 200 OK in 24ms (Views: 1.6ms | ActiveRecord: 8.2ms)
+
+
+  [1m[36mTranslation Load (5.6ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."title_id" IN (35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56)[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 9.4ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modules/angular-animate.min.js.map"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
