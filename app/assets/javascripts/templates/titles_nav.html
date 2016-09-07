@@ -9,17 +9,23 @@
       <li class="nav-item">
         <a class="nav-link" href="#">FAQ</a>
       </li>
-      <li class="nav-item">
+      <li ng-show="!userIsSignedIn()" class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
       </li>
-      <li class="nav-item">
+      <li ng-show="userIsSignedIn()" class="nav-item">
         <a class="nav-link" ng-click="logOutUser()">Logout</a>
       </li>
-      <li class="nav-item">
+      <li ng-show="!userIsSignedIn()" class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
           <!-- trigger signup modal -->
           Sign Up
         </a>
+      </li>
+      <li ng-show="userIsSignedIn()" class="nav-item">
+        <a class="nav-link" ui-sref="profile">Profile</a>
+      </li>
+      <li ng-show="userIsAdmin()" class="nav-item">
+        <a class="nav-link" ui-sref="admin">Admin Portal</a>
       </li>
     </ul>
 

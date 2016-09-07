@@ -1,6 +1,6 @@
 titlesApp
-  .controller('titlesTableController', ['$scope', '$timeout', '$http', 'NgTableParams', 'titlesService', function($scope, $timeout, $http, NgTableParams, titlesService){
-  // var addItem = angular.element(document.getElementsByClassName('add-item'));
+  .controller('titlesTableController', ['$scope', '$timeout', '$http', 'NgTableParams', 'titlesService', '$state', function($scope, $timeout, $http, NgTableParams, titlesService, $state){
+
   var data = [];
   $scope.tableParams = new NgTableParams({}, { dataset: data});
 
@@ -29,6 +29,11 @@ titlesApp
     var inst = titlesService.getFocus();
     getTitles(inst);
   });
+
+  $scope.seePosts = function(title) {
+    console.log(title);
+    $state.go('titles', {"id": title});
+  };
 
 
   init();

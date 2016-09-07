@@ -1,3 +1,4 @@
+<div ng-controller="mainController">
 <header>
   <div class="uci-header navbar navbar-fixed-top">
 
@@ -7,7 +8,7 @@
   	  </a>
     </div>
     <div class="navbar-header navbar-right">
-      <a class="navbar-brand ming-title" ui-sref="main">Ming Dynasty Titles Dictionary</a>
+      <a class="navbar-brand ming-title" ui-sref="main">{{title}}</a>
     </div>
   </div>
   <nav class="project-nav navbar navbar-fixed-top navbar-light bg-faded">
@@ -38,4 +39,5 @@
 </div><!-- /.container-->
 <signup-form></signup-form>
 <log-in></log-in>
-<%= render "debugging" %>
+<!-- <%= render "debugging" %> -->
+</div>

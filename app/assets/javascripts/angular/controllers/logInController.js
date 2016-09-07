@@ -1,5 +1,5 @@
 titlesApp
-  .controller('logInController', ['$scope', '$timeout', 'User', 'Auth', function($scope, $timeout, User, Auth){
+  .controller('logInController', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth){
 
   var init = function() {
 
@@ -22,7 +22,7 @@ titlesApp
     };
 
     Auth.login(credentials, config).then(function(user) {
-        console.log(user); // => {id: 1, ect: '...'}
+      console.log(user); // => {id: 1, ect: '...'}
     }, function(error) {
       console.log("FAIL STATE", error);
         // Authentication failed...

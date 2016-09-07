@@ -18,11 +18,13 @@ Rails.application.routes.draw do
   resources :comments
   resources :translations
   resources :institutions
-  resources :titles
+  # resources :titles
 
   get 'api/institutions/all_with_ancestry' => 'institutions#all_with_ancestry'
   get 'api/titles' => 'titles#index'
   get 'api/titles/institution/:id' => 'titles#titles_by_institution'
+  get 'api/titles/:id' => 'titles#show'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
