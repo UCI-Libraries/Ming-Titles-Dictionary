@@ -2,22 +2,22 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span ng-click="resetForm()"  aria-hidden="true">&times;</span></button>
         <h2 class="modal-title" id="myModalLabel">
           Ming Scholar Registration Form
         </h2>
-        <h4 class="modal-title" >
+        <h4 ng-show="!submitted" class="modal-title" >
           Thank you for wanting to make contribution to this project! Please fill out this form.
         </h4>
         <p><span class="redfont">*</span> indicates a required field.</p>
         <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
       </div>
       <div class="modal-body">
-        <form class="signup-form form-horizontal" ng-submit="submitUser(formData, myForm)" name="myForm">
+        <form ng-show="!submitted" class="signup-form form-horizontal" ng-submit="submitUser(formData, myForm)" name="myForm">
           <div class="form-group">
             <label class="col-md-3 control-label" for="email"><span class="redfont">*&nbsp;</span>Email:&nbsp;</label>
             <div class="col-md-9">
-              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" ng-change="resetEmailCheck()" required/>
               <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
               <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
             </div>
@@ -32,14 +32,6 @@
             <div class="col-md-9">
               <input class="form-control" type="text" id="lname" ng-model="formData.lname" name="lname" required/>
               <span class="form-error" ng-show="myForm.lname.$error.required && myForm.lname.$dirty">required</span>
-            </div>
-
-            <label class="col-md-3 control-label" for="username"><span class="redfont">*&nbsp;</span>Username:&nbsp;</label>
-            <div class="col-md-9">
-              <input class="form-control" type="text" class="form-control" id="username" name="username" ng-model="formData.username" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required/>
-              <span class="form-error" ng-show="myForm.username.$error.required && myForm.username.$dirty">required</span>
-              <span class="form-error" ng-show="!myForm.username.$error.minLength && !myForm.username.$error.maxLength && myForm.username.$error.pattern && myForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
-              <span class="form-error" ng-show="!myForm.username.$error.required && (myForm.username.$error.minlength || myForm.username.$error.maxlength) && myForm.username.$dirty">Username must be between 5 and 20 characters.</span>
             </div>
 
             <label class="col-md-3 control-label" for="country"><span class="redfont">*&nbsp;</span>Country:&nbsp;</label>
@@ -71,6 +63,7 @@
               <input class="form-control" type="password" id="password_c" name="password_c" ng-model="formData.password_c" valid-password-c required/>
               <span class="form-error" ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
               <span class="form-error" ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span>
+              <span class="form-error" ng-show="emailExists">An account with this email has already been created.</span>
             </div>
 
             <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
@@ -80,6 +73,8 @@
           <br/>
 
         </form>
+
+        <span ng-show="submitted">Thank you for applying to contribute to this project! An administrator will be reviewing your application and getting back to you soon.</span>
       </div>
     </div>
   </div>

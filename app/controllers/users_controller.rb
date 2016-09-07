@@ -40,6 +40,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def approved
+    @users = User.where(approved: false)
+    render json: @users
+  end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

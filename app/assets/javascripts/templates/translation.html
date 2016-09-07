@@ -1,3 +1,30 @@
-<a class="back" ui-sref="main">< Back to main</a>
+<div class="container">
+  <a class="back" ui-sref="main">< Back to main</a>
 
-<p> {{title}}</p>
+  <div class="chinese-title">
+    <h1>Official Chinese:&nbsp;{{title.chinese_title}}</h1>
+    <h2>Official Pin Yin:&nbsp;{{title.pinyin_title}}
+  </div>
+official English translations:
+  <div class="official-translations" ng-repeat="translation in title.translations | filter:{ approved: true }">
+    <h3>{{translation.translation}}</h3>
+    <p>Author:&nbsp;{{translation.user.email}}</p>
+  </div>
+
+unofficial English translations:
+  <div class="official-translations" ng-repeat="translation in title.translations">
+    <h3>{{translation.translation}}</h3>
+    <p>Author:&nbsp;{{translation.user.email}}</p>
+    <p>comment on translation</p>
+  </div>
+
+Add a translation:
+
+
+<span> {{title}}</span>
+
+
+
+
+
+</div>

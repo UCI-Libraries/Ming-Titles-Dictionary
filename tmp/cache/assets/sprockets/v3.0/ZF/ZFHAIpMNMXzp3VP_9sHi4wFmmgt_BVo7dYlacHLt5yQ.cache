@@ -1,17 +1,0 @@
-{:uriI"file://app/assets/javascripts/templates/titles_table.html?type=text/ng-html&id=f67181eed4c14f66af29a9a07529ef0bd1c9f42967606bf6e0d8df3c8b5ac30a:ET:load_pathI"app/assets/javascripts;T:filenameI"7app/assets/javascripts/templates/titles_table.html;T:	nameI"templates/titles_table;T:logical_pathI" templates/titles_table.html;T:content_typeI"text/ng-html;T:sourceI"ˆ<table ng-table="tableParams" class="table" show-filter="true">
-    <tr class="" ng-repeat="title in $data">
-        <td title="'Chinese Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'">
-            {{title.chinese_title}}</td>
-        <td title="'Pin Yin Title'" filter="{ pinyin_title: 'text'}" sortable="'pinyin_title'">
-            {{title.pinyin_title}}</td>
-        <td title="'# of Translations'" filter="{ num_translations: 'number'}" sortable="'num_translations'">
-            {{title.num_translations}}</td>
-        <td title="'Translations'">
-            {{title.translations[0].translation}}</td>
-    </tr>
-</table>
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Efile-digest://app/assets/javascripts/templates/titles_table.html;TT:charsetI"
-utf-8;F:digest"%(¢ìE±KËFHzFÆ€o†`‰WG…®Ã›Èìj:lengthiˆ:dependencies_digest"%xbù][—ç\² RE:Çº@kı=T¼ùƒóL¤‘ÄÄ:idI"Ef67181eed4c14f66af29a9a07529ef0bd1c9f42967606bf6e0d8df3c8b5ac30a;F:
-mtimel+OÌÈW

@@ -24,7 +24,7 @@
       <li ng-show="userIsSignedIn()" class="nav-item">
         <a class="nav-link" ui-sref="profile">Profile</a>
       </li>
-      <li ng-show="userIsAdmin()" class="nav-item">
+      <li ng-show="userIsSignedIn() && userIsAdmin()" class="nav-item">
         <a class="nav-link" ui-sref="admin">Admin Portal</a>
       </li>
     </ul>

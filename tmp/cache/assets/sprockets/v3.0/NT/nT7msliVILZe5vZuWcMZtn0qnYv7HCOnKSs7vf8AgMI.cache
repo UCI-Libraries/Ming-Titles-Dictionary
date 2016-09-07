@@ -1,42 +1,0 @@
-{:uriI"”file://app/assets/javascripts/templates/institutions_menu.html?type=text/ng-html&id=5ac2b873b3d1be8218ea92f506d00928be0a9c7b76fa8265e06afbf9dd8d5f94:ET:load_pathI"app/assets/javascripts;T:filenameI"<app/assets/javascripts/templates/institutions_menu.html;T:	nameI" templates/institutions_menu;T:logical_pathI"%templates/institutions_menu.html;T:content_typeI"text/ng-html;T:sourceI"a<h2 style="font-size:18px; margin-top:0;"><span class="fa fa-list" style="color:#FFC522;"></span> Browse</h2>
-
-<v-accordion  class="vAccordion--default">
-  <v-pane class="is-expanded" expanded>
-    <v-pane-header ng-click="updateTitles()">
-      Select All
-    </v-pane-header>
-    <v-pane-content class="empty">
-    </v-pane-content>
-  </v-pane>
-  <v-pane ng-repeat="office in offices" expanded="office.isExpanded">
-    <v-pane-header ng-click="updateTitles(office.id)">
-      {{ ::office.name }}
-    </v-pane-header>
-    <v-pane-content>
-      <v-accordion ng-if="office.children">
-        <v-pane ng-repeat="suboffice in office.children" ng-disabled="suboffice.isDisabled">
-          <v-pane-header ng-click="updateTitles(suboffice.id)">
-            {{ ::suboffice.name }}
-          </v-pane-header>
-          <v-pane-content>
-            <v-accordion ng-if="suboffice.children.length > 0">
-              <v-pane ng-repeat="subsub in suboffice.children" ng-disabled="subsub.isDisabled">
-                <v-pane-header ng-click="updateTitles(subsub.id)">
-                  {{ ::subsub.name }}
-                </v-pane-header>
-                <v-pane-content class="empty">
-                </v-pane-content>
-              </v-pane>
-            </v-accordion>
-          </v-pane-content>
-        </v-pane>
-      </v-accordion>
-    </v-pane-content>
-  </v-pane>
-
-</v-accordion>
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Jfile-digest://app/assets/javascripts/templates/institutions_menu.html;TT:charsetI"
-utf-8;F:digest"%Ù<zçãxð,Ö½È˜®¹ðê=Ý=OiÔ©•}1ÏÎ:lengthia:dependencies_digest"%'íu6\ø”ãå‡¹ºžKcNN²Øâ—{§'äâã:idI"E5ac2b873b3d1be8218ea92f506d00928be0a9c7b76fa8265e06afbf9dd8d5f94;F:
-mtimel+­)ÊW

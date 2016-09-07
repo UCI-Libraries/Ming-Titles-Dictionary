@@ -14,17 +14,15 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     template: '<about-info></about-info>'
   };
 
-  // var title = {
-  //   url: '/title/:id',
-  //   params: [
-  //      'id'
-  //   ],
-  //   template: 'translation',
-  //   controller: 'translationsController'
-  // };
+  var admin = {
+    name: 'admin',
+    url: '/admin',
+    template: '<admin></admin>'
+  };
 
   $stateProvider.state(aboutState);
   $stateProvider.state(mainState);
+  $stateProvider.state(admin);
   $stateProvider.state('titles' ,{
     url: '/titles/:id',
     template: '<translations></translations>',
