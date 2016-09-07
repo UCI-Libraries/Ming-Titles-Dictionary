@@ -7,6 +7,8 @@ titlesApp
 
   init();
   $scope.submitted = false;
+  $scope.emailExists = false;
+
 
   var clearFormFields = function() {
 
@@ -17,9 +19,14 @@ titlesApp
   };
 
   $scope.resetForm = function() {
-    console.log("Clearing form in sign up controller");
     $scope.formData = null;
     $scope.submitted = false;
+    $scope.emailExists = false;
+    $scope.myForm.$setPristine();
+  };
+
+  $scope.resetEmailCheck = function() {
+    $scope.emailExists = false;
   };
 
   $scope.submitUser = function(data) {
@@ -45,7 +52,10 @@ titlesApp
         console.log(registeredUser); // => {id: 1, ect: '...'}
     }, function(error) {
         console.log("FAILED", error);
-        // Registration failed...
+        if (error.data.errors.email) {
+          $scope.emailExists = true;
+          console.log("email is already taken");
+        }
     });
 
     $scope.$on('devise:new-registration', function(event, user) {

@@ -17,7 +17,7 @@
           <div class="form-group">
             <label class="col-md-3 control-label" for="email"><span class="redfont">*&nbsp;</span>Email:&nbsp;</label>
             <div class="col-md-9">
-              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" ng-change="resetEmailCheck()" required/>
               <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
               <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
             </div>
@@ -63,6 +63,7 @@
               <input class="form-control" type="password" id="password_c" name="password_c" ng-model="formData.password_c" valid-password-c required/>
               <span class="form-error" ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
               <span class="form-error" ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span>
+              <span class="form-error" ng-show="emailExists">An account with this email has already been created.</span>
             </div>
 
             <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
