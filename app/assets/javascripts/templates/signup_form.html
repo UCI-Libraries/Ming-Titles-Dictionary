@@ -6,14 +6,14 @@
         <h2 class="modal-title" id="myModalLabel">
           Ming Scholar Registration Form
         </h2>
-        <h4 class="modal-title" >
+        <h4 ng-show="!submitted" class="modal-title" >
           Thank you for wanting to make contribution to this project! Please fill out this form.
         </h4>
         <p><span class="redfont">*</span> indicates a required field.</p>
         <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
       </div>
       <div class="modal-body">
-        <form class="signup-form form-horizontal" ng-submit="submitUser(formData, myForm)" name="myForm">
+        <form ng-show="!submitted" class="signup-form form-horizontal" ng-submit="submitUser(formData, myForm)" name="myForm">
           <div class="form-group">
             <label class="col-md-3 control-label" for="email"><span class="redfont">*&nbsp;</span>Email:&nbsp;</label>
             <div class="col-md-9">
@@ -72,6 +72,8 @@
           <br/>
 
         </form>
+
+        <span ng-show="submitted">Thank you for applying to contribute to this project! An administrator will be reviewing your application and getting back to you soon.</span>
       </div>
     </div>
   </div>

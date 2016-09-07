@@ -6,10 +6,20 @@ titlesApp
   };
 
   init();
+  $scope.submitted = false;
+
+  var clearFormFields = function() {
+
+  };
+
+  var displayThankYou = function() {
+    $scope.submitted = true;
+  };
 
   $scope.resetForm = function() {
     console.log("Clearing form in sign up controller");
     $scope.formData = null;
+    $scope.submitted = false;
   };
 
   $scope.submitUser = function(data) {
