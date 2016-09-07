@@ -5,7 +5,6 @@
 #  id                     :integer          not null, primary key
 #  approved               :boolean          default(FALSE), not null
 #  is_admin               :boolean          default(FALSE), not null
-#  user_handle            :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string           default(""), not null
@@ -18,6 +17,10 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string
 #  institution            :text
 #  country                :text
 #  fname                  :text
@@ -32,6 +35,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :translations
   has_many :comments
+
+  after_create :send_admin_mail
+  
+  def send_admin_mail
+    AdminMailer.new_user_waiting_for_approval(self).deliver
+  end
 
   def active_for_authentication?
     super && approved?

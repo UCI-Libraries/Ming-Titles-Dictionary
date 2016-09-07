@@ -20,7 +20,6 @@ titlesApp
     console.log(data);
     // var user = new User();
     var credentials = {
-      user_handle: data.username,
       email: data.email,
       fname: data.fname,
       lname: data.lname,

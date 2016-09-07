@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-first_user = User.new(is_admin: true, approved: true, user_handle: "Claire", email: "clwoods@uci.edu", password: "orange7A")
+first_user = User.new(is_admin: true, approved: true, email: "clwoods@uci.edu", fname: "Claire", lname: "Woods", password: "orange7A")
 first_user.save!
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'official_titles_examples.csv'))
@@ -38,7 +38,8 @@ csv.each do |row|
   if row["official_translation"]
     trans = Translation.new(translation: row["official_translation"],
                         user_id: 1,
-                        title_id: t.id)
+                        title_id: t.id,
+                        approved: true)
     trans.save!
   end
   institution_ids = [
