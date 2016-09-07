@@ -1,4 +1,4 @@
-<div id="loginModal" class= "modal fade" >
+<div id="loginModal" class="modal fade" my-modal>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -25,6 +25,9 @@
               <span class="form-error" ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
             </div>
 
+            <div class="col-md-9">
+              <span class="form-error pull-right" >{{errors}}</span>
+            </div>
 
             <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
             <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>

@@ -43,12 +43,11 @@ titlesApp
     });
 
     $scope.$on('devise:new-registration', function(event, user) {
-        // ...
+      console.log("reg complete");
+      // TODO: message that admin is being contacted
+      // TODO: clear fields
     });
   };
-
-
-
 
 
 
