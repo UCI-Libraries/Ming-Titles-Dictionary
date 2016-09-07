@@ -1,7 +1,6 @@
 titlesApp.controller('mainController', ['$http', '$scope', '$timeout', 'Auth', function($http, $scope, $timeout, Auth){
 
-
-  $scope.title = "Ming Titles";
+  $scope.title = "Ming Dynasty Titles Dictionary";
 
   var init = function(user) {
     Auth.currentUser().then(function(user) {
@@ -12,17 +11,8 @@ titlesApp.controller('mainController', ['$http', '$scope', '$timeout', 'Auth', f
         console.log("no session");
         // unauthenticated error
     });
-    // console.log(user);
-    // logUser(user);
-
   };
 
   init();
-
-  // function logUser(str) {
-  //   $scope.current_user = str;
-  // }
-  //
-  // $scope.$evalAsync(logUser());
 
 }]);
