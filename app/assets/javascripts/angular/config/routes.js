@@ -29,6 +29,13 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     controller: 'translationsController'
   });
 
+  $stateProvider.state('profile' ,{
+    url: '/profile/:id',
+    template: '<p>Make a profile template! also link the nav item for profile through the controller so that it uses $state to pass in the params</p>',
+    controller: 'profileController'
+  });
+
+
 
 
 }]);

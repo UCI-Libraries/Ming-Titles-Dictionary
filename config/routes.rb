@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'api/titles/institution/:id' => 'titles#titles_by_institution'
   get 'api/titles/:id' => 'titles#show'
 
-  get 'admin/users' => 'users#approved'
+  get 'admin/users_to_approve' => 'users#approved'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
