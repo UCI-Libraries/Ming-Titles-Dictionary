@@ -1,20 +1,25 @@
+// .admin {
+//   .nav-item:hover {
+//     text-decoration: underline;
+//     background-color: red;
+//
+//   }
+//   .nav-item.active {
+//     text-decoration: underline;
+//     background-color: red;
+//
+//   }
+// }
 .admin {
-  .nav-item:hover {
+  .nav-link:hover {
+    background-color: white;
     text-decoration: underline;
   }
-  .nav-item.active {
+  .active {
+    font-weight: bold;
+    background-color: white;
+    border-bottom: none;
     text-decoration: underline;
   }
-}
 
-// admin.nav-item.nav-link:hover {
-//   background-color: $uci-blue;
-//   border-bottom: 5px solid $uci-gold;
-// }
-// .nav-link:focus {
-//   background-color: #0d5186;
-//   border-bottom: 5px solid $nav-active-blue;
-// }
-// .nav-link:focus:hover {
-//   border-bottom: 5px solid $uci-gold;
-// }
+}

@@ -10,12 +10,12 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right admin">
-        <li class="nav-item" ng-class="active=true">
+        <li class="nav-item" ng-class="{active: translationAuth}">
           <a class="nav-link" ng-click="showTranslations()">
             Approve Translations
           </a>
         </li>
-        <li class="nav-item" ng-class="active = userAuth">
+        <li class="nav-item" ng-class="{active: userAuth}">
           <a class="nav-link" ng-click="showUsers()">
             Approve Scholars
           </a>
