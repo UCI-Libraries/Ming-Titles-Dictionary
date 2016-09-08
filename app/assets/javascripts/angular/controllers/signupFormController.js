@@ -1,14 +1,8 @@
 titlesApp
-  .controller('signupFormController', ['$scope', '$timeout', 'User', 'Auth', function($scope, $timeout, User, Auth){
+  .controller('signupFormController', ['$scope', 'Auth', function($scope, Auth){
 
-  var init = function() {
-
-  };
-
-  init();
   $scope.submitted = false;
   $scope.emailExists = false;
-
 
   var clearFormFields = function() {
 
@@ -31,7 +25,6 @@ titlesApp
 
   $scope.submitUser = function(data) {
     console.log(data);
-    // var user = new User();
     var credentials = {
       email: data.email,
       fname: data.fname,
@@ -66,7 +59,5 @@ titlesApp
       // TODO: clear fields
     });
   };
-
-
 
 }]);

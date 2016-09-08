@@ -1,12 +1,11 @@
 titlesApp
-  .controller('titlesTableController', ['$scope', '$timeout', '$http', 'NgTableParams', 'titlesService', '$state', function($scope, $timeout, $http, NgTableParams, titlesService, $state){
+  .controller('titlesTableController', ['$scope', '$http', 'NgTableParams', 'titlesService', '$state', function($scope, $http, NgTableParams, titlesService, $state){
 
   var data = [];
   $scope.tableParams = new NgTableParams({}, { dataset: data});
 
   var init = function() {
-    // getTitles();
-    getTitles(6);
+    getTitles();
   };
 
   function getTitles(inst) {
@@ -34,7 +33,6 @@ titlesApp
     console.log(title);
     $state.go('titles', {"id": title});
   };
-
 
   init();
 

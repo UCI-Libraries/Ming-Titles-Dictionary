@@ -1,11 +1,5 @@
 titlesApp
-  .controller('titlesNavController', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth){
-
-  var init = function() {
-
-  };
-
-  init();
+  .controller('titlesNavController', ['$scope', 'Auth', function($scope, Auth){
 
   $scope.logOutUser = function() {
     console.log("log out");
@@ -43,10 +37,5 @@ titlesApp
     // console.log("ADMIN", Auth._current_user.is_admin);
     return true;
   };
-
-
-
-
-
 
 }]);

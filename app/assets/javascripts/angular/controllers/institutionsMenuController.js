@@ -1,5 +1,5 @@
 titlesApp
-  .controller('institutionsMenuController', ['$rootScope', '$scope', '$timeout', '$http', 'titlesService', function($rootScope, $scope, $timeout, $http, titlesService){
+  .controller('institutionsMenuController', ['$rootScope', '$scope', '$http', 'titlesService', function($rootScope, $scope, $http, titlesService){
 
   $scope.offices = [];
 

@@ -1,5 +1,5 @@
 titlesApp
-  .controller('userApprovalController', ['$scope', '$timeout', '$http', '$stateParams', 'titlesService', function($scope, $timeout, $http, $stateParams, titlesService){
+  .controller('userApprovalController', ['$scope','$http', function($scope, $http ){
 
   var init = function() {
     getUsers();
@@ -14,9 +14,6 @@ titlesApp
     });
   }
 
-
-
   init();
-
 
 }]);

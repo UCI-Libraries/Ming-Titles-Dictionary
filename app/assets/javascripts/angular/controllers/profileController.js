@@ -1,36 +1,18 @@
 titlesApp
-  .controller('profileController', ['$scope', '$timeout', '$http', '$stateParams', 'titlesService', function($scope, $timeout, $http, $stateParams, titlesService){
+  .controller('profileController', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
 
-  // var init = function() {
-  //   getUsers();
+  // $scope.userAuth = true;
+  // $scope.translationAuth = false;
+  //
+  // $scope.showUsers = function() {
+  //   $scope.translationAuth = false;
+  //   $scope.userAuth = true;
   // };
   //
-  // $scope.users = {};
-  //
-  // function getUsers() {
-  //   console.log("in translations controller", $stateParams);
-  //     $http.get('admin/users/').then(function(response) {
-  //       console.log(response.data);
-  //       $scope.users = response.data;
-  //     });
-  // }
-  //
-  //
-  //
-  // init();
-
-  $scope.userAuth = true;
-  $scope.translationAuth = false;
-
-  $scope.showUsers = function() {
-    $scope.translationAuth = false;
-    $scope.userAuth = true;
-  };
-
-  $scope.showTranslations = function() {
-    $scope.translationAuth = true;
-    $scope.userAuth = false;
-  };
+  // $scope.showTranslations = function() {
+  //   $scope.translationAuth = true;
+  //   $scope.userAuth = false;
+  // };
 
 
 }]);
