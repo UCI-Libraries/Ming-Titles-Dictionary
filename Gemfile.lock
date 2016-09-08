@@ -45,7 +45,6 @@ GEM
       railties (>= 4.2, < 6)
       sprockets (>= 3.0, < 5)
       tilt
-    angular-ui-router-rails (0.2.15)
     angularjs-rails (1.5.6)
     annotate (2.7.1)
       activerecord (>= 3.2, < 6.0)
@@ -193,7 +192,6 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   angular-rails-templates
-  angular-ui-router-rails
   angularjs-rails
   annotate
   bootstrap-sass (~> 3.3.6)

@@ -10,7 +10,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'ancestry'
 gem 'font-awesome-sass'
 gem 'google-webfonts'
-gem 'angular-ui-router-rails'
 
 
 source "https://rails-assets.org" do
