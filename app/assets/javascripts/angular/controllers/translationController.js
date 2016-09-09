@@ -18,7 +18,9 @@ titlesApp
 
   $scope.postTranslation = function() {
     var translation = new Translation();
-    translation.translation = 'New Title in English';
+    translation.translation_text = 'New Title in English';
+    translation.title_id = 3;
+    translation.user_id = 1;
     translation.save();
   };
 

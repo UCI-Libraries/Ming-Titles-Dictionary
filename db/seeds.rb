@@ -36,7 +36,7 @@ csv.each do |row|
   t.chinese_title = row["official_Chinese"]
   t.save!
   if row["official_translation"]
-    trans = Translation.new(translation: row["official_translation"],
+    trans = Translation.new(translation_text: row["official_translation"],
                         user_id: 1,
                         title_id: t.id,
                         approved: true)

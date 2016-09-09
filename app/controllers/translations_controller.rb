@@ -24,7 +24,14 @@ class TranslationsController < ApplicationController
   # POST /translations
   # POST /translations.json
   def create
+    p "this is translation params"
+    p translation_params
+
+    p "after - - - - - - - - - - - -"
     @translation = Translation.new(translation_params)
+
+    p "@translation"
+    p @translation
 
     respond_to do |format|
       if @translation.save
@@ -69,6 +76,11 @@ class TranslationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def translation_params
-      params.fetch(:translation, {})
+      p "PARAMS:"
+      p params
+      p "end params"
+      p params.fetch(:translation, {})
+
+      params.require(:translation).permit(:translation_text, :title_id, :user_id)
     end
 end

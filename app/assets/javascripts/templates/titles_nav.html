@@ -1,5 +1,6 @@
 <nav class="project-nav navbar navbar-fixed-top navbar-light bg-faded">
   <div class="container-fluid">
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-right" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -15,12 +16,12 @@
           <li class="nav-item">
             <a class="nav-link about" ui-sref="about" ui-sref-active="active">About</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">Contributors</a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">FAQ</a>
-          </li>
+          </li> -->
           <li ng-show="!userIsSignedIn()" class="nav-item">
             <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
           </li>
@@ -29,7 +30,6 @@
           </li>
           <li ng-show="!userIsSignedIn()" class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#signupFormModal">
-              <!-- trigger signup modal -->
               Sign Up
             </a>
           </li>
@@ -42,6 +42,5 @@
         </ul>
 
     </div><!-- /.navbar-collapse -->
-
   </div><!-- /.container-fluid -->
 </nav>

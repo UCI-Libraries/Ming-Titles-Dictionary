@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907204848) do
+ActiveRecord::Schema.define(version: 20160909234002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 20160907204848) do
   end
 
   create_table "translations", force: :cascade do |t|
-    t.string   "translation",                 null: false
-    t.integer  "title_id",                    null: false
-    t.integer  "user_id",                     null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "approved",    default: false
+    t.string   "translation_text",                 null: false
+    t.integer  "title_id",                         null: false
+    t.integer  "user_id",                          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "approved",         default: false
     t.index ["title_id"], name: "index_translations_on_title_id", using: :btree
     t.index ["user_id"], name: "index_translations_on_user_id", using: :btree
   end
