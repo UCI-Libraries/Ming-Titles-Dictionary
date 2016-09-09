@@ -1,5 +1,5 @@
 titlesApp
-  .controller('translationsController', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', function($scope, $http, $stateParams, Translation){
 
   var init = function() {
     getPosts();
@@ -15,6 +15,12 @@ titlesApp
         $scope.translations = response.data.traslations;
       });
   }
+
+  $scope.postTranslation = function() {
+    var translation = new Translation();
+    translation.translation = 'New Title in English';
+    translation.save();
+  };
 
   init();
 

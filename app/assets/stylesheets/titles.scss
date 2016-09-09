@@ -9,8 +9,13 @@ tbody {
   }
 }
 
-tr:nth-child(even) {background: white}
-tr:nth-child(odd) {background: #f9f9f9}
+tr:nth-child(even) {
+  background: white;
+}
+
+tr:nth-child(odd) {
+  background: #f9f9f9;
+}
 
 th.filter, th.header {
   background-color: white;
