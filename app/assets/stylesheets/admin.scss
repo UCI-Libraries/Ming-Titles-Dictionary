@@ -1,0 +1,25 @@
+// .admin {
+//   .nav-item:hover {
+//     text-decoration: underline;
+//     background-color: red;
+//
+//   }
+//   .nav-item.active {
+//     text-decoration: underline;
+//     background-color: red;
+//
+//   }
+// }
+.admin {
+  .nav-link:hover {
+    background-color: white;
+    text-decoration: underline;
+  }
+  .active {
+    font-weight: bold;
+    background-color: white;
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+}

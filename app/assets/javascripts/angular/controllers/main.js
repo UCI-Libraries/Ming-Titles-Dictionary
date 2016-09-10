@@ -1,4 +1,4 @@
-titlesApp.controller('mainController', ['$http', '$scope', '$timeout', 'Auth', function($http, $scope, $timeout, Auth){
+titlesApp.controller('mainController', ['$scope', 'Auth', function($scope, Auth){
 
   $scope.title = "Ming Dynasty Titles Dictionary";
 

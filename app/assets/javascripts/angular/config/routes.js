@@ -29,6 +29,13 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     controller: 'translationsController'
   });
 
+  $stateProvider.state('profile' ,{
+    url: '/profile/:id',
+    template: '<profile></profile>',
+    controller: 'profileController'
+  });
+
+
 
 
 }]);

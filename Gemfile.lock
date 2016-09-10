@@ -1,9 +1,3 @@
-GIT
-  remote: git@github.com:rodeschen/angular-ui-router-rails.git
-  revision: b40db42b97d0dddc9a722ce665012a6c0e8b53ad
-  specs:
-    angular-ui-router-rails (0.0.3)
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -198,7 +192,6 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   angular-rails-templates
-  angular-ui-router-rails!
   angularjs-rails
   annotate
   bootstrap-sass (~> 3.3.6)

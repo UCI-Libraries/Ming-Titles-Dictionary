@@ -1,4 +1,51 @@
-<a class="back" ui-sref="main">< Back to main</a>
+<div class="container">
+  <back-link></back-link>
+  <div class="row content-view">
+    <div class="col-sm-3 pull-right" id="profile-info">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Profile&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="#profileEdit"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
+        </div>
+        <div class="panel-body">
+          <p>Make a profile template! also link the nav item for profile through the controller so that it uses $state to pass in the params</p>
+          <p>link to reset password</p>
+          <p>link to email settings</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9" id="profile-main">
+      <div class="row">
+        <ul class="nav nav-tabs">
+          <li ng-click="showTranslations()" ng-class="{active: translationsView}"><a>All translations submitted</a></li>
+          <li ng-click="showComments()" ng-class="{active: commentsView}"><a>All comments on translations submitted</a></li>
+        </ul>
+      </div>
+      <div ng-show="translationsView" class="container">
+        LOOK IT'S TRANSLATIONS
+      </div>
+      <div ng-show="commentsView" class="container">
+        LOOK IT'S COMMENTS
+      </div>
+    </div>
+  </div>
+</div>
 
+<div id="profileEdit" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
 
-THIS IS THE PROFILE PAGE
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit your profile</h4>
+      </div>
+      <div class="modal-body">
+        <p>Form for editing profile goes here</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

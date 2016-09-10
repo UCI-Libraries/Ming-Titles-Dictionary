@@ -7,16 +7,19 @@
   </div>
 official English translations:
   <div class="official-translations" ng-repeat="translation in title.translations | filter:{ approved: true }">
-    <h3>{{translation.translation}}</h3>
+    <h3>{{translation.translation_text}}</h3>
     <p>Author:&nbsp;{{translation.user.email}}</p>
+    <!-- <p>Author:&nbsp;{{translation.user.email}}</p> -->
   </div>
 
 unofficial English translations:
   <div class="official-translations" ng-repeat="translation in title.translations">
-    <h3>{{translation.translation}}</h3>
+    <h3>{{translation.translation_text}}</h3>
     <p>Author:&nbsp;{{translation.user.email}}</p>
     <p>comment on translation</p>
   </div>
+
+  <button ng-click="postTranslation()">POST</button>
 
 Add a translation:
 

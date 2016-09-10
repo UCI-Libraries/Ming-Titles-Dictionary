@@ -2,13 +2,13 @@
 #
 # Table name: translations
 #
-#  id          :integer          not null, primary key
-#  translation :string           not null
-#  title_id    :integer          not null
-#  user_id     :integer          not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  approved    :boolean          default(FALSE)
+#  id               :integer          not null, primary key
+#  translation_text :string           not null
+#  title_id         :integer          not null
+#  user_id          :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  approved         :boolean          default(FALSE)
 #
 
 require 'test_helper'

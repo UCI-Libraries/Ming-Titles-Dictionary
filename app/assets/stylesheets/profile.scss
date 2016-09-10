@@ -1,0 +1,46 @@
+.content-view {
+  margin-top: 15px;
+}
+
+.back-link {
+  margin-top: 15px;
+}
+
+.back {
+}
+
+.panel-heading {
+  button {
+    top: -5px;
+    color: $uci-gold;
+    background-color: $uci-blue;
+  }
+  button:hover {
+    background-color: $uci-gold;
+    color: $uci-blue;
+  }
+  button:focus {
+    background-color: $uci-blue;
+    color: $uci-gold;
+  }
+  .btn-sm {
+    padding: 5px 8px;
+    line-height: 1;
+  }
+}
+
+.nav-tabs {
+  .active {
+    // border: .5px solid black;
+    background-color: none;
+    border-bottom: none;
+    background-color: none;
+  }
+  li {
+    a {
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+
+}

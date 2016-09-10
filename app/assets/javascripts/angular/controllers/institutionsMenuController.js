@@ -1,5 +1,5 @@
 titlesApp
-  .controller('institutionsMenuController', ['$scope', '$timeout', '$http', 'titlesService', function($scope, $timeout, $http, titlesService){
+  .controller('institutionsMenuController', ['$rootScope', '$scope', '$http', 'titlesService', function($rootScope, $scope, $http, titlesService){
 
   $scope.offices = [];
 
@@ -18,6 +18,7 @@ titlesApp
 
   $scope.updateTitles = function(inst) {
     titlesService.setFocus(inst);
+    $rootScope.$broadcast('updateTitleTable');
   };
 
 }]);

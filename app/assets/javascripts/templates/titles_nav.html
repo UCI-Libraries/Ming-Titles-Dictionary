@@ -1,32 +1,46 @@
-<div class="collapse navbar-collapse" id="nav-right">
-  <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link about" ui-sref="about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contributors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">FAQ</a>
-      </li>
-      <li ng-show="!userIsSignedIn()" class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-      </li>
-      <li ng-show="userIsSignedIn()" class="nav-item">
-        <a class="nav-link" ng-click="logOutUser()">Logout</a>
-      </li>
-      <li ng-show="!userIsSignedIn()" class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#signupFormModal">
-          <!-- trigger signup modal -->
-          Sign Up
-        </a>
-      </li>
-      <li ng-show="userIsSignedIn()" class="nav-item">
-        <a class="nav-link" ui-sref="profile">Profile</a>
-      </li>
-      <li ng-show="userIsSignedIn() && userIsAdmin()" class="nav-item">
-        <a class="nav-link" ui-sref="admin">Admin Portal</a>
-      </li>
-    </ul>
+<nav class="project-nav navbar navbar-fixed-top navbar-light bg-faded">
+  <div class="container-fluid">
 
-</div><!-- /.navbar-collapse -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-right" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="nav-right">
+      <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item">
+            <a class="nav-link about" ui-sref="about" ui-sref-active="active">About</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Contributors</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">FAQ</a>
+          </li> -->
+          <li ng-show="!userIsSignedIn()" class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+          </li>
+          <li ng-show="userIsSignedIn()" class="nav-item">
+            <a class="nav-link" ng-click="logOutUser()">Logout</a>
+          </li>
+          <li ng-show="!userIsSignedIn()" class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#signupFormModal">
+              Sign Up
+            </a>
+          </li>
+          <li ng-show="userIsSignedIn()" class="nav-item">
+            <a class="nav-link" ui-sref="profile" ui-sref-active="active">Profile</a>
+          </li>
+          <li ng-show="userIsSignedIn() && userIsAdmin()" class="nav-item">
+            <a class="nav-link" ui-sref="admin" ui-sref-active="active">Admin Portal</a>
+          </li>
+        </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

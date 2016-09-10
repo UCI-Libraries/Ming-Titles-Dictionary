@@ -1,5 +1,5 @@
 titlesApp
-  .controller('logInController', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth){
+  .controller('logInController', ['$scope', 'Auth', function($scope, Auth){
 
   var init = function() {
 
@@ -43,12 +43,5 @@ titlesApp
         $scope.dismiss();
     });
   };
-
-
-
-
-
-
-
 
 }]);

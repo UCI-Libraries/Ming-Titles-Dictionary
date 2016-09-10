@@ -1,15 +1,14 @@
 titlesApp
-  .service('titlesService', ['$rootScope', function($rootScope) {
+  .service('titlesService', function() {
 
     var titleFocus = "";
 
     this.setFocus = function(inst) {
       titleFocus =  inst;
-      $rootScope.$broadcast('updateTitleTable');
     };
 
     this.getFocus = function() {
       return titleFocus;
     };
 
-}]);
+});
