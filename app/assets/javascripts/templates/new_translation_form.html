@@ -1,0 +1,45 @@
+<div id="newTranslationModal" class="modal fade" my-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">
+          Submit a new translation for:
+        </h2>
+
+        <h3>parent?{{title}}</h3>
+
+      </div>
+      <div class="modal-body">
+        <form class="signup-form form-horizontal" ng-submit="logInUser(formData, myForm)" name="myForm">
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="email"><span class="redfont">*&nbsp;</span>Email:&nbsp;</label>
+            <div class="col-md-9">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="password"><span class="redfont">*&nbsp;</span>Password:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="password" id="password" name="password" ng-model="formData.password" ng-minlength="6" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+              <span class="form-error" ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 6 and 20 characters.</span>
+              <span class="form-error" ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+            </div>
+
+            <div class="col-md-9">
+              <span class="form-error pull-right" >{{errors}}</span>
+            </div>
+
+            <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+          </div>
+
+          <br/>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,10 +21,21 @@ unofficial English translations:
 
   <button ng-click="postTranslation()">POST</button>
 
+  <a class="nav-link" data-toggle="modal" data-target="#newCommentModal">Comment</a>
+  <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">Translation</a>
+
+
+
 Add a translation:
 
 
-<span> {{title}}</span>
+<span>{{title}}</span>
+
+
+<new-translation-form></new-translation-form>
+<new-comment-form></new-comment-form>
+
+
 
 
 
