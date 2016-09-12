@@ -17,6 +17,8 @@ titlesApp
       console.log(response.data);
       for (var i = 0; i < response.data.length; i++) {
         response.data[i].num_translations = 0; //initialization of new property
+        console.log(response.data[i].translations);
+
         response.data[i].num_translations = response.data[i].translations.length;  //set the data from nested obj into new property
       }
       $scope.tableParams = new NgTableParams({}, { dataset: response.data});
