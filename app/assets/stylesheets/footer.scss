@@ -1,0 +1,22 @@
+html {
+    // position: relative;
+}
+
+body {
+  min-height: 100%;
+  margin: 0 0 145px; /* bottom = footer height */
+}
+
+footer {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 145px;
+    width: 100%;
+    border-top: solid 1px #ccc;
+}
+
+.contributors, .sponsors {
+  margin-top: 15px;
+}
