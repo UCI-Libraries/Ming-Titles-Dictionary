@@ -5,31 +5,44 @@
     <h1>Official Chinese:&nbsp;{{title.chinese_title}}</h1>
     <h2>Official Pin Yin:&nbsp;{{title.pinyin_title}}
   </div>
-official English translations:
+<!-- official English translations:
   <div class="official-translations" ng-repeat="translation in title.translations | filter:{ approved: true }">
     <h3>{{translation.translation_text}}</h3>
     <p>Author:&nbsp;{{translation.user.email}}</p>
-    <!-- <p>Author:&nbsp;{{translation.user.email}}</p> -->
-  </div>
+  </div> -->
 
 unofficial English translations:
-  <div class="official-translations" ng-repeat="translation in title.translations">
+  <div class="official-translations" ng-repeat="translation in title.translations | filter:{ approved: false }">
     <h3>{{translation.translation_text}}</h3>
-    <p>Author:&nbsp;{{translation.user.email}}</p>
-    <p>comment on translation</p>
+    <!-- <p>Author:&nbsp;{{translation.user.email}}</p> -->
+    <h2>Comments on this translation:</h2>
+    <div class="comments-block">
+      <ul ng-repeat="comment in translation.comments">
+        <li>
+          <article>
+            <!-- <span>{{comment}}</span> -->
+            <span>Posted at:{{comment.created_at}}</span>
+            <span>{{comment.comment_text}}</span>
+            <span>Delete link if author is current user</span>
+            <span>Edit link if author is current user</span>
+          </article>
+        </li>
+      </ul>
+    </div>
+    <p><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
   </div>
 
-  <button ng-click="postTranslation()">POST</button>
+  <!-- <button ng-click="postTranslation()">POST TRANSLATION</button>
+  <button ng-click="postComment()">POST COMMENT</button> -->
 
-  <a class="nav-link" data-toggle="modal" data-target="#newCommentModal">Comment</a>
-  <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">Translation</a>
+  <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal"> Add a new translation</a>
 
 
 
 Add a translation:
 
 
-<span>{{title}}</span>
+<!-- <span>{{title}}</span> -->
 
 
 <new-translation-form></new-translation-form>

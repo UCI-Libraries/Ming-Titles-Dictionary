@@ -27,8 +27,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    p "\n\nHELLO I AM A USER"
-    p "HI I AM IN THE RESOURCE CONTROLL THINGKSDJFKSDJLFKJKLSDJF\n\n"
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

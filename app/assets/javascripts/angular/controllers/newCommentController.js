@@ -21,4 +21,9 @@ titlesApp
 
   };
 
+  $scope.resetCommentForm = function() {
+    $scope.formData = null;
+    $scope.myForm.$setPristine();
+  };
+
 }]);

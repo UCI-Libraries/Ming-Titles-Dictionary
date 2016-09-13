@@ -5,7 +5,7 @@
 #  id             :integer          not null, primary key
 #  translation_id :integer          not null
 #  user_id        :integer          not null
-#  comment        :text
+#  comment_text   :text
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

@@ -9,6 +9,10 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  approved         :boolean          default(FALSE)
+#  explanation      :text
+#  pinyin_comment   :text
+#  links            :text
+#  scholars         :text
 #
 
 class Translation < ApplicationRecord
