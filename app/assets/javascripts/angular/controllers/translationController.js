@@ -22,12 +22,22 @@ titlesApp
     $scope.current_translation = translation;
   };
 
-  $scope.postTranslation = function() {
+  $scope.postTranslation = function(data, form) {
     var translation = new Translation();
-    translation.translation_text = 'New Title in English';
-    translation.title_id = 3;
-    translation.user_id = 1;
-    translation.save();
+    Auth.currentUser().then(function(user) {
+      translation.translation_text = data.translation_text;
+      translation.explanation = data.justification;
+      translation.title_id = $scope.title.id;
+      translation.user_id = user.id;
+      translation.scholars = data.scholars;
+      translation.links = data.links;
+      translation.pinyin_comment = data.pinyin_comment;
+      // translation.official_title_comment = data.official_title_comment;
+      translation.save();
+      getPosts();
+    }, function(error) {
+      console.log("no session, comment cannot be saved");
+    });
   };
 
   $scope.postComment = function(data) {
