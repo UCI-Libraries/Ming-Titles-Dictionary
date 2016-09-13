@@ -16,7 +16,7 @@ class TitlesController < ApplicationController
   # GET /titles/1
   # GET /titles/1.json
   def show
-    @title = Title.includes(translations: :user).find_by(id: params[:id])
+    @title = Title.includes(translations: :user).order("translations.created_at").find_by(id: params[:id])
     render json: @title, include: [translations: {include: [:user, comments: {include: :user}]}]
   end
 

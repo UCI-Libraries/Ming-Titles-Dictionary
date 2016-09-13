@@ -1,20 +1,14 @@
 titlesApp
   .controller('logInController', ['$scope', 'Auth', function($scope, Auth){
 
-  var init = function() {
-
-  };
-
   $scope.errors = "";
-
-  init();
 
   $scope.logInUser = function(data) {
     console.log(data);
 
     var credentials = {
-    email: 'clwoods@uci.edu',
-    password: 'orange7A'
+      email: 'clwoods@uci.edu',
+      password: 'orange7A'
     };
 
     var config = {
@@ -31,15 +25,13 @@ titlesApp
     });
 
     $scope.$on('devise:login', function(event, currentUser) {
-        console.log(currentUser, "LOGGED IN");
-        // TODO: close modal.
+      console.log(currentUser, "LOGGED IN");
     });
 
     $scope.$on('devise:new-session', function(event, currentUser) {
-        // user logged in by Auth.login({...})
-        console.log(currentUser, "NEW SESSION");
-        $scope.errors = "";
-        $scope.dismiss();
+      console.log(currentUser, "NEW SESSION");
+      $scope.errors = "";
+      $scope.dismiss();
     });
   };
 

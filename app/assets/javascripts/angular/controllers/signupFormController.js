@@ -4,10 +4,6 @@ titlesApp
   $scope.submitted = false;
   $scope.emailExists = false;
 
-  var clearFormFields = function() {
-
-  };
-
   var displayThankYou = function() {
     $scope.submitted = true;
   };
