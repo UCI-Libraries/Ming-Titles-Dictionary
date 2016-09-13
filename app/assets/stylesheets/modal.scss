@@ -1,4 +1,4 @@
-.signup-form {
+.titles-form {
   input {
     margin-bottom: 10px;
     margin-left: 5px;
@@ -32,4 +32,13 @@
     width: 750px;
     margin: 40px auto;
   }
+}
+
+#comment_text {
+  height: 300px;
+  border: 1px solid #ccc;
+}
+
+.mid-form-title {
+  border: none;
 }

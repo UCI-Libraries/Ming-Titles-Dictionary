@@ -1,0 +1,80 @@
+<div id="newTranslationModal" class="modal fade" my-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Chinese Title:&nbsp;{{title.chinese_title}}</h2>
+        <h2>Pin Yin Title:&nbsp;{{title.pinyin_title}}</h2>
+        <!-- <h3>parent?{{title}}</h3> -->
+        <h3 class="modal-title" id="myModalLabel">
+          Submit a New Translation:
+        </h3>
+      </div>
+      <div class="modal-body">
+        <form class="titles-form form-horizontal" ng-submit="postTranslation()" name="myForm">
+          <div class="form-group">
+            <label class="col-md-12" for="email">&nbsp;&nbsp;Your English translation:&nbsp;</label>
+            <div class="col-md-12">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <label class="col-md-12" for="email">&nbsp;&nbsp;Justification for your translation:&nbsp;</label>
+            <div class="col-md-12">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <label class="col-md-12" for="email">&nbsp;&nbsp;Links or citations to help us make a selection when more than one translation has been submitted:&nbsp;</label>
+            <div class="col-md-12">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <label class="col-md-12" for="email">&nbsp;&nbsp;Other scholar(s)with expertise to help translate this title (optional):&nbsp;</label>
+            <div class="col-md-12">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <hr></hr>
+
+            <div class="modal-header mid-form-title">
+              <h3 class="modal-title" id="myModalLabel">
+                More Information:
+              </h3>
+            </div>
+
+            <label class="col-md-12" for="email">&nbsp;&nbsp;Comment on the Pinyin ({{title.pinyin_title}}):&nbsp;</label>
+            <div class="col-md-12">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <label class="col-md-12" for="email">&nbsp;&nbsp;Comment on the official title ({{title.chinese_title}}):&nbsp;</label>
+            <div class="col-md-12">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="formData.email" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <div class="col-md-12">
+              <span class="form-error pull-right" >{{errors}}</span>
+            </div>
+
+            <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+          </div>
+
+          <br/>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
