@@ -7,9 +7,7 @@
     margin: 10px;
   }
   textarea {
-    height: 30px;
     width: 100%;
-    border: none;
   }
 }
 
@@ -21,6 +19,7 @@
   background-color: white;
   border-radius: 0px;
   width: 100%;
+  padding-right: 15px;
 }
 
 .control-label {
@@ -41,4 +40,11 @@
 
 .mid-form-title {
   border: none;
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+}
+
+hr {
+  border: 1px solid #ccc;
+  width: 100%;
 }

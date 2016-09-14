@@ -1,47 +1,44 @@
 titlesApp
   .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', function($scope, $http, $stateParams, Translation, Comment, Auth){
 
+  function formatTimestamps(translations) {
+    translations.forEach(function(translation){
+      translation.comments.forEach(function(comment){
+        var date = moment(comment.created_at.slice(0,10)+" "+ comment.created_at.slice(11,19))
+                        .subtract(6, 'hours')
+                        .format('MMMM Do YYYY h:mm a');
+        // var time = moment(comment.created_at.slice(11,19)).format('h:mm a');
+        // console.log(comment.created_at.slice(11,19));
+        comment.formatted_date = date;
+      });
+    });
+    return translations;
+  }
+
   var init = function() {
-    getPosts();
+    $scope.getPosts();
   };
 
   $scope.title = {};
   $scope.current_translation = {};
   $scope.translations = [];
 
-  function getPosts() {
+  $scope.ifComments = function(comments) {
+    console.log(comments.length > 0);
+    return comments.length > 0;
+  };
+
+  $scope.getPosts = function() {
     console.log("in translations controller", $stateParams);
-      $http.get('api/titles/'+ $stateParams.id).then(function(response) {
-        $scope.title = response.data;
-        $scope.translations = response.data.traslations;
-      });
-  }
+    $http.get('api/titles/'+ $stateParams.id).then(function(response) {
+      $scope.title = response.data;
+      console.log("RESPONSE", response.data);
+      $scope.translations = formatTimestamps(response.data.translations);
+    });
+  };
 
   $scope.logCurrentTranslation = function(translation) {
-    console.log("CURRENT", translation);
     $scope.current_translation = translation;
-  };
-
-  $scope.postTranslation = function() {
-    var translation = new Translation();
-    translation.translation_text = 'New Title in English';
-    translation.title_id = 3;
-    translation.user_id = 1;
-    translation.save();
-  };
-
-  $scope.postComment = function(data) {
-    var comment = new Comment();
-    Auth.currentUser().then(function(user) {
-      comment.comment_text = data.comment_text;
-      comment.translation_id = $scope.current_translation.id;
-      comment.user_id = user.id;
-      comment.save();
-      getPosts();
-    }, function(error) {
-      console.log("no session, comment cannot be saved");
-    });
-
   };
 
   init();

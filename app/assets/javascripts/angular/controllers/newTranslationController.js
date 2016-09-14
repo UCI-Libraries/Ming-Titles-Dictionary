@@ -1,19 +1,32 @@
 titlesApp
-  .controller('newTranslationController', ['$scope', function($scope){
+  .controller('newTranslationController', ['$scope', 'Translation', 'Auth', function($scope, Translation, Auth){
 
   $scope.errors = "";
 
-  $scope.logInUser = function(data) {
-    console.log(data);
+  $scope.resetTranslationForm = function() {
+    $scope.formData = null;
+    $scope.myForm.$setPristine();
+  };
 
-    // $scope.dismiss();
-
-    var config = {
-        headers: {
-            'X-HTTP-Method-Override': 'POST'
-        }
-    };
-
+  $scope.postTranslation = function(data, form) {
+    var translation = new Translation();
+    Auth.currentUser().then(function(user) {
+      translation.translation_text = data.translation_text;
+      translation.explanation = data.justification;
+      translation.title_id = $scope.title.id;
+      translation.user_id = user.id;
+      translation.scholars = data.scholars;
+      translation.links = data.links;
+      translation.pinyin_comment = data.pinyin_comment;
+      // translation.official_title_comment = data.official_title_comment;
+      translation.save().then(function() {
+        $scope.getPosts();
+        $scope.resetTranslationForm();
+        $scope.dismiss();
+      });
+    }, function(error) {
+      console.log("no session, translation cannot be saved");
+    });
   };
 
 }]);
