@@ -1,8 +1,6 @@
 html {
     position: relative;
     min-height: 100%;
-
-    // margin: 0 0 145px; /* bottom = footer height */
 }
 
 .container {
@@ -10,13 +8,12 @@ html {
 }
 
 footer {
-    background-color: white;
-    // position: absolute;
-    left: 0;
-    bottom: 0;
-    height: auto;
-    width: 100%;
-    border-top: solid 1px #ccc;
+  background-color: white;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  border-top: solid 1px #ccc;
 }
 
 .contributors, .sponsors {
@@ -24,7 +21,7 @@ footer {
 }
 
 footer {
-    background-color: white;
-    width: 100%;
-    border-top: solid 1px #ccc;
+  background-color: white;
+  width: 100%;
+  border-top: solid 1px #ccc;
 }

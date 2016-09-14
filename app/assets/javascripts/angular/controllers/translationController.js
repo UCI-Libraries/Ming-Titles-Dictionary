@@ -23,6 +23,11 @@ titlesApp
   $scope.current_translation = {};
   $scope.translations = [];
 
+  $scope.ifComments = function(comments) {
+    console.log(comments.length > 0);
+    return comments.length > 0;
+  };
+
   $scope.getPosts = function() {
     console.log("in translations controller", $stateParams);
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {

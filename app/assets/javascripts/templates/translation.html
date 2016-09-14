@@ -18,7 +18,7 @@
           <p>links</p>
           <p>other scholars</p>
         </div>
-        <div class="comments-block">
+        <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>
           <ul ng-repeat="comment in translation.comments">
             <li class="translation-comment">
@@ -32,7 +32,7 @@
               </article>
             </li>
           </ul>
-          <p><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
+          <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
           <p>links</p>
           <p>other scholars</p>
         </div>
-        <div class="comments-block">
+        <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>
           <ul ng-repeat="comment in translation.comments">
             <li class="translation-comment">
@@ -59,7 +59,7 @@
             </li>
           </ul>
         </div>
-        <p><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
+        <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
       </div>
     </div>
 
