@@ -11,6 +11,8 @@ titlesApp
 
       function getTranslations() {
         $http.get('admin/translations/').then(function(response) {
+          console.log("TRANSLATIONS", response.data);
+
           $scope.tableParams.settings({dataset: response.data});
         });
       }

@@ -11,6 +11,7 @@ titlesApp
 
   function getUsers() {
     $http.get('admin/all_users/').then(function(response) {
+      console.log("USERS", response.data);
       $scope.tableParams.settings({dataset: response.data});
     });
   }
