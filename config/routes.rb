@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'admin/users_to_approve' => 'users#authorize'
   get 'admin/all_users' => 'users#index'
   put 'admin/approve_user/:id' => 'users#approve'
+  get 'admin/translations' => 'translations#index'
 
 
 

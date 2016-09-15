@@ -4,10 +4,10 @@ titlesApp
   var init = function() {
     getUsers();
   };
+
   var data = [];
   $scope.tableParams = new NgTableParams({}, { dataset: data});
   $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
-  // $scope.users = {};
 
   function getUsers() {
     $http.get('admin/all_users/').then(function(response) {
@@ -29,23 +29,6 @@ titlesApp
       getUsers();
     });
   };
-
-  // function getTitles(inst) {
-  //   var route = 'api/titles/';
-  //   if(!!inst || inst === '') {
-  //     route = 'api/titles/institution/' + inst;
-  //   }
-  //   $http.get(route).then(function(response) {
-  //     for (var i = 0; i < response.data.length; i++) {
-  //       response.data[i].num_translations = 0; //initialization of new property
-  //       console.log(response.data[i].translations);
-  //
-  //       response.data[i].num_translations = response.data[i].translations.length;  //set the data from nested obj into new property
-  //     }
-  //     $scope.tableParams = new NgTableParams({}, { dataset: response.data});
-  //
-  //   });
-  // }
 
   init();
 
