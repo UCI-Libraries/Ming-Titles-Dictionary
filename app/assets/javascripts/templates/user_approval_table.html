@@ -1,18 +1,22 @@
 <div class="user-approval-table">
-  <!-- <ul ng-repeat="user in users">
-
-    <li>{{user.email}}&nbsp;-&nbsp;{{user.approved}}</li>
-  </ul> -->
   <table ng-table="tableParams" class="table" show-filter="true">
       <tr class="" ng-repeat="user in $data" ng-model="title.id" ng-click="seePosts(title.id)">
           <td title="'Scholar ID'" filter="{ id: 'number'}" sortable="'id'">
               {{user.id}}</td>
           <td title="'Email'" filter="{ email: 'text'}" sortable="'email'">
               {{user.email}}</td>
-          <td title="'# of Translations'" sortable="'num_translations'">
-              {{user.translations.lenth}}</td>
+          <td title="'First Name'" filter="{ fname: 'text'}" sortable="'fname'">
+              {{user.fname}}</td>
+          <td title="'Last Name'" filter="{ lname: 'text'}" sortable="'lname'">
+              {{user.lname}}</td>
+          <td title="'Country'" filter="{ country: 'text'}" sortable="'country'">
+              {{user.country}}</td>
+          <td title="'Areas of Research'" filter="{ research: 'text'}" sortable="'research'">
+              {{user.research}}</td>
+          <td title="'Institution'" filter="{ institution: 'text'}" sortable="'institution'">
+              {{user.institution}}</td>
           <td title="'Approved'">
-              {{user.approved}}</td>
+              <button ng-click="approveUser(user)">Approve Scholar</td>
       </tr>
   </table>
 </div>

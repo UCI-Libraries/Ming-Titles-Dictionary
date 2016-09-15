@@ -16,6 +16,13 @@ titlesApp
       // $scope.users = response.data;
     });
   }
+  $scope.approveUser = function(user) {
+    console.log(user, user.id);
+    $http.put('admin/approve_user/'+ user.id +'.json', {params:{"approved": true}}).then(function(response) {
+      console.log("Saved!", response.data);
+      getUsers();
+    });
+  };
 
   // function getTitles(inst) {
   //   var route = 'api/titles/';
