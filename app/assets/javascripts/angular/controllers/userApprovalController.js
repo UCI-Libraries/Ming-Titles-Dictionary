@@ -10,7 +10,7 @@ titlesApp
   $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
   function getUsers() {
-    $http.get('admin/all_users.json').then(function(response) {
+    $http.get('admin/all_users').then(function(response) {
       console.log("USERS", response.data);
       $scope.tableParams.settings({dataset: response.data});
     });
