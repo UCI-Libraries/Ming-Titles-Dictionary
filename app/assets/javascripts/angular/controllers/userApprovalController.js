@@ -10,7 +10,7 @@ titlesApp
   // $scope.users = {};
 
   function getUsers() {
-    $http.get('admin/users_to_approve/').then(function(response) {
+    $http.get('admin/all_users/').then(function(response) {
       console.log(response.data);
       $scope.tableParams = new NgTableParams({}, { dataset: response.data});
       // $scope.users = response.data;
@@ -18,7 +18,15 @@ titlesApp
   }
   $scope.approveUser = function(user) {
     console.log(user, user.id);
-    $http.put('admin/approve_user/'+ user.id +'.json', {params:{"approved": true}}).then(function(response) {
+    $http.put('admin/approve_user/'+ user.id +'.json', {"approved": true}).then(function(response) {
+      console.log("Saved!", response.data);
+      getUsers();
+    });
+  };
+
+  $scope.revokeUser = function(user) {
+    console.log(user, user.id);
+    $http.put('admin/approve_user/'+ user.id +'.json', {"approved": false}).then(function(response) {
       console.log("Saved!", response.data);
       getUsers();
     });

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.order("id")
     render json: @users
   end
 
@@ -47,9 +47,11 @@ class UsersController < ApplicationController
   def approve
     @user = set_user
     p @user
-    p "USER"
+    p "approved??"
+    p user_params["approved"]
+
     respond_to do |format|
-      if @user.update(approved:true)
+      if @user.update(user_params)
         p @user
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
@@ -92,6 +94,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+      params.fetch(:user, {}).permit(:approved, :id)
+      # params.require(:user).permit(:id, :approved, :is_admin, :research, :institution, :fname, :lname, :email, :country)
     end
 end

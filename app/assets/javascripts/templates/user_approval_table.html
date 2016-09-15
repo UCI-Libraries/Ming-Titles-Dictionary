@@ -15,8 +15,9 @@
               {{user.research}}</td>
           <td title="'Institution'" filter="{ institution: 'text'}" sortable="'institution'">
               {{user.institution}}</td>
-          <td title="'Approved'">
-              <button ng-click="approveUser(user)">Approve Scholar</td>
+          <td title="'Approval'">
+              <button ng-show="!user.approved" ng-click="approveUser(user)">Approve Scholar</button><button ng-show="user.approved" ng-click="revokeUser(user)">Revoke Access</button></td>
+
       </tr>
   </table>
 </div>
