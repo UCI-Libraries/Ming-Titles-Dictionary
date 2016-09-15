@@ -1,5 +1,25 @@
 <div class="user-approval-table">
-  <ul ng-repeat="user in users">
-    <li>{{user.email}}&nbsp;-&nbsp;{{user.approved}}</li>
-  </ul>
+  <table ng-table="tableParams" class="table" show-filter="true">
+      <tr class="" ng-repeat="user in $data" ng-model="title.id" ng-click="seePosts(title.id)">
+          <td title="'Scholar ID'" filter="{ id: 'number'}" sortable="'id'">
+              {{user.id}}</td>
+          <td title="'Email'" filter="{ email: 'text'}" sortable="'email'">
+              {{user.email}}</td>
+          <td title="'First Name'" filter="{ fname: 'text'}" sortable="'fname'">
+              {{user.fname}}</td>
+          <td title="'Last Name'" filter="{ lname: 'text'}" sortable="'lname'">
+              {{user.lname}}</td>
+          <td title="'Country'" filter="{ country: 'text'}" sortable="'country'">
+              {{user.country}}</td>
+          <td title="'Areas of Research'" filter="{ research: 'text'}" sortable="'research'">
+              {{user.research}}</td>
+          <td title="'Institution'" filter="{ institution: 'text'}" sortable="'institution'">
+              {{user.institution}}</td>
+          <td title="'Approved?'" filter="{ approved: 'select'}" filter-data="approvedFilter" sortable="'approved'">
+              {{user.approved}}</td>
+          <td title="'Approve/Revoke'">
+              <button ng-show="!user.approved" ng-click="approveUser(user)">Approve Scholar</button><button ng-show="user.approved" ng-click="revokeUser(user)">Revoke Access</button></td>
+
+      </tr>
+  </table>
 </div>

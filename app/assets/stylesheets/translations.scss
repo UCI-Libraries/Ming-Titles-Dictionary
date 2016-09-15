@@ -10,6 +10,13 @@
 
 .translation-container {
   background-color: #f5f5f5;
+  h1{
+    border-bottom: 3px solid $uci-blue;
+    color: $uci-blue;
+  }
+  h2 {
+    color: $uci-blue;
+  }
 }
 
 .translation-block {

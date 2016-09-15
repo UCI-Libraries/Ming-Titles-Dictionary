@@ -1,18 +1,34 @@
 titlesApp
-  .controller('userApprovalController', ['$scope','$http', function($scope, $http ){
+  .controller('userApprovalController', ['$scope','$http', 'NgTableParams', function($scope, $http, NgTableParams){
 
   var init = function() {
     getUsers();
   };
 
-  $scope.users = {};
+  var data = [];
+  $scope.tableParams = new NgTableParams({}, { dataset: data});
+  $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
   function getUsers() {
-    $http.get('admin/users_to_approve/').then(function(response) {
-      console.log(response.data);
-      $scope.users = response.data;
+    $http.get('admin/all_users/').then(function(response) {
+      $scope.tableParams.settings({dataset: response.data});
     });
   }
+  $scope.approveUser = function(user) {
+    console.log(user, user.id);
+    $http.put('admin/approve_user/'+ user.id +'.json', {"approved": true}).then(function(response) {
+      console.log("Saved!", response.data);
+      getUsers();
+    });
+  };
+
+  $scope.revokeUser = function(user) {
+    console.log(user, user.id);
+    $http.put('admin/approve_user/'+ user.id +'.json', {"approved": false}).then(function(response) {
+      console.log("Saved!", response.data);
+      getUsers();
+    });
+  };
 
   init();
 
