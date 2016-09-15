@@ -35,7 +35,6 @@ titlesApp
   });
 
   $scope.seePosts = function(title) {
-    // console.log(title);
     $state.go('titles', {"id": title});
   };
 
