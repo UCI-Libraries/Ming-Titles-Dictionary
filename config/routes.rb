@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'api/titles/:id' => 'titles#show'
 
   get 'admin/users_to_approve' => 'users#authorize'
-  get 'admin/all_users.json' => 'users#index'
+  get 'admin/all_users' => 'users#index', :defaults => { :format => 'json' }
   put 'admin/approve_user/:id' => 'users#approve'
   get 'admin/translations' => 'translations#index'
 
