@@ -6,14 +6,12 @@ titlesApp
   };
   var data = [];
   $scope.tableParams = new NgTableParams({}, { dataset: data});
-
+  $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
   // $scope.users = {};
 
   function getUsers() {
     $http.get('admin/all_users/').then(function(response) {
-      console.log(response.data);
-      $scope.tableParams = new NgTableParams({}, { dataset: response.data});
-      // $scope.users = response.data;
+      $scope.tableParams.settings({dataset: response.data});
     });
   }
   $scope.approveUser = function(user) {
