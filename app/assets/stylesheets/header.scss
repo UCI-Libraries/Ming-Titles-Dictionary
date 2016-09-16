@@ -23,14 +23,6 @@
   font-weight: 100;
 }
 
-.active {
-  background-color: $nav-active-blue;
-  border-bottom: 5px solid $nav-active-blue;
-}
-.active:hover {
-  background-color: $nav-active-blue;
-}
-
 .navbar {
   width: 100%;
   color: $uci-dark-blue;
@@ -43,6 +35,7 @@
     font-size: 1em;
     font-weight: 400;
     border-right: 1px solid $uci-border-blue;
+    border-bottom: 5px solid $uci-blue;
   }
   .navbar-brand {
     color: white;
@@ -59,6 +52,18 @@
   .nav-link:focus:hover {
     border-bottom: 5px solid $uci-gold;
   }
+}
+
+.active {
+  background-color: $nav-active-blue;
+  border-bottom: 5px solid;
+}
+.active:hover {
+  background-color: $nav-active-blue;
+}
+.active:focus {
+  background-color: $nav-active-blue;
+  border-bottom: 5px solid;
 }
 
 .navbar-right {

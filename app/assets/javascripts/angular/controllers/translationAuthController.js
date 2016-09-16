@@ -16,11 +16,11 @@ titlesApp
       }
 
       $scope.approveTranslation = function(translation) {
-        // console.log(user, user.id);
-        // $http.put('admin/approve_user/'+ user.id +'.json', {"approved": true}).then(function(response) {
-        //   console.log("Saved!", response.data);
-        //   getUsers();
-        // });
+        console.log(translation);
+        $http.put('admin/translations/'+ translation.id, {"approved": true}).then(function(response) {
+          console.log("Saved!", response.data);
+          getTranslations();
+        });
       };
 
       $scope.revokeTranslation = function(translation) {

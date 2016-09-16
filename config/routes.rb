@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :users, :only => [:show], :defaults => { :format => 'json' }
 
   resources :comments
-  # resources :translations
+  resources :translations
   # resources :institutions
   # resources :titles
 
@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   get 'admin/all_users' => 'users#index', :defaults => { :format => 'json' }
   put 'admin/approve_user/:id' => 'users#approve'
   get 'admin/translations' => 'translations#index'
+  put 'admin/translations/:id' => 'translations#update', :defaults => { :format => 'json' }
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

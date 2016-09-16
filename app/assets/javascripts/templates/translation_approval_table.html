@@ -5,20 +5,22 @@
               {{translation.id}}</td>
           <td title="'English Translation'" filter="{ translation_text: 'text'}" sortable="'translation_text'">
               {{translation.translation_text}}</td>
-          <!-- <td title="'First Name'" filter="{ fname: 'text'}" sortable="'fname'">
-              {{translation.fname}}</td>
-          <td title="'Last Name'" filter="{ lname: 'text'}" sortable="'lname'">
-              {{translation.lname}}</td>
-          <td title="'Country'" filter="{ country: 'text'}" sortable="'country'">
-              {{translation.country}}</td>
-          <td title="'Areas of Research'" filter="{ research: 'text'}" sortable="'research'">
-              {{translation.research}}</td>
-          <td title="'Institution'" filter="{ institution: 'text'}" sortable="'institution'">
-              {{translation.institution}}</td>
+          <td title="'Official Title'">
+              {{translation.title.chinese_title}}</td>
+          <td title="'Scholar ID'" filter="{ user: 'text'}" sortable="'user'">
+              {{translation.user_id}}</td>
+          <td title="'Explanation'" filter="{ explanation: 'text'}" sortable="'explanation'">
+              {{translation.explanation}}</td>
+          <td title="'Links'" filter="{ links: 'text'}" sortable="'country'">
+              {{translation.links}}</td>
+          <td title="'Other Scholars'" filter="{ scholars: 'text'}" sortable="'scholars'">
+              {{translation.scholars}}</td>
+          <td title="'pinyin_comment'" filter="{ pinyin_comment: 'text'}" sortable="'pinyin_comment'">
+              {{translation.pinyin_comment}}</td>
           <td title="'Approved?'" filter="{ approved: 'select'}" filter-data="approvedFilter" sortable="'approved'">
               {{translation.approved}}</td>
           <td title="'Approve/Revoke'">
-              <button ng-show="!translation.approved" ng-click="approveUser(translation)">Approve Scholar</button><button ng-show="translation.approved" ng-click="revokeUser(translation)">Revoke Access</button></td> -->
+              <button ng-show="!translation.approved" ng-click="approveTranslation(translation)">Approve Translation</button><button ng-show="translation.approved" ng-click="revokeTranslation(translation)">Set as Unapproved</button></td>
 
       </tr>
   </table>
