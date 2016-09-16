@@ -15,6 +15,16 @@ class UsersController < ApplicationController
   def show
   end
 
+  def show_translations
+    @user = User.includes(:translations).find_by(id: params[:id])
+    render json: @user, include: :translations
+  end
+
+  def show_comments
+    @user = User.includes(:comments).find_by(id: params[:id])
+    render json: @user, include: :comments
+  end
+
   # GET /users/new
   def new
     @user = User.new

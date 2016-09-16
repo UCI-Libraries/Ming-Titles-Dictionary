@@ -18,13 +18,17 @@ Rails.application.routes.draw do
 
   # resources :comments
   # resources :translations
-  resources :institutions
+  # resources :institutions
   # resources :titles
 
   get 'api/institutions/all_with_ancestry' => 'institutions#all_with_ancestry'
   get 'api/titles' => 'titles#index'
   get 'api/titles/institution/:id' => 'titles#titles_by_institution'
   get 'api/titles/:id' => 'titles#show'
+  get 'api/user/:id/translations' => 'users#show_translations'
+  get 'api/user/:id/comments' => 'users#show_comments'
+
+
 
   get 'admin/users_to_approve' => 'users#authorize'
   get 'admin/all_users' => 'users#index', :defaults => { :format => 'json' }
