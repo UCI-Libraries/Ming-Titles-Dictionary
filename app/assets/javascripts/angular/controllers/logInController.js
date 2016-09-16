@@ -60,6 +60,12 @@ titlesApp
     Auth.sendResetPasswordInstructions(parameters).then(function(response) {
         console.log(response);
         // Sended email if user found otherwise email not sended...
+    }, function(error) {
+        console.log("FAILED", error);
+        // if (error.data.errors.email) {
+        //   // $scope.emailExists = true;
+        //   // console.log("email is already taken");
+        // }
     });
 
     $scope.$on('devise:send-reset-password-instructions-successfully', function(event) {
