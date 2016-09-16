@@ -12,3 +12,29 @@ textarea {
   margin-bottom: 10px;
   margin-left: 5px;
 }
+
+.login-link {
+  padding-right: 2em;
+}
+
+.pass-reset {
+  position: absolute;
+  background-color: $uci-blue;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pass-reset {
+  .modal-content {
+    margin-top: 20vh;
+  }
+  .form-group {
+    margin-bottom: 15px;
+    margin-left: 15px;
+  }
+  .form-error {
+    h2 {
+      display: none;
+    }
+  }
+}

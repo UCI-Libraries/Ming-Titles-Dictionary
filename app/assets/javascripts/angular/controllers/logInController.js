@@ -1,7 +1,20 @@
 titlesApp
-  .controller('logInController', ['$scope', 'Auth', function($scope, Auth){
+  .controller('logInController', ['$scope', 'Auth', '$http', function($scope, Auth, $http){
 
   $scope.errors = "";
+
+  $scope.passwordReset = false;
+  $scope.logIn = true;
+
+  $scope.passwordResetView = function() {
+    $scope.passwordReset = true;
+    $scope.logIn = false;
+  };
+
+  $scope.logInResetView = function() {
+    $scope.passwordReset = false;
+    $scope.logIn = true;
+  };
 
   $scope.logInUser = function(data) {
     console.log(data);
@@ -32,6 +45,31 @@ titlesApp
       console.log(currentUser, "NEW SESSION");
       $scope.errors = "";
       $scope.dismiss();
+    });
+  };
+
+  $scope.resetPass = function(data, form) {
+    var parameters = {
+      email: 'clairewoods@gmail.com'
+    };
+
+    // $http.post('/auth/secret/new', parameters).then(function(response) {
+    //   console.log(response);
+    // });
+    // console.log(Auth.sendResetPasswordInstructions);
+    Auth.sendResetPasswordInstructions(parameters).then(function(response) {
+        console.log(response);
+        // Sended email if user found otherwise email not sended...
+    }, function(error) {
+        console.log("FAILED", error);
+        // if (error.data.errors.email) {
+        //   // $scope.emailExists = true;
+        //   // console.log("email is already taken");
+        // }
+    });
+
+    $scope.$on('devise:send-reset-password-instructions-successfully', function(event) {
+        // ...
     });
   };
 

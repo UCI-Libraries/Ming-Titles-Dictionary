@@ -1,17 +1,22 @@
 titlesApp
-  .controller('translationApprovalController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', function($scope, $http, $stateParams, titlesService, NgTableParams){
+  .controller('profileCommentsTableController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', 'Auth', function($scope, $http, $stateParams, titlesService, NgTableParams, Auth){
 
       var init = function() {
-        getTranslations();
+        getComments();
       };
 
       var data = [];
       $scope.tableParams = new NgTableParams({}, { dataset: data});
       $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
-      function getTranslations() {
-        $http.get('admin/translations/').then(function(response) {
-          $scope.tableParams.settings({dataset: response.data});
+      function getComments() {
+        Auth.currentUser().then(function(user) {
+          $http.get('api/user/'+user.id+'/comments').then(function(response) {
+            // console.log("translations by user", response.data);
+            $scope.tableParams.settings({dataset: response.data.comments});
+          });
+        }, function(error) {
+          console.log("no session, comment cannot be saved");
         });
       }
 

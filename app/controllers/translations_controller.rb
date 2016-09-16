@@ -6,7 +6,7 @@ class TranslationsController < ApplicationController
   def index
     @translations = Translation.includes(:user, :title, :comments).all
     # @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user)
-    render json: @translations, include: [:user, :title]
+    render json: @translations, include: [:user, :title, :comments]
   end
 
   # GET /translations/1

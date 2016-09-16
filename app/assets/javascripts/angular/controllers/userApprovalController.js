@@ -10,7 +10,7 @@ titlesApp
   $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
   function getUsers() {
-    $http.get('admin/all_users/').then(function(response) {
+    $http.get('admin/all_users').then(function(response) {
       $scope.tableParams.settings({dataset: response.data});
     });
   }
@@ -25,7 +25,7 @@ titlesApp
   $scope.revokeUser = function(user) {
     console.log(user, user.id);
     $http.put('admin/approve_user/'+ user.id +'.json', {"approved": false}).then(function(response) {
-      console.log("Saved!", response.data);
+      console.log("Revoked!", response.data);
       getUsers();
     });
   };
