@@ -65,7 +65,7 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.uci.edu",
+    address: "cygnus.lib.uci.edu",
     port: 25,
     domain: ENV["UCI_DOMAIN"],
     authentication: "plain",

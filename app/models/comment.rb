@@ -13,4 +13,13 @@
 class Comment < ApplicationRecord
   belongs_to :translation
   belongs_to :user
+
+  after_create :send_welcome_mail
+
+  def send_welcome_mail
+    # TitlesMailer.welcome_email(@user).deliver
+    # p @user
+    MyMailer.new_comment(User.first).deliver
+  end
+
 end
