@@ -11,7 +11,6 @@ titlesApp
 
   function getUsers() {
     $http.get('admin/all_users').then(function(response) {
-      console.log("USERS", response.data);
       $scope.tableParams.settings({dataset: response.data});
     });
   }
@@ -26,7 +25,7 @@ titlesApp
   $scope.revokeUser = function(user) {
     console.log(user, user.id);
     $http.put('admin/approve_user/'+ user.id +'.json', {"approved": false}).then(function(response) {
-      console.log("Saved!", response.data);
+      console.log("Revoked!", response.data);
       getUsers();
     });
   };

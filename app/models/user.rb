@@ -36,6 +36,9 @@ class User < ApplicationRecord
   has_many :translations
   has_many :comments
 
+  after_create :send_welcome_mail
+  # TODO: set up admin mailer
+
   validate :password_complexity
 
   def password_complexity
@@ -45,11 +48,13 @@ class User < ApplicationRecord
        end
     end
   end
-  # after_create :send_admin_mail
-  # TODO: set up admin mailer
 
   def send_admin_mail
     AdminMailer.new_user_waiting_for_approval(self).deliver
+  end
+
+  def send_welcome_mail
+    TitlesMailer.welcome_email(@user).deliver_later
   end
 
   def active_for_authentication?
