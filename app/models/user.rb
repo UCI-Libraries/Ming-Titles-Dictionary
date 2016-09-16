@@ -36,9 +36,18 @@ class User < ApplicationRecord
   has_many :translations
   has_many :comments
 
+  validate :password_complexity
+
+  def password_complexity
+    if password.present?
+       if !password.match(/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/)
+         errors.add :password, "complexity requirement not met"
+       end
+    end
+  end
   # after_create :send_admin_mail
   # TODO: set up admin mailer
-  
+
   def send_admin_mail
     AdminMailer.new_user_waiting_for_approval(self).deliver
   end

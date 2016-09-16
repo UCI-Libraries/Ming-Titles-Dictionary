@@ -1,7 +1,7 @@
 <%= form_for(translation) do |f| %>
   <% if translation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(translation.errors.count, "error") %> prohibited this translation from being saved:</h2>
+      <p><%= pluralize(translation.errors.count, "error") %> prohibited this translation from being saved:</p>
 
       <ul>
       <% translation.errors.full_messages.each do |message| %>
