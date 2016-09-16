@@ -49,7 +49,6 @@ titlesApp
 
     $scope.$on('devise:new-registration', function(event, user) {
       console.log("reg complete");
-      clearFormFields();
       displayThankYou();
       // TODO: message that admin is being contacted
       // TODO: clear fields
