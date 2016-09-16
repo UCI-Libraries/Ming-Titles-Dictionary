@@ -51,7 +51,6 @@ titlesApp
       console.log("reg complete");
       displayThankYou();
       // TODO: message that admin is being contacted
-      // TODO: clear fields
     });
   };
 
