@@ -21,8 +21,11 @@ class UsersController < ApplicationController
   end
 
   def show_comments
-    @user = User.includes(:comments).find_by(id: params[:id])
-    render json: @user, include: :comments
+    # @user = User.includes(comments: :translation).find_by(id: params[:id])
+    @user_comments = User.find_by(id: params[:id]).comments.includes(translation: :title)
+    p @user_comments
+    render json: @user_comments, include: {translation: {include: :title}}
+    # [translations: {include: :user}]
   end
 
   # GET /users/new

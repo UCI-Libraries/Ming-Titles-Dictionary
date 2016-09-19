@@ -1,5 +1,5 @@
 titlesApp
-  .controller('profileCommentsTableController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', 'Auth', function($scope, $http, $stateParams, titlesService, NgTableParams, Auth){
+  .controller('profileCommentsTableController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', 'Auth', '$state', function($scope, $http, $stateParams, titlesService, NgTableParams, Auth, $state){
 
       var init = function() {
         getComments();
@@ -12,8 +12,8 @@ titlesApp
       function getComments() {
         Auth.currentUser().then(function(user) {
           $http.get('api/user/'+user.id+'/comments').then(function(response) {
-            // console.log("translations by user", response.data);
-            $scope.tableParams.settings({dataset: response.data.comments});
+            console.log("comments by user", response.data);
+            $scope.tableParams.settings({dataset: response.data});
           });
         }, function(error) {
           console.log("no session, comment cannot be saved");
@@ -34,6 +34,12 @@ titlesApp
         //   console.log("Saved!", response.data);
         //   getUsers();
         // });
+      };
+
+      $scope.seeTitle = function(id) {
+        console.log(id);
+        var url = $state.href('titles', {"id": id});
+        window.open(url,'_blank');
       };
 
       init();

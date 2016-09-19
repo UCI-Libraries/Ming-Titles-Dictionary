@@ -1,5 +1,5 @@
 titlesApp
-  .controller('profileTranslationTableController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', 'Auth', function($scope, $http, $stateParams, titlesService, NgTableParams, Auth){
+  .controller('profileTranslationTableController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', 'Auth', '$state', function($scope, $http, $stateParams, titlesService, NgTableParams, Auth, $state){
 
       var init = function() {
         getTranslations();
@@ -35,6 +35,11 @@ titlesApp
         //   console.log("Saved!", response.data);
         //   getUsers();
         // });
+      };
+
+      $scope.seeTitle = function(id) {
+        var url = $state.href('titles', {"id": id});
+        window.open(url,'_blank');
       };
 
       init();
