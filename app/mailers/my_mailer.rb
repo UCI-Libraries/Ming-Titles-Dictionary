@@ -5,7 +5,7 @@ class MyMailer < Devise::Mailer
   include Devise::Mailers::Helpers
   default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
   default from: 'clairewoods@gmail.com'
-
+  # default from: 'devnull@cygnus.uci.edu'
 
   def greeting(user)
     @user = user
@@ -18,5 +18,5 @@ class MyMailer < Devise::Mailer
     @url  = 'http://example.com/login'
     mail(to: @user.email, subject: 'Welcome')
   end
-  
+
 end

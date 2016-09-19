@@ -1,7 +1,6 @@
 <div class="translations-bg">
   <div class="container translation-container">
-    <a class="back" ui-sref="main">< Back to main</a>
-
+    <back-link></back-link>
     <div class="chinese-title">
       <h1>Official Chinese:&nbsp;{{title.chinese_title}}</h1>
       <h2>Official Pinyin:&nbsp;{{title.pinyin_title}}
@@ -13,10 +12,10 @@
       <div class="translation" ng-show="translation.approved">
         <div class="translation-block">
           <h3>{{translation.translation_text}}</h3>
-          <h4>Author if author is canonized</h4>
-          <p>justification</p>
-          <p>links</p>
-          <p>other scholars</p>
+          <h4>Author: (show conditionally){{translation.user.email}}</h4>
+          <p>Explanation of translation: (show if one is available): {{}}</p>
+          <p>Links: {{}}</p>
+          <p>Other scholars who could help translate this title: {{}}</p>
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>
@@ -41,10 +40,10 @@
       <div class="translation" ng-show="!translation.approved">
         <div class="translation_block">
           <h3>{{translation.translation_text}}</h3>
-          <h4>Author if author is canonized</h4>
-          <p>justification</p>
-          <p>links</p>
-          <p>other scholars</p>
+          <h4>Author: (show conditionally){{translation.user.email}}</h4>
+          <p>Explanation of translation: (show if one is available): {{}}</p>
+          <p>Links: {{}}</p>
+          <p>Other scholars who could help translate this title: {{}}</p>
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>
@@ -52,9 +51,11 @@
             <li class="translation-comment">
               <article>
                 <!-- <span>{{comment}}</span> -->
-                <span>Posted:&nbsp;{{comment.formatted_date}},&nbsp;at&nbsp;</span>
-                <span>{{comment.comment_text}}</span>
-                <span ng-show="true"><a>Delete</a></span>&nbsp;<span><a>Edit</a></span>
+                <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
+                <div class="comment-text">
+                  <span>{{comment.comment_text}}</span><br/>
+                </div>
+                <span ng-show="true"><a>Delete</a></span>&nbsp;&nbsp;&nbsp;<span><a>Edit</a></span>
               </article>
             </li>
           </ul>
@@ -62,6 +63,8 @@
         <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
       </div>
     </div>
+    <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">Add a new translation</a>
+
 
     <new-translation-form></new-translation-form>
     <new-comment-form></new-comment-form>
