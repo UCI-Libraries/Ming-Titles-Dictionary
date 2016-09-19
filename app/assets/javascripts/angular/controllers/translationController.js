@@ -6,9 +6,7 @@ titlesApp
       translation.comments.forEach(function(comment){
         var date = moment(comment.created_at.slice(0,10)+" "+ comment.created_at.slice(11,19))
                         .subtract(6, 'hours')
-                        .format('MMMM Do YYYY h:mm a');
-        // var time = moment(comment.created_at.slice(11,19)).format('h:mm a');
-        // console.log(comment.created_at.slice(11,19));
+                        .format('MM-DD-YY h:mm a');
         comment.formatted_date = date;
       });
     });

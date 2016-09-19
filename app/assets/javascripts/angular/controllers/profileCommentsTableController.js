@@ -12,7 +12,9 @@ titlesApp
       function getComments() {
         Auth.currentUser().then(function(user) {
           $http.get('api/user/'+user.id+'/comments').then(function(response) {
-            console.log("comments by user", response.data);
+            response.data.forEach( function(comment) {
+              comment.formatted_date = formatTimestamp(comment.created_at);
+            });
             $scope.tableParams.settings({dataset: response.data});
           });
         }, function(error) {
@@ -20,30 +22,17 @@ titlesApp
         });
       }
 
-      $scope.approveTranslation = function(translation) {
-        // console.log(user, user.id);
-        // $http.put('admin/approve_user/'+ user.id +'.json', {"approved": true}).then(function(response) {
-        //   console.log("Saved!", response.data);
-        //   getUsers();
-        // });
-      };
-
-      $scope.revokeTranslation = function(translation) {
-        // console.log(user, user.id);
-        // $http.put('admin/approve_user/'+ user.id +'.json', {"approved": false}).then(function(response) {
-        //   console.log("Saved!", response.data);
-        //   getUsers();
-        // });
-      };
+      function formatTimestamp(timestamp) {
+        return moment(timestamp.slice(0,10)+" "+ timestamp.slice(11,19))
+                        .subtract(6, 'hours')
+                        .format('MM-DD-YY h:mm a');
+      }
 
       $scope.seeTitle = function(id) {
-        console.log(id);
         var url = $state.href('titles', {"id": id});
         window.open(url,'_blank');
       };
 
       init();
-
-
 
 }]);
