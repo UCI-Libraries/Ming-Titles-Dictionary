@@ -5,7 +5,7 @@
       <h1>Official Chinese:&nbsp;{{title.chinese_title}}</h1>
       <h2>Official Pinyin:&nbsp;{{title.pinyin_title}}
     </div>
-    <div class="translation-divider">
+    <div class="translation-subhead">
       <h3 class="">Official English translations:</h3>
     </div>
     <div class="official-translations" ng-repeat="translation in title.translations">
@@ -36,7 +36,9 @@
         <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
       </div>
     </div>
-
+    <div class="translation-subhead">
+      <h3 class="">Unofficial English translations:</h3>
+    </div>
     <div class="unofficial-translations" ng-repeat="translation in title.translations">
       <div class="translation" ng-show="!translation.approved">
         <div class="translation_block">

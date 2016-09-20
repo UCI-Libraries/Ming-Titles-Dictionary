@@ -71,6 +71,6 @@ class TranslationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def translation_params
-      params.require(:translation).permit(:translation_text, :title_id, :user_id, :links, :scholars, :pinyin_comment, :explanation, :approved)
+      params.require(:translation).permit(:translation_text, :title_id, :user_id, :scholars, :explanation, :approved)
     end
 end

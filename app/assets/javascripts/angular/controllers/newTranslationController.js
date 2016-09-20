@@ -16,8 +16,7 @@ titlesApp
       translation.title_id = $scope.title.id;
       translation.user_id = user.id;
       translation.scholars = data.scholars;
-      translation.links = data.links;
-      translation.pinyin_comment = data.pinyin_comment;
+      translation.additional_comment = data.additional_comment;
       // translation.official_title_comment = data.official_title_comment;
       translation.save().then(function() {
         $scope.getPosts();

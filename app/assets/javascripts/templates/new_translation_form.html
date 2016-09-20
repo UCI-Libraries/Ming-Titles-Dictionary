@@ -14,23 +14,17 @@
           <div class="form-group">
             <label class="col-md-12" for="translation_text">&nbsp;&nbsp;Your English translation:&nbsp;</label>
             <div class="col-md-12">
-              <textarea rows="3" class="form-control" id="translation_text" name="translation_text" ng-model="formData.translation_text"></textarea>
+              <textarea rows="2" class="form-control" id="translation_text" name="translation_text" ng-model="formData.translation_text"></textarea>
             </div>
 
             <label class="col-md-12" for="justification">&nbsp;&nbsp;Justification for your translation:&nbsp;</label>
             <div class="col-md-12">
               <textarea rows="3" class="form-control" id="justification" name="justification" ng-model="formData.justification"></textarea>
-              <!-- <span class="form-error" ng-show="myForm.translation_text && myForm.justification.$dirty">please give an explication of your translation</span> -->
-            </div>
-
-            <label class="col-md-12" for="links">&nbsp;&nbsp;Links or citations to help us make a selection when more than one translation has been submitted:&nbsp;</label>
-            <div class="col-md-12">
-              <textarea rows="3" rows="3" class="form-control" id="links" name="links" ng-model="formData.links"></textarea>
             </div>
 
             <label class="col-md-12" for="scholars">&nbsp;&nbsp;Other scholar(s)with expertise to help translate this title (optional):&nbsp;</label>
             <div class="col-md-12">
-              <textarea rows="3" class="form-control" id="scholars" name="scholars" ng-model="formData.scholars"></textarea>
+              <textarea rows="2" class="form-control" id="scholars" name="scholars" ng-model="formData.scholars"></textarea>
             </div>
 
             <div class="col-md-12 modal-header mid-form-title">
@@ -39,17 +33,12 @@
               </h3>
             </div>
 
-            <label class="col-md-12" for="pinyin_comment">&nbsp;&nbsp;Comment on the Pinyin ({{title.pinyin_title}}):&nbsp;</label>
+            <label class="col-md-12" for="additional_comment">&nbsp;&nbsp;Any other comments:&nbsp;</label>
             <div class="col-md-12">
-              <textarea rows="1" class="form-control" id="pinyin_comment" name="pinyin_comment" ng-model="formData.pinyin_comment"></textarea>
+              <textarea rows="1" class="form-control" id="additional_comment" name="additional_comment" ng-model="formData.additional_comment"></textarea>
             </div>
 
-            <!-- <label class="col-md-12" for="official_title_comment">&nbsp;&nbsp;Comment on the official title ({{title.chinese_title}}):&nbsp;</label>
-            <div class="col-md-12">
-              <textarea rows="1" class="form-control" id="official_title_comment" name="official_title_comment" ng-model="formData.official_title_comment"></textarea>
-            </div> -->
-
-            <button type="submit" class="btn pull-right" ng-disabled="!(!!formData.official_title_comment || !!formData.pinyin_comment  || !!formData.scholars || !!formData.links || !!formData.justification || !!formData.translation_text)">Submit</button>
+            <button type="submit" class="btn pull-right" ng-disabled="!(!!formData.official_title_comment || !!formData.additional_comment  || !!formData.scholars ||  !!formData.justification || !!formData.translation_text)">Submit</button>
             <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
           </div>
 
