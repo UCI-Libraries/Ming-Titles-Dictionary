@@ -1,4 +1,4 @@
-.ng-table th {
+/*.ng-table th {
   text-align: center;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -145,7 +145,7 @@
   }
 }
 .ng-table-pagination {
-  margin-top: 0;
+  margin-top: 10;
 }
 .ng-table-group-selector:before,
 .ng-table-group-selector:after,
@@ -226,4 +226,4 @@
   .filter > .filter-cell {
     padding: 0px;
   }
-}
+}*/
