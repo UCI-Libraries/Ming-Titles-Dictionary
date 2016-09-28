@@ -6,6 +6,8 @@ titlesApp
       };
 
       var data = [];
+      $scope.dataEmpty = data.length === 0;
+
       $scope.tableParams = new NgTableParams({}, { dataset: data});
       $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
@@ -15,6 +17,7 @@ titlesApp
             response.data.forEach( function(comment) {
               comment.formatted_date = formatTimestamp(comment.created_at);
             });
+            $scope.dataEmpty = response.data.length === 0;
             $scope.tableParams.settings({dataset: response.data});
           });
         }, function(error) {

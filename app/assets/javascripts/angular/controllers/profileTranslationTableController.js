@@ -6,13 +6,19 @@ titlesApp
       };
 
       var data = [];
-      $scope.tableParams = new NgTableParams({}, { dataset: data});
+      $scope.dataEmpty = data.length === 0;
+
+      $scope.tableParams = new NgTableParams(
+        {sorting: {
+          comment_added_at: "asc"
+        }},
+        { dataset: data});
       $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
       function getTranslations() {
         Auth.currentUser().then(function(user) {
           $http.get('api/user/'+user.id+'/translations').then(function(response) {
-            console.log("translations by user", response.data);
+            $scope.dataEmpty = response.data.length === 0;
             $scope.tableParams.settings({dataset: response.data});
           });
         }, function(error) {

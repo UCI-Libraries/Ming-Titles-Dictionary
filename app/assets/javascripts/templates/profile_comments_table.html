@@ -11,4 +11,7 @@
               {{comment.formatted_date}}</td>
       </tr>
   </table>
+  <div ng-show="dataEmpty" ng-cloak>
+    <p>You have not commented on any translations, yet. <a ui-sref="main">Go browse the titles table.</a></p>
+  </div>
 </div>
