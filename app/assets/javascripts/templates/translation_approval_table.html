@@ -17,7 +17,7 @@
               {{translation.scholars}}</td>
           <td title="'Additional Comment'" filter="{ additional_comment: 'text'}" sortable="'additional_comment'" ng-click="seeTitle(translation.title.id)">
               {{translation.additional_comment}}</td>
-          <td title="'Flagged'" filter="{ flag: 'boolean'}" sortable="'flag'" ng-click="setFlag(translation.flag)">
+          <td title="'Flagged'" filter="{ flag: 'select'}" sortable="'flag'" ng-click="setFlag(translation.flag)" filter-data="approvedFilter" sortable="'flagged'">
               {{translation.flag}}</td>
           <td title="'Approved?'" filter="{ approved: 'select'}" filter-data="approvedFilter" sortable="'approved'">
               {{translation.approved}}</td>
