@@ -10,8 +10,8 @@
         <div class="panel-body">
           <p>Make a profile template! also link the nav item for profile through the controller so that it uses $state to pass in the params</p>
           <br/>
-          <p><a>Reset Password</a></p>
-          <p><a>Email preferences</a></p>
+          <p><a data-toggle="modal" data-target="#profilePassReset">Reset Password</a></p>
+          <p><a data-toggle="modal" data-target="#profileMailPrefs">Email preferences</a></p>
         </div>
       </div>
     </div>
@@ -42,6 +42,44 @@
       </div>
       <div class="modal-body">
         <p>Form for editing profile goes here</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="profilePassReset" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Reset your password</h4>
+      </div>
+      <div class="modal-body">
+        <p>Form for resetting password goes here</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="profileMailPrefs" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update your contact preferences</h4>
+      </div>
+      <div class="modal-body">
+        <p>Form for editing contact preferences goes here</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

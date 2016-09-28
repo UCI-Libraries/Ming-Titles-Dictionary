@@ -55,25 +55,25 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: ENV["GMAIL_DOMAIN"],
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
-  }
-
   # config.action_mailer.smtp_settings = {
-  #   address: "cygnus.lib.uci.edu",
-  #   port: 25,
-  #   domain: ENV["UCI_DOMAIN"],
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   domain: ENV["GMAIL_DOMAIN"],
   #   authentication: "plain",
   #   enable_starttls_auto: true,
-  #   user_name: ENV["UCI_USERNAME"],
-  #   password: ENV["UCI_PASSWORD"]
+  #   user_name: ENV["GMAIL_USERNAME"],
+  #   password: ENV["GMAIL_PASSWORD"]
   # }
+
+  config.action_mailer.smtp_settings = {
+    address: "cygnus.lib.uci.edu",
+    port: 25,
+    domain: ENV["UCI_DOMAIN"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["UCI_USERNAME"],
+    password: ENV["UCI_PASSWORD"]
+  }
 
   # TODO: https://rubyonrailshelp.wordpress.com/2014/01/02/setting-up-mailer-using-devise-for-forgot-password/
   # Use an evented file watcher to asynchronously detect changes in source code,

@@ -18,11 +18,11 @@ class Comment < ApplicationRecord
   after_create :update_parent
 
 
-  # def send_welcome_mail
-  #   # TitlesMailer.welcome_email(@user).deliver
-  #   # p @user
-  #   MyMailer.new_comment(User.first).deliver
-  # end
+  def send_welcome_mail
+    # TitlesMailer.welcome_email(@user).deliver
+    # p @user
+    MyMailer.new_comment(User.first).deliver
+  end
 
   def update_parent
     if self.translation

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920003742) do
+ActiveRecord::Schema.define(version: 20160928174158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160920003742) do
     t.text     "scholars"
     t.datetime "comment_added_at"
     t.boolean  "flagged",            default: false
+    t.boolean  "flag",               default: false
     t.index ["title_id"], name: "index_translations_on_title_id", using: :btree
     t.index ["user_id"], name: "index_translations_on_user_id", using: :btree
   end

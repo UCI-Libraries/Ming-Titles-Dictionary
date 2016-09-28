@@ -1,20 +1,24 @@
 <div class="translation-approval-table">
   <table ng-table="tableParams" class="table" show-filter="true">
-      <tr class="" ng-repeat="translation in $data" ng-model="translation.title.id" ng-click="seeTitle(translation.title.id)">
-          <td title="'Translation #'" filter="{ id: 'number'}" sortable="'id'">
+      <tr class="" ng-repeat="translation in $data" ng-model="translation.title.id">
+          <td title="'Translation #'" filter="{ id: 'number'}" sortable="'id'" ng-click="seeTitle(translation.title.id)">
               {{translation.id}}</td>
-          <td title="'English Translation'" filter="{ translation_text: 'text'}" sortable="'translation_text'">
+          <td title="'English Translation'" filter="{ translation_text: 'text'}" sortable="'translation_text'" ng-click="seeTitle(translation.title.id)">
               {{translation.translation_text}}</td>
-          <td title="'Official Title'">
-              {{translation.title.chinese_title}}</td>
-          <td title="'Scholar ID'" filter="{ user: 'text'}" sortable="'user'">
+          <td title="'Official Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'" ng-click="seeTitle(translation.title.id)">
+              {{translation.chinese_title}}</td>
+          <td title="'# of Translations for Title'" filter="{ num_translations: 'number'}" sortable="'num_translations'" ng-click="seeTitle(translation.title.id)">
+              {{translation.num_translations}}??</td>
+          <td title="'Scholar ID'" filter="{ user: 'text'}" sortable="'user'" ng-click="seeTitle(translation.title.id)">
               {{translation.user_id}}</td>
-          <td title="'Explanation'" filter="{ explanation: 'text'}" sortable="'explanation'">
+          <td title="'Explanation'" filter="{ explanation: 'text'}" sortable="'explanation'" ng-click="seeTitle(translation.title.id)">
               {{translation.explanation}}</td>
-          <td title="'Other Scholars'" filter="{ scholars: 'text'}" sortable="'scholars'">
+          <td title="'Other Scholars'" filter="{ scholars: 'text'}" sortable="'scholars'" ng-click="seeTitle(translation.title.id)">
               {{translation.scholars}}</td>
-          <td title="'additional_comment'" filter="{ additional_comment: 'text'}" sortable="'additional_comment'">
+          <td title="'Additional Comment'" filter="{ additional_comment: 'text'}" sortable="'additional_comment'" ng-click="seeTitle(translation.title.id)">
               {{translation.additional_comment}}</td>
+          <td title="'Flagged'" filter="{ flag: 'boolean'}" sortable="'flag'" ng-click="setFlag(translation.flag)">
+              {{translation.flag}}</td>
           <td title="'Approved?'" filter="{ approved: 'select'}" filter-data="approvedFilter" sortable="'approved'">
               {{translation.approved}}</td>
           <td title="'Approve/Revoke'">
