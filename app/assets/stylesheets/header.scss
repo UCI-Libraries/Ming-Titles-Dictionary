@@ -40,7 +40,7 @@
     font-weight: 300;
   }
   .nav-link:hover {
-    background-color: $uci-grey;
+    background-color: $uci-light-yellow-solid-shadow;
     border-bottom: 5px solid $uci-grey;
   }
   .nav-link:focus {
@@ -57,15 +57,15 @@
   border-bottom: 5px solid $uci-grey;
 }
 .active:hover {
-  background-color: $uci-grey;
+  background-color: $uci-light-yellow-solid-shadow;
   border-bottom: 5px solid $uci-grey;
 }
 .active:focus {
-  background-color: $uci-grey;
+  background-color: $uci-light-yellow-solid;
   border-bottom: 5px solid $uci-grey;
 }
 .active:focus:hover {
-  background-color: $uci-grey;
+  background-color: $uci-light-yellow-solid-shadow;
   border-bottom: 5px solid $uci-grey;
 }
 

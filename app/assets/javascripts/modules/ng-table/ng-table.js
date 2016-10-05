@@ -1371,13 +1371,10 @@
                         'ng-table-pagination': 'params',
                         'template-url': 'templates.pagination'
                     });
-                    // $element.before(paginationTemplate);
-                    // $element.after(paginationTemplate);
 
                     if (headerTemplate) {
                         $compile(headerTemplate)($scope);
                     }
-                    // $compile(paginationTemplate)($scope);
                     
                      // this allows to add the attribute table-pagination-top to ngTable
                      // so you will see the pagination at the top
