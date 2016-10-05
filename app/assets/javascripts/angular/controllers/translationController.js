@@ -1,5 +1,5 @@
 titlesApp
-  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', function($scope, $http, $stateParams, Translation, Comment, Auth){
+  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', '$filter', function($scope, $http, $stateParams, Translation, Comment, Auth, $filter){
 
   function formatTimestamps(translations) {
     translations.forEach(function(translation){
@@ -13,13 +13,26 @@ titlesApp
     return translations;
   }
 
+  function sortByAuthorized(translations) {
+    $scope.translations.unofficial = [];
+    $scope.translations.official = [];
+    translations.forEach( function(translation) {
+      if (translation.approved) {
+        $scope.translations.official.push(translation);
+      } else {
+        $scope.translations.unofficial.push(translation);
+      }
+    });
+  }
+
   var init = function() {
     $scope.getPosts();
+    $scope.title = {};
+    $scope.current_translation = {};
+    $scope.translations = {};
+    $scope.translations.unofficial = [];
+    $scope.translations.official = [];
   };
-
-  $scope.title = {};
-  $scope.current_translation = {};
-  $scope.translations = [];
 
   $scope.ifComments = function(comments) {
     console.log(comments.length > 0);
@@ -27,17 +40,26 @@ titlesApp
   };
 
   $scope.getPosts = function() {
-    console.log("in translations controller", $stateParams);
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
-      console.log("RESPONSE", response.data);
-      $scope.translations = formatTimestamps(response.data.translations);
+      var translations = formatTimestamps(response.data.translations);
+      sortByAuthorized(translations);
     });
+  };
+
+  $scope.noOfficialTranslations = function() {
+    return $scope.translations.official.length === 0;
+  };
+
+  $scope.noUnofficialTranslations = function() {
+    return $scope.translations.unofficial.length === 0;
   };
 
   $scope.logCurrentTranslation = function(translation) {
     $scope.current_translation = translation;
   };
+
+
 
   init();
 

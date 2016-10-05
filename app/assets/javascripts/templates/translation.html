@@ -8,7 +8,7 @@
     <div class="translation-subhead">
       <h3 class="">Official English translations:</h3>
     </div>
-    <div class="official-translations" ng-repeat="translation in title.translations">
+    <div class="official-translations" ng-repeat="translation in translations.official">
       <div class="translation" ng-show="translation.approved">
         <div class="translation-block">
           <h3>{{translation.translation_text}}</h3>
@@ -36,10 +36,11 @@
         <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
       </div>
     </div>
+    <div class="translation placeholder" ng-show="noOfficialTranslations()"><em>Currently there are no official translations for this title</em></div>
     <div class="translation-subhead">
       <h3 class="">Unofficial English translations:</h3>
     </div>
-    <div class="unofficial-translations" ng-repeat="translation in title.translations">
+    <div class="unofficial-translations" ng-repeat="translation in translations.unofficial">
       <div class="translation" ng-show="!translation.approved">
         <div class="translation_block">
           <h3>{{translation.translation_text}}</h3>
@@ -66,6 +67,7 @@
         <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
       </div>
     </div>
+    <div class="translation placeholder" ng-show="noUnofficialTranslations()"><em>Currently there are no unofficial translations for this title</em></div>
     <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">Add a new translation</a>
 
 
