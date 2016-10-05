@@ -25,8 +25,6 @@ class Translation < ApplicationRecord
 
   def update_parent
     if self.title
-      p "HEY IN HERE"
-      p self.title.translations.count
       self.title.translation_count = self.title.translations.count
       self.title.save!
     end
