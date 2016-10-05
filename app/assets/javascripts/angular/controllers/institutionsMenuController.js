@@ -9,7 +9,6 @@ titlesApp
 
   function getOffices() {
       $http.get('api/institutions/all_with_ancestry').then(function(response) {
-        console.log(response.data);
         $scope.offices = response.data;
       });
   }

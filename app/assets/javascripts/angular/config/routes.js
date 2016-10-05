@@ -20,9 +20,16 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     template: '<admin></admin>'
   };
 
-  $stateProvider.state(aboutState);
-  $stateProvider.state(mainState);
-  $stateProvider.state(admin);
+  var contributors = {
+    name: 'contributors',
+    url: '/contributors',
+    template: '<contributors></contributors>'
+  };
+
+  $stateProvider.state(aboutState)
+                .state(mainState)
+                .state(admin)
+                .state(contributors);
   $stateProvider.state('titles' ,{
     url: '/titles/:id',
     template: '<translations></translations>',
