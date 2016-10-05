@@ -2,22 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$golden: rgba(219, 195, 92, 1);
-// $raisinblue: rgba(30, 31, 38, 1);
-$whiteblue: rgba(212, 245, 245, 1);
 $uci-blue: #1966A2;
-$uci-secondary-blue: #1B3D6D;
 $uci-dark-blue: #0A142F;
 $uci-header-blue: #1B3D6D;
-$uci-gold: #FCD02F;
-$header-height: 90px;
+
+$uci-light-yellow-transp: rgba(#f7eb5f, 0.6);
+$table-yellow: rgba(#dbdfc1, 0.89);
+$uci-light-yellow-solid: #F7EB5F;
+
 $uci-grey: #8F9FA9;
 $uci-dark-grey: #555759;
-$uci-border-blue: #3076AB;
-$nav-active-blue: #0d5186;
-$uci-light-yellow: rgba(#f7eb5f, 0.6);
-$table-yellow: rgba(#dbdfc1, 0.89);
-$nav-yellow: #F7EB5F;
+
+$header-height: 90px;
+
 
 body {
   font-family: Open Sans;
@@ -50,11 +47,11 @@ body {
 }
 
 .navbar-toggle {
-  border: 2px solid $uci-gold;
+  border: 2px solid $uci-light-yellow-solid;
 }
 
 .icon-bar {
-  border: 1px solid $uci-gold;
+  border: 1px solid $uci-light-yellow-solid;
 }
 
 .redfont {
