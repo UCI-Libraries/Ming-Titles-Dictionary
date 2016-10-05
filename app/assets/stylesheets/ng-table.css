@@ -41,7 +41,7 @@
 }
 .ng-table th.sortable.sort-desc,
 .ng-table th.sortable.sort-asc {
-  background-color: rgba(141, 192, 219, 0.25);
+  background-color: $table-yellow;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
 .ng-table th.sortable.sort-desc .sort-indicator:after,

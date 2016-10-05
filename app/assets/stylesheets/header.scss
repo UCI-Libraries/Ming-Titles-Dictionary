@@ -5,10 +5,9 @@
   padding-bottom: 20px;
   line-height: 60px;
   z-index: 1000;
-  background-color: $uci-dark-blue;
+  background-color: $uci-header-blue;
   h1 {
     margin-left: 20px;
-    color: $uci-gold;
     font-size: 2em;
     font-weight: lighter;
   }
@@ -16,38 +15,37 @@
 
 .project-nav {
   margin-top: $header-height;
-  background-color: $uci-blue;
-}
-
-.ming-title {
-  font-weight: 100;
+  background-color: $nav-yellow;
 }
 
 .navbar {
   width: 100%;
   color: $uci-dark-blue;
   border: none;
+  border-bottom: .25px solid #C6BEB5;
+
   .about {
-    border-left: 1px solid $uci-border-blue;
+    border-left: 1px solid white;
   }
   .nav-link {
     color: $uci-dark-blue;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 400;
-    border-right: 1px solid $uci-border-blue;
-    border-bottom: 5px solid $uci-blue;
+    border-right: 1px solid white;
+    border-bottom: 5px solid $nav-yellow;
   }
   .navbar-brand {
     color: white;
-    font-weight: lighter;
+    font-size: large;
+    font-weight: 300;
   }
   .nav-link:hover {
-    background-color: $uci-blue;
-    border-bottom: 5px solid $uci-gold;
+    background-color: $uci-grey;
+    border-bottom: 5px solid $uci-grey;
   }
   .nav-link:focus {
-    background-color: #0d5186;
-    border-bottom: 5px solid $nav-active-blue;
+    background-color: $nav-yellow;
+    border-bottom: 5px solid $uci-grey;
   }
   .nav-link:focus:hover {
     border-bottom: 5px solid $uci-gold;
@@ -55,15 +53,20 @@
 }
 
 .active {
-  background-color: $nav-active-blue;
-  border-bottom: 5px solid;
+  background-color: $nav-yellow;
+  border-bottom: 5px solid $uci-grey;
 }
 .active:hover {
-  background-color: $nav-active-blue;
+  background-color: $uci-grey;
+  border-bottom: 5px solid $uci-grey;
 }
 .active:focus {
-  background-color: $nav-active-blue;
-  border-bottom: 5px solid;
+  background-color: $uci-grey;
+  border-bottom: 5px solid $uci-grey;
+}
+.active:focus:hover {
+  background-color: $uci-grey;
+  border-bottom: 5px solid $uci-grey;
 }
 
 .navbar-right {
