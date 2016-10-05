@@ -14,15 +14,16 @@ titlesApp
 
       function getTranslations() {
         $http.get('admin/translations/').then(function(response) {
-          var data = setTitle(response.data);
+          console.log(response.data);
+          var data = setNestedAttrs(response.data);
           $scope.tableParams.settings({dataset: data});
         });
       }
 
-      function setTitle(data) {
+      function setNestedAttrs(data) {
         data.forEach( function(title) {
           title.chinese_title = title.title.chinese_title;
-
+          title.translation_count = title.title.translation_count;
         });
         return data;
       }

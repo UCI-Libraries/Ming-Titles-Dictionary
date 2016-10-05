@@ -11,7 +11,6 @@ gem 'ancestry'
 gem 'font-awesome-sass'
 gem 'google-webfonts'
 
-
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end

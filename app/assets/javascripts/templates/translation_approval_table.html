@@ -8,7 +8,7 @@
           <td title="'Official Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'" ng-click="seeTitle(translation.title.id)">
               {{translation.chinese_title}}</td>
           <td title="'# of Translations for Title'" filter="{ num_translations: 'number'}" sortable="'num_translations'" ng-click="seeTitle(translation.title.id)">
-              {{translation.num_translations}}??</td>
+              {{translation.translation_count}}</td>
           <td title="'Scholar ID'" filter="{ user: 'text'}" sortable="'user'" ng-click="seeTitle(translation.title.id)">
               {{translation.user_id}}</td>
           <td title="'Explanation'" filter="{ explanation: 'text'}" sortable="'explanation'" ng-click="seeTitle(translation.title.id)">
