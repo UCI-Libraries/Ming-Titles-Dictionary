@@ -14,6 +14,7 @@
 #  scholars           :text
 #  comment_added_at   :datetime
 #  flagged            :boolean          default(FALSE)
+#  flag               :boolean          default(FALSE)
 #
 
 class Translation < ApplicationRecord
@@ -25,7 +26,7 @@ class Translation < ApplicationRecord
 
   def update_parent
     if self.title
-      self.title.translation_count = self.title.translations.count
+      self.title.translation_count = 7
       self.title.save!
     end
   end

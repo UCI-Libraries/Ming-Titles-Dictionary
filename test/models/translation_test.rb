@@ -14,6 +14,7 @@
 #  scholars           :text
 #  comment_added_at   :datetime
 #  flagged            :boolean          default(FALSE)
+#  flag               :boolean          default(FALSE)
 #
 
 require 'test_helper'
