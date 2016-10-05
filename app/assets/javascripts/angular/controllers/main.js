@@ -1,6 +1,6 @@
 titlesApp.controller('mainController', ['$scope', 'Auth', function($scope, Auth){
 
-  $scope.title = "Ming Dynasty Titles Dictionary";
+  $scope.title = "Ming Government Official Titles: A Crowd-Translation Project";
 
   var init = function(user) {
     Auth.currentUser().then(function(user) {
