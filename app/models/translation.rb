@@ -23,11 +23,21 @@ class Translation < ApplicationRecord
   has_many :comments
 
   after_create :update_parent
+  after_update :update_user_status
 
   def update_parent
     if self.title
       self.title.translation_count = 7
       self.title.save!
+    end
+  end
+
+  def update_user_status
+    if self.user
+      self.user.has_contributed = self.user.translations.any? do |t|
+         t.approved
+      end
+      self.user.save!
     end
   end
 end

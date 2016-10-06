@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   get 'users/password' => 'devise/passwords#new' , :defaults => { :format => 'json' }
 
-  resources :users, :only => [:show], :defaults => { :format => 'json' }
+  resources :users, :only => [:show, :index], :defaults => { :format => 'json' }
+
 
   resources :comments
   resources :translations
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get 'api/titles/:id' => 'titles#show'
   get 'api/user/:id/translations' => 'users#show_translations'
   get 'api/user/:id/comments' => 'users#show_comments'
+  get 'api/users/contributors/:has_contributed' => 'users#contributors'
 
   get 'admin/users_to_approve' => 'users#authorize'
   get 'admin/all_users' => 'users#index', :defaults => { :format => 'json' }

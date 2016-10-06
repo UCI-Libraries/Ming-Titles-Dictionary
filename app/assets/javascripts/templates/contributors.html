@@ -3,4 +3,11 @@
   <article>
     <h1>Contributors</h1>
   </article>
+  <ul ng-repeat="contributor in contributors">
+    <li class="contributor">
+      {{contributor.fname}} {{contributor.lname}} {{contributor.email}}
+      {{contributor.has_contributed}}
+    </li>
+  </ul>
+
 </div>

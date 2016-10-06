@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005053952) do
+ActiveRecord::Schema.define(version: 20161006041822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,11 +39,12 @@ ActiveRecord::Schema.define(version: 20161005053952) do
   end
 
   create_table "titles", force: :cascade do |t|
-    t.string   "chinese_title",                 null: false
+    t.string   "chinese_title",                     null: false
     t.string   "pinyin_title"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "translation_count", default: 0
+    t.text     "source",            default: "UCI"
   end
 
   create_table "translations", force: :cascade do |t|
@@ -57,7 +58,6 @@ ActiveRecord::Schema.define(version: 20161005053952) do
     t.text     "additional_comment"
     t.text     "scholars"
     t.datetime "comment_added_at"
-    t.boolean  "flagged",            default: false
     t.boolean  "flag",               default: false
     t.index ["title_id"], name: "index_translations_on_title_id", using: :btree
     t.index ["user_id"], name: "index_translations_on_user_id", using: :btree
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20161005053952) do
     t.text     "fname"
     t.text     "lname"
     t.text     "research"
+    t.boolean  "has_contributed",        default: false
     t.index ["approved"], name: "index_users_on_approved", using: :btree
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
