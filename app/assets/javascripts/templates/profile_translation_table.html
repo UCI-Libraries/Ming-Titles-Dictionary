@@ -5,15 +5,10 @@
               {{translation.translation_text}}</td>
           <td title="'Chinese Title'">
               {{translation.title.chinese_title}}</td>
-          <td title="'# of Comments'" sortable="'comments.length'">
+          <td title="'# of Comments on Translation'" sortable="'comments.length'">
               {{translation.comments.length}}</td>
           <td title="'Last Updated'" sortable="'comment_added_at'">
               {{translation.comment_added_at}}</td>
-          <!-- <td title="'Areas of Research'" filter="{ research: 'text'}" sortable="'research'">
-              {{translation.research}}</td>
-          <td title="'Institution'" filter="{ institution: 'text'}" sortable="'institution'">
-              {{translation.institution}}</td> -->
-
       </tr>
   </table>
   <div ng-show="dataEmpty" ng-cloak>

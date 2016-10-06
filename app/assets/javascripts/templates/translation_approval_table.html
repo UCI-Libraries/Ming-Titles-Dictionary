@@ -9,6 +9,8 @@
               {{translation.chinese_title}}</td>
           <td title="'# of Translations for Title'" filter="{ num_translations: 'number'}" sortable="'num_translations'" ng-click="seeTitle(translation.title.id)">
               {{translation.translation_count}}</td>
+          <td title="'# of Comments on Translation'" sortable="'comments.length'">
+              {{translation.comments.length}}</td>
           <td title="'Scholar ID'" filter="{ user: 'text'}" sortable="'user'" ng-click="seeTitle(translation.title.id)">
               {{translation.user_id}}</td>
           <td title="'Explanation'" filter="{ explanation: 'text'}" sortable="'explanation'" ng-click="seeTitle(translation.title.id)">

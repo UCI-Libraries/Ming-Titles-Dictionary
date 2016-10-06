@@ -31,7 +31,7 @@ titlesApp
     };
 
     Auth.login(credentials, config).then(function(user) {
-      console.log(user); // => {id: 1, ect: '...'}
+      userService.setUser = user;
     }, function(error) {
       $scope.errors = error.data.error;
         // Authentication failed...
@@ -53,19 +53,14 @@ titlesApp
       email: 'clairewoods@gmail.com'
     };
 
-    // $http.post('/auth/secret/new', parameters).then(function(response) {
-    //   console.log(response);
-    // });
-    // console.log(Auth.sendResetPasswordInstructions);
     Auth.sendResetPasswordInstructions(parameters).then(function(response) {
         console.log(response);
         // Sended email if user found otherwise email not sended...
     }, function(error) {
         console.log("FAILED", error);
-        // if (error.data.errors.email) {
-        //   // $scope.emailExists = true;
-        //   // console.log("email is already taken");
-        // }
+        if (error.data.errors.email) {
+          $scope.emailExists = true;
+        }
     });
 
     $scope.$on('devise:send-reset-password-instructions-successfully', function(event) {
