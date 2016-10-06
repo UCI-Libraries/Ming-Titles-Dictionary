@@ -44,8 +44,6 @@ class TranslationsController < ApplicationController
   def update
     respond_to do |format|
       if @translation.update(translation_params)
-        p "TRANSLATION?"
-        p @translation
         format.html { redirect_to @translation, notice: 'Translation was successfully updated.' }
         format.json { render :show, status: :ok, location: @translation }
       else

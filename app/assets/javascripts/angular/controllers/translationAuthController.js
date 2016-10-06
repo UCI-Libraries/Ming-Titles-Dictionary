@@ -12,6 +12,8 @@ titlesApp
 
       $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
+      $scope.flaggedFilter = [{title: 'flagged', id: true},{title: 'unflagged', id: false}];
+
       function getTranslations() {
         $http.get('translations/').then(function(response) {
           var data = setNestedAttrs(response.data);
@@ -48,7 +50,6 @@ titlesApp
 
       $scope.setFlag = function(id, flag) {
         $http.put('admin/translations/'+ id, {"flag": !flag}).then(function(response) {
-          console.log("flag!", response);
           getTranslations();
         });
       };
