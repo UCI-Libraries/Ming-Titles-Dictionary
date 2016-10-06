@@ -29,20 +29,16 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
   $stateProvider.state(aboutState)
                 .state(mainState)
                 .state(admin)
-                .state(contributors);
-  $stateProvider.state('titles' ,{
-    url: '/titles/:id',
-    template: '<translations></translations>',
-    controller: 'translationsController'
-  });
-
-  $stateProvider.state('profile' ,{
-    url: '/profile/:id',
-    template: '<profile></profile>',
-    controller: 'profileController'
-  });
-
-
+                .state(contributors)
+                .state('titles' ,{
+                  url: '/titles/:id',
+                  template: '<translations></translations>',
+                  controller: 'translationsController'
+                }).state('profile' ,{
+                  url: '/profile/:id',
+                  template: '<profile></profile>',
+                  controller: 'profileController'
+                });
 
 
 }]);

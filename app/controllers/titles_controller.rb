@@ -17,8 +17,6 @@ class TitlesController < ApplicationController
   # GET /titles/1.json
   def show
     @title = Title.includes(translations: [:user, comments: :user]).order("translations.created_at").find_by(id: params[:id])
-    p params
-    p title_params
     if params[:official]
       @title =  @title.where({translations: {approved: true}})
     end

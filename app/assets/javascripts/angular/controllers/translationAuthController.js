@@ -1,5 +1,5 @@
 titlesApp
-  .controller('translationApprovalController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', '$state', function($scope, $http, $stateParams, titlesService, NgTableParams, $state){
+  .controller('translationApprovalController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', '$state', 'Translation', function($scope, $http, $stateParams, titlesService, NgTableParams, $state, Translation){
 
       var init = function() {
         getTranslations();
@@ -13,7 +13,7 @@ titlesApp
       $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
 
       function getTranslations() {
-        $http.get('admin/translations/').then(function(response) {
+        $http.get('translations/').then(function(response) {
           var data = setNestedAttrs(response.data);
           $scope.tableParams.settings({dataset: data});
         });
@@ -46,8 +46,11 @@ titlesApp
         window.open(url,'_blank');
       };
 
-      $scope.setFlag = function(flag) {
-        console.log("setting");
+      $scope.setFlag = function(id, flag) {
+        $http.put('admin/translations/'+ id, {"flag": !flag}).then(function(response) {
+          console.log("flag!", response);
+          getTranslations();
+        });
       };
 
       init();

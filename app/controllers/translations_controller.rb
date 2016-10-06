@@ -44,6 +44,8 @@ class TranslationsController < ApplicationController
   def update
     respond_to do |format|
       if @translation.update(translation_params)
+        p "TRANSLATION?"
+        p @translation
         format.html { redirect_to @translation, notice: 'Translation was successfully updated.' }
         format.json { render :show, status: :ok, location: @translation }
       else
@@ -71,6 +73,6 @@ class TranslationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def translation_params
-      params.require(:translation).permit(:translation_text, :title_id, :user_id, :scholars, :explanation, :approved)
+      params.require(:translation).permit(:translation_text, :title_id, :user_id, :scholars, :explanation, :approved, :flag)
     end
 end

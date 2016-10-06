@@ -1,18 +1,10 @@
 Rails.application.routes.draw do
 
-  # devise_for :users
-
-  # post 'auth_user' => 'authentication#authenticate_user'
-
   root to: "home#index"
 
   devise_for :users
 
   get 'users/password' => 'devise/passwords#new' , :defaults => { :format => 'json' }
-
-  # devise_for :users, controllers: {
-  #   sessions: 'users/sessions'
-  # }, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
 
   resources :users, :only => [:show], :defaults => { :format => 'json' }
 
@@ -28,15 +20,11 @@ Rails.application.routes.draw do
   get 'api/user/:id/translations' => 'users#show_translations'
   get 'api/user/:id/comments' => 'users#show_comments'
 
-
-
   get 'admin/users_to_approve' => 'users#authorize'
   get 'admin/all_users' => 'users#index', :defaults => { :format => 'json' }
   put 'admin/approve_user/:id' => 'users#approve'
   get 'admin/translations' => 'translations#index'
   put 'admin/translations/:id' => 'translations#update', :defaults => { :format => 'json' }
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
