@@ -1,4 +1,4 @@
-titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', function($scope, Auth, userService){
+titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootScope', '$state', function($scope, Auth, userService, $rootScope, $state){
 
   $scope.title = "Ming Government Official Titles: A Crowd-Translation Project";
 
@@ -11,5 +11,14 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', functio
   };
 
   init();
+
+  $rootScope.$on('$stateChangeError', function(evt, to, toParams, from, fromParams, error) {
+      console.log('there was an error');
+     if (error.redirectTo) {
+       $state.go(error.redirectTo);
+     } else {
+       $state.go('main', {status: error.status});
+     }
+   });
 
 }]);

@@ -1,5 +1,5 @@
 titlesApp
-  .controller('titlesNavController', ['$scope', 'Auth', '$state', function($scope, Auth, $state){
+  .controller('titlesNavController', ['$scope', 'Auth', '$state', 'userService', function($scope, Auth, $state, userService){
 
   $scope.logOutUser = function() {
     var config = {

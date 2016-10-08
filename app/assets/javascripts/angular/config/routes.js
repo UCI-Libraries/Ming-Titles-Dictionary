@@ -11,7 +11,18 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
   var aboutState = {
     name: 'about',
     url: '/about',
-    template: '<about-info></about-info>'
+    template: '<about-info></about-info>',
+    resolve: {
+      auth: function(Auth, $q) {
+        var deferred = $q.defer();
+        return Auth.currentUser().then(function(user) {
+          if (user) {
+            console.log(user);
+          }
+          return deferred.resolve({});
+        });
+      }
+    }
   };
 
   var admin = {
@@ -39,6 +50,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                   template: '<profile></profile>',
                   controller: 'profileController'
                 });
+
 
 
 }]);
