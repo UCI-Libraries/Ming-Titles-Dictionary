@@ -31,6 +31,17 @@ class UsersController < ApplicationController
     render json: @user_comments, include: {translation: {include: :title}}
   end
 
+  def change_password
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+      bypass_sign_in(@user)
+      render json: {response: "password updated"}
+    else
+      render json: {response: "password update failed"}
+    end
+  end
+
   # GET /users/new
   def new
     @user = User.new
@@ -110,7 +121,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {}).permit(:approved, :id, :source, :has_contributed)
-      # params.require(:user).permit(:id, :approved, :is_admin, :research, :institution, :fname, :lname, :email, :country)
+      params.fetch(:user, {}).permit(:approved, :id, :source, :has_contributed, :password, :password_confirmation)
     end
 end

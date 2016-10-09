@@ -11,24 +11,25 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
   var aboutState = {
     name: 'about',
     url: '/about',
-    template: '<about-info></about-info>',
-    resolve: {
-      auth: function(Auth, $q) {
-        var deferred = $q.defer();
-        return Auth.currentUser().then(function(user) {
-          if (user) {
-            console.log(user);
-          }
-          return deferred.resolve({});
-        });
-      }
-    }
+    template: '<about-info></about-info>'
   };
 
   var admin = {
     name: 'admin',
     url: '/admin',
-    template: '<admin></admin>'
+    template: '<admin></admin>',
+    resolve: {
+      auth: function(Auth, $q) {
+        var deferred = $q.defer();
+        return Auth.currentUser().then(function(user) {
+          // if (!user.fname) {
+          //   console.log(user);
+          //   return $q.reject("Not Authorized");
+          // }
+          return deferred.resolve({});
+        });
+      }
+    }
   };
 
   var contributors = {
@@ -44,11 +45,35 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                 .state('titles' ,{
                   url: '/titles/:id',
                   template: '<translations></translations>',
-                  controller: 'translationsController'
+                  controller: 'translationsController',
+                  resolve: {
+                    auth: function(Auth, $q) {
+                      var deferred = $q.defer();
+                      return Auth.currentUser().then(function(user) {
+                        // if (!user.fname) {
+                        //   console.log(user);
+                        //   return $q.reject("Not Authorized");
+                        // }
+                        return deferred.resolve({});
+                      });
+                    }
+                  }
                 }).state('profile' ,{
                   url: '/profile/:id',
                   template: '<profile></profile>',
-                  controller: 'profileController'
+                  controller: 'profileController',
+                  resolve: {
+                    auth: function(Auth, $q) {
+                      var deferred = $q.defer();
+                      return Auth.currentUser().then(function(user) {
+                        // if (!user.fname) {
+                        //   console.log(user);
+                        //   return $q.reject("Not Authorized");
+                        // }
+                        return deferred.resolve({});
+                      });
+                    }
+                  }
                 });
 
 

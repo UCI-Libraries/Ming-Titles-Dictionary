@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'api/user/:id/translations' => 'users#show_translations'
   get 'api/user/:id/comments' => 'users#show_comments'
   get 'api/users/contributors/:has_contributed' => 'users#contributors'
+  put 'api/users/change_password' => 'users#change_password'
+
 
   get 'admin/users_to_approve' => 'users#authorize'
   get 'admin/all_users' => 'users#index', :defaults => { :format => 'json' }
