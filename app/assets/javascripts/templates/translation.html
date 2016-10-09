@@ -16,6 +16,7 @@
           <p>Explanation of translation: (show if one is available): {{}}</p>
           <p>Links: {{}}</p>
           <p>Other scholars who could help translate this title: {{}}</p>
+          <span ng-show="true"><a ng-click="deleteTranslation(translation.id)">Delete</a></span>&nbsp;&nbsp;&nbsp;<span><a>Edit</a></span>
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>
@@ -48,6 +49,7 @@
           <p>Explanation of translation: (show if one is available): {{}}</p>
           <p>Links: {{}}</p>
           <p>Other scholars who could help translate this title: {{}}</p>
+          <span ng-show="true" ng-click="deleteTranslation(translation.id)"><a >Delete</a></span>&nbsp;&nbsp;&nbsp;<span><a>Edit</a></span>
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>

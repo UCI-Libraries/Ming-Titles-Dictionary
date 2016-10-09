@@ -18,6 +18,13 @@ titlesApp.factory('Translation', ['$http', function($http) {
 
   // TODO: remove column "flagged"
 
+  Translation.delete = function(id) {
+    return $http.delete('/translations/' + id + '.json').then(function(response) {
+      console.log(response);
+      return new Translation(response.data);
+    });
+  };
+
   // an instance method to create a new Translation
   Translation.prototype.save = function() {
     var translation = this;

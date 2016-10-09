@@ -1,6 +1,15 @@
 titlesApp
   .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', '$filter', function($scope, $http, $stateParams, Translation, Comment, Auth, $filter){
 
+  var init = function() {
+    getPosts();
+    $scope.title = {};
+    $scope.current_translation = {};
+    $scope.translations = {};
+    $scope.translations.unofficial = [];
+    $scope.translations.official = [];
+  };
+
   function formatTimestamps(translations) {
     translations.forEach(function(translation){
       translation.comments.forEach(function(comment){
@@ -25,25 +34,22 @@ titlesApp
     });
   }
 
-  var init = function() {
-    $scope.getPosts();
-    $scope.title = {};
-    $scope.current_translation = {};
-    $scope.translations = {};
-    $scope.translations.unofficial = [];
-    $scope.translations.official = [];
-  };
-
   $scope.ifComments = function(comments) {
     console.log(comments.length > 0);
     return comments.length > 0;
   };
 
-  $scope.getPosts = function() {
+  getPosts = function() {
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
       var translations = formatTimestamps(response.data.translations);
       sortByAuthorized(translations);
+    });
+  };
+
+  $scope.deleteTranslation = function(id) {
+    Translation.delete(id).then(function() {
+      getPosts();
     });
   };
 
@@ -56,6 +62,7 @@ titlesApp
   };
 
   $scope.logCurrentTranslation = function(translation) {
+    console.log("in herer");
     $scope.current_translation = translation;
   };
 
