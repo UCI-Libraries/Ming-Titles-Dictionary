@@ -26,6 +26,7 @@
 #  fname                  :text
 #  lname                  :text
 #  research               :text
+#  has_contributed        :boolean          default(FALSE)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

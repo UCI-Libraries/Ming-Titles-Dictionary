@@ -26,6 +26,7 @@
 #  fname                  :text
 #  lname                  :text
 #  research               :text
+#  has_contributed        :boolean          default(FALSE)
 #
 
 class User < ApplicationRecord

@@ -13,8 +13,8 @@
 #  additional_comment :text
 #  scholars           :text
 #  comment_added_at   :datetime
-#  flagged            :boolean          default(FALSE)
 #  flag               :boolean          default(FALSE)
+#  reviewed           :boolean          default(TRUE)
 #
 
 require 'test_helper'

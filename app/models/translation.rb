@@ -13,8 +13,8 @@
 #  additional_comment :text
 #  scholars           :text
 #  comment_added_at   :datetime
-#  flagged            :boolean          default(FALSE)
 #  flag               :boolean          default(FALSE)
+#  reviewed           :boolean          default(TRUE)
 #
 
 class Translation < ApplicationRecord
@@ -23,7 +23,7 @@ class Translation < ApplicationRecord
   has_many :comments
 
   after_create :update_parent
-  after_create :send_translation_thank_you
+  # after_create :send_translation_thank_you
   after_update :update_user_status
 
   def update_parent
@@ -34,7 +34,7 @@ class Translation < ApplicationRecord
   end
 
   def send_translation_thank_you
-    MyMailer.new_translation(@user, self.include(:title)).deliver
+    MyMailer.new_translation(@user, self).deliver
   end
 
   def update_user_status

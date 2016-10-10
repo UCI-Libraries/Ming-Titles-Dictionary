@@ -10,7 +10,7 @@ titlesApp
           {sorting: { id: "asc" }}, { dataset: data}
         );
 
-      $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
+      $scope.statusFilter = [{title: 'approved', id: 'approved'},{title: 'unapproved', id: 'unapproved'}, {title: 'new', id: 'new'}];
 
       $scope.flaggedFilter = [{title: 'flagged', id: true},{title: 'unflagged', id: false}];
 
@@ -25,12 +25,18 @@ titlesApp
         data.forEach( function(title) {
           title.chinese_title = title.title.chinese_title;
           title.translation_count = title.title.translation_count;
+          title.status = "unapproved";
+          if (title.approved === true ) {
+            title.status = "approved";
+          } else if (title.reviewed === false) {
+            title.status = "new";
+          }
         });
         return data;
       }
 
       $scope.approveTranslation = function(translation) {
-        $http.put('admin/translations/'+ translation.id, {"approved": true}).then(function(response) {
+        $http.put('admin/translations/'+ translation.id, {"approved": true, "new": false}).then(function(response) {
           console.log("Approved!", response.data);
           getTranslations();
         });
@@ -55,7 +61,5 @@ titlesApp
       };
 
       init();
-
-
 
 }]);

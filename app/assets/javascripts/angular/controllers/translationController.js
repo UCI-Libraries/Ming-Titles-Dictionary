@@ -2,7 +2,7 @@ titlesApp
   .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', '$filter', function($scope, $http, $stateParams, Translation, Comment, Auth, $filter){
 
   var init = function() {
-    getPosts();
+    $scope.getPosts();
     $scope.title = {};
     $scope.current_translation = {};
     $scope.translations = {};
@@ -39,7 +39,7 @@ titlesApp
     return comments.length > 0;
   };
 
-  getPosts = function() {
+  $scope.getPosts = function() {
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
       var translations = formatTimestamps(response.data.translations);
@@ -49,7 +49,7 @@ titlesApp
 
   $scope.deleteTranslation = function(id) {
     Translation.delete(id).then(function() {
-      getPosts();
+      $scope.getPosts();
     });
   };
 
