@@ -70,6 +70,16 @@ titlesApp
     $scope.current_comment = comment;
   };
 
+  $scope.deleteComment = function(id) {
+    var comment = new Comment();
+    comment.delete(id).then(function(response) {
+      console.log(response);
+      $scope.getPosts();
+    });
+
+  };
+
+
 
   init();
 

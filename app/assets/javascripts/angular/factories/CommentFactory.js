@@ -23,5 +23,14 @@ titlesApp.factory('Comment', ['$http', function($http) {
     });
   };
 
+  Comment.prototype.delete = function(id) {
+    var comment = this;
+    return $http.delete('/comments/'+ id +'.json').then(function(response) {
+      console.log('RESPONSE TO POST - comment/delete', response);
+      comment.id = response.data.id;
+      return comment;
+    });
+  };
+
   return Comment;
 }]);

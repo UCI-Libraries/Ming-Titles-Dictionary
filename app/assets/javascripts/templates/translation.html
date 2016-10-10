@@ -29,7 +29,7 @@
                   <span>{{comment.comment_text}}</span><br/>
                 </div>
                 <span ng-show="true">
-                  <a>Delete</a>
+                  <a ng-click="deleteComment(comment.id)">Delete</a>
                 </span>&nbsp;&nbsp;&nbsp;
                 <span>
                   <a data-toggle="modal" ng-click="logCurrentComment(comment)" data-target="#editCommentModal">Edit</a>
