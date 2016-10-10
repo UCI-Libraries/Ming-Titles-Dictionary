@@ -5,6 +5,7 @@ titlesApp
     $scope.getPosts();
     $scope.title = {};
     $scope.current_translation = {};
+    $scope.current_comment = {};
     $scope.translations = {};
     $scope.translations.unofficial = [];
     $scope.translations.official = [];
@@ -62,10 +63,12 @@ titlesApp
   };
 
   $scope.logCurrentTranslation = function(translation) {
-    console.log("in herer");
     $scope.current_translation = translation;
   };
 
+  $scope.logCurrentComment = function(comment) {
+    $scope.current_comment = comment;
+  };
 
 
   init();

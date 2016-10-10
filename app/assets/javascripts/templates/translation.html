@@ -28,13 +28,21 @@
                 <div class="comment-text">
                   <span>{{comment.comment_text}}</span><br/>
                 </div>
-                <span ng-show="true"><a>Delete</a></span>&nbsp;&nbsp;&nbsp;<span><a>Edit</a></span>
+                <span ng-show="true">
+                  <a>Delete</a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span>
+                  <a data-toggle="modal" ng-click="logCurrentComment(comment)" data-target="#editCommentModal">Edit</a>
+                </span>
               </article>
             </li>
           </ul>
 
         </div>
-        <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
+        <p class="comment-trigger">
+          <a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">
+            Comment on this translation
+          </a></p>
       </div>
     </div>
     <div class="translation placeholder" ng-show="noOfficialTranslations()"><em>Currently there are no official translations for this title</em></div>

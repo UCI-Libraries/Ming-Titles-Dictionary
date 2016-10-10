@@ -1,4 +1,4 @@
-<div id="newCommentModal" class="modal fade" my-modal>
+<div id="editCommentModal" class="modal fade" my-modal>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,7 +11,7 @@
         <p>Explanation:&nbsp;{{current_translation.explanation}}</p>
       </div>
       <div class="modal-body">
-        <form class="titles-form form-horizontal" ng-submit="postComment(formData, myForm)" name="myForm">
+        <form class="titles-form form-horizontal" ng-submit="updateComment(formData, myForm)" name="myForm">
           <div class="form-group">
             <label class="col-md-3 control-label" for="comment_text">
               <span class="redfont">*&nbsp;</span>
