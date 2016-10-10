@@ -67,7 +67,9 @@ titlesApp
   };
 
   $scope.logCurrentComment = function(comment) {
+    console.log($scope.current_comment);
     $scope.current_comment = comment;
+    console.log($scope.current_comment);
   };
 
   $scope.deleteComment = function(id) {
