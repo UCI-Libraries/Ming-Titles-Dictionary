@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-
   # GET /users
   # GET /users.json
   def index
@@ -73,9 +72,10 @@ class UsersController < ApplicationController
 
   def approve
     @user = set_user
-    p @user
-    p "approved??"
-    p user_params["approved"]
+    if user_params["approved"] == true && @user.approved == false
+      p "SEND APPROVAL"
+      # MyMailer.acceptance(@user).deliver
+    end
 
     respond_to do |format|
       if @user.update(user_params)

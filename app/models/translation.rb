@@ -23,6 +23,7 @@ class Translation < ApplicationRecord
   has_many :comments
 
   after_create :update_parent
+  after_create :send_translation_thank_you
   after_update :update_user_status
 
   def update_parent
@@ -30,6 +31,10 @@ class Translation < ApplicationRecord
       self.title.translation_count = 7
       self.title.save!
     end
+  end
+
+  def send_translation_thank_you
+    MyMailer.new_translation(@user, self.include(:title)).deliver
   end
 
   def update_user_status

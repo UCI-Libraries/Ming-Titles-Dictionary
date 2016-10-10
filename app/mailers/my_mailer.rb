@@ -4,19 +4,23 @@ class MyMailer < Devise::Mailer
   #include Devise::Controllers # Optional. eg. `confirmation_url`
   include Devise::Mailers::Helpers
   default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
-  # default from: 'clairewoods@gmail.com'
   default from: 'devnull@cygnus.lib.uci.edu'
 
   def greeting(user)
     @user = user
     @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome')
+    mail(to: @user.email, subject: 'Ming Government Official Titles: A Crowd-Translation Project')
   end
 
-  def new_comment(user)
+  def new_translation(user, translation)
     @user = user
-    @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome')
+    @translation = translation
+    mail(to: @user.email, subject: 'New Translation Submitted')
+  end
+
+  def acceptance(user)
+    @user = user
+    mail(to: @user.email, subject: 'Congratulations! You have been accepted as a contributing scholar.')
   end
 
 end
