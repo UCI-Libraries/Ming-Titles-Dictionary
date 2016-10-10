@@ -16,7 +16,10 @@ class TitlesController < ApplicationController
   # GET /titles/1
   # GET /titles/1.json
   def show
-    @title = Title.includes(translations: :user).order("translations.created_at").find_by(id: params[:id])
+    @title = Title.includes(translations: [:user, comments: :user]).order("translations.created_at").find_by(id: params[:id])
+    if params[:official]
+      @title =  @title.where({translations: {approved: true}})
+    end
     render json: @title, include: [translations: {include: [:user, comments: {include: :user}]}]
   end
 
@@ -77,6 +80,6 @@ class TitlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def title_params
-      params.fetch(:title, {})
+      params.fetch(:title, {}).permit(:approved, :id)
     end
 end

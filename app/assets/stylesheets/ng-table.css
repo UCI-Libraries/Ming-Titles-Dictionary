@@ -41,7 +41,7 @@
 }
 .ng-table th.sortable.sort-desc,
 .ng-table th.sortable.sort-asc {
-  background-color: rgba(141, 192, 219, 0.25);
+  background-color: $table-yellow;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
 .ng-table th.sortable.sort-desc .sort-indicator:after,
@@ -96,6 +96,28 @@
 .ng-table .ng-table-group-toggle {
   margin-right: 5px;
 }
+
+.ng-table-pager {
+    margin-top: 15px;
+    button, a {
+        height: 30px;
+        line-height: 10px;
+        border-width: 1px;
+        border-color: buttonface;
+    }
+    a {
+      line-height: 8px;
+    }
+    active {
+      border-width: 1px;
+      border-color: buttonface;
+    }
+    button:focus {
+      border-width: 1px;
+      border-color: buttonface;
+    }
+}
+
 @media only screen and (max-width: 800px) {
   .ng-table-responsive {
     border-bottom: 1px solid #999999;

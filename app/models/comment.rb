@@ -13,4 +13,14 @@
 class Comment < ApplicationRecord
   belongs_to :translation
   belongs_to :user
+
+  after_create :update_parent
+
+  def update_parent
+    if self.translation
+      self.translation.comment_added_at = self.created_at
+      self.translation.save
+    end
+  end
+
 end

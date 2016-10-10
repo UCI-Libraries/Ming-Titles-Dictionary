@@ -6,22 +6,23 @@
   margin-top: 15px;
 }
 
-.back {
+#profile-info {
+  z-index: 900;
 }
 
 .panel-heading {
   button {
     top: -5px;
-    color: $uci-gold;
+    color: $uci-light-yellow-solid;
     background-color: $uci-blue;
   }
   button:hover {
-    background-color: $uci-gold;
+    background-color: $uci-light-yellow-solid;
     color: $uci-blue;
   }
   button:focus {
     background-color: $uci-blue;
-    color: $uci-gold;
+    color: $uci-light-yellow-solid;
   }
   .btn-sm {
     padding: 5px 8px;

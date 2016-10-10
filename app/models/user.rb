@@ -26,6 +26,7 @@
 #  fname                  :text
 #  lname                  :text
 #  research               :text
+#  has_contributed        :boolean          default(FALSE)
 #
 
 class User < ApplicationRecord
@@ -54,7 +55,9 @@ class User < ApplicationRecord
   end
 
   def send_welcome_mail
-    TitlesMailer.welcome_email(@user).deliver_later
+    # TitlesMailer.welcome_email(@user).deliver
+    p @user
+    MyMailer.greeting(User.first).deliver
   end
 
   def active_for_authentication?

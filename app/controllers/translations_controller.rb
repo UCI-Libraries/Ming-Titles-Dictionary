@@ -4,9 +4,9 @@ class TranslationsController < ApplicationController
   # GET /translations
   # GET /translations.json
   def index
-    @translations = Translation.includes(:user, :title, :comments).all
+    @translations = Translation.includes(:user, {title: :translations}, :comments).all
     # @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user)
-    render json: @translations, include: [:user, :title, :comments]
+    render json: @translations.to_json({include: [:user, :comments, :title]})
   end
 
   # GET /translations/1
@@ -71,6 +71,6 @@ class TranslationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def translation_params
-      params.require(:translation).permit(:translation_text, :title_id, :user_id, :links, :scholars, :pinyin_comment, :explanation)
+      params.require(:translation).permit(:translation_text, :title_id, :user_id, :scholars, :explanation, :approved, :flag)
     end
 end

@@ -5,7 +5,8 @@
 
 tbody {
   tr:hover {
-    background-color: #dfdfdf;
+    // background-color: #dfdfdf;
+    background-color: $uci-light-yellow-transp;
   }
 }
 
@@ -14,9 +15,18 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-  background: #f9f9f9;
+  background: $table-yellow;
 }
 
 th.filter, th.header {
   background-color: white;
+}
+
+.pagination > li > a {
+  line-height: 1.1;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  background-color: $uci-header-blue;
+  border-color: $uci-header-blue;
 }

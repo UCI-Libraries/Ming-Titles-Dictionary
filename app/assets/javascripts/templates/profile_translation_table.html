@@ -1,25 +1,17 @@
 <div class="profile-translation-table col-md-9">
   <table ng-table="tableParams" class="table" show-filter="true">
       <tr class="" ng-repeat="translation in $data" ng-model="translation.title.id" ng-click="seeTitle(translation.title.id)">
-          <td title="'Translation #'" filter="{ id: 'number'}" sortable="'id'">
-              {{translation.id}}</td>
-          <td title="'English Translation'" filter="{ translation_text: 'text'}" sortable="'translation_text'">
+          <td title="'My Translation'" filter="{ translation_text: 'text'}" sortable="'translation_text'">
               {{translation.translation_text}}</td>
-          <!-- <td title="'First Name'" filter="{ fname: 'text'}" sortable="'fname'">
-              {{translation.fname}}</td>
-          <td title="'Last Name'" filter="{ lname: 'text'}" sortable="'lname'">
-              {{translation.lname}}</td>
-          <td title="'Country'" filter="{ country: 'text'}" sortable="'country'">
-              {{translation.country}}</td>
-          <td title="'Areas of Research'" filter="{ research: 'text'}" sortable="'research'">
-              {{translation.research}}</td>
-          <td title="'Institution'" filter="{ institution: 'text'}" sortable="'institution'">
-              {{translation.institution}}</td>
-          <td title="'Approved?'" filter="{ approved: 'select'}" filter-data="approvedFilter" sortable="'approved'">
-              {{translation.approved}}</td>
-          <td title="'Approve/Revoke'">
-              <button ng-show="!translation.approved" ng-click="approveUser(translation)">Approve Scholar</button><button ng-show="translation.approved" ng-click="revokeUser(translation)">Revoke Access</button></td> -->
-
+          <td title="'Chinese Title'">
+              {{translation.title.chinese_title}}</td>
+          <td title="'# of Comments on Translation'" sortable="'comments.length'">
+              {{translation.comments.length}}</td>
+          <td title="'Last Updated'" sortable="'comment_added_at'">
+              {{translation.comment_added_at}}</td>
       </tr>
   </table>
+  <div ng-show="dataEmpty" ng-cloak>
+    <p>You have not added any translations, yet. <a ui-sref="main">Go browse the titles table.</a></p>
+  </div>
 </div>

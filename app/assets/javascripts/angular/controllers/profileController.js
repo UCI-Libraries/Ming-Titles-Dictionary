@@ -1,5 +1,5 @@
 titlesApp
-  .controller('profileController', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+  .controller('profileController', ['$scope', '$http', '$stateParams', 'Auth', function($scope, $http, $stateParams, Auth){
 
   $scope.translationsView = true;
   $scope.commentsView = false;

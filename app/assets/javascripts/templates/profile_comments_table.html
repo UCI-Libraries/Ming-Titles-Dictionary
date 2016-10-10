@@ -1,25 +1,17 @@
 <div class="profile-comments-table col-md-9">
   <table ng-table="tableParams" class="table" show-filter="true">
-      <tr class="" ng-repeat="comment in $data" ng-model="comment.title.id" ng-click="seeTitle(comment.title.id)">
-          <td title="'Translation #'" filter="{ id: 'number'}" sortable="'id'">
-              {{comment.id}}</td>
-          <td title="'Comment'" filter="{ comment_text: 'text'}" sortable="'comment_text'">
+      <tr class="" ng-repeat="comment in $data" ng-model="comment.title.id" ng-click="seeTitle(comment.translation.title.id)">
+          <td title="'Official Chinese'">
+              {{comment.translation.title.chinese_title}}</td>
+          <td title="'Translation'">
+              {{comment.translation.translation_text}}</td>
+          <td title="'Your Comment'" filter="{ comment_text: 'text' }" sortable="'comment_text'">
               {{comment.comment_text}}</td>
-          <!-- <td title="'First Name'" filter="{ fname: 'text'}" sortable="'fname'">
-              {{translation.fname}}</td>
-          <td title="'Last Name'" filter="{ lname: 'text'}" sortable="'lname'">
-              {{translation.lname}}</td>
-          <td title="'Country'" filter="{ country: 'text'}" sortable="'country'">
-              {{translation.country}}</td>
-          <td title="'Areas of Research'" filter="{ research: 'text'}" sortable="'research'">
-              {{translation.research}}</td>
-          <td title="'Institution'" filter="{ institution: 'text'}" sortable="'institution'">
-              {{translation.institution}}</td>
-          <td title="'Approved?'" filter="{ approved: 'select'}" filter-data="approvedFilter" sortable="'approved'">
-              {{translation.approved}}</td>
-          <td title="'Approve/Revoke'">
-              <button ng-show="!translation.approved" ng-click="approveUser(translation)">Approve Scholar</button><button ng-show="translation.approved" ng-click="revokeUser(translation)">Revoke Access</button></td> -->
-
+          <td title="'Date Submitted'" sortable="'created_at'">
+              {{comment.formatted_date}}</td>
       </tr>
   </table>
+  <div ng-show="dataEmpty" ng-cloak>
+    <p>You have not commented on any translations, yet. <a ui-sref="main">Go browse the titles table.</a></p>
+  </div>
 </div>

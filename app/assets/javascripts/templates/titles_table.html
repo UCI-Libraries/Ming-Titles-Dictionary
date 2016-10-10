@@ -1,12 +1,13 @@
-<table ng-table="tableParams" class="table" show-filter="true">
+<!-- <div ng-table-pagination="tableParams" template-url="'partials/pager.html'"></div> -->
+<table ng-table="tableParams" table-pagination-top table-pagination-bottom class="table" show-filter="true">
     <tr class="" ng-repeat="title in $data" ng-model="title.id" ng-click="seePosts(title.id)">
         <td title="'Chinese Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'">
             {{title.chinese_title}}</td>
         <td title="'Pinyin Title'" filter="{ pinyin_title: 'text'}" sortable="'pinyin_title'">
             {{title.pinyin_title}}</td>
+        <td title="'First Approved Title'">
+            {{title.translations[0].translation_text}}</td>
         <td title="'# of Translations'" sortable="'num_translations'">
             {{title.num_translations}}</td>
-        <td title="'Translation Sample'">
-            {{title.translations[0].translation_text}}</td>
     </tr>
 </table>

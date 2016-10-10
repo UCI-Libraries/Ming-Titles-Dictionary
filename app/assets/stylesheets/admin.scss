@@ -1,15 +1,3 @@
-// .admin {
-//   .nav-item:hover {
-//     text-decoration: underline;
-//     background-color: red;
-//
-//   }
-//   .nav-item.active {
-//     text-decoration: underline;
-//     background-color: red;
-//
-//   }
-// }
 .admin {
   .nav-link:hover {
     background-color: white;
@@ -22,4 +10,12 @@
     text-decoration: underline;
   }
 
+}
+
+.fa-flag {
+  color: $uci-grey;
+}
+
+.flagged {
+  color: $uci-blue;
 }

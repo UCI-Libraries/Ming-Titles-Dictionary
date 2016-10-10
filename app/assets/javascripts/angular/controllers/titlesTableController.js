@@ -2,7 +2,11 @@ titlesApp
   .controller('titlesTableController', ['$scope', '$http', 'NgTableParams', 'titlesService', '$state', function($scope, $http, NgTableParams, titlesService, $state){
 
   var data = [];
-  $scope.tableParams = new NgTableParams({}, { dataset: data});
+  $scope.tableParams = new NgTableParams({
+    sorting: {
+      num_translations: "asc"
+    }},
+    { dataset: data});
 
   var init = function() {
     getTitles();

@@ -29,7 +29,7 @@ Rails.application.configure do
   # care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = true
 
   config.action_mailer.perform_deliveries = true
 
@@ -45,32 +45,35 @@ Rails.application.configure do
   config.assets.debug = true
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  config.assets.quiet = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
+  # config.action_mailer.delivery_method = :sendmail
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: ENV["GMAIL_DOMAIN"],
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
-  }
 
   # config.action_mailer.smtp_settings = {
-  #  :address              => "smtp.gmail.com",
-  #  :port                 => 587,
-  #  :domain               => ENV[“GMAIL_DOMAIN”],
-  #  :user_name            => ENV[“GMAIL_USERNAME”],
-  #  :password             => ENV[“GMAIL_PASSWORD”]
-  #  :authentication       => :plain,
-  #  :enable_starttls_auto => true  }
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   domain: ENV["GMAIL_DOMAIN"],
+  #   authentication: "plain",
+  #   enable_starttls_auto: true,
+  #   user_name: ENV["GMAIL_USERNAME"],
+  #   password: ENV["GMAIL_PASSWORD"]
+  # }
+
+  config.action_mailer.smtp_settings = {
+    address: "cygnus.lib.uci.edu",
+    port: 25,
+    domain: ENV["UCI_DOMAIN"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["UCI_USERNAME"],
+    password: ENV["UCI_PASSWORD"]
+  }
 
   # TODO: https://rubyonrailshelp.wordpress.com/2014/01/02/setting-up-mailer-using-devise-for-forgot-password/
   # Use an evented file watcher to asynchronously detect changes in source code,

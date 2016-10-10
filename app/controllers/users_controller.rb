@@ -2,11 +2,15 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-
   # GET /users
   # GET /users.json
   def index
     @users = User.all.order("id")
+    render json: @users
+  end
+
+  def contributors
+    @users = User.where(has_contributed: params[:has_contributed])
     render json: @users
   end
 
@@ -16,13 +20,25 @@ class UsersController < ApplicationController
   end
 
   def show_translations
-    @user = User.includes(:translations).find_by(id: params[:id])
-    render json: @user, include: :translations
+    @user_translations = User.find_by(id: params[:id]).translations.includes([:comments, :title])
+    render json: @user_translations, include: [:comments, :title]
   end
 
   def show_comments
-    @user = User.includes(:comments).find_by(id: params[:id])
-    render json: @user, include: :comments
+    @user_comments = User.find_by(id: params[:id]).comments.includes(translation: :title)
+    p @user_comments
+    render json: @user_comments, include: {translation: {include: :title}}
+  end
+
+  def change_password
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+      bypass_sign_in(@user)
+      render json: {response: "password updated"}
+    else
+      render json: {response: "password update failed"}
+    end
   end
 
   # GET /users/new
@@ -56,9 +72,10 @@ class UsersController < ApplicationController
 
   def approve
     @user = set_user
-    p @user
-    p "approved??"
-    p user_params["approved"]
+    if user_params["approved"] == true && @user.approved == false
+      p "SEND APPROVAL"
+      MyMailer.acceptance(@user).deliver
+    end
 
     respond_to do |format|
       if @user.update(user_params)
@@ -104,7 +121,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {}).permit(:approved, :id)
-      # params.require(:user).permit(:id, :approved, :is_admin, :research, :institution, :fname, :lname, :email, :country)
+      params.fetch(:user, {}).permit(:approved, :id, :source, :has_contributed, :password, :password_confirmation)
     end
 end

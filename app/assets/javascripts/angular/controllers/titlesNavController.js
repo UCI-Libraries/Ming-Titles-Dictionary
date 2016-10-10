@@ -1,8 +1,7 @@
 titlesApp
-  .controller('titlesNavController', ['$scope', 'Auth', '$state', function($scope, Auth, $state){
+  .controller('titlesNavController', ['$scope', 'Auth', '$state', 'userService', function($scope, Auth, $state, userService){
 
   $scope.logOutUser = function() {
-    console.log("log out");
     var config = {
             headers: {
                 'X-HTTP-Method-Override': 'DELETE'
@@ -11,20 +10,17 @@ titlesApp
         Auth.logout(config).then(function(oldUser) {
           if (oldUser) {
             alert("you're signed out now.");
+            userService.setUser = {};
           }
 
         }, function(error) {
-            console.log(Auth._current_user);
-
             console.log(error,"could not log out");
             // An error occurred logging out.
         });
 
         $scope.$on('devise:logout', function(event, oldCurrentUser) {
             // ...
-            // console.log("log out success");
             $state.go('main');
-
         });
 
   };
