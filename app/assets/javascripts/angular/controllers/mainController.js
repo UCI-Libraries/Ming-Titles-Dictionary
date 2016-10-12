@@ -4,7 +4,7 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootS
 
   var init = function(user) {
     Auth.currentUser().then(function(user) {
-        userService.setUser = user;
+        userService.setUser(user);
     }, function(error) {
         console.log("no session");
     });

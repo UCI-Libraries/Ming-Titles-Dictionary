@@ -1,5 +1,5 @@
 titlesApp
-  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', '$filter', function($scope, $http, $stateParams, Translation, Comment, Auth, $filter){
+  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', '$filter', 'userService', function($scope, $http, $stateParams, Translation, Comment, Auth, $filter, userService){
 
   var init = function() {
     $scope.getPosts();
@@ -79,6 +79,31 @@ titlesApp
 
   };
 
+  $scope.userCanEdit = function(post) {
+    var currentUser = userService.getUser();
+    if (currentUser.id === post.user.id) {
+      return true;
+    }
+    return false;
+  };
+
+  $scope.userCanDelete = function(post) {
+    var currentUser = userService.getUser();
+    if (currentUser.is_admin === true) {
+      return true;
+    } else if (currentUser.id === post.user.id) {
+      return true;
+    }
+    return false;
+  };
+
+  $scope.userCanViewAuthor = function() {
+    var currentUser = userService.getUser();
+    if (currentUser.is_admin === true) {
+      return true;
+    }
+    return false;
+  };
 
 
   init();
