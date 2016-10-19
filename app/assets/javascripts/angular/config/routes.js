@@ -1,4 +1,4 @@
-titlesApp.config(['$stateProvider', '$urlRouterProvider', '$q', function($stateProvider, $urlRouterProvider, $q) {
+titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 
@@ -19,7 +19,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', '$q', function($stateP
     url: '/admin',
     template: '<admin></admin>',
     resolve: {
-      auth: function(Auth, $q) {
+      auth: ['Auth','$q', function(Auth, $q) {
         var deferred = $q.defer();
         return Auth.currentUser().then(function(user) {
           console.log("to titles", admin);
@@ -30,7 +30,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', '$q', function($stateP
           // }
           return deferred.resolve({});
         });
-      }
+      }]
     }
   };
 
@@ -49,7 +49,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', '$q', function($stateP
                   template: '<translations></translations>',
                   controller: 'translationsController',
                   resolve: {
-                    auth: function(Auth, $q) {
+                    auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
                         console.log("to titles", user);
@@ -59,14 +59,14 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', '$q', function($stateP
                         // }
                         return deferred.resolve({});
                       });
-                    }
+                    }]
                   }
                 }).state('profile' ,{
                   url: '/profile/:id',
                   template: '<profile></profile>',
                   controller: 'profileController',
                   resolve: {
-                    auth: function(Auth, $q) {
+                    auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
                         // if (!user.fname) {
@@ -77,7 +77,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', '$q', function($stateP
 
                         return deferred.resolve({});
                       });
-                    }
+                    }]
                   }
                 });
 
