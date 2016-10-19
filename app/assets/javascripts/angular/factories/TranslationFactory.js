@@ -16,8 +16,6 @@ titlesApp.factory('Translation', ['$http', function($http) {
   //   });
   // };
 
-  // TODO: remove column "flagged"
-
   Translation.delete = function(id) {
     return $http.delete('/translations/' + id + '.json').then(function(response) {
       console.log(response);
