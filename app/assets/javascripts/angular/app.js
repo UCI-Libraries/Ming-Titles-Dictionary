@@ -1,1 +1,1 @@
-var titlesApp = angular.module('titlesApp', ['templates', 'countrySelect', 'UserValidation', 'Devise', 'ngAnimate', 'ui.bootstrap', 'ngTouch', 'vAccordion', 'ngTable', 'ui.router', 'ngRoute']);
+var titlesApp = angular.module('titlesApp', ['templates', 'countrySelect', 'UserValidation', 'Devise', 'ngAnimate', 'ui.bootstrap', 'ngTouch', 'vAccordion', 'ngTable', 'ui.router']);
