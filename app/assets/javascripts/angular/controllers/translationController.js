@@ -1,5 +1,5 @@
 titlesApp
-  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', '$filter', 'userService', function($scope, $http, $stateParams, Translation, Comment, Auth, $filter, userService){
+  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', 'userService', function($scope, $http, $stateParams, Translation, Comment, Auth, userService){
 
   var init = function() {
     $scope.getPosts();
