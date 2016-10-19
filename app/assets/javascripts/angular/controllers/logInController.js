@@ -1,5 +1,5 @@
 titlesApp
-  .controller('logInController', ['$scope', 'Auth', '$http', function($scope, Auth, $http){
+  .controller('logInController', ['$scope', 'Auth', '$http', 'userService', function($scope, Auth, $http, userService){
 
   $scope.errors = "";
 
@@ -31,7 +31,7 @@ titlesApp
     };
 
     Auth.login(credentials, config).then(function(user) {
-      userService.setUser = user;
+      userService.setUser(user);
     }, function(error) {
       $scope.errors = error.data.error;
         // Authentication failed...
