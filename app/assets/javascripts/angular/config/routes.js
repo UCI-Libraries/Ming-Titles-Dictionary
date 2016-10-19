@@ -22,6 +22,8 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
       auth: function(Auth, $q) {
         var deferred = $q.defer();
         return Auth.currentUser().then(function(user) {
+          console.log("to titles", admin);
+
           // if (!user.fname) {
           //   console.log(user);
           //   return $q.reject("Not Authorized");
@@ -50,6 +52,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     auth: function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
+                        console.log("to titles", user);
                         // if (!user.fname) {
                         //   console.log(user);
                         //   return $q.reject("Not Authorized");
@@ -70,6 +73,8 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                         //   console.log(user);
                         //   return $q.reject("Not Authorized");
                         // }
+                        console.log("to profiles", user);
+
                         return deferred.resolve({});
                       });
                     }
