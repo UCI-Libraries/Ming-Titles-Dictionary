@@ -1,4 +1,4 @@
-titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+titlesApp.config(['$stateProvider', '$urlRouterProvider', '$q', function($stateProvider, $urlRouterProvider, $q) {
 
   $urlRouterProvider.otherwise('/');
 
