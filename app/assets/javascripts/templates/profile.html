@@ -5,13 +5,26 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Profile&nbsp;&nbsp;&nbsp;&nbsp;
-          <button type="button" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="#profileEdit"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
+          <button type="button" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="#profileEditModal"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
         </div>
         <div class="panel-body">
-          <p>Make a profile template! also link the nav item for profile through the controller so that it uses $state to pass in the params</p>
-          <br/>
+          <p>
+            Name: {{user.fname}} {{user.lname}}
+          </p>
+          <p>
+            Country: {{user.country}}
+          </p>
+          <p>
+            Areas of Research: {{user.research}}
+          </p>
+          <p>
+            Affiliated Institution: {{user.institution}}
+          </p>
+          <p>
+            Email: {{user.email}}
+          </p>
           <p><a data-toggle="modal" data-target="#profilePassReset">Reset Password</a></p>
-          <p><a data-toggle="modal" data-target="#profileMailPrefs">Email preferences</a></p>
+          <!-- <p><a data-toggle="modal" data-target="#profileMailPrefs">Email preferences</a></p> -->
         </div>
       </div>
     </div>
@@ -32,24 +45,67 @@
   </div>
 </div>
 
-<div id="profileEdit" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-sm">
-
+<div class="modal fade" id="profileEditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit your profile</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">
+          Edit your profile information
+        </h2>
       </div>
       <div class="modal-body">
-        <p>Form for editing profile goes here</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <form ng-show="!submitted" class="titles-form form-horizontal" ng-submit="editUser(user)" name="myForm">
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="email"><span class="redfont">*&nbsp;</span>Email:&nbsp;</label>
+            <div class="col-md-9">
+              <input col-md-9 type="email" class="form-control" id="email" name="email" ng-model="user.email" ng-change="resetEmailCheck()" required/>
+              <span class="form-error" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+              <span class="form-error" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="fname"><span class="redfont">*&nbsp;</span>First Name:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" id="fname" ng-model="user.fname" name="fname" required/>
+              <span class="form-error" ng-show="myForm.fname.$error.required && myForm.fname.$dirty">required</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="lname"><span class="redfont">*&nbsp;</span>Last Name:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" id="lname" ng-model="user.lname" name="lname" required/>
+              <span class="form-error" ng-show="myForm.lname.$error.required && myForm.lname.$dirty">required</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="country"><span class="redfont">*&nbsp;</span>Country:&nbsp;</label>
+            <div class="col-md-9">
+              <country-select class="countries form-control" ng-model="user.country" name="country" required></country-select><span class="form-error" ng-show="myForm.country.$error.required && myForm.country.$dirty">required</span>
+            </div>
+
+            <label class="col-md-3 control-label" for="institution">Affiliated Institution:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" ng-model="user.institution" name="institution"/>
+            </div>
+
+            <label class="col-md-3 control-label" for="research"><span class="redfont">*&nbsp;</span>Areas of Research:&nbsp;</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" ng-model="user.research" name="research" required></textarea>
+              <span class="form-error" ng-show="myForm.research.$error.required && myForm.research.$dirty">required</span>
+            </div>
+
+            <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+          </div>
+
+          <br/>
+
+        </form>
+
+        <span ng-show="submitted">Thank you for applying to contribute to this project! An administrator will be reviewing your application and getting back to you soon.</span>
       </div>
     </div>
-
   </div>
 </div>
+
 
 <div id="profilePassReset" class="modal fade" role="dialog">
   <div class="modal-dialog modal-sm">

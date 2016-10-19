@@ -1,5 +1,5 @@
 titlesApp
-  .controller('profileController', ['$scope', '$http', '$stateParams', 'Auth', function($scope, $http, $stateParams, Auth){
+  .controller('profileController', ['$scope', '$http', '$stateParams', 'Auth', 'userService', function($scope, $http, $stateParams, Auth, userService){
 
   $scope.translationsView = true;
   $scope.commentsView = false;
@@ -13,18 +13,24 @@ titlesApp
     $scope.translationsView = false;
     $scope.commentsView = true;
   };
-  // $scope.userAuth = true;
-  // $scope.translationAuth = false;
-  //
-  // $scope.showUsers = function() {
-  //   $scope.translationAuth = false;
-  //   $scope.userAuth = true;
-  // };
-  //
-  // $scope.showTranslations = function() {
-  //   $scope.translationAuth = true;
-  //   $scope.userAuth = false;
-  // };
+
+  $scope.user = userService.getUser();
+
+  $scope.editUser = function(data) {
+    console.log("editing user", data);
+    var user = {};
+    user.fname = data.fname;
+    user.lname = data.lname;
+    user.email = data.email;
+    user.research = data.research;
+    user.institution = data.institution;
+    user.country = data.country;
+    $http.put('api/users/update_profile' , user).then(function(response) {
+      console.log('RESPONSE TO POST - users/edit', response);
+      // translation.id = response.data.id;
+      return user;
+    });
+  };
 
 
 }]);

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'api/user/:id/comments' => 'users#show_comments'
   get 'api/users/contributors/:has_contributed' => 'users#contributors'
   put 'api/users/change_password' => 'users#change_password'
+  put 'api/users/update_profile' => 'users#update_profile'
 
 
   get 'admin/users_to_approve' => 'users#authorize'

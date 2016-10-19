@@ -20,7 +20,7 @@
 class Translation < ApplicationRecord
   belongs_to :title
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   after_create :update_parent
   # after_create :send_translation_thank_you

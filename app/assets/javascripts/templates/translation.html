@@ -20,7 +20,7 @@
             <a ng-click="deleteTranslation(translation.id)">Delete</a>
           </span>&nbsp;&nbsp;&nbsp;
           <span ng-show="userCanEdit(translation)">
-            <a>Edit (still to do)</a>
+            <a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#editTranslationModal">Edit</a>
           </span>
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
@@ -64,7 +64,7 @@
             <a>Delete</a>
           </span>&nbsp;&nbsp;&nbsp;
           <span ng-show="userCanEdit(translation)">
-            <a>Edit (still to do)</a>
+            <a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#editTranslationModal">Edit</a>
           </span>
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
