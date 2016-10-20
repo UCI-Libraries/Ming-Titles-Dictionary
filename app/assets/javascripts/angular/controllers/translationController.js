@@ -9,6 +9,8 @@ titlesApp
     $scope.translations = {};
     $scope.translations.unofficial = [];
     $scope.translations.official = [];
+    $scope.pinyin_comments = [];
+    $scope.title_comments = [];
   };
 
   function formatTimestamps(translations) {
@@ -21,6 +23,17 @@ titlesApp
       });
     });
     return translations;
+  }
+
+  function formatCommentTimestamps(comments) {
+    comments.forEach(function(comment){
+
+        var date = moment(comment.created_at.slice(0,10)+" "+ comment.created_at.slice(11,19))
+                        .subtract(6, 'hours')
+                        .format('MM-DD-YY h:mm a');
+        comment.formatted_date = date;
+      });
+    return comments;
   }
 
   function sortByAuthorized(translations) {
@@ -44,6 +57,7 @@ titlesApp
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
       var translations = formatTimestamps(response.data.translations);
+      $scope.pinyin_comments = formatCommentTimestamps(response.data.pinyin_comments);
       sortByAuthorized(translations);
     });
   };
@@ -79,9 +93,18 @@ titlesApp
 
   };
 
+  $scope.deletePinyinComment = function(id) {
+    // var comment = new Comment();
+    // comment.delete(id).then(function(response) {
+    //   console.log(response);
+    //   $scope.getPosts();
+    // });
+    console.log("delete pinyin", id);
+  };
+
   $scope.userCanEdit = function(post) {
     var currentUser = userService.getUser();
-    if (currentUser.id === post.user.id) {
+    if (currentUser.id === post.user_id) {
       return true;
     }
     return false;
@@ -91,7 +114,7 @@ titlesApp
     var currentUser = userService.getUser();
     if (currentUser.is_admin === true) {
       return true;
-    } else if (currentUser.id === post.user.id) {
+    } else if (currentUser.id === post.user_id) {
       return true;
     }
     return false;

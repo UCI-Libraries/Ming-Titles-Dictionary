@@ -4,6 +4,9 @@
     <div class="chinese-title">
       <h1>Official Chinese:&nbsp;{{title.chinese_title}}</h1>
       <h2>Official Pinyin:&nbsp;{{title.pinyin_title}}
+      <a class="comment-link" data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newPinyinCommentModal">
+        Comment on Pinyin
+      </a></h2>
     </div>
     <div class="translation-subhead">
       <h3 class="">Official English translations:</h3>
@@ -25,7 +28,7 @@
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>
-          <ul ng-repeat="comment in translation.comments">
+          <ul ng-repeat="comment in translation.comments | orderBy: 'id'">
             <li class="translation-comment">
               <article>
                 <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
@@ -69,7 +72,7 @@
         </div>
         <div class="comments-block" ng-show="translation.comments.length > 0">
           <h4>Comments on this translation:</h4>
-          <ul ng-repeat="comment in translation.comments">
+          <ul ng-repeat="comment in translation.comments | orderBy: 'id'">
             <li class="translation-comment">
               <article>
                 <!-- <span>{{comment}}</span> -->
@@ -93,9 +96,31 @@
     <div class="translation placeholder" ng-show="noUnofficialTranslations()"><em>Currently there are no unofficial translations for this title</em></div>
     <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">Add a new translation</a>
 
+    <div class="translation-subhead">
+      <h3 class="">Comments on the Pinyin translation:</h3>
+    </div>
+    <div class="unofficial-translations" ng-repeat="comment in title.pinyin_comments">
+      <div class="translation">
+        <div class="translation_block">
+          <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
+          <p>Comment: {{comment.comment_text}}</p>
+          <span ng-show="userCanDelete(comment)" ng-click="deletePinyinComment(comment.id)">
+            <a>Delete</a>
+          </span>&nbsp;&nbsp;&nbsp;
+          <span ng-show="userCanEdit(comment)">
+            <a data-toggle="modal" ng-click="logCurrentPinyinTranslation(translation)" data-target="#editPinyinCommentModal">Edit</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Pinyin translation of this title</em></div>
+
 
     <new-translation-form></new-translation-form>
     <new-comment-form></new-comment-form>
+    <new-pinyin-comment-form></new-pinyin-comment-form>
+    <!-- <new-comment-form></new-comment-form> -->
+
     <edit-translation-form></edit-translation-form>
     <edit-comment-form></edit-comment-form>
 

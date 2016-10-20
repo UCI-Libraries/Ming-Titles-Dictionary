@@ -14,7 +14,8 @@
 #  scholars           :text
 #  comment_added_at   :datetime
 #  flag               :boolean          default(FALSE)
-#  reviewed           :boolean          default(TRUE)
+#  reviewed           :boolean          default(FALSE)
+#  flagged            :boolean          default(FALSE)
 #
 
 class Translation < ApplicationRecord

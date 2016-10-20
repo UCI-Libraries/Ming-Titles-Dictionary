@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
 
   resources :comments
+  resources :pinyin_comments
+  resources :title_comments
   resources :translations
   # resources :institutions
   # resources :titles
