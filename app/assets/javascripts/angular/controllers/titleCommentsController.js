@@ -41,14 +41,14 @@ titlesApp
         $http.get('api/title_comments').then(function(response) {
           $scope.dataEmpty = response.data.length === 0;
           response.data.forEach( function(comment) {
-            comment.comment_type = 'pinyin';
+            comment.comment_type = 'chinese';
             comment.chinese_title = comment.title.chinese_title;
             comment.pinyin_title = comment.title.pinyin_title;
+            data.push(comment);
           });
-          data.push(response.data);
+        }).then( function() {
+          $scope.tableParams.settings({dataset: data});
         });
-      }).then(function() {
-        $scope.tableParams.settings({dataset: data});
       });
     }
 
