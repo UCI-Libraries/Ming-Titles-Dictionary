@@ -1,11 +1,13 @@
 titlesApp
-  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'Auth', 'userService', function($scope, $http, $stateParams, Translation, Comment, Auth, userService){
+  .controller('translationsController', ['$scope', '$http', '$stateParams', 'Translation', 'Comment', 'PinyinComment', 'TitleComment', 'Auth', 'userService', function($scope, $http, $stateParams, Translation, Comment, PinyinComment, TitleComment, Auth, userService){
 
   var init = function() {
     $scope.getPosts();
     $scope.title = {};
     $scope.current_translation = {};
     $scope.current_comment = {};
+    $scope.current_pinyin_comment = {};
+    $scope.current_title_comment = {};
     $scope.translations = {};
     $scope.translations.unofficial = [];
     $scope.translations.official = [];
@@ -76,12 +78,25 @@ titlesApp
     return $scope.translations.unofficial.length === 0;
   };
 
+  $scope.noPinyinComments = function() {
+    return $scope.pinyin_comments.length === 0;
+  };
+
   $scope.logCurrentTranslation = function(translation) {
     $scope.current_translation = translation;
   };
 
   $scope.logCurrentComment = function(comment) {
     $scope.current_comment = comment;
+  };
+
+  $scope.logCurrentPinyinComment = function(comment) {
+    $scope.current_pinyin_comment = comment;
+  };
+
+  $scope.logCurrentTitleComment = function(comment) {
+    console.log("LOGGING");
+    $scope.current_title_comment = comment;
   };
 
   $scope.deleteComment = function(id) {
@@ -94,12 +109,21 @@ titlesApp
   };
 
   $scope.deletePinyinComment = function(id) {
-    // var comment = new Comment();
-    // comment.delete(id).then(function(response) {
-    //   console.log(response);
-    //   $scope.getPosts();
-    // });
+    var comment = new PinyinComment();
+    comment.delete(id).then(function(response) {
+      console.log(response);
+      $scope.getPosts();
+    });
     console.log("delete pinyin", id);
+  };
+
+  $scope.deleteTitleComment = function(id) {
+    var comment = new TitleComment();
+    comment.delete(id).then(function(response) {
+      console.log(response);
+      $scope.getPosts();
+    });
+    console.log("delete title comment", id);
   };
 
   $scope.userCanEdit = function(post) {

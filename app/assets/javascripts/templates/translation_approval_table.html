@@ -1,5 +1,5 @@
 <div class="translation-approval-table">
-  <table ng-table="tableParams" class="table" show-filter="true">
+  <table ng-table="tableParams" table-pagination-top table-pagination-bottom  class="table" show-filter="true">
       <tr class="" ng-repeat="translation in $data" ng-model="translation.title.id">
           <td title="'Translation ID'" filter="{ id: 'number'}" sortable="'id'" ng-click="seeTitle(translation.title.id)">
               {{translation.id}}</td>

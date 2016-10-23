@@ -4,8 +4,8 @@ class TitleCommentsController < ApplicationController
   # GET /title_comments
   # GET /title_comments.json
   def index
-    @title_comments = TitleComment.all
-    render json: @title_comments
+    @comments = TitleComment.includes(:title).all
+    render json: @comments.to_json({include: [:title]})
   end
 
   # GET /title_comments/1
@@ -25,12 +25,12 @@ class TitleCommentsController < ApplicationController
   # POST /title_comments
   # POST /title_comments.json
   def create
-    @title_comment = TitleComment.new(comment_params)
+    @title_comment = TitleComment.new(title_comment_params)
 
     respond_to do |format|
       if @title_comment.save
         format.html { redirect_to @title_comment, notice: 'TitleComment was successfully created.' }
-        format.json { render :show, status: :created, location: @title_comment }
+        format.json { render json: @title_comment }
       else
         format.html { render :new }
         format.json { render json: @title_comment.errors, status: :unprocessable_entity }
@@ -42,9 +42,9 @@ class TitleCommentsController < ApplicationController
   # PATCH/PUT /title_comments/1.json
   def update
     respond_to do |format|
-      if @title_comment.update(comment_params)
+      if @title_comment.update(title_comment_params)
         format.html { redirect_to @title_comment, notice: 'TitleComment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @title_comment }
+        format.json { render json: @title_comment, status: :ok, location: @title_comment }
       else
         format.html { render :edit }
         format.json { render json: @title_comment.errors, status: :unprocessable_entity }

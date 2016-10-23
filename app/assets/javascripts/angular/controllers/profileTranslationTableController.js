@@ -10,15 +10,28 @@ titlesApp
 
       $scope.tableParams = new NgTableParams(
         {sorting: {
-          comment_added_at: "asc"
+          formatted_comment_added_date: "desc"
         }},
         { dataset: data});
       $scope.approvedFilter = [{title: 'approved', id: true},{title: 'unapproved', id: false}];
+
+      function formatTimestamp(timestamp) {
+        if (timestamp) {
+          return moment(timestamp.slice(0,10)+" "+ timestamp.slice(11,19))
+                          .subtract(6, 'hours')
+                          .format('MM-DD-YY h:mm a');
+        } else {
+          return "";
+        }
+      }
 
       function getTranslations() {
         Auth.currentUser().then(function(user) {
           $http.get('api/user/'+user.id+'/translations').then(function(response) {
             $scope.dataEmpty = response.data.length === 0;
+            response.data.forEach( function(translation) {
+              translation.formatted_comment_added_date = formatTimestamp(translation.comment_added_at);
+            });
             $scope.tableParams.settings({dataset: response.data});
           });
         }, function(error) {

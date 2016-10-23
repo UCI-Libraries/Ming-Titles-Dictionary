@@ -3,24 +3,35 @@ titlesApp
 
   $scope.userAuth = true;
   $scope.translationAuth = false;
-  $scope.export = false;
+  $scope.exportAuth = false;
+  $scope.titleComments = false;
 
   $scope.showUsers = function() {
     $scope.translationAuth = false;
-    $scope.export = false;
+    $scope.titleComments = false;
+    $scope.exportAuth = false;
     $scope.userAuth = true;
   };
 
   $scope.showTranslations = function() {
     $scope.translationAuth = true;
-    $scope.export = false;
+    $scope.titleComments = false;
+    $scope.exportAuth = false;
     $scope.userAuth = false;
   };
 
   $scope.showExport = function() {
     $scope.translationAuth = false;
+    $scope.titleComments = false;
     $scope.userAuth = false;
-    $scope.export = true;
+    $scope.exportAuth = true;
+  };
+
+  $scope.showTitleComments = function() {
+    $scope.translationAuth = false;
+    $scope.userAuth = false;
+    $scope.exportAuth = false;
+    $scope.titleComments = true;
   };
 
 

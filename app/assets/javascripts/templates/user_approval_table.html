@@ -1,5 +1,5 @@
 <div class="user-approval-table">
-  <table ng-table="tableParams" class="table" show-filter="true">
+  <table ng-table="tableParams" table-pagination-top table-pagination-bottom  class="table" show-filter="true">
       <tr class="" ng-repeat="user in $data" ng-model="title.id" ng-click="seePosts(title.id)">
           <td title="'Scholar ID'" filter="{ id: 'number'}" sortable="'id'">
               {{user.id}}</td>

@@ -4,8 +4,8 @@ class PinyinCommentsController < ApplicationController
   # GET /pinyin_comments
   # GET /pinyin_comments.json
   def index
-    @comments = PinyinComment.all
-    render json: @comments
+    @comments = PinyinComment.includes(:title).all
+    render json: @comments.to_json({include: [:title]})
   end
 
   # GET /pinyin_comments/1

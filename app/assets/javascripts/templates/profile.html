@@ -9,19 +9,19 @@
         </div>
         <div class="panel-body">
           <p>
-            Name: {{user.fname}} {{user.lname}}
+            <strong>Name:</strong> {{user.fname}} {{user.lname}}
           </p>
           <p>
-            Country: {{user.country}}
+            <strong>Country:</strong> {{user.country}}
           </p>
           <p>
-            Areas of Research: {{user.research}}
+            <strong>Areas of Research:</strong> {{user.research}}
           </p>
           <p>
-            Affiliated Institution: {{user.institution}}
+            <strong>Affiliated Institution:</strong> {{user.institution}}
           </p>
           <p>
-            Email: {{user.email}}
+            <strong>Email:</strong> {{user.email}}
           </p>
           <p><a data-toggle="modal" data-target="#profilePassReset">Reset Password</a></p>
           <!-- <p><a data-toggle="modal" data-target="#profileMailPrefs">Email preferences</a></p> -->
@@ -99,8 +99,6 @@
           <br/>
 
         </form>
-
-        <span ng-show="submitted">Thank you for applying to contribute to this project! An administrator will be reviewing your application and getting back to you soon.</span>
       </div>
     </div>
   </div>

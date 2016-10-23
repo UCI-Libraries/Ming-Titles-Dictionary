@@ -1,0 +1,20 @@
+<div class="profile-translation-table col-md-9">
+  <table ng-table="tableParams" table-pagination-top table-pagination-bottom  class="table" show-filter="true">
+      <tr class="" ng-repeat="comment in $data" ng-model="translation.title.id" ng-click="seeTitle(translation.title.id)">
+          <td title="'Chinese Title'" sortable="'chinese_title'" filter="{ chinese_title: 'text' }">
+              {{comment.chinese_title}}</td>
+          <td title="'Pinyin Title'" sortable="'pinyin_title'" filter="{ pinyin_title: 'text' }">
+              {{comment.pinyin_title}}</td>
+          <td title="'Comment'" sortable="'comment_text'" filter="{ comment_text: 'text' }">
+              {{comment.comment_text}}</td>
+          <td title="'Scholar ID'" sortable="'user_id'" filter="{ user_id: 'text' }">
+              {{comment.user_id}}</td>
+          <td title="'Comment Type'" sortable="'comment_type'" filter="{ comment_type: 'select'}" filter-data="commentTypeFilter">
+              {{comment.comment_type}}</td>
+
+      </tr>
+  </table>
+  <div ng-show="dataEmpty" ng-cloak>
+    <p>You have not added any translations, yet. <a ui-sref="main">Go browse the titles table.</a></p>
+  </div>
+</div>

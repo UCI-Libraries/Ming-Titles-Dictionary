@@ -1,5 +1,5 @@
 <div class="profile-comments-table col-md-9">
-  <table ng-table="tableParams" class="table" show-filter="true">
+  <table ng-table="tableParams" table-pagination-top table-pagination-bottom  class="table" show-filter="true">
       <tr class="" ng-repeat="comment in $data" ng-model="comment.title.id" ng-click="seeTitle(comment.translation.title.id)">
           <td title="'Official Chinese'">
               {{comment.translation.title.chinese_title}}</td>
