@@ -1,0 +1,51 @@
+<div id="editTranslationModal" class="modal fade" my-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Chinese Title:&nbsp;{{title.chinese_title}}</h2>
+        <h2>Pinyin Title:&nbsp;{{title.pinyin_title}}</h2>
+        <h3 class="modal-title" id="myModalLabel">
+          Edit Your Translation:
+        </h3>
+      </div>
+      <div class="modal-body">
+        <form class="titles-form form-horizontal" ng-submit="updateTranslation(current_translation)" name="myForm">
+          <div class="form-group">
+            <label class="col-md-12" for="translation_text">&nbsp;&nbsp;Your English translation:&nbsp;</label>
+            <div class="col-md-12">
+              <textarea rows="2" class="form-control" id="translation_text" name="translation_text" ng-model="current_translation.translation_text"></textarea>
+            </div>
+
+            <label class="col-md-12" for="justification">&nbsp;&nbsp;Justification for your translation:&nbsp;</label>
+            <div class="col-md-12">
+              <textarea rows="3" class="form-control" id="justification" name="justification" ng-model="current_translation.justification"></textarea>
+            </div>
+
+            <label class="col-md-12" for="scholars">&nbsp;&nbsp;Other scholar(s)with expertise to help translate this title (optional):&nbsp;</label>
+            <div class="col-md-12">
+              <textarea rows="2" class="form-control" id="scholars" name="scholars" ng-model="current_translation.scholars"></textarea>
+            </div>
+
+            <div class="col-md-12 modal-header mid-form-title">
+              <h3 class="modal-title">
+                More Information:
+              </h3>
+            </div>
+
+            <label class="col-md-12" for="additional_comment">&nbsp;&nbsp;Any other comments:&nbsp;</label>
+            <div class="col-md-12">
+              <textarea rows="1" class="form-control" id="additional_comment" name="additional_comment" ng-model="current_translation.additional_comment"></textarea>
+            </div>
+
+            <button type="submit" class="btn pull-right" ng-disabled="!(!!current_translation.official_title_comment || !!current_translation.additional_comment  || !!current_translation.scholars ||  !!current_translation.justification || !!current_translation.translation_text)">Submit</button>
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+          </div>
+
+          <br/>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010040750) do
+ActiveRecord::Schema.define(version: 20161019223125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,22 @@ ActiveRecord::Schema.define(version: 20161010040750) do
     t.integer "institution_id", null: false
   end
 
+  create_table "pinyin_comments", force: :cascade do |t|
+    t.integer  "title_id",     null: false
+    t.integer  "user_id",      null: false
+    t.text     "comment_text"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "title_comments", force: :cascade do |t|
+    t.integer  "title_id",     null: false
+    t.integer  "user_id",      null: false
+    t.text     "comment_text"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "titles", force: :cascade do |t|
     t.string   "chinese_title",                     null: false
     t.string   "pinyin_title"
@@ -60,6 +76,7 @@ ActiveRecord::Schema.define(version: 20161010040750) do
     t.datetime "comment_added_at"
     t.boolean  "flag",               default: false
     t.boolean  "reviewed",           default: false
+    t.boolean  "flagged",            default: false
     t.index ["title_id"], name: "index_translations_on_title_id", using: :btree
     t.index ["user_id"], name: "index_translations_on_user_id", using: :btree
   end

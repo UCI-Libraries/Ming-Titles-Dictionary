@@ -5,6 +5,8 @@
       <ul class="nav nav-tabs">
         <li ng-click="showTranslations()" ng-class="{active: translationAuth}"><a>Approve Translations</a></li>
         <li ng-click="showUsers()" ng-class="{active: userAuth}"><a>Approve Scholars</a></li>
+        <li ng-click="showTitleComments()" ng-class="{active: titleComments}"><a>View Title Comments</a></li>
+        <li ng-click="showExport()" ng-class="{active: exportAuth}"><a>Export Data</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
@@ -13,5 +15,11 @@
   </div>
   <div ng-show="translationAuth" class="container">
     <translation-approval></translation-approval>
+  </div>
+  <div ng-show="titleComments" class="container">
+    <title-comments></title-comments>
+  </div>
+  <div ng-show="exportAuth" class="container">
+    <translation-export></translation-export>
   </div>
 </div>

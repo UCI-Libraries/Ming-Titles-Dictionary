@@ -19,16 +19,18 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     url: '/admin',
     template: '<admin></admin>',
     resolve: {
-      auth: function(Auth, $q) {
+      auth: ['Auth','$q', function(Auth, $q) {
         var deferred = $q.defer();
         return Auth.currentUser().then(function(user) {
+          console.log("to titles", admin);
+
           // if (!user.fname) {
           //   console.log(user);
           //   return $q.reject("Not Authorized");
           // }
           return deferred.resolve({});
         });
-      }
+      }]
     }
   };
 
@@ -47,32 +49,35 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                   template: '<translations></translations>',
                   controller: 'translationsController',
                   resolve: {
-                    auth: function(Auth, $q) {
+                    auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
+                        console.log("to titles", user);
                         // if (!user.fname) {
                         //   console.log(user);
                         //   return $q.reject("Not Authorized");
                         // }
                         return deferred.resolve({});
                       });
-                    }
+                    }]
                   }
                 }).state('profile' ,{
                   url: '/profile/:id',
                   template: '<profile></profile>',
                   controller: 'profileController',
                   resolve: {
-                    auth: function(Auth, $q) {
+                    auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
                         // if (!user.fname) {
                         //   console.log(user);
                         //   return $q.reject("Not Authorized");
                         // }
+                        console.log("to profiles", user);
+
                         return deferred.resolve({});
                       });
-                    }
+                    }]
                   }
                 });
 

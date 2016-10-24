@@ -41,6 +41,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_profile
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+      render json: {response: "profile updated"}
+    else
+      render json: {response: "profile update failed"}
+    end
+  end
+
   # GET /users/new
   def new
     @user = User.new
@@ -121,6 +131,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {}).permit(:approved, :id, :source, :has_contributed, :password, :password_confirmation)
+      params.fetch(:user, {}).permit(:approved, :id, :source, :has_contributed, :password, :password_confirmation, :email, :institution, :country, :fname, :lname, :research)
     end
 end

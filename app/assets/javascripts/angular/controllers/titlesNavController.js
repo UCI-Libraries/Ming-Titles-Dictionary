@@ -10,7 +10,7 @@ titlesApp
         Auth.logout(config).then(function(oldUser) {
           if (oldUser) {
             alert("you're signed out now.");
-            userService.setUser = {};
+            userService.setUser({});
           }
 
         }, function(error) {
