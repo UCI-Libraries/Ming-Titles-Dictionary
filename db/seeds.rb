@@ -10,7 +10,7 @@ require 'csv'
 first_user = User.new(is_admin: true, approved: true, email: "clwoods@uci.edu", fname: "Claire", lname: "Woods", password: "orange7A")
 first_user.save!
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'official_titles_examples.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'official_titles_sorted-10-24-2016.cvs'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 
 # add in institutions, check for any new
