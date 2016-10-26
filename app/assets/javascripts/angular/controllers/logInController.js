@@ -20,8 +20,8 @@ titlesApp
     console.log(data);
 
     var credentials = {
-      email: 'clwoods@uci.edu',
-      password: 'orange7A'
+      email: data.email,
+      password: data.password
     };
 
     var config = {

@@ -6,8 +6,8 @@ class MyMailer < Devise::Mailer
   default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
   default from: 'devnull@cygnus.lib.uci.edu'
 
-  def greeting(user)
-    @user = user
+  def greeting(id)
+    @user = User.find_by_id(id)
     @url  = 'http://example.com/login'
     mail(to: @user.email, subject: 'Ming Government Official Titles: A Crowd-Translation Project')
   end
