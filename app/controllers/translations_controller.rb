@@ -63,6 +63,17 @@ class TranslationsController < ApplicationController
     end
   end
 
+  def export
+    @translations = Translation.all.limit(10)
+    respond_to do |format|
+      format.csv do
+        response.headers['Content-Type'] = 'text/csv'
+        response.headers['Content-Disposition'] = 'attachment; filename=translations.csv'
+        send_file @translations.to_csv
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_translation

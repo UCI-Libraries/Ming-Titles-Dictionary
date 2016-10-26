@@ -17,7 +17,7 @@
 #  reviewed           :boolean          default(FALSE)
 #  flagged            :boolean          default(FALSE)
 #
-
+require 'csv'
 class Translation < ApplicationRecord
   belongs_to :title
   belongs_to :user
@@ -44,6 +44,16 @@ class Translation < ApplicationRecord
          t.approved
       end
       self.user.save!
+    end
+  end
+
+  def self.to_csv
+    attributes = %w(id translation_text explanation user_id title_id created_at)
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      all.each do |translation|
+        csv << translation.attributes.values_at(*attributes)
+      end
     end
   end
 end
