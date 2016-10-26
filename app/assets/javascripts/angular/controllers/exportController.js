@@ -4,17 +4,9 @@ titlesApp
   var init = function() {
   };
 
-  console.log("is this on?");
+  $scope.translationFilename = moment()+"Trans.csv";
 
-  $scope.getTranslations = function() {
-    console.log("getting csv");
-
-    $http.get('admin/translations_export.csv').then(function(response) {
-      console.log(response);
-    });
-  };
-
-  $scope.getArray =
+  $scope.getTranslationsArray =
     $http.get('admin/translations_export.json').then(function(response) {
       console.log(response);
       return response.data;

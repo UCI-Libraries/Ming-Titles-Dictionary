@@ -64,7 +64,7 @@ class TranslationsController < ApplicationController
   end
 
   def export
-    @translations = Translation.all.limit(10)
+    @translations = Translation.all
     respond_to do |format|
       format.json do
         render json: @translations.to_csv_array
