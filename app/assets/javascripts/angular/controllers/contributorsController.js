@@ -13,13 +13,6 @@ titlesApp
     });
   }
 
-  // $scope.approveTranslation = function(translation) {
-  //   $http.put('admin/translations/'+ translation.id, {"approved": true}).then(function(response) {
-  //     console.log("Approved!", response.data);
-  //     getTranslations();
-  //   });
-  // };
-
   init();
 
 }]);

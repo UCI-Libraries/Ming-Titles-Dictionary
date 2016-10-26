@@ -23,7 +23,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
         var deferred = $q.defer();
         return Auth.currentUser().then(function(user) {
           console.log("to titles", admin);
-
+          console.log(user);
           // if (!user.fname) {
           //   console.log(user);
           //   return $q.reject("Not Authorized");

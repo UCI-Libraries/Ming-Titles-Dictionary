@@ -38,7 +38,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   after_create :send_welcome_mail
-  # TODO: set up admin mailer
 
   validate :password_complexity
 
@@ -50,14 +49,9 @@ class User < ApplicationRecord
     end
   end
 
-  def send_admin_mail
-    AdminMailer.new_user_waiting_for_approval(self).deliver
-  end
-
   def send_welcome_mail
-    # TitlesMailer.welcome_email(@user).deliver
-    p @user
-    MyMailer.greeting(User.first).deliver
+    MyMailer.greeting(self.id).deliver
+    MyMailer.notify_superadmin_new_scholar(self.id).deliver
   end
 
   def active_for_authentication?

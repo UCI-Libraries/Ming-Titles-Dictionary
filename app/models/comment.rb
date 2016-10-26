@@ -15,6 +15,8 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   after_create :update_parent
+  after_create :update_user_status
+
 
   def update_parent
     if self.translation
@@ -22,5 +24,14 @@ class Comment < ApplicationRecord
       self.translation.save
     end
   end
+
+  def update_user_status
+    # 2 is the Charles Hucker account
+    if self.user && self.user.id != 2
+      self.user.has_contributed = true
+      self.user.save!
+    end
+  end
+
 
 end

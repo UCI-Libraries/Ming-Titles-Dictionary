@@ -1,10 +1,12 @@
 titlesApp
-  .controller('adminController', ['$scope', function($scope){
+  .controller('adminController', ['$scope', 'userService', function($scope, userService){
 
   $scope.userAuth = true;
   $scope.translationAuth = false;
   $scope.exportAuth = false;
   $scope.titleComments = false;
+
+  $scope.isSuperAdmin = userService.getUser().super_admin;
 
   $scope.showUsers = function() {
     $scope.translationAuth = false;

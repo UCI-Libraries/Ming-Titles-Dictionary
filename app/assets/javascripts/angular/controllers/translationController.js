@@ -144,7 +144,18 @@ titlesApp
     return false;
   };
 
-  $scope.userCanViewAuthor = function() {
+  $scope.userCanViewAuthor = function(translation) {
+    var currentUser = userService.getUser();
+    if (currentUser.is_admin === true ||
+        // 2 is the Charles Hucker account from the seeded data
+        translation.user_id === 2 ||
+        translation.user_id === currentUser.id ) {
+      return true;
+    }
+    return false;
+  };
+
+  $scope.userCanArchive = function() {
     var currentUser = userService.getUser();
     if (currentUser.is_admin === true) {
       return true;

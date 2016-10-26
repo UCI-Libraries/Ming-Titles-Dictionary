@@ -16,8 +16,8 @@ titlesApp
 
       function getTranslations() {
         $http.get('translations/').then(function(response) {
-          var data = setNestedAttrs(response.data);
-          $scope.tableParams.settings({dataset: data});
+          $scope.data = setNestedAttrs(response.data);
+          $scope.tableParams.settings({dataset: $scope.data});
         });
       }
 
@@ -37,14 +37,12 @@ titlesApp
 
       $scope.approveTranslation = function(translation) {
         $http.put('admin/translations/'+ translation.id, {"approved": true, "new": false}).then(function(response) {
-          console.log("Approved!", response.data);
           getTranslations();
         });
       };
 
       $scope.revokeTranslation = function(translation) {
         $http.put('admin/translations/'+ translation.id, {"approved": false}).then(function(response) {
-          console.log("Revoked!", response.data);
           getTranslations();
         });
       };
@@ -54,9 +52,14 @@ titlesApp
         window.open(url,'_blank');
       };
 
-      $scope.setFlag = function(id, flag) {
-        $http.put('admin/translations/'+ id, {"flag": !flag}).then(function(response) {
-          getTranslations();
+      $scope.setFlag = function(translation, flag) {
+        $http.put('admin/translations/'+ translation.id, {"flag": !flag}).then(function(response) {
+          $scope.data.forEach( function(t) {
+            if (t.id === translation.id) {
+              t.flag = !flag;
+            }
+          });
+          $scope.tableParams.settings({dataset: $scope.data});
         });
       };
 

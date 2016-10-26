@@ -83,15 +83,15 @@ class UsersController < ApplicationController
   def approve
     @user = set_user
     if user_params["approved"] == true && @user.approved == false
-      p "SEND APPROVAL"
       MyMailer.acceptance(@user).deliver
     end
 
     respond_to do |format|
       if @user.update(user_params)
         p @user
+        p "UPDATING??"
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render json: @user, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }

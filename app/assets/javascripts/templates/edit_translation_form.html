@@ -27,18 +27,7 @@
               <textarea rows="2" class="form-control" id="scholars" name="scholars" ng-model="current_translation.scholars"></textarea>
             </div>
 
-            <div class="col-md-12 modal-header mid-form-title">
-              <h3 class="modal-title">
-                More Information:
-              </h3>
-            </div>
-
-            <label class="col-md-12" for="additional_comment">&nbsp;&nbsp;Any other comments:&nbsp;</label>
-            <div class="col-md-12">
-              <textarea rows="1" class="form-control" id="additional_comment" name="additional_comment" ng-model="current_translation.additional_comment"></textarea>
-            </div>
-
-            <button type="submit" class="btn pull-right" ng-disabled="!(!!current_translation.official_title_comment || !!current_translation.additional_comment  || !!current_translation.scholars ||  !!current_translation.justification || !!current_translation.translation_text)">Submit</button>
+            <button type="submit" class="btn pull-right" ng-disabled="!(!!current_translation.official_title_comment || !!current_translation.scholars ||  !!current_translation.justification || !!current_translation.translation_text)">Submit</button>
             <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
           </div>
 
