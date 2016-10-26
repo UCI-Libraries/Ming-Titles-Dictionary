@@ -66,10 +66,8 @@ class TranslationsController < ApplicationController
   def export
     @translations = Translation.all.limit(10)
     respond_to do |format|
-      format.csv do
-        response.headers['Content-Type'] = 'text/csv'
-        response.headers['Content-Disposition'] = 'attachment; filename=translations.csv'
-        send_file @translations.to_csv
+      format.json do
+        render json: @translations.to_csv_array
       end
     end
   end

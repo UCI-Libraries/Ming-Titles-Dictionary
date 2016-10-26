@@ -51,13 +51,15 @@ class Translation < ApplicationRecord
     end
   end
 
-  def self.to_csv
+  def self.to_csv_array
     attributes = %w(id translation_text explanation user_id title_id created_at)
-    CSV.generate(headers: true) do |csv|
-      csv << attributes
-      all.each do |translation|
-        csv << translation.attributes.values_at(*attributes)
-      end
+    array = []
+    all.each do |translation|
+      hash = {}
+      attributes.each { |attr| hash[attr] = translation[attr]}
+      array << hash
     end
+    array
   end
+
 end

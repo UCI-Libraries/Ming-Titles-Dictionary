@@ -14,6 +14,13 @@ titlesApp
     });
   };
 
+  $scope.getArray =
+    $http.get('admin/translations_export.json').then(function(response) {
+      console.log(response);
+      return response.data;
+    });
+
+
   init();
 
 }]);
