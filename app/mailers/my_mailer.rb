@@ -18,6 +18,20 @@ class MyMailer < Devise::Mailer
     mail(to: @user.email, subject: 'New Translation Submitted')
   end
 
+  def notify_superadmin_new_translation(translation)
+    #superadmin is hardcoded here:
+    @user = User.find_by_id(1)
+    @translation = translation
+    mail(to: @user.email, subject: 'New Translation Submitted')
+  end
+
+  def notify_superadmin_new_scholar(user)
+    #superadmin is hardcoded here:
+    @admin = User.find_by_id(1)
+    @scholar = user
+    mail(to: @admin.email, subject: 'New Scholar Application')
+  end
+
   def acceptance(user)
     @user = user
     mail(to: @user.email, subject: 'Congratulations! You have been accepted as a contributing scholar.')

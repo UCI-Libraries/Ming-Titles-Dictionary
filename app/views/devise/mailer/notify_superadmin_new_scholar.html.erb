@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>
+      Ming Government Official Titles: A Crowd-Translation Project
+    </h1>
+    <p>
+      A new scholar has applied!
+      http://mingofficialtitles.lib.uci.edu/admin.
+    </p>
+    <p>
+      Here are their details:
+      Name: <%= @scholar.user.fname @scholar.user.lname%>
+      Email: <%= @scholar.email %>
+      Institution: <%= @scholar.institution %>
+      Research: <%= @scholar.research %>
+      Country: <%= @scholar.country %>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>
+      Ming Government Official Titles: A Crowd-Translation Project
+    </h1>
+    <p>
+      A new translation has been submitted!
+      http://mingofficialtitles.lib.uci.edu/contributors.
+    </p>
+    <p>
+      Here is the translation submitted:
+      Title: <%= @translation.title.official_chinese %>
+      Translation: <%= @translation.translation_text %>
+      Submitting scholar: <%= @translation.user.fname @translation.user.lname%>
+    </p>
+  </body>
+</html>

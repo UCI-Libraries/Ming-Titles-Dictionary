@@ -49,8 +49,15 @@ titlesApp
 
     $scope.$on('devise:new-registration', function(event, user) {
       console.log("reg complete");
+      Auth.logout(config).then(function(oldUser) {
+        if (oldUser) {
+          userService.setUser({});
+        }
+      }, function(error) {
+          console.log(error,"could not log out");
+      });
       displayThankYou();
-      // TODO: message that admin is being contacted
+      // TODO: LOG OUT USER HERE
     });
   };
 

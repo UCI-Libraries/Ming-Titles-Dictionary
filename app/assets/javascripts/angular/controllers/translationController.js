@@ -148,6 +148,7 @@ titlesApp
     var currentUser = userService.getUser();
     console.log(translation, currentUser);
     if (currentUser.is_admin === true ||
+        // 2 is the Charles Hucker account from the seeded data
         translation.user_id === 2 ||
         translation.user_id === currentUser.id ) {
       return true;

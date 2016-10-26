@@ -24,7 +24,7 @@ class Translation < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   after_create :update_parent
-  # after_create :send_translation_thank_you
+  after_create :send_translation_emails
   after_update :update_user_status
 
   def update_parent
@@ -34,15 +34,19 @@ class Translation < ApplicationRecord
     end
   end
 
-  def send_translation_thank_you
+  def send_translation_emails
     MyMailer.new_translation(@user, self).deliver
+    MyMailer.notify_superadmin_new_translation(@user, self).deliver
   end
 
   def update_user_status
-    if self.user
-      self.user.has_contributed = self.user.translations.any? do |t|
-         t.approved
-      end
+    # 2 is the Charles Hucker account
+    if self.user && self.user.id != 2
+      ## below would be the method if only looking for approved translations
+      # self.user.has_contributed = self.user.translations.any? do |t|
+      #    t.approved
+      # end
+      self.user.has_contributed = true
       self.user.save!
     end
   end
