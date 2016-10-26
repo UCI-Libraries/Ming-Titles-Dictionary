@@ -18,7 +18,6 @@ titlesApp
       translation.title_id = $scope.title.id;
       translation.user_id = user.id;
       translation.scholars = data.scholars;
-      translation.additional_comment = data.additional_comment;
       translation.edit().then(function() {
         $scope.getPosts();
         $scope.resetTranslationForm();

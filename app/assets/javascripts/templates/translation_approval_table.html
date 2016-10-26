@@ -17,8 +17,6 @@
               {{translation.explanation}}</td>
           <td title="'Other Scholars'" filter="{ scholars: 'text'}" sortable="'scholars'" ng-click="seeTitle(translation.title.id)">
               {{translation.scholars}}</td>
-          <td title="'Additional Comment'" filter="{ additional_comment: 'text'}" sortable="'additional_comment'" ng-click="seeTitle(translation.title.id)">
-              {{translation.additional_comment}}</td>
           <td title="'Flagged'" filter="{ flag: 'select'}" sortable="'flag'" ng-click="setFlag(translation, translation.flag)" filter-data="flaggedFilter">
               <i class="fa fa-lg fa-flag"  ng-class="{'flagged': translation.flag}" aria-hidden="true"></i></td>
           <td title="'Status'" filter="{ status: 'select'}" filter-data="statusFilter" sortable="'status'">

@@ -37,7 +37,7 @@ class User < ApplicationRecord
   has_many :translations, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  # after_create :send_welcome_mail
+  after_create :send_welcome_mail
 
   validate :password_complexity
 
@@ -49,12 +49,9 @@ class User < ApplicationRecord
     end
   end
 
-  def send_admin_mail
-    AdminMailer.new_user_waiting_for_approval(self).deliver
-  end
-
   def send_welcome_mail
     MyMailer.greeting(self.id).deliver
+    MyMailer.notify_superadmin_new_scholar(self.id).deliver
   end
 
   def active_for_authentication?

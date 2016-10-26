@@ -4,11 +4,10 @@ class MyMailer < Devise::Mailer
   #include Devise::Controllers # Optional. eg. `confirmation_url`
   include Devise::Mailers::Helpers
   default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
-  default from: 'devnull@cygnus.lib.uci.edu'
+  default from: 'mingtitles@lib.uci.edu'
 
   def greeting(id)
     @user = User.find_by_id(id)
-    @url  = 'http://example.com/login'
     mail(to: @user.email, subject: 'Ming Government Official Titles: A Crowd-Translation Project')
   end
 
@@ -25,10 +24,10 @@ class MyMailer < Devise::Mailer
     mail(to: @user.email, subject: 'New Translation Submitted')
   end
 
-  def notify_superadmin_new_scholar(user)
+  def notify_superadmin_new_scholar(id)
     #superadmin is hardcoded here:
     @admin = User.find_by_id(1)
-    @scholar = user
+    @scholar =  User.find_by_id(id)
     mail(to: @admin.email, subject: 'New Scholar Application')
   end
 

@@ -4,7 +4,7 @@
     <div class="navbar-collapse">
       <ul class="nav nav-tabs">
         <li ng-click="showTranslations()" ng-class="{active: translationAuth}"><a>Approve Translations</a></li>
-        <li ng-click="showUsers()" ng-class="{active: userAuth}"><a>Approve Scholars</a></li>
+        <li ng-show="isSuperAdmin" ng-click="showUsers()" ng-class="{active: userAuth}"><a>Approve Scholars</a></li>
         <li ng-click="showTitleComments()" ng-class="{active: titleComments}"><a>View Title Comments</a></li>
         <li ng-click="showExport()" ng-class="{active: exportAuth}"><a>Export Data</a></li>
         <li ng-click="addTitle()" ng-class="{active: addTitle}"><a>Add Title</a></li>
@@ -30,8 +30,5 @@
   </div>
   <div ng-show="archived" class="container">
     <archived></archived>
-  </div>
-  <div ng-show="adminAuth" class="container">
-    <admin-auth></admin-auth>
   </div>
 </div>

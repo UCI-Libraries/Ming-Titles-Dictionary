@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019223125) do
+ActiveRecord::Schema.define(version: 20161026202624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161019223125) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "ancestry"
+    t.text     "rank"
     t.index ["ancestry"], name: "index_institutions_on_ancestry", using: :btree
   end
 
@@ -64,19 +65,18 @@ ActiveRecord::Schema.define(version: 20161019223125) do
   end
 
   create_table "translations", force: :cascade do |t|
-    t.string   "translation_text",                   null: false
-    t.integer  "title_id",                           null: false
-    t.integer  "user_id",                            null: false
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.boolean  "approved",           default: false
+    t.string   "translation_text",                 null: false
+    t.integer  "title_id",                         null: false
+    t.integer  "user_id",                          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "approved",         default: false
     t.text     "explanation"
-    t.text     "additional_comment"
     t.text     "scholars"
     t.datetime "comment_added_at"
-    t.boolean  "flag",               default: false
-    t.boolean  "reviewed",           default: false
-    t.boolean  "flagged",            default: false
+    t.boolean  "flag",             default: false
+    t.boolean  "reviewed",         default: false
+    t.boolean  "flagged",          default: false
     t.index ["title_id"], name: "index_translations_on_title_id", using: :btree
     t.index ["user_id"], name: "index_translations_on_user_id", using: :btree
   end
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20161019223125) do
     t.text     "lname"
     t.text     "research"
     t.boolean  "has_contributed",        default: false
+    t.boolean  "super_admin",            default: false
     t.index ["approved"], name: "index_users_on_approved", using: :btree
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
