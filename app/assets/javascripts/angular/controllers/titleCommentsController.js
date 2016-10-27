@@ -53,9 +53,10 @@ titlesApp
     }
 
     $scope.seeTitle = function(id) {
-      console.log("IN HERE", id);
-      var url = $state.href('titles', {"id": id});
-      window.open(url,'_blank');
+      if (id) {
+        var url = $state.href('titles', {"id": id});
+        window.open(url,'_blank');
+      }
     };
 
     init();

@@ -22,13 +22,13 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
       auth: ['Auth','$q', function(Auth, $q) {
         var deferred = $q.defer();
         return Auth.currentUser().then(function(user) {
-          console.log("to titles", admin);
-          console.log(user);
-          // if (!user.fname) {
-          //   console.log(user);
-          //   return $q.reject("Not Authorized");
-          // }
-          return deferred.resolve({});
+            if (user.is_admin) {
+              return deferred.resolve({});
+            } else {
+              return $q.reject("Not Authorized");
+            }
+        }, function(error) {
+            return $q.reject("Not Authorized");
         });
       }]
     }
@@ -52,12 +52,9 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
-                        console.log("to titles", user);
-                        // if (!user.fname) {
-                        //   console.log(user);
-                        //   return $q.reject("Not Authorized");
-                        // }
-                        return deferred.resolve({});
+                          return deferred.resolve({});
+                      }, function(error) {
+                          return $q.reject("Not Authorized");
                       });
                     }]
                   }
@@ -69,21 +66,13 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
-                        // if (!user.fname) {
-                        //   console.log(user);
-                        //   return $q.reject("Not Authorized");
-                        // }
-                        console.log("to profiles", user);
-
-                        return deferred.resolve({});
+                          return deferred.resolve({});
+                      }, function(error) {
+                          return $q.reject("Not Authorized");
                       });
                     }]
                   }
                 });
-
-                // TODO: redirect if http://localhost:5000/#/titles/
-
-
 
 }]);
 
