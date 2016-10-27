@@ -81,6 +81,8 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                   }
                 });
 
+                // TODO: redirect if http://localhost:5000/#/titles/
+
 
 
 }]);
