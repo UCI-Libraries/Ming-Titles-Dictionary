@@ -17,7 +17,6 @@ titlesApp
   $scope.user = userService.getUser();
 
   $scope.editUser = function(data) {
-    console.log("editing user", data);
     var user = {};
     user.fname = data.fname;
     user.lname = data.lname;
@@ -26,8 +25,8 @@ titlesApp
     user.institution = data.institution;
     user.country = data.country;
     $http.put('api/users/update_profile' , user).then(function(response) {
-      console.log('RESPONSE TO POST - users/edit', response);
-      // translation.id = response.data.id;
+      // console.log('RESPONSE TO POST - users/edit', response);
+      $scope.dismiss();
       return user;
     });
   };

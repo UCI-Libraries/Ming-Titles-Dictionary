@@ -4,10 +4,12 @@
     <h1>Contributors</h1>
   </article>
   <p>
-    This page recognizes, in a real time, the collaborative virtual community of Ming scholars, of which we are proud and thankful. All Ming scholars who have made at least one submission to the crowd-translation system for Ming government official titles will find their names here. The list is organized in alphabetical order by contributors’ last name.
+    This page recognizes, in a real time, the collaborative virtual community of Ming scholars, of which we are proud and thankful. All Ming scholars who have made at least one submission to the crowd-translation system for Ming government official titles will find their names here. The list is organized in alphabetical order by
+    the last names of the contributors.
+    
     該網頁按姓氏順序列出所有使用本系統參與明代官名翻譯的所有專家學者。由衷感謝和欣賞這支網絡合作專家團隊。
   </p>
-  <ul ng-repeat="contributor in contributors">
+  <ul ng-repeat="contributor in contributors | orderBy:'lname'">
 
     <li class="contributor">
       {{contributor.fname}}&nbsp;{{contributor.lname}},&nbsp;{{contributor.country}}
