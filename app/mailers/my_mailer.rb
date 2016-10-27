@@ -4,7 +4,7 @@ class MyMailer < Devise::Mailer
   #include Devise::Controllers # Optional. eg. `confirmation_url`
   include Devise::Mailers::Helpers
   default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
-  default from: 'mingtitles@lib.uci.edu'
+  default from: 'devnull@cygnus.lib.uci.edu'
 
   def greeting(id)
     @user = User.find_by_id(id)
