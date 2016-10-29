@@ -3,6 +3,8 @@
       <tr class="" ng-repeat="comment in $data" ng-model="comment.title.id" ng-click="seeTitle(comment.translation.title.id)">
           <td title="'Official Chinese'">
               {{comment.translation.title.chinese_title}}</td>
+          <td title="'Official Pinyin'">
+              {{comment.translation.title.pinyin_title}}</td>
           <td title="'Translation'">
               {{comment.translation.translation_text}}</td>
           <td title="'Your Comment'" filter="{ comment_text: 'text' }" sortable="'comment_text'">

@@ -24,6 +24,7 @@ titlesApp
       function setNestedAttrs(data) {
         data.forEach( function(title) {
           title.chinese_title = title.title.chinese_title;
+          title.pinyin_title = title.title.pinyin_title;
           title.translation_count = title.title.translation_count;
           title.status = "unapproved";
           if (title.approved === true ) {
