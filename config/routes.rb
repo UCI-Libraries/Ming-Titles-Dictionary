@@ -34,9 +34,11 @@ Rails.application.routes.draw do
   put 'admin/approve_user/:id' => 'users#approve'
   get 'admin/translations' => 'translations#index'
   put 'admin/translations/:id' => 'translations#update', :defaults => { :format => 'json' }
-  get 'admin/translations_export' => 'translations#export', :defaults => { :format => 'csv' }
-  get 'admin/comments_export' => 'comments#export', :defaults => { :format => 'csv' }
-  get 'admin/titles_export' => 'titles#export', :defaults => { :format => 'csv' }
+  get 'admin/translations_export' => 'translations#export'
+  get 'admin/comments_export' => 'comments#export'
+  get 'admin/titles_export' => 'titles#export'
+  get 'admin/scholars_export' => 'users#export'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -11,4 +11,14 @@ titlesApp
       return response.data;
     });
 
+  $scope.getCommentsArray =
+    $http.get('admin/comments_export.json').then(function(response) {
+      return response.data;
+    });
+
+  $scope.getScholarsArray =
+    $http.get('admin/scholars_export.json').then(function(response) {
+      return response.data;
+    });
+
 }]);

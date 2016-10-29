@@ -76,4 +76,15 @@ class User < ApplicationRecord
     recoverable
   end
 
+  def self.to_csv_array
+    attributes = %w(id approved is_admin created_at updated_at email institution country fname lname research has_contributed)
+    array = []
+    all.each do |translation|
+      hash = {}
+      attributes.each { |attr| hash[attr] = translation[attr]}
+      array << hash
+    end
+    array
+  end
+
 end

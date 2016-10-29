@@ -124,6 +124,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def export
+    @users = User.all
+    respond_to do |format|
+      format.json do
+        render json: @users.to_csv_array
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
