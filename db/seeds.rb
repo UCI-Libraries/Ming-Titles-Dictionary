@@ -7,13 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-root_user = User.new(is_admin: true, super_admin: true, approved: true, email: "clwoods@uci.edu", fname: "Claire", lname: "Woods", password: "Password123")
-root_user.save!
+# root_user = User.new(is_admin: true, super_admin: true, approved: true, email: "clwoods@uci.edu", fname: "Claire", lname: "Woods", password: "Password123")
+# root_user.save!
+#
+# author = User.new(is_admin: true, super_admin: false, approved: true, email: "no-reply@uci.edu", fname: "Charles", lname: "Hucker", password: "Hucker1985")
+# author.save!
+#
+# test_scholar = User.new(is_admin: false, super_admin: false, approved: true, email: "email@email.com", fname: "Test", lname: "Scholar", password: "Password123")
+# test_scholar.save!
+#
+# test_admin = User.new(is_admin: true, super_admin: false, approved: true, email: "email@email.io", fname: "Test", lname: "Admin", password: "Password123")
+# test_admin.save!
 
-author = User.new(is_admin: true, super_admin: false, approved: true, email: "no-reply@uci.edu", fname: "Charles", lname: "Hucker", password: "Hucker1985")
-author.save!
-
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'official_titles_sorted-10-24-2016.cvs'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'official_titles_2016-10-28.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 # add in institutions, check for any new
 csv.each do |row|
@@ -44,13 +50,14 @@ end
 
 # add in titles, and add titles to institutions and institutions to titles
 csv.each do |row|
+  p row
   t = Title.new
   t.pinyin_title = row["official_pinyin"]
   t.chinese_title = row["official_Chinese"]
   t.save!
   if row["official_translation"]
     trans = Translation.new(translation_text: row["official_translation"],
-                        user_id: author.id,
+                        user_id: 2,
                         title_id: t.id,
                         approved: true)
     trans.save!

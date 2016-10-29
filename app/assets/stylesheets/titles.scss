@@ -30,3 +30,11 @@ th.filter, th.header {
   background-color: $uci-header-blue;
   border-color: $uci-header-blue;
 }
+
+.spinner {
+  position: absolute;
+  top: 200px;
+  width: 30px;
+  margin-left: 40%;
+  margin-right: 40%;
+}
