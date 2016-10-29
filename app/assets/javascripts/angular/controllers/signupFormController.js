@@ -20,7 +20,6 @@ titlesApp
   };
 
   $scope.submitUser = function(data) {
-    console.log(data);
     var credentials = {
       email: data.email,
       fname: data.fname,
@@ -38,7 +37,7 @@ titlesApp
     };
 
     Auth.register(credentials, config).then(function(registeredUser) {
-        console.log(registeredUser); // => {id: 1, ect: '...'}
+        // console.log(registeredUser); // => {id: 1, ect: '...'}
     }, function(error) {
         console.log("FAILED", error);
         if (error.data.errors && error.data.errors.email) {

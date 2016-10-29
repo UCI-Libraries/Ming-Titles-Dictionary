@@ -11,7 +11,6 @@ titlesApp
   $scope.updateTranslation = function(data) {
     var translation = new Translation();
     Auth.currentUser().then(function(user) {
-      console.log("$scope.title.id IN EDIT TRANLATION", data);
       translation.id = data.id;
       translation.translation_text = data.translation_text;
       translation.explanation = data.explanation;

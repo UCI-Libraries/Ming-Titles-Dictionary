@@ -6,9 +6,7 @@ titlesApp.factory('Comment', ['$http', function($http) {
 
   Comment.prototype.edit = function(id) {
     var comment = this;
-    console.log(comment);
     return $http.put('/comments/' + id +'.json', comment).then(function(response) {
-      // console.log(response);
       return new Comment(response.data);
     });
   };
@@ -17,7 +15,6 @@ titlesApp.factory('Comment', ['$http', function($http) {
   Comment.prototype.save = function() {
     var comment = this;
     return $http.post('/comments.json', comment).then(function(response) {
-      console.log('RESPONSE TO POST - comment/new', response);
       comment.id = response.data.id;
       return comment;
     });

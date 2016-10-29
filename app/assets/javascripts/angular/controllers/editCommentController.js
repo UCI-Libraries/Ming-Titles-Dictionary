@@ -8,12 +8,11 @@ titlesApp
 
   $scope.updateComment = function(data) {
     var comment = new Comment();
-    console.log(comment, data);
     comment.comment_text = data;
     comment.edit($scope.current_comment.id).then(function(response) {
-      console.log(response);
+      // console.log(response);
+      $scope.dismiss();
     });
-    $scope.dismiss();
   };
 
 }]);

@@ -81,7 +81,7 @@
       };
 
       $scope.$on('accordionA:onReady', function () {
-        console.log('accordionA is ready!');
+        // console.log('accordionA is ready!');
       });
 
     });

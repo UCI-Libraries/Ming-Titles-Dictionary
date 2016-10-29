@@ -10,9 +10,9 @@ titlesApp
     var comment = new PinyinComment();
     comment.comment_text = data;
     comment.edit($scope.current_comment.id).then(function(response) {
-      console.log(response);
+      // console.log(response);
+      $scope.dismiss();
     });
-    $scope.dismiss();
   };
 
 }]);

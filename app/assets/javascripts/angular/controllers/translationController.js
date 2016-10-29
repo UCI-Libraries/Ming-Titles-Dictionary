@@ -51,7 +51,6 @@ titlesApp
   }
 
   $scope.ifComments = function(comments) {
-    console.log(comments.length > 0);
     return comments.length > 0;
   };
 
@@ -96,14 +95,12 @@ titlesApp
   };
 
   $scope.logCurrentTitleComment = function(comment) {
-    console.log("LOGGING");
     $scope.current_title_comment = comment;
   };
 
   $scope.deleteComment = function(id) {
     var comment = new Comment();
     comment.delete(id).then(function(response) {
-      console.log(response);
       $scope.getPosts();
     });
 
@@ -112,19 +109,15 @@ titlesApp
   $scope.deletePinyinComment = function(id) {
     var comment = new PinyinComment();
     comment.delete(id).then(function(response) {
-      console.log(response);
       $scope.getPosts();
     });
-    console.log("delete pinyin", id);
   };
 
   $scope.deleteTitleComment = function(id) {
     var comment = new TitleComment();
     comment.delete(id).then(function(response) {
-      console.log(response);
       $scope.getPosts();
     });
-    console.log("delete title comment", id);
   };
 
   $scope.userCanEdit = function(post) {
