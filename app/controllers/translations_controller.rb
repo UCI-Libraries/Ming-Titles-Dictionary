@@ -56,6 +56,8 @@ class TranslationsController < ApplicationController
   # DELETE /translations/1.json
   def destroy
     @translation.destroy
+    @translation.title.translation_count = @translation.title.translations.count
+    @translation.title.save!
     respond_to do |format|
       format.html { redirect_to translations_url, notice: 'Translation was successfully destroyed.' }
       format.json { head :no_content }

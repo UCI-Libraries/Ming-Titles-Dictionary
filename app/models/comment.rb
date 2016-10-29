@@ -33,5 +33,16 @@ class Comment < ApplicationRecord
     end
   end
 
+  def self.to_csv_array
+    attributes = %w(id translation_text explanation user_id title_id created_at)
+    array = []
+    all.each do |translation|
+      hash = {}
+      attributes.each { |attr| hash[attr] = translation[attr]}
+      array << hash
+    end
+    array
+  end
+
 
 end
