@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   resources :pinyin_comments
   resources :title_comments
   resources :translations
-  # resources :institutions
-  # resources :titles
 
   get 'api/institutions/all_with_ancestry' => 'institutions#all_with_ancestry'
   get 'api/titles' => 'titles#index'
@@ -28,10 +26,10 @@ Rails.application.routes.draw do
   put 'api/users/change_password' => 'users#change_password'
   put 'api/users/update_profile' => 'users#update_profile'
 
-
   get 'admin/users_to_approve' => 'users#authorize'
   get 'admin/all_users' => 'users#index', :defaults => { :format => 'json' }
   put 'admin/approve_user/:id' => 'users#approve'
+  put 'admin/approve_admin/:id' => 'users#approve'
   get 'admin/translations' => 'translations#index'
   put 'admin/translations/:id' => 'translations#update', :defaults => { :format => 'json' }
   get 'admin/translations_export' => 'translations#export'
@@ -41,9 +39,6 @@ Rails.application.routes.draw do
   get 'admin/institutions_export' => 'institutions#export'
   get 'admin/pinyin_comments_export' => 'pinyin_comments#export'
   get 'admin/title_comments_export' => 'title_comments#export'
-
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

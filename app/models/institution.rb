@@ -23,7 +23,7 @@ class Institution < ApplicationRecord
   end
 
   def self.to_csv_array
-    attributes = %w(id name ancestry)
+    attributes = %w(id name)
     array = []
     all.each do |inst|
       hash = {}

@@ -73,7 +73,7 @@ class TitlesController < ApplicationController
   end
 
   def export
-    @titles = Title.all
+    @titles = Title.includes(:institutions).all
     respond_to do |format|
       format.json do
         render json: @titles.to_csv_array
