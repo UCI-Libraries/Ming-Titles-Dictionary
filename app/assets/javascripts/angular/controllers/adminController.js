@@ -5,6 +5,7 @@ titlesApp
   $scope.translationAuth = false;
   $scope.exportAuth = false;
   $scope.titleComments = false;
+  $scope.archived = false;
 
   $scope.isSuperAdmin = userService.getUser().super_admin;
 
@@ -13,6 +14,7 @@ titlesApp
     $scope.titleComments = false;
     $scope.exportAuth = false;
     $scope.userAuth = true;
+    $scope.archived = false;
   };
 
   $scope.showTranslations = function() {
@@ -20,6 +22,7 @@ titlesApp
     $scope.titleComments = false;
     $scope.exportAuth = false;
     $scope.userAuth = false;
+    $scope.archived = false;
   };
 
   $scope.showExport = function() {
@@ -27,6 +30,7 @@ titlesApp
     $scope.titleComments = false;
     $scope.userAuth = false;
     $scope.exportAuth = true;
+    $scope.archived = false;
   };
 
   $scope.showTitleComments = function() {
@@ -34,7 +38,15 @@ titlesApp
     $scope.userAuth = false;
     $scope.exportAuth = false;
     $scope.titleComments = true;
+    $scope.archived = false;
   };
 
+  $scope.showArchived = function() {
+    $scope.translationAuth = false;
+    $scope.userAuth = false;
+    $scope.exportAuth = false;
+    $scope.titleComments = false;
+    $scope.archived = true;
+  };
 
 }]);
