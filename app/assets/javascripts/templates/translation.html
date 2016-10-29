@@ -15,6 +15,9 @@
         </a>
       </h2>
     </div>
+    <div class="add-translation"><a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">
+      Add a new translation
+    </a></div>
     <div class="translation-subhead">
       <h3 class="">Official English translations:</h3>
     </div>
@@ -101,14 +104,18 @@
       </div>
     </div>
     <div class="translation placeholder" ng-show="noUnofficialTranslations()"><em>Currently there are no unofficial translations for this title</em></div>
-    <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">Add a new translation</a>
+    <div class="add-translation">
+      <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">
+        Add a new translation
+      </a>
+    </div>
 
-    <div class="translation-subhead">
-      <h3 class="">Comments on the Pinyin translation:</h3>
+    <div class="title-comment-subhead">
+      <h4 class="title-comment-title">Comments on the Pinyin translation:</h4>
     </div>
     <div class="unofficial-translations" ng-repeat="comment in title.pinyin_comments">
       <div class="translation">
-        <div class="translation-block">
+        <div class="title-comment-block">
           <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
           <p>Comment: {{comment.comment_text}}</p>
           <span ng-show="userCanDelete(comment)" ng-click="deletePinyinComment(comment.id)">
@@ -122,12 +129,12 @@
     </div>
     <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Pinyin translation of this title</em></div>
 
-    <div class="translation-subhead">
-      <h3 class="">Comments on the official Chinese title:</h3>
+    <div class="title-comment-subhead">
+      <h4 class="title-comment-title">Comments on the official Chinese title:</h4>
     </div>
     <div class="unofficial-translations" ng-repeat="comment in title.title_comments">
       <div class="translation">
-        <div class="translation-block">
+        <div class="title-comment-block">
           <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
           <p>Comment: {{comment.comment_text}}</p>
           <span ng-show="userCanDelete(comment)" ng-click="deleteTitleComment(comment.id)">

@@ -60,6 +60,7 @@ titlesApp
       $scope.title = response.data;
       var translations = formatTimestamps(response.data.translations);
       $scope.pinyin_comments = formatCommentTimestamps(response.data.pinyin_comments);
+      $scope.title_comments = formatCommentTimestamps(response.data.title_comments);
       sortByAuthorized(translations);
     });
   };
