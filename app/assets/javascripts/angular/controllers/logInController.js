@@ -38,11 +38,11 @@ titlesApp
     });
 
     $scope.$on('devise:login', function(event, currentUser) {
-      console.log(currentUser, "LOGGED IN");
+      // console.log(currentUser, "LOGGED IN");
     });
 
     $scope.$on('devise:new-session', function(event, currentUser) {
-      console.log(currentUser, "NEW SESSION");
+      // console.log(currentUser, "NEW SESSION");
       $scope.errors = "";
       $scope.dismiss();
     });

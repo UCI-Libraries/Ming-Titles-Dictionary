@@ -14,6 +14,12 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     template: '<about-info></about-info>'
   };
 
+  var faq = {
+    name: 'faq',
+    url: '/faq',
+    template: '<faq></faq>'
+  };
+
   var admin = {
     name: 'admin',
     url: '/admin',
@@ -43,6 +49,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
   $stateProvider.state(aboutState)
                 .state(mainState)
                 .state(admin)
+                .state(faq)
                 .state(contributors)
                 .state('titles' ,{
                   url: '/titles/:id',

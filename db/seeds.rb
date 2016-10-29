@@ -18,22 +18,24 @@ csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 # add in institutions, check for any new
 csv.each do |row|
 
-  inst1 = row["Institution 1"].gsub(/\s+/, "")
-  rank1 = row["Institution 1"]
+  inst1 = row["Institution 1"]
 
-  inst2 = row["Institution 2"].gsub(/\s+/, "")
-  rank2 = row["Institution 2"]
+  inst2 = row["Institution 2"]
 
-  inst3 = row["Institution 3"].gsub(/\s+/, "")
-  rank3 = row["Institution 3"]
+  inst3 = row["Institution 3"]
 
-  inst1 = Institution.find_by_name(inst1) || Institution.create(name: inst1)
+  if !!inst1
+    inst1 = inst1.gsub(/\s+/, "")
+    inst1 = Institution.find_by_name(inst1) || Institution.create(name: inst1)
+  end
 
   if !!inst2
+    inst2 = inst2.gsub(/\s+/, "")
     inst2 = Institution.find_by_name(inst2) || Institution.create(name: inst2, parent: inst1)
   end
 
   if !!inst3
+    inst3 = inst3.gsub(/\s+/, "")
     inst3 = Institution.find_by_name(inst3) || Institution.create(name: inst3, parent: inst2)
   end
 
