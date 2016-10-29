@@ -65,6 +65,15 @@ class InstitutionsController < ApplicationController
     end
   end
 
+  def export
+    @institutions = Institution.all
+    respond_to do |format|
+      format.json do
+        render json: @institutions.to_csv_array
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_institution

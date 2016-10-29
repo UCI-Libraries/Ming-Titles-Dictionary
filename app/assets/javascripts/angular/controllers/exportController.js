@@ -21,4 +21,9 @@ titlesApp
       return response.data;
     });
 
+  $scope.getInstitutionsArray =
+    $http.get('admin/institutions_export.json').then(function(response) {
+      return response.data;
+    });
+
 }]);

@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   get 'admin/comments_export' => 'comments#export'
   get 'admin/titles_export' => 'titles#export'
   get 'admin/scholars_export' => 'users#export'
+  get 'admin/institutions_export' => 'institutions#export'
+
 
 
 
