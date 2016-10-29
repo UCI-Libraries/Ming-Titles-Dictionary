@@ -44,7 +44,7 @@ class PinyinCommentsController < ApplicationController
     respond_to do |format|
       if @pinyin_comment.update(pinyin_comment_params)
         format.html { redirect_to @pinyin_comment, notice: 'PinyinComment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pinyin_comment }
+        format.json { render json: @pinyin_comment }
       else
         format.html { render :edit }
         format.json { render json: @pinyin_comment.errors, status: :unprocessable_entity }
@@ -59,6 +59,15 @@ class PinyinCommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to pinyin_comments_url, notice: 'PinyinComment was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def export
+    @comments = PinyinComment.all
+    respond_to do |format|
+      format.json do
+        render json: @comments.to_csv_array
+      end
     end
   end
 

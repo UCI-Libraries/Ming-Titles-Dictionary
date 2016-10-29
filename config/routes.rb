@@ -39,6 +39,8 @@ Rails.application.routes.draw do
   get 'admin/titles_export' => 'titles#export'
   get 'admin/scholars_export' => 'users#export'
   get 'admin/institutions_export' => 'institutions#export'
+  get 'admin/pinyin_comments_export' => 'pinyin_comments#export'
+  get 'admin/title_comments_export' => 'title_comments#export'
 
 
 

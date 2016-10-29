@@ -15,5 +15,11 @@
     <div class="col-md-3 export-item">
       <button type="button" ng-csv="getInstitutionsArray" csv-header="['id', 'name', 'ancestry']" filename="institutions.csv">Export Institutions Table</button>
     </div>
+    <div class="col-md-3 export-item">
+      <button type="button" ng-csv="getPinyinCommentsArray" csv-header="['id', 'title_id', 'user_id', 'comment_text', 'created_at']" filename="pinyin_comments.csv">Export Pinyin Comments Table</button>
+    </div>
+    <div class="col-md-3 export-item">
+      <button type="button" ng-csv="getTitleCommentsArray" csv-header="['id', 'title_id', 'user_id', 'comment_text', 'created_at']" filename="chinese_title_comments.csv">Export Chinese Title Comments Table</button>
+    </div>
   </div>
 </div>

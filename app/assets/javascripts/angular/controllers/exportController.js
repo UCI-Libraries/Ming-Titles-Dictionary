@@ -26,4 +26,14 @@ titlesApp
       return response.data;
     });
 
+  $scope.getPinyinCommentsArray =
+    $http.get('admin/pinyin_comments_export.json').then(function(response) {
+      return response.data;
+    });
+
+  $scope.getTitleCommentsArray =
+    $http.get('admin/title_comments_export.json').then(function(response) {
+      return response.data;
+    });
+
 }]);
