@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-9 export-item">
+    <div class="col-md-3 export-item">
       <button type="button" ng-csv="getTranslationsArray" csv-header="['id', 'translation_text', 'explanation', 'user_id', 'title_id', 'created_at']" filename="translations.csv">Export Translations Table</button>
     </div>
-    <div class="col-md-9 export-item">
-      <button type="button" ng-csv="getTranslationsArray" csv-header="['id', 'translation_text', 'explanation', 'user_id', 'title_id', 'created_at']" filename="translations.csv">Export Translations Table</button>
+    <div class="col-md-3 export-item">
+      <button type="button" ng-csv="getTitlesArray" csv-header="['id', 'chinese_title', 'pinyin_title', 'translation_count', 'institutions']" filename="titles.csv">Export Titles Table</button>
     </div>
-    <div class="col-md-9 export-item">
-      <button type="button" ng-csv="getTranslationsArray" csv-header="['id', 'translation_text', 'explanation', 'user_id', 'title_id', 'created_at']" filename="translations.csv">Export Translations Table</button>
-    </div>
+    <!-- <div class="col-md-3 export-item">
+      <button type="button" ng-csv="getScholarsArray" csv-header="['id', 'translation_text', 'explanation', 'user_id', 'title_id', 'created_at']" filename="translations.csv">Export Scholars Table</button>
+    </div> -->
   </div>
 </div>

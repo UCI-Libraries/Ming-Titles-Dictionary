@@ -6,4 +6,9 @@ titlesApp
       return response.data;
     });
 
+  $scope.getTitlesArray =
+    $http.get('admin/titles_export.json').then(function(response) {
+      return response.data;
+    });
+
 }]);
