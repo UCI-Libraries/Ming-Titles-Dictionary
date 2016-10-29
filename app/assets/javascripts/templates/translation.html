@@ -3,13 +3,13 @@
     <back-link></back-link>
     <div class="chinese-title">
       <h1>
-        Official Chinese:&nbsp;{{title.chinese_title}}
+        Chinese Title:&nbsp;{{title.chinese_title}}
         <a class="comment-link" data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newTitleCommentModal">
           Comment on Chinese title
         </a>
       </h1>
       <h2>
-        Official Pinyin:&nbsp;{{title.pinyin_title}}
+        Pinyin Title:&nbsp;{{title.pinyin_title}}
         <a class="comment-link" data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newPinyinCommentModal">
           Comment on Pinyin title
         </a>
@@ -19,7 +19,7 @@
       Add a new translation
     </a></div>
     <div class="translation-subhead">
-      <h3 class="">Official English translations:</h3>
+      <h3 class="">English Translations:</h3>
     </div>
     <div class="official-translations" ng-repeat="translation in translations.official">
       <div class="translation" ng-show="translation.approved">
@@ -62,9 +62,9 @@
           </a></p>
       </div>
     </div>
-    <div class="translation placeholder" ng-show="noOfficialTranslations()"><em>Currently there are no official translations for this title</em></div>
+    <div class="translation placeholder" ng-show="noOfficialTranslations()"><em>Currently there are no translations for this title</em></div>
     <div class="translation-subhead">
-      <h3 class="">Unofficial English translations:</h3>
+      <h3 class="">Other English translations:</h3>
     </div>
     <div class="unofficial-translations" ng-repeat="translation in translations.unofficial">
       <div class="translation" ng-show="!translation.approved">
@@ -103,7 +103,7 @@
         <p class="comment-trigger"><a data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newCommentModal">Comment on this translation</a></p>
       </div>
     </div>
-    <div class="translation placeholder" ng-show="noUnofficialTranslations()"><em>Currently there are no unofficial translations for this title</em></div>
+    <div class="translation placeholder" ng-show="noUnofficialTranslations()"><em>Currently there are no other English translations for this title</em></div>
     <div class="add-translation">
       <a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">
         Add a new translation
@@ -111,7 +111,7 @@
     </div>
 
     <div class="title-comment-subhead">
-      <h4 class="title-comment-title">Comments on the Pinyin translation:</h4>
+      <h4 class="title-comment-title">Comments on the Pinyin title:</h4>
     </div>
     <div class="unofficial-translations" ng-repeat="comment in title.pinyin_comments">
       <div class="translation">
@@ -127,10 +127,10 @@
         </div>
       </div>
     </div>
-    <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Pinyin translation of this title</em></div>
+    <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Pinyin title</em></div>
 
     <div class="title-comment-subhead">
-      <h4 class="title-comment-title">Comments on the official Chinese title:</h4>
+      <h4 class="title-comment-title">Comments on the Chinese title:</h4>
     </div>
     <div class="unofficial-translations" ng-repeat="comment in title.title_comments">
       <div class="translation">
@@ -146,7 +146,7 @@
         </div>
       </div>
     </div>
-    <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the official Chinese title</em></div>
+    <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Chinese title</em></div>
 
 
     <new-translation-form></new-translation-form>

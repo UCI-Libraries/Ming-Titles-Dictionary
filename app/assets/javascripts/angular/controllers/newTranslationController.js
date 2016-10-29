@@ -17,6 +17,7 @@ titlesApp
       translation.user_id = user.id;
       translation.scholars = data.scholars;
       translation.save().then(function() {
+        console.log("is this saving?");
         $scope.getPosts();
         $scope.resetTranslationForm();
         $scope.dismiss();

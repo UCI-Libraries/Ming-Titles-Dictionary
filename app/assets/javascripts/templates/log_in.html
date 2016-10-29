@@ -27,8 +27,8 @@
             <div class="col-md-9">
               <input class="form-control" type="password" id="password" name="password" ng-model="formData.password" ng-minlength="6" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
               <span class="form-error" ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
-              <span class="form-error" ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 6 and 20 characters.</span>
-              <span class="form-error" ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+              <span class="form-error" ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 6 and 20 characters. 密碼字符必須在6-20個之間</span>
+              <span class="form-error" ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.) 必須至少有一個小寫、一個大寫、一個非字 母字符（數字或符號）</span>
             </div>
 
             <div class="col-md-9">

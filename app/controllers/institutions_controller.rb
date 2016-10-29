@@ -33,7 +33,7 @@ class InstitutionsController < ApplicationController
     respond_to do |format|
       if @institution.save
         format.html { redirect_to @institution, notice: 'Institution was successfully created.' }
-        format.json { render :show, status: :created, location: @institution }
+        format.json { render json: { status: :created, institution: @institution }  }
       else
         format.html { render :new }
         format.json { render json: @institution.errors, status: :unprocessable_entity }
@@ -47,7 +47,7 @@ class InstitutionsController < ApplicationController
     respond_to do |format|
       if @institution.update(institution_params)
         format.html { redirect_to @institution, notice: 'Institution was successfully updated.' }
-        format.json { render :show, status: :ok, location: @institution }
+        format.json { render json: { status: :ok, institution: @institution }  }
       else
         format.html { render :edit }
         format.json { render json: @institution.errors, status: :unprocessable_entity }

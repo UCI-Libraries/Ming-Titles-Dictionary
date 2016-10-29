@@ -30,8 +30,7 @@ class TranslationsController < ApplicationController
 
     respond_to do |format|
       if @translation.save
-        format.html { redirect_to @translation, notice: 'Translation was successfully created.' }
-        format.json { render :show, status: :created, location: @translation }
+        format.json { render json: {status: :created, translation: @translation} }
       else
         format.html { render :new }
         format.json { render json: @translation.errors, status: :unprocessable_entity }
@@ -45,7 +44,7 @@ class TranslationsController < ApplicationController
     respond_to do |format|
       if @translation.update(translation_params)
         format.html { redirect_to @translation, notice: 'Translation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @translation }
+        format.json { render json: {status: :ok, translation: @translation} }
       else
         format.html { render :edit }
         format.json { render json: @translation.errors, status: :unprocessable_entity }
