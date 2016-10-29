@@ -1,5 +1,5 @@
 titlesApp
-  .controller('titlesTableController', ['$scope', '$http', 'NgTableParams', 'titlesService', '$state', 'spinnerService', function($scope, $http, NgTableParams, titlesService, $state, spinnerService){
+  .controller('titlesTableController', ['$scope', '$http', 'NgTableParams', 'titlesService', '$state', function($scope, $http, NgTableParams, titlesService, $state){
   $scope.loading = false;
 
   var data = [];
