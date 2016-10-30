@@ -78,7 +78,7 @@ v-pane-content {
 .vAccordion--default v-pane {
   overflow: hidden; }
   .vAccordion--default v-pane.is-expanded > v-pane-header {
-    border-bottom-color: $uci-light-yellow-solid; }
+    border-bottom-color: $uci-blue; }
     .vAccordion--default v-pane.is-expanded > v-pane-header::after {
       -webkit-transform: rotate(90deg);
               transform: rotate(90deg);

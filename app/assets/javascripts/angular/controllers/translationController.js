@@ -62,7 +62,6 @@ titlesApp
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
       $scope.archived = response.data.archived;
-      console.log("DATA", response.data, response.data.archived);
       var translations = formatTimestamps(response.data.translations);
       $scope.pinyin_comments = formatCommentTimestamps(response.data.pinyin_comments);
       $scope.title_comments = formatCommentTimestamps(response.data.title_comments);
@@ -141,7 +140,6 @@ titlesApp
 
   $scope.userCanDelete = function(post) {
     var currentUser = userService.getUser();
-    console.log(currentUser);
     if (currentUser.super_admin === true) {
       return true;
     } else if (currentUser.id === post.user_id) {
