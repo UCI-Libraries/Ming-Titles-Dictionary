@@ -14,4 +14,15 @@ class TitleComment < ApplicationRecord
   belongs_to :title
   belongs_to :user
 
+  def self.to_csv_array
+    attributes = %w(id title_id user_id comment_text created_at)
+    array = []
+    all.each do |translation|
+      hash = {}
+      attributes.each { |attr| hash[attr] = translation[attr]}
+      array << hash
+    end
+    array
+  end
+
 end

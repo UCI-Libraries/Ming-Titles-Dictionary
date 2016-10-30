@@ -8,7 +8,6 @@ titlesApp
 
   function getContributors() {
     $http.get('api/users/contributors/true').then(function(response) {
-      console.log(response);
       $scope.contributors = response.data;
     });
   }

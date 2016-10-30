@@ -207,11 +207,11 @@ Use these callbacks to get the expanded/collapsed pane index and id:
 
 ```js
 $scope.expandCallback = function (index, id) {
-  console.log('expanded pane:', index, id);
+  // console.log('expanded pane:', index, id);
 };
 
 $scope.collapseCallback = function (index, id) {
-  console.log('collapsed pane:', index, id));
+  // console.log('collapsed pane:', index, id));
 };
 ```
 

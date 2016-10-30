@@ -31,6 +31,7 @@ titlesApp
             $scope.dataEmpty = response.data.length === 0;
             response.data.forEach( function(translation) {
               translation.formatted_comment_added_date = formatTimestamp(translation.comment_added_at);
+              translation.chinese_title = translation.title.chinese_title;
             });
             $scope.tableParams.settings({dataset: response.data});
           });
@@ -41,8 +42,10 @@ titlesApp
       }
 
       $scope.seeTitle = function(id) {
-        var url = $state.href('titles', {"id": id});
-        window.open(url,'_blank');
+        if (id) {
+          var url = $state.href('titles', {"id": id});
+          window.open(url,'_blank');
+        }
       };
 
       init();

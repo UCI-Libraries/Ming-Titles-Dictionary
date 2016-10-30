@@ -30,8 +30,7 @@ titlesApp
   };
 
   $scope.userIsAdmin = function() {
-    // console.log("ADMIN", Auth._current_user.is_admin);
-    return true;
+    return userService.getUser().is_admin;
   };
 
 }]);

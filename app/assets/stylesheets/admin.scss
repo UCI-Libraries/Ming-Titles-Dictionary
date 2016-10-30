@@ -19,3 +19,15 @@
 .flagged {
   color: $uci-blue;
 }
+
+.export-item {
+  padding: 30px;
+}
+
+.translation-spinner {
+  position: absolute;
+  top: 500px;
+  width: 30px;
+  margin-left: 40%;
+  margin-right: 40%;
+}

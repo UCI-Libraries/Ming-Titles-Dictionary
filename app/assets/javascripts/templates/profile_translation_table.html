@@ -1,10 +1,12 @@
 <div class="profile-translation-table col-md-9">
   <table ng-table="tableParams" table-pagination-top table-pagination-bottom  class="table" show-filter="true">
       <tr class="" ng-repeat="translation in $data" ng-model="translation.title.id" ng-click="seeTitle(translation.title.id)">
-          <td title="'My Translation'" filter="{ translation_text: 'text'}" sortable="'translation_text'">
+          <td title="'My Translation'" sortable="'translation_text'">
               {{translation.translation_text}}</td>
-          <td title="'Chinese Title'">
-              {{translation.title.chinese_title}}</td>
+          <td title="'Chinese Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'">
+              {{translation.chinese_title}}</td>
+          <td title="'Pinyin Title'">
+              {{translation.title.pinyin_title}}</td>
           <td title="'# of Comments on Translation'" sortable="'comments.length'">
               {{translation.comments.length}}</td>
           <td title="'Last Updated'" sortable="'formatted_comment_added_date'">

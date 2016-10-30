@@ -15,17 +15,13 @@ titlesApp
     });
   }
   $scope.approveUser = function(user) {
-    console.log(user, user.id);
     $http.put('admin/approve_user/'+ user.id +'.json', {"approved": true}).then(function(response) {
-      console.log("Saved!", response.data);
       getUsers();
     });
   };
 
   $scope.revokeUser = function(user) {
-    console.log(user, user.id);
     $http.put('admin/approve_user/'+ user.id +'.json', {"approved": false}).then(function(response) {
-      console.log("Revoked!", response.data);
       getUsers();
     });
   };

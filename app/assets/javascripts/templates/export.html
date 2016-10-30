@@ -1,1 +1,25 @@
-<button type="button" ng-csv="getTranslationsArray" csv-header="['id', 'translation_text', 'explanation', 'user_id', 'title_id', 'created_at']" filename="translations.csv">Export Translations Table</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 export-item">
+      <button lazy-load="true" type="button" ng-csv="getTranslationsArray" csv-header="['id', 'translation_text', 'explanation', 'user_id', 'title_id', 'created_at']" filename="translations.csv">Export Translations Table</button>
+    </div>
+    <div class="col-md-3 export-item">
+      <button lazy-load="true" type="button" ng-csv="getTitlesArray" csv-header="['id', 'chinese_title', 'pinyin_title', 'translation_count', 'institutions']" filename="titles.csv">Export Titles Table</button>
+    </div>
+    <div class="col-md-3 export-item">
+      <button lazy-load="true" type="button" ng-csv="getCommentsArray" csv-header="['id', 'translation_id', 'user_id', 'comment_text', 'created_at']" filename="comments.csv">Export Comments Table</button>
+    </div>
+    <div class="col-md-3 export-item">
+      <button lazy-load="true" type="button" ng-csv="getScholarsArray" csv-header="['id', 'approved', 'is_admin', 'created_at', 'updated_at', 'email', 'institution', 'country', 'fname', 'lname', 'research', 'has_contributed']" filename="scholars.csv">Export Scholars Table</button>
+    </div>
+    <div class="col-md-3 export-item">
+      <button lazy-load="true" type="button" ng-csv="getInstitutionsArray" csv-header="['id', 'name']" filename="institutions.csv">Export Institutions Table</button>
+    </div>
+    <div class="col-md-3 export-item">
+      <button lazy-load="true" type="button" ng-csv="getPinyinCommentsArray" csv-header="['id', 'title_id', 'user_id', 'comment_text', 'created_at']" filename="pinyin_comments.csv">Export Pinyin Comments Table</button>
+    </div>
+    <div class="col-md-3 export-item">
+      <button lazy-load="true" type="button" ng-csv="getTitleCommentsArray" csv-header="['id', 'title_id', 'user_id', 'comment_text', 'created_at']" filename="chinese_title_comments.csv">Export Chinese Title Comments Table</button>
+    </div>
+  </div>
+</div>

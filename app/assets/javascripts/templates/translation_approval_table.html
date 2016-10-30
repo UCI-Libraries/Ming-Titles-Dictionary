@@ -1,15 +1,17 @@
-<div class="translation-approval-table">
+<div class="translation-approval-table container">
   <table ng-table="tableParams" table-pagination-top table-pagination-bottom  class="table" show-filter="true">
       <tr class="" ng-repeat="translation in $data" ng-model="translation.title.id">
-          <td title="'Translation ID'" filter="{ id: 'number'}" sortable="'id'" ng-click="seeTitle(translation.title.id)">
+          <td title="'TR ID'" filter="{ id: 'number'}" sortable="'id'" ng-click="seeTitle(translation.title.id)">
               {{translation.id}}</td>
-          <td title="'English Translation'" filter="{ translation_text: 'text'}" sortable="'translation_text'" ng-click="seeTitle(translation.title.id)">
+          <td title="'English TR'" filter="{ translation_text: 'text'}" sortable="'translation_text'" ng-click="seeTitle(translation.title.id)">
               {{translation.translation_text}}</td>
           <td title="'Official Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'" ng-click="seeTitle(translation.title.id)">
               {{translation.chinese_title}}</td>
-          <td title="'# of Translations for Title'" filter="{ num_translations: 'number'}" sortable="'num_translations'" ng-click="seeTitle(translation.title.id)">
+          <td title="'Pinyin Title'" filter="{ pinyin_title: 'text'}" sortable="'pinyin_title'" ng-click="seeTitle(translation.title.id)">
+              {{translation.pinyin_title}}</td>
+          <td title="'# of TRs/Title'" filter="{ num_translations: 'number'}" sortable="'num_translations'" ng-click="seeTitle(translation.title.id)">
               {{translation.translation_count}}</td>
-          <td title="'# of Comments on Translation'" sortable="'comments.length'">
+          <td title="'# of CMTs/TR'" sortable="'comments.length'">
               {{translation.comments.length}}</td>
           <td title="'Scholar ID'" filter="{ user: 'text'}" sortable="'user'" ng-click="seeTitle(translation.title.id)">
               {{translation.user_id}}</td>
@@ -26,4 +28,20 @@
 
       </tr>
   </table>
+  <div class="translation-spinner" ng-show="loading">
+    <svg width='142px' height='142px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-default">
+      <rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(0 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(30 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.08333333333333333s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(60 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.16666666666666666s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(90 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.25s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(120 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.3333333333333333s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(150 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.4166666666666667s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(180 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(210 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5833333333333334s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(240 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.6666666666666666s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(270 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.75s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(300 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.8333333333333334s' repeatCount='indefinite'/></rect>
+      <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(330 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.9166666666666666s' repeatCount='indefinite'/></rect></svg>
+  </div>
 </div>

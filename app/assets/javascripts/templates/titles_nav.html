@@ -16,9 +16,6 @@
           <li class="nav-item">
             <a class="nav-link about" ui-sref="about" ui-sref-active="active">About</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Contributors</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" ui-sref="contributors">Contributors</a>
           </li>
@@ -36,8 +33,14 @@
           <li ng-show="userIsSignedIn()" class="nav-item">
             <a class="nav-link" ui-sref="profile" ui-sref-active="active">Profile</a>
           </li>
-          <li ng-show="userIsSignedIn() && userIsAdmin()" class="nav-item">
+          <li ng-show="userIsAdmin()" class="nav-item">
             <a class="nav-link" ui-sref="admin" ui-sref-active="active">Admin Portal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="faq" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:yingz@uci.edu?Subject=Ming%20Government%20Official%20Titles">Contact Us</a>
           </li>
         </ul>
 

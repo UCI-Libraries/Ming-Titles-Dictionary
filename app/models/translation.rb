@@ -29,14 +29,14 @@ class Translation < ApplicationRecord
 
   def update_parent
     if self.title
-      self.title.translation_count = 7
+      self.title.translation_count = self.title.translations.count
       self.title.save!
     end
   end
 
   def send_translation_emails
-    MyMailer.new_translation(@user, self).deliver
-    MyMailer.notify_superadmin_new_translation(@user, self).deliver
+    MyMailer.new_translation(self.user.id, self.id).deliver_now
+    MyMailer.notify_superadmin_new_translation(self.id).deliver_now
   end
 
   def update_user_status

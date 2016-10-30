@@ -4,12 +4,17 @@ class TitlesController < ApplicationController
   # GET /titles
   # GET /titles.json
   def index
-    @titles = Title.includes(translations: :user).all
+    @titles = Title.includes(translations: :user).where(archived: false)
     render json: @titles, include: [translations: {include: :user}]
   end
 
   def titles_by_institution
-    @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user)
+    @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user).where(archived: false)
+    render json: @titles, include: [translations: {include: :user}]
+  end
+
+  def archived
+    @titles = Title.includes(translations: :user).where(archived: true)
     render json: @titles, include: [translations: {include: :user}]
   end
 
@@ -40,7 +45,7 @@ class TitlesController < ApplicationController
     respond_to do |format|
       if @title.save
         format.html { redirect_to @title, notice: 'Title was successfully created.' }
-        format.json { render :show, status: :created, location: @title }
+        format.json { render json: @title }
       else
         format.html { render :new }
         format.json { render json: @title.errors, status: :unprocessable_entity }
@@ -54,7 +59,7 @@ class TitlesController < ApplicationController
     respond_to do |format|
       if @title.update(title_params)
         format.html { redirect_to @title, notice: 'Title was successfully updated.' }
-        format.json { render :show, status: :ok, location: @title }
+        format.json { render json: @title }
       else
         format.html { render :edit }
         format.json { render json: @title.errors, status: :unprocessable_entity }
@@ -72,6 +77,15 @@ class TitlesController < ApplicationController
     end
   end
 
+  def export
+    @titles = Title.includes(:institutions).all
+    respond_to do |format|
+      format.json do
+        render json: @titles.to_csv_array
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_title
@@ -80,6 +94,6 @@ class TitlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def title_params
-      params.fetch(:title, {}).permit(:approved, :id)
+      params.fetch(:title, {}).permit(:approved, :id, :archived)
     end
 end

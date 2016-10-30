@@ -1,15 +1,29 @@
-<table ng-table="tableParams" table-pagination-top table-pagination-bottom class="table" show-filter="true">
-    <tr class="" ng-repeat="title in $data" ng-model="title.id" ng-click="seePosts(title.id)">
-        <td title="'Chinese Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'">
-            {{title.chinese_title}}</td>
-        <td title="'Pinyin Title'" filter="{ pinyin_title: 'text'}" sortable="'pinyin_title'">
-            {{title.pinyin_title}}</td>
-        <td title="'English Title'">
-            {{title.translations[0].translation_text}}</td>
-        <td title="'# of Translations'" sortable="'num_translations'">
-            {{title.num_translations}}</td>
-    </tr>
-</table>
+<div class="container">
+  <h1 style="padding-bottom:30px;">Archived Titles</h1>
+    <div class="col-md-10">
+      <div class="row" ng-show="anyArchived()" >
+        <table ng-table="tableParams" table-pagination-top table-pagination-bottom class="table" show-filter="true">
+            <tr class="" ng-repeat="title in $data" ng-model="title.id" ng-click="seePosts(title.id)">
+                <td title="'Chinese Title'" filter="{ chinese_title: 'text'}" sortable="'chinese_title'">
+                    {{title.chinese_title}}</td>
+                <td title="'Pinyin Title'" filter="{ pinyin_title: 'text'}" sortable="'pinyin_title'">
+                    {{title.pinyin_title}}</td>
+                <td title="'English Title'">
+                    {{title.translations[0].translation_text}}</td>
+                <td title="'# of Translations'" sortable="'num_translations'">
+                    {{title.num_translations}}</td>
+            </tr>
+        </table>
+      </div>
+      <div class="row placeholder" ng-show="!anyArchived()"><em>Currently there are no archived titles. Titles can be archived by any admin from their individual translation page.</em></div>
+    </div>
+  </div>
+
+</div>
+<!-- 
+
+
+
 <div class="spinner" ng-show="loading">
 <svg width='142px' height='142px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-default"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(0 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(30 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.08333333333333333s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(60 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.16666666666666666s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(90 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.25s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(120 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.3333333333333333s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(150 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.4166666666666667s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(180 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(210 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5833333333333334s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(240 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.6666666666666666s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(270 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.75s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(300 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.8333333333333334s' repeatCount='indefinite'/></rect><rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(330 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.9166666666666666s' repeatCount='indefinite'/></rect></svg>
-</div>
+</div> -->

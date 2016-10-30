@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   end
 
   def contributors
-    @users = User.where(has_contributed: params[:has_contributed])
+    # 2 is the Charles Hucker ID from our seed data
+    @users = User.where(has_contributed: params[:has_contributed]).where.not(id: [1, 2, 3, 4])
     render json: @users
   end
 
@@ -20,12 +21,12 @@ class UsersController < ApplicationController
   end
 
   def show_translations
-    @user_translations = User.find_by(id: params[:id]).translations.includes([:comments, :title])
+    @user_translations = User.find_by(id: params[:id]).translations.includes([:comments, :title]).where(titles: {archived: false})
     render json: @user_translations, include: [:comments, :title]
   end
 
   def show_comments
-    @user_comments = User.find_by(id: params[:id]).comments.includes(translation: :title)
+    @user_comments = User.find_by(id: params[:id]).comments.includes(translation: :title).where(titles: {archived: false})
     p @user_comments
     render json: @user_comments, include: {translation: {include: :title}}
   end
@@ -88,8 +89,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update(user_params)
-        p @user
-        p "UPDATING??"
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render json: @user, status: :ok }
       else
@@ -123,6 +122,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def export
+    @users = User.all
+    respond_to do |format|
+      format.json do
+        render json: @users.to_csv_array
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -131,6 +139,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {}).permit(:approved, :id, :source, :has_contributed, :password, :password_confirmation, :email, :institution, :country, :fname, :lname, :research)
+      params.fetch(:user, {}).permit(:approved, :id, :source, :has_contributed, :password, :password_confirmation, :email, :institution, :country, :fname, :lname, :research, :is_admin)
     end
 end

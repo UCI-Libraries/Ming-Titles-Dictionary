@@ -11,7 +11,6 @@ titlesApp
   $scope.postTranslation = function(data, form) {
     var translation = new Translation();
     Auth.currentUser().then(function(user) {
-      console.log("$scope.title.id IN NEW TRANLATION", $scope.title.id);
       translation.translation_text = data.translation_text;
       translation.explanation = data.justification;
       translation.title_id = $scope.title.id;

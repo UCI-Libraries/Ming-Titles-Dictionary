@@ -51,15 +51,21 @@ titlesApp
   }
 
   $scope.ifComments = function(comments) {
-    console.log(comments.length > 0);
     return comments.length > 0;
+  };
+
+  $scope.titleIsArchived = function() {
+    return $scope.archived;
   };
 
   $scope.getPosts = function() {
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
+      $scope.archived = response.data.archived;
+      console.log("DATA", response.data, response.data.archived);
       var translations = formatTimestamps(response.data.translations);
       $scope.pinyin_comments = formatCommentTimestamps(response.data.pinyin_comments);
+      $scope.title_comments = formatCommentTimestamps(response.data.title_comments);
       sortByAuthorized(translations);
     });
   };
@@ -95,14 +101,12 @@ titlesApp
   };
 
   $scope.logCurrentTitleComment = function(comment) {
-    console.log("LOGGING");
     $scope.current_title_comment = comment;
   };
 
   $scope.deleteComment = function(id) {
     var comment = new Comment();
     comment.delete(id).then(function(response) {
-      console.log(response);
       $scope.getPosts();
     });
 
@@ -111,19 +115,15 @@ titlesApp
   $scope.deletePinyinComment = function(id) {
     var comment = new PinyinComment();
     comment.delete(id).then(function(response) {
-      console.log(response);
       $scope.getPosts();
     });
-    console.log("delete pinyin", id);
   };
 
   $scope.deleteTitleComment = function(id) {
     var comment = new TitleComment();
     comment.delete(id).then(function(response) {
-      console.log(response);
       $scope.getPosts();
     });
-    console.log("delete title comment", id);
   };
 
   $scope.userCanEdit = function(post) {
@@ -132,6 +132,11 @@ titlesApp
       return true;
     }
     return false;
+  };
+
+  $scope.userIsAdmin = function() {
+    var currentUser = userService.getUser();
+    return currentUser.is_admin;
   };
 
   $scope.userCanDelete = function(post) {
@@ -161,6 +166,20 @@ titlesApp
       return true;
     }
     return false;
+  };
+
+  $scope.archiveTitle = function() {
+    $http.put('admin/titles/'+ $scope.title.id, {"archived": true}
+    ).then(function(response) {
+      $scope.archived = true;
+    });
+  };
+
+  $scope.unarchiveTitle = function() {
+    $http.put('admin/titles/'+ $scope.title.id, {"archived": false}
+    ).then(function(response) {
+      $scope.archived = false;
+    });
   };
 
 

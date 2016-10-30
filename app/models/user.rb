@@ -50,8 +50,8 @@ class User < ApplicationRecord
   end
 
   def send_welcome_mail
-    MyMailer.greeting(self.id).deliver
-    MyMailer.notify_superadmin_new_scholar(self.id).deliver
+    MyMailer.greeting(self.id).deliver_now
+    MyMailer.notify_superadmin_new_scholar(self.id).deliver_now
   end
 
   def active_for_authentication?
@@ -74,6 +74,17 @@ class User < ApplicationRecord
       recoverable.send_reset_password_instructions
     end
     recoverable
+  end
+
+  def self.to_csv_array
+    attributes = %w(id approved is_admin created_at updated_at email institution country fname lname research has_contributed)
+    array = []
+    all.each do |translation|
+      hash = {}
+      attributes.each { |attr| hash[attr] = translation[attr]}
+      array << hash
+    end
+    array
   end
 
 end

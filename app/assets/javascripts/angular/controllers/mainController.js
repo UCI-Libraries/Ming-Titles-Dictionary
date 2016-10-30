@@ -13,7 +13,7 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootS
   init();
 
   $rootScope.$on('$stateChangeError', function(evt, to, toParams, from, fromParams, error) {
-      console.log('there was an error', evt, to, toParams, error);
+      // console.log('there was an error', evt, to, toParams, error);
      if (error.redirectTo) {
        $state.go(error.redirectTo);
      } else {

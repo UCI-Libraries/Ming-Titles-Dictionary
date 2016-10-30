@@ -22,4 +22,15 @@ class Institution < ApplicationRecord
     all_trees
   end
 
+  def self.to_csv_array
+    attributes = %w(id name)
+    array = []
+    all.each do |inst|
+      hash = {}
+      attributes.each { |attr| hash[attr] = inst[attr]}
+      array << hash
+    end
+    array
+  end
+
 end

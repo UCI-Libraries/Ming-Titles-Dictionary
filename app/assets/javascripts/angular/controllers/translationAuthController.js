@@ -2,6 +2,7 @@ titlesApp
   .controller('translationApprovalController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', '$state', 'Translation', function($scope, $http, $stateParams, titlesService, NgTableParams, $state, Translation){
 
       var init = function() {
+        $scope.loading = true;
         getTranslations();
       };
 
@@ -18,12 +19,14 @@ titlesApp
         $http.get('translations/').then(function(response) {
           $scope.data = setNestedAttrs(response.data);
           $scope.tableParams.settings({dataset: $scope.data});
+          $scope.loading = false;
         });
       }
 
       function setNestedAttrs(data) {
         data.forEach( function(title) {
           title.chinese_title = title.title.chinese_title;
+          title.pinyin_title = title.title.pinyin_title;
           title.translation_count = title.title.translation_count;
           title.status = "unapproved";
           if (title.approved === true ) {
@@ -48,8 +51,10 @@ titlesApp
       };
 
       $scope.seeTitle = function(id) {
-        var url = $state.href('titles', {"id": id});
-        window.open(url,'_blank');
+        if (id) {
+          var url = $state.href('titles', {"id": id});
+          window.open(url,'_blank');
+        }
       };
 
       $scope.setFlag = function(translation, flag) {

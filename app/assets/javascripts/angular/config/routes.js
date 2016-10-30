@@ -14,6 +14,12 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     template: '<about-info></about-info>'
   };
 
+  var faq = {
+    name: 'faq',
+    url: '/faq',
+    template: '<faq></faq>'
+  };
+
   var admin = {
     name: 'admin',
     url: '/admin',
@@ -22,13 +28,13 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
       auth: ['Auth','$q', function(Auth, $q) {
         var deferred = $q.defer();
         return Auth.currentUser().then(function(user) {
-          console.log("to titles", admin);
-          console.log(user);
-          // if (!user.fname) {
-          //   console.log(user);
-          //   return $q.reject("Not Authorized");
-          // }
-          return deferred.resolve({});
+            if (user.is_admin) {
+              return deferred.resolve({});
+            } else {
+              return $q.reject("Not Authorized");
+            }
+        }, function(error) {
+            return $q.reject("Not Authorized");
         });
       }]
     }
@@ -43,6 +49,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
   $stateProvider.state(aboutState)
                 .state(mainState)
                 .state(admin)
+                .state(faq)
                 .state(contributors)
                 .state('titles' ,{
                   url: '/titles/:id',
@@ -52,12 +59,9 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
-                        console.log("to titles", user);
-                        // if (!user.fname) {
-                        //   console.log(user);
-                        //   return $q.reject("Not Authorized");
-                        // }
-                        return deferred.resolve({});
+                          return deferred.resolve({});
+                      }, function(error) {
+                          return $q.reject("Not Authorized");
                       });
                     }]
                   }
@@ -69,19 +73,13 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     auth: ['Auth','$q', function(Auth, $q) {
                       var deferred = $q.defer();
                       return Auth.currentUser().then(function(user) {
-                        // if (!user.fname) {
-                        //   console.log(user);
-                        //   return $q.reject("Not Authorized");
-                        // }
-                        console.log("to profiles", user);
-
-                        return deferred.resolve({});
+                          return deferred.resolve({});
+                      }, function(error) {
+                          return $q.reject("Not Authorized");
                       });
                     }]
                   }
                 });
-
-
 
 }]);
 

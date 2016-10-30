@@ -4,8 +4,7 @@ class TranslationsController < ApplicationController
   # GET /translations
   # GET /translations.json
   def index
-    @translations = Translation.includes(:user, {title: :translations}, :comments).all
-    # @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user)
+    @translations = Translation.includes(:user, :title, :comments)
     render json: @translations.to_json({include: [:user, :comments, :title]})
   end
 
@@ -30,8 +29,7 @@ class TranslationsController < ApplicationController
 
     respond_to do |format|
       if @translation.save
-        format.html { redirect_to @translation, notice: 'Translation was successfully created.' }
-        format.json { render :show, status: :created, location: @translation }
+        format.json { render json: {status: :created, translation: @translation} }
       else
         format.html { render :new }
         format.json { render json: @translation.errors, status: :unprocessable_entity }
@@ -45,7 +43,7 @@ class TranslationsController < ApplicationController
     respond_to do |format|
       if @translation.update(translation_params)
         format.html { redirect_to @translation, notice: 'Translation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @translation }
+        format.json { render json: {status: :ok, translation: @translation} }
       else
         format.html { render :edit }
         format.json { render json: @translation.errors, status: :unprocessable_entity }
@@ -57,6 +55,8 @@ class TranslationsController < ApplicationController
   # DELETE /translations/1.json
   def destroy
     @translation.destroy
+    @translation.title.translation_count = @translation.title.translations.count
+    @translation.title.save!
     respond_to do |format|
       format.html { redirect_to translations_url, notice: 'Translation was successfully destroyed.' }
       format.json { head :no_content }

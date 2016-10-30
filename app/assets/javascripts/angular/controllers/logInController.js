@@ -17,8 +17,6 @@ titlesApp
   };
 
   $scope.logInUser = function(data) {
-    console.log(data);
-
     var credentials = {
       email: data.email,
       password: data.password
@@ -38,11 +36,11 @@ titlesApp
     });
 
     $scope.$on('devise:login', function(event, currentUser) {
-      console.log(currentUser, "LOGGED IN");
+      // console.log(currentUser, "LOGGED IN");
     });
 
     $scope.$on('devise:new-session', function(event, currentUser) {
-      console.log(currentUser, "NEW SESSION");
+      // console.log(currentUser, "NEW SESSION");
       $scope.errors = "";
       $scope.dismiss();
     });
@@ -54,7 +52,7 @@ titlesApp
     };
 
     Auth.sendResetPasswordInstructions(parameters).then(function(response) {
-        console.log(response);
+        // console.log(response);
         // Sended email if user found otherwise email not sended...
     }, function(error) {
         console.log("FAILED", error);
