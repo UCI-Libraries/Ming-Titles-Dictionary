@@ -29,6 +29,8 @@ class TranslationsController < ApplicationController
 
     respond_to do |format|
       if @translation.save
+        @translation.comment_added_at = @translation.created_at
+        @translation.save!
         format.json { render json: {status: :created, translation: @translation} }
       else
         format.html { render :new }

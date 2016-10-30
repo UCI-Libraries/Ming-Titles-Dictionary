@@ -141,7 +141,8 @@ titlesApp
 
   $scope.userCanDelete = function(post) {
     var currentUser = userService.getUser();
-    if (currentUser.is_admin === true) {
+    console.log(currentUser);
+    if (currentUser.super_admin === true) {
       return true;
     } else if (currentUser.id === post.user_id) {
       return true;
