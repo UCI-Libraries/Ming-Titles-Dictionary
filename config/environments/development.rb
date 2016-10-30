@@ -59,7 +59,6 @@ Rails.application.configure do
     port: 25,
     domain: ENV["UCI_DOMAIN"],
     authentication: 'plain',
-    enable_starttls_auto: true,
     user_name: ENV["UCI_USERNAME"],
     password: ENV["UCI_PASSWORD"]
   }

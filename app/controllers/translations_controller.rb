@@ -4,7 +4,7 @@ class TranslationsController < ApplicationController
   # GET /translations
   # GET /translations.json
   def index
-    @translations = Translation.includes(:user, :title, :comments)
+    @translations = Translation.includes(:user, :title, :comments).where(titles: {archived: false})
     render json: @translations.to_json({include: [:user, :comments, :title]})
   end
 
@@ -29,6 +29,8 @@ class TranslationsController < ApplicationController
 
     respond_to do |format|
       if @translation.save
+        @translation.comment_added_at = @translation.created_at
+        @translation.save!
         format.json { render json: {status: :created, translation: @translation} }
       else
         format.html { render :new }

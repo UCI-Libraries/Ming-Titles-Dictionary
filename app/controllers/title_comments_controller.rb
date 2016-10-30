@@ -4,7 +4,7 @@ class TitleCommentsController < ApplicationController
   # GET /title_comments
   # GET /title_comments.json
   def index
-    @comments = TitleComment.includes(:title).all
+    @comments = TitleComment.includes(:title).where(titles: {archived: false})
     render json: @comments.to_json({include: [:title]})
   end
 
