@@ -58,6 +58,8 @@ class TitlesController < ApplicationController
   def update
     respond_to do |format|
       if @title.update(title_params)
+        p "IT WORKED"
+        p @title
         format.html { redirect_to @title, notice: 'Title was successfully updated.' }
         format.json { render json: @title }
       else
@@ -94,6 +96,6 @@ class TitlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def title_params
-      params.fetch(:title, {}).permit(:approved, :id)
+      params.fetch(:title, {}).permit(:approved, :id, :archived)
     end
 end

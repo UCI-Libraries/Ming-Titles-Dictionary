@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   put 'admin/approve_admin/:id' => 'users#approve'
   get 'admin/translations' => 'translations#index'
   put 'admin/translations/:id' => 'translations#update', :defaults => { :format => 'json' }
+  put 'admin/titles/:id' => 'titles#update', :defaults => { :format => 'json' }
   get 'admin/translations_export' => 'translations#export'
   get 'admin/comments_export' => 'comments#export'
   get 'admin/titles_export' => 'titles#export'

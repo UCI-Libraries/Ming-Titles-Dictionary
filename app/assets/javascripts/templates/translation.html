@@ -1,6 +1,7 @@
 <div class="translations-bg">
   <div class="container translation-container">
     <back-link></back-link>
+    <div class="placeholder" ng-show="titleIsArchived()"><em>This title has been archived</em></div>
     <div class="chinese-title">
       <h1>
         Chinese Title:&nbsp;{{title.chinese_title}}
@@ -14,6 +15,14 @@
           Comment on Pinyin title
         </a>
       </h2>
+    </div>
+    <div ng-show="userIsAdmin()">
+        <button ng-show="!titleIsArchived()" ng-click="archiveTitle()">
+          Archive Title
+        </button>
+        <button ng-show="titleIsArchived()" ng-click="unarchiveTitle()">
+          Remove Archived Status
+        </button>
     </div>
     <div class="add-translation"><a class="nav-link" data-toggle="modal" data-target="#newTranslationModal">
       Add a new translation

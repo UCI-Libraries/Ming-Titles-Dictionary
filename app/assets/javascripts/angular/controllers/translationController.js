@@ -54,9 +54,15 @@ titlesApp
     return comments.length > 0;
   };
 
+  $scope.titleIsArchived = function() {
+    return $scope.archived;
+  };
+
   $scope.getPosts = function() {
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
+      $scope.archived = response.data.archived;
+      console.log("DATA", response.data, response.data.archived);
       var translations = formatTimestamps(response.data.translations);
       $scope.pinyin_comments = formatCommentTimestamps(response.data.pinyin_comments);
       $scope.title_comments = formatCommentTimestamps(response.data.title_comments);
@@ -128,6 +134,12 @@ titlesApp
     return false;
   };
 
+  $scope.userIsAdmin = function() {
+    var currentUser = userService.getUser();
+    console.log("currentUser", currentUser);
+    return currentUser.is_admin;
+  };
+
   $scope.userCanDelete = function(post) {
     var currentUser = userService.getUser();
     if (currentUser.is_admin === true) {
@@ -155,6 +167,20 @@ titlesApp
       return true;
     }
     return false;
+  };
+
+  $scope.archiveTitle = function() {
+    $http.put('admin/titles/'+ $scope.title.id, {"archived": true}
+    ).then(function(response) {
+      $scope.archived = true;
+    });
+  };
+
+  $scope.unarchiveTitle = function() {
+    $http.put('admin/titles/'+ $scope.title.id, {"archived": false}
+    ).then(function(response) {
+      $scope.archived = false;
+    });
   };
 
 
