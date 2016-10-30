@@ -37,7 +37,7 @@ class User < ApplicationRecord
   has_many :translations, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  # after_create :send_welcome_mail
+  after_create :send_welcome_mail
 
   validate :password_complexity
 
