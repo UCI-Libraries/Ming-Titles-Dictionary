@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def contributors
     # 2 is the Charles Hucker ID from our seed data
-    @users = User.where(has_contributed: params[:has_contributed]).where.not(id: 2)
+    @users = User.where(has_contributed: params[:has_contributed]).where.not(id: [1, 2, 3, 4])
     render json: @users
   end
 

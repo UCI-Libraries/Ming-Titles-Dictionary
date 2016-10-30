@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'api/institutions/all_with_ancestry' => 'institutions#all_with_ancestry'
   get 'api/titles' => 'titles#index'
   get 'api/titles/institution/:id' => 'titles#titles_by_institution'
+  get 'api/archived_titles' => 'titles#archived'
   get 'api/titles/:id' => 'titles#show'
   get 'api/pinyin_comments' => 'pinyin_comments#index'
   get 'api/title_comments' => 'title_comments#index'

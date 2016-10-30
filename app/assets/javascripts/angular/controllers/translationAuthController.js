@@ -2,6 +2,7 @@ titlesApp
   .controller('translationApprovalController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', '$state', 'Translation', function($scope, $http, $stateParams, titlesService, NgTableParams, $state, Translation){
 
       var init = function() {
+        $scope.loading = true;
         getTranslations();
       };
 
@@ -18,6 +19,7 @@ titlesApp
         $http.get('translations/').then(function(response) {
           $scope.data = setNestedAttrs(response.data);
           $scope.tableParams.settings({dataset: $scope.data});
+          $scope.loading = false;
         });
       }
 

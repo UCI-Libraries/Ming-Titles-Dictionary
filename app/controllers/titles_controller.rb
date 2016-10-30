@@ -4,12 +4,17 @@ class TitlesController < ApplicationController
   # GET /titles
   # GET /titles.json
   def index
-    @titles = Title.includes(translations: :user).all
+    @titles = Title.includes(translations: :user).where(archived: false)
     render json: @titles, include: [translations: {include: :user}]
   end
 
   def titles_by_institution
-    @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user)
+    @titles = Institution.find_by(id: params[:id]).titles.includes(translations: :user).where(archived: false)
+    render json: @titles, include: [translations: {include: :user}]
+  end
+
+  def archived
+    @titles = Title.includes(translations: :user).where(archived: true)
     render json: @titles, include: [translations: {include: :user}]
   end
 
