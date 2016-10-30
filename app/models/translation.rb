@@ -24,7 +24,7 @@ class Translation < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   after_create :update_parent
-  # after_create :send_translation_emails
+  after_create :send_translation_emails
   after_update :update_user_status
 
   def update_parent
