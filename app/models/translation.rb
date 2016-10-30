@@ -35,8 +35,8 @@ class Translation < ApplicationRecord
   end
 
   def send_translation_emails
-    MyMailer.new_translation(self.user, self).deliver
-    MyMailer.notify_superadmin_new_translation(self).deliver
+    MyMailer.new_translation(self.user.id, self.id).deliver_now
+    MyMailer.notify_superadmin_new_translation(self.id).deliver_now
   end
 
   def update_user_status

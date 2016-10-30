@@ -11,16 +11,22 @@ class MyMailer < Devise::Mailer
     mail(to: @user.email, subject: 'Ming Government Official Titles: A Crowd-Translation Project')
   end
 
-  def new_translation(user, translation)
-    @user = user
-    @translation = translation
+  def new_translation(user_id, translation_id)
+    @user = User.find_by_id(user_id)
+    @translation = Translation.find_by_id(translation_id)
     mail(to: @user.email, subject: 'New Translation Submitted')
   end
 
-  def notify_superadmin_new_translation(translation)
+  def notify_superadmin_new_translation(translation_id)
+    puts "???????"
+    puts translation_id
     #superadmin is hardcoded here:
     @user = User.find_by_id(1)
-    @translation = translation
+    @translation = Translation.find_by_id(translation_id)
+    puts @translation
+    puts @translation.title
+    puts @translation.translation_text
+    puts @translation.user
     mail(to: @user.email, subject: 'New Translation Submitted')
   end
 

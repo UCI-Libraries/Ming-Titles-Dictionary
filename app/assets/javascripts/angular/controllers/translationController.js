@@ -136,7 +136,6 @@ titlesApp
 
   $scope.userIsAdmin = function() {
     var currentUser = userService.getUser();
-    console.log("currentUser", currentUser);
     return currentUser.is_admin;
   };
 

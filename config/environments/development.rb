@@ -58,7 +58,7 @@ Rails.application.configure do
     address: "cygnus.lib.uci.edu",
     port: 25,
     domain: ENV["UCI_DOMAIN"],
-    authentication: "plain",
+    authentication: 'plain',
     enable_starttls_auto: true,
     user_name: ENV["UCI_USERNAME"],
     password: ENV["UCI_PASSWORD"]

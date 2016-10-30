@@ -50,8 +50,8 @@ class User < ApplicationRecord
   end
 
   def send_welcome_mail
-    MyMailer.greeting(self.id).deliver
-    MyMailer.notify_superadmin_new_scholar(self.id).deliver
+    MyMailer.greeting(self.id).deliver_now
+    MyMailer.notify_superadmin_new_scholar(self.id).deliver_now
   end
 
   def active_for_authentication?

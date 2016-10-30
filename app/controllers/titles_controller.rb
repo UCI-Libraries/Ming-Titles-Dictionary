@@ -58,8 +58,6 @@ class TitlesController < ApplicationController
   def update
     respond_to do |format|
       if @title.update(title_params)
-        p "IT WORKED"
-        p @title
         format.html { redirect_to @title, notice: 'Title was successfully updated.' }
         format.json { render json: @title }
       else

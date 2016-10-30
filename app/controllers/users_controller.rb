@@ -89,8 +89,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update(user_params)
-        p @user
-        p "UPDATING??"
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render json: @user, status: :ok }
       else
