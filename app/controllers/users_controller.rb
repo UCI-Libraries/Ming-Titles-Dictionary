@@ -21,12 +21,12 @@ class UsersController < ApplicationController
   end
 
   def show_translations
-    @user_translations = User.find_by(id: params[:id]).translations.includes([:comments, :title])
+    @user_translations = User.find_by(id: params[:id]).translations.includes([:comments, :title]).where(titles: {archived: false})
     render json: @user_translations, include: [:comments, :title]
   end
 
   def show_comments
-    @user_comments = User.find_by(id: params[:id]).comments.includes(translation: :title)
+    @user_comments = User.find_by(id: params[:id]).comments.includes(translation: :title).where(titles: {archived: false})
     p @user_comments
     render json: @user_comments, include: {translation: {include: :title}}
   end
