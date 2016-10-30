@@ -84,7 +84,7 @@ class UsersController < ApplicationController
   def approve
     @user = set_user
     if user_params["approved"] == true && @user.approved == false
-      MyMailer.acceptance(@user).deliver
+      # MyMailer.acceptance(@user).deliver
     end
 
     respond_to do |format|
