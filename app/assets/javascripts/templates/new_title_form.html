@@ -1,0 +1,41 @@
+<h3 class="modal-title" id="myModalLabel">
+  Submit a New Title:
+</h3>
+<div class="modal-body">
+  <form class="titles-form form-horizontal" ng-submit="postTitle(formData, myForm)" name="myForm">
+    <div class="form-group">
+      <label class="col-md-12" for="chinese_title">&nbsp;&nbsp;Chinese Title (required):&nbsp;</label>
+      <div class="col-md-12">
+        <textarea rows="1" class="form-control" id="chinese_title" name="chinese_title" ng-model="formData.chineseTitle"></textarea>
+      </div>
+
+      <label class="col-md-12" for="pinyin_title">&nbsp;&nbsp;Pinyin Title (required):&nbsp;</label>
+      <div class="col-md-12">
+        <textarea rows="1" class="form-control" id="pinyin_title" name="pinyin_title" ng-model="formData.pinyinTitle"></textarea>
+      </div>
+
+      <label class="col-md-12" for="institution1">&nbsp;&nbsp;Institution 1 (required):&nbsp;</label>
+      <div class="col-md-12">
+        <textarea rows="1" class="form-control" id="institution1" name="institution1" ng-model="formData.institutionOne" required></textarea>
+        <span class="form-error" ng-show="myForm.institution1.$error.required && myForm.email.$dirty">required</span>
+      </div>
+
+      <label class="col-md-12" for="institution2">&nbsp;&nbsp;Institution 2:&nbsp;</label>
+      <div class="col-md-12">
+        <textarea rows="1" class="form-control" id="institution2" name="institution2" ng-model="formData.institutionTwo"></textarea>
+      </div>
+
+      <label class="col-md-12" for="institution3">&nbsp;&nbsp;Institution 3:&nbsp;</label>
+      <div class="col-md-12">
+        <textarea rows="1" class="form-control" id="institution3" name="institution3" ng-model="formData.institutionThree"></textarea>
+      </div>
+
+      <button type="submit" class="btn pull-right" ng-disabled="!(!!formData.chineseTitle && !!formData.pinyinTitle &&  !!formData.institutionOne)">Submit</button>
+
+      <div class="placeholder" ng-show="titleSaved"><em>A new title was created</em></div>
+    </div>
+
+    <br/>
+
+  </form>
+</div>
