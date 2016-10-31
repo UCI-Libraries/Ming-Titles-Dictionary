@@ -15,6 +15,12 @@
           Comment on Pinyin title
         </a>
       </h2>
+      <div class="institution-block">
+        <h4>Institutions:</h4>
+        <div>
+          <span ng-repeat="inst in title.institutions"><p>{{inst.name}}</p></span>
+        </div>
+      </div>
     </div>
     <div ng-show="userIsAdmin()">
         <button ng-show="!titleIsArchived()" ng-click="archiveTitle()">

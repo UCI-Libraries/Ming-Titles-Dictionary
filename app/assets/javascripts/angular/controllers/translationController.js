@@ -61,6 +61,7 @@ titlesApp
   $scope.getPosts = function() {
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
+      console.log(response.data);
       $scope.archived = response.data.archived;
       var translations = formatTimestamps(response.data.translations);
       $scope.pinyin_comments = formatCommentTimestamps(response.data.pinyin_comments);
