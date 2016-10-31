@@ -9,6 +9,7 @@
 #  updated_at        :datetime         not null
 #  translation_count :integer          default(0)
 #  source            :text             default("UCI")
+#  archived          :boolean          default(FALSE)
 #
 
 class Title < ApplicationRecord

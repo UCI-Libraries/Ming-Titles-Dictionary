@@ -40,10 +40,40 @@ class TitlesController < ApplicationController
   # POST /titles
   # POST /titles.json
   def create
-    @title = Title.new(title_params)
+    inst1 = Institution.find_by_name(params[:institution_one]) || Institution.create(name: params[:institution_one])
+    p inst1
+
+    if params[:institution_two]
+      inst2 = Institution.find_by_name(params[:institution_two]) || Institution.create(name: params[:institution_two], parent: inst1)
+    end
+
+    if params[:institution_three] && params[:institution_two]
+      inst3 = Institution.find_by_name(params[:institution_three]) || Institution.create(name: params[:institution_three], parent: inst2)
+    end
+
+    @title = Title.new
+    @title.pinyin_title = params[:pinyin_title]
+    @title.chinese_title = params[:chinese_title]
+    @title.source = "UCI"
+    @title.save!
+
+    institution_ids = [params[:institution_one], params[:institution_two], params[:institution_three]]
+
+    institution_ids.each do |inst|
+      if inst
+        institution = Institution.find_by_name(inst)
+        if institution
+          relation = InstitutionsAndTitle.new(
+            institution_id: institution.id,
+            title_id: @title.id
+          )
+          relation.save!
+        end
+      end
+    end
 
     respond_to do |format|
-      if @title.save
+      if @title.id
         format.html { redirect_to @title, notice: 'Title was successfully created.' }
         format.json { render json: @title }
       else
@@ -94,6 +124,6 @@ class TitlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def title_params
-      params.fetch(:title, {}).permit(:approved, :id, :archived)
+      params.fetch(:title, {}).permit(:approved, :id, :archived, :chinese_title, :pinyin_title, :institution_one, :institution_two, :institution_three)
     end
 end

@@ -8,6 +8,7 @@
         <li ng-click="showTitleComments()" ng-class="{active: titleComments}"><a>View Title Comments</a></li>
         <li ng-click="showExport()" ng-class="{active: exportAuth}"><a>Export Data</a></li>
         <li ng-click="showArchived()" ng-class="{active: archived}"><a>Archived Titles</a></li>
+        <li ng-show="isSuperAdmin" ng-click="showNewTitle()" ng-class="{active: newTitle}"><a>Add Title</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
@@ -25,5 +26,8 @@
   </div>
   <div ng-show="archived" class="container">
     <archived></archived>
+  </div>
+  <div ng-show="newTitle" class="container">
+    <new-title-form></new-title-form>
   </div>
 </div>

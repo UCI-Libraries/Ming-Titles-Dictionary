@@ -4,18 +4,6 @@ titlesApp.factory('Translation', ['$http', function($http) {
     angular.extend(this, data);
   };
 
-  // Translation.get = function(id) {
-  //   return $http.get('/translation/' + id).then(function(response) {
-  //     return new Translation(response.data);
-  //   });
-  // };
-  //
-  // Translation.index = function(id) {
-  //   return $http.get('/translations.json').then(function(response) {
-  //     return new Translation(response.data);
-  //   });
-  // };
-
   Translation.delete = function(id) {
     return $http.delete('/translations/' + id + '.json').then(function(response) {
       console.log(response);

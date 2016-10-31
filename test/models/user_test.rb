@@ -27,6 +27,7 @@
 #  lname                  :text
 #  research               :text
 #  has_contributed        :boolean          default(FALSE)
+#  super_admin            :boolean          default(FALSE)
 #
 
 require 'test_helper'

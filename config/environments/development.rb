@@ -57,10 +57,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "cygnus.lib.uci.edu",
     port: 25,
-    domain: ENV["UCI_DOMAIN"],
+    domain: 'lib.uci.edu',
     authentication: 'plain',
-    user_name: ENV["UCI_USERNAME"],
-    password: ENV["UCI_PASSWORD"]
+    enable_starttls_auto: true,
+    user_name: 'mingtitles@lib.uci.edu',
+    password: 'mingmingtitles'
   }
 
   # TODO: https://rubyonrailshelp.wordpress.com/2014/01/02/setting-up-mailer-using-devise-for-forgot-password/

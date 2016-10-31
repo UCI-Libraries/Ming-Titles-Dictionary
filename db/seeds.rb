@@ -54,6 +54,7 @@ csv.each do |row|
   t = Title.new
   t.pinyin_title = row["official_pinyin"]
   t.chinese_title = row["official_Chinese"]
+  t.source = "Hucker"
   t.save!
   if row["official_translation"]
     trans = Translation.new(translation_text: row["official_translation"],

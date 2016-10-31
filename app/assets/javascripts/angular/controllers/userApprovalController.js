@@ -38,6 +38,18 @@ titlesApp
     });
   };
 
+  $scope.makeSAdmin = function(user) {
+    $http.put('admin/approve_admin/'+ user.id +'.json', {"super_admin": true}).then(function(response) {
+      getUsers();
+    });
+  };
+
+  $scope.revokeSAdmin = function(user) {
+    $http.put('admin/approve_admin/'+ user.id +'.json', {"super_admin": false}).then(function(response) {
+      getUsers();
+    });
+  };
+
   init();
 
 }]);

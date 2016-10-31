@@ -27,6 +27,7 @@
 #  lname                  :text
 #  research               :text
 #  has_contributed        :boolean          default(FALSE)
+#  super_admin            :boolean          default(FALSE)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
