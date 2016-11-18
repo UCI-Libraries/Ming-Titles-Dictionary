@@ -21,7 +21,7 @@ titlesApp
     function formatTimestamp(timestamp) {
       if (timestamp) {
         return moment(timestamp.slice(0,10)+" "+ timestamp.slice(11,19))
-                        .subtract(6, 'hours')
+                        .subtract(7, 'hours')
                         .format('MM-DD-YY h:mm a');
       } else {
         return "";
