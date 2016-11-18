@@ -19,7 +19,7 @@ titlesApp
     translations.forEach(function(translation){
       translation.comments.forEach(function(comment){
         var date = moment(comment.created_at.slice(0,10)+" "+ comment.created_at.slice(11,19))
-                        .subtract(6, 'hours')
+                        .subtract(7, 'hours')
                         .format('MM-DD-YY h:mm a');
         comment.formatted_date = date;
       });
@@ -31,7 +31,7 @@ titlesApp
     comments.forEach(function(comment){
 
         var date = moment(comment.created_at.slice(0,10)+" "+ comment.created_at.slice(11,19))
-                        .subtract(6, 'hours')
+                        .subtract(7, 'hours')
                         .format('MM-DD-YY h:mm a');
         comment.formatted_date = date;
       });
@@ -61,6 +61,7 @@ titlesApp
   $scope.getPosts = function() {
     $http.get('api/titles/'+ $stateParams.id).then(function(response) {
       $scope.title = response.data;
+      console.log(response.data);
       $scope.archived = response.data.archived;
       var translations = formatTimestamps(response.data.translations);
       $scope.pinyin_comments = formatCommentTimestamps(response.data.pinyin_comments);
