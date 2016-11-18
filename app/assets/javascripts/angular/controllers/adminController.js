@@ -1,8 +1,8 @@
 titlesApp
   .controller('adminController', ['$scope', 'userService', function($scope, userService){
 
-  $scope.userAuth = true;
-  $scope.translationAuth = false;
+  $scope.userAuth = false;
+  $scope.translationAuth = true;
   $scope.exportAuth = false;
   $scope.titleComments = false;
   $scope.archived = false;
