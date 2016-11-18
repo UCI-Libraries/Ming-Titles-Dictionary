@@ -21,11 +21,11 @@ class TitlesController < ApplicationController
   # GET /titles/1
   # GET /titles/1.json
   def show
-    @title = Title.includes([pinyin_comments: :user], :title_comments, translations: [:user, comments: :user]).order("translations.created_at").find_by(id: params[:id])
+    @title = Title.includes([pinyin_comments: :user], :title_comments, :institutions, translations: [:user, comments: :user]).order("translations.created_at").find_by(id: params[:id])
     if params[:official]
       @title =  @title.where({translations: {approved: true}})
     end
-    render json: @title, include: [:pinyin_comments, :title_comments, translations: {include: [:user, comments: {include: :user}]}]
+    render json: @title, include: [:pinyin_comments, :title_comments, :institutions, translations: {include: [:user, comments: {include: :user}]}]
   end
 
   # GET /titles/new
