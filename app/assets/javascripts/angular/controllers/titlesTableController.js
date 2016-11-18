@@ -57,7 +57,8 @@ titlesApp
   });
 
   $scope.seePosts = function(title) {
-    $state.go('titles', {"id": title});
+    var url = $state.href('titles', {"id": title});
+    window.open(url,'_blank');
   };
 
   init();
