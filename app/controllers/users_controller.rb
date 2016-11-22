@@ -31,9 +31,10 @@ class UsersController < ApplicationController
     render json: @user_comments, include: {translation: {include: :title}}
   end
 
-  def change_password
+def change_password
     @user = User.find(current_user.id)
-    if @user.update(user_params)
+    @user.password = params[:password]
+    if @user.save!
       # Sign in the user by passing validation in case their password changed
       bypass_sign_in(@user)
       render json: {response: "password updated"}
@@ -41,6 +42,18 @@ class UsersController < ApplicationController
       render json: {response: "password update failed"}
     end
   end
+
+
+#  def change_password
+#    @user = User.find(current_user.id)
+#    if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+ #     bypass_sign_in(@user)
+ ##     render json: {response: "password updated"}
+ #   else
+ #     render json: {response: "password update failed"}
+ #   end
+ # end
 
   def update_profile
     @user = User.find(current_user.id)
