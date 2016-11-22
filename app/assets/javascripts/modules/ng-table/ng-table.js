@@ -875,8 +875,8 @@
                     });
                     maxPivotPages = Math.round((settings.paginationMaxBlocks - settings.paginationMinBlocks) / 2);
                     minPage = Math.max(2, currentPage - maxPivotPages);
-                    maxPage = Math.min(numPages - 1, currentPage + maxPivotPages * 2 - (currentPage - minPage));
-                    minPage = Math.max(2, minPage - (maxPivotPages * 2 - (maxPage - minPage)));
+                    maxPage = Math.min(numPages - 1, currentPage + maxPivotPages * 4 - (currentPage - minPage));
+                    minPage = Math.max(2, minPage - (maxPivotPages * 4 - (maxPage - minPage)));
                     var i = minPage;
                     while (i <= maxPage) {
                         if ((i === minPage && i !== 2) || (i === maxPage && i !== numPages - 1)) {
