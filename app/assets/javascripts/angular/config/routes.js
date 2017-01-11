@@ -20,6 +20,12 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     template: '<faq></faq>'
   };
 
+  var bibliography = {
+    name: 'bibliography',
+    url: '/bibliography',
+    template: '<bibliography></bibliography>'
+  };
+
   var admin = {
     name: 'admin',
     url: '/admin',
@@ -49,6 +55,7 @@ titlesApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
   $stateProvider.state(aboutState)
                 .state(mainState)
                 .state(admin)
+                .state(bibliography)
                 .state(faq)
                 .state(contributors)
                 .state('titles' ,{

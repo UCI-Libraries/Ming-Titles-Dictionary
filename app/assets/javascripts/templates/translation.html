@@ -41,9 +41,8 @@
         <div class="translation-block">
           <h3>{{translation.translation_text}}</h3>
           <h4 ng-show="userCanViewAuthor(translation)">Author: {{translation.user.fname}}&nbsp;{{translation.user.lname}}</h4>
-          <p>Explanation of translation: (show if one is available): {{}}</p>
-          <p>Links: {{}}</p>
-          <p>Other scholars who could help translate this title: {{}}</p>
+          <p ng-show="userIsAdmin()">Explanation of translation: {{translation.explanation}}</p>
+          <p ng-show="userIsAdmin()">Other scholars who could help translate this title: {{translation.scholars}}</p>
           <span ng-show="userCanDelete(translation)">
             <a ng-click="deleteTranslation(translation.id)">Delete</a>
           </span>&nbsp;&nbsp;&nbsp;
@@ -86,8 +85,8 @@
         <div class="translation_block">
           <h3>{{translation.translation_text}}</h3>
           <h4 ng-show="userCanViewAuthor(translation)">Author: {{translation.user.fname}}&nbsp;{{translation.user.lname}}</h4>
-          <p>Explanation of translation: {{translation.explanation}}</p>
-          <p>Other scholars who could help translate this title: {{translation.scholars}}</p>
+          <p ng-show="userIsAdmin()">Explanation of translation: {{translation.explanation}}</p>
+          <p ng-show="userIsAdmin()">Other scholars who could help translate this title: {{translation.scholars}}</p>
           <span ng-show="userCanDelete(translation)" ng-click="deleteTranslation(translation.id)">
             <a>Delete</a>
           </span>&nbsp;&nbsp;&nbsp;
