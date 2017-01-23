@@ -19,7 +19,20 @@
         <textarea rows="1" class="form-control" id="institution1" name="institution1" ng-model="formData.institutionOne" required></textarea>
         <span class="form-error" ng-show="myForm.institution1.$error.required && myForm.email.$dirty">required</span>
       </div>
-
+      <div class="btn-group" uib-dropdown keyboard-nav>
+          <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" uib-dropdown-toggle>
+              Dropdown with keyboard navigation <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+              <li role="menuitem"><a href="#">Action</a></li>
+              <li role="menuitem"><a href="#">Another action</a></li>
+              <li role="menuitem"><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li role="menuitem"><a href="#">Separated link</a></li>
+          </ul>
+      </div>
+      <select ng-change="fetchChildren(institution)" ng-model="institution" ng-options="institution.name for institution in institutions">
+      </select>
       <label class="col-md-12" for="institution2">&nbsp;&nbsp;Institution 2:&nbsp;</label>
       <div class="col-md-12">
         <textarea rows="1" class="form-control" id="institution2" name="institution2" ng-model="formData.institutionTwo"></textarea>

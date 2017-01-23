@@ -1,9 +1,39 @@
 titlesApp
-  .controller('newTitleController', ['$scope', 'Title', function($scope, Title){
+  .controller('newTitleController', ['$scope', 'Title', '$http', function($scope, Title, $http){
 
   $scope.errors = "";
 
+  var init = function() {
+    $scope.institutions = [];
+    getRootOffices();
+  };
+
+  function getRootOffices() {
+    $http({
+        url: 'api/institutions',
+        method: "GET",
+        params: {roots: true}
+     }).then(function(response) {
+        console.log(response.data);
+        $scope.institutions = response.data;
+      });
+  }
+
+  init();
+
   $scope.titleSaved = false;
+
+  $scope.fetchChildren = function(institution) {
+    $http({
+        url: 'api/institutions',
+        method: "GET",
+        params: {parent_id: institution.id}
+     }).then(function(response) {
+        console.log(response.data);
+        // $scope.institutions = response.data;
+      });
+    console.log(institution);
+  };
 
   $scope.resetTitleForm = function() {
     $scope.formData = null;

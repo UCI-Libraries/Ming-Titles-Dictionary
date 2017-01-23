@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :translations
 
   get 'api/institutions/all_with_ancestry' => 'institutions#all_with_ancestry'
+  get 'api/institutions/' => 'institutions#index'
   get 'api/titles' => 'titles#index'
   post 'api/titles' => 'titles#create'
   get 'api/titles/institution/:id' => 'titles#titles_by_institution'
