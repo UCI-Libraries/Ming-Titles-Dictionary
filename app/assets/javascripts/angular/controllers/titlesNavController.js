@@ -33,4 +33,8 @@ titlesApp
     return userService.getUser().is_admin;
   };
 
+  $scope.showDiscuss = function() {
+    console.log("show discuss");
+  };
+
 }]);
