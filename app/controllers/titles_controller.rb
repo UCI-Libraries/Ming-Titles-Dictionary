@@ -41,8 +41,7 @@ class TitlesController < ApplicationController
   # POST /titles.json
   def create
     inst1 = Institution.find_by_name(params[:institution_one]) || Institution.create(name: params[:institution_one])
-    p inst1
-
+    
     if params[:institution_two]
       inst2 = Institution.find_by_name(params[:institution_two]) || Institution.create(name: params[:institution_two], parent: inst1)
     end

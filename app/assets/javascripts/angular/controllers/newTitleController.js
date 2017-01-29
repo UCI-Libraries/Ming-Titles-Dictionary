@@ -4,7 +4,10 @@ titlesApp
   $scope.errors = "";
 
   var init = function() {
-    $scope.institutions = [];
+    $scope.institutionsOne = [];
+    $scope.institutionsTwo = [];
+    $scope.institutionsThree = [];
+
     getRootOffices();
   };
 
@@ -15,7 +18,7 @@ titlesApp
         params: {roots: true}
      }).then(function(response) {
         console.log(response.data);
-        $scope.institutions = response.data;
+        $scope.institutionsOne = response.data;
       });
   }
 
@@ -23,16 +26,24 @@ titlesApp
 
   $scope.titleSaved = false;
 
-  $scope.fetchChildren = function(institution) {
-    $http({
-        url: 'api/institutions',
-        method: "GET",
-        params: {parent_id: institution.id}
-     }).then(function(response) {
-        console.log(response.data);
-        // $scope.institutions = response.data;
-      });
-    console.log(institution);
+  $scope.fetchChildren = function(institution, rank) {
+    if (institution.id && rank === 2) {
+      $http({
+          url: 'api/institutions',
+          method: "GET",
+          params: {parent_id: institution.id}
+       }).then(function(response) {
+          $scope.institutionsTwo = response.data;
+       });
+    } else if (institution.id && rank === 3) {
+      $http({
+          url: 'api/institutions',
+          method: "GET",
+          params: {parent_id: institution.id}
+       }).then(function(response) {
+          $scope.institutionsThree = response.data;
+       });
+    }
   };
 
   $scope.resetTitleForm = function() {
@@ -43,12 +54,11 @@ titlesApp
 
   $scope.postTitle = function(data, form) {
     var title = new Title();
-    console.log(data);
     title.chinese_title = data.chineseTitle;
     title.pinyin_title = data.pinyinTitle;
-    title.institution_one = data.institutionOne;
-    title.institution_two = data.institutionTwo;
-    title.institution_three = data.institutionThree;
+    title.institution_one = data.institutionOne.name;
+    title.institution_two = data.institutionTwo.name;
+    title.institution_three = data.institutionThree.name;
     title.save().then(function() {
       $scope.resetTitleForm();
     }, function(error) {
