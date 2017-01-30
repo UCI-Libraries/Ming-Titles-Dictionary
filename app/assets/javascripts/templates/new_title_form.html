@@ -16,18 +16,24 @@
 
       <label class="col-md-12" for="institution1">&nbsp;&nbsp;Institution 1 (required):&nbsp;</label>
       <div class="col-md-12">
-        <textarea rows="1" class="form-control" id="institution1" name="institution1" ng-model="formData.institutionOne" required></textarea>
+        <select id="institution1" name="institution1" class="form-control" ng-change="fetchChildren(formData.institutionOne, 2)" ng-model="formData.institutionOne" ng-options="institution.name for institution in institutionsOne" required>
+          <option value='' disabled selected>Please Choose</option>
+        </select>
         <span class="form-error" ng-show="myForm.institution1.$error.required && myForm.email.$dirty">required</span>
       </div>
 
       <label class="col-md-12" for="institution2">&nbsp;&nbsp;Institution 2:&nbsp;</label>
       <div class="col-md-12">
-        <textarea rows="1" class="form-control" id="institution2" name="institution2" ng-model="formData.institutionTwo"></textarea>
+        <select id="institution2" name="institution2" ng-disabled="institutionsTwo.length === 0" class="form-control" ng-change="fetchChildren(formData.institutionTwo, 3)" ng-model="formData.institutionTwo" ng-options="institution.name for institution in institutionsTwo">
+          <option value='' disabled selected>None Selected</option>
+        </select>
       </div>
 
       <label class="col-md-12" for="institution3">&nbsp;&nbsp;Institution 3:&nbsp;</label>
       <div class="col-md-12">
-        <textarea rows="1" class="form-control" id="institution3" name="institution3" ng-model="formData.institutionThree"></textarea>
+        <select id="institution3" name="institution3" ng-disabled="institutionsThree.length === 0" class="form-control" ng-model="formData.institutionThree" ng-options="institution.name for institution in institutionsThree">
+          <option value='' disabled selected>None Selected</option>
+        </select>
       </div>
 
       <button type="submit" class="btn pull-right" ng-disabled="!(!!formData.chineseTitle && !!formData.pinyinTitle &&  !!formData.institutionOne)">Submit</button>

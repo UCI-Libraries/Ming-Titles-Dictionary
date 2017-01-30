@@ -1,5 +1,5 @@
 titlesApp
-  .controller('titlesNavController', ['$scope', 'Auth', '$state', 'userService', function($scope, Auth, $state, userService){
+  .controller('titlesNavController', ['$rootScope', '$scope', 'Auth', '$state', 'userService', function($rootScope, $scope, Auth, $state, userService){
 
   $scope.logOutUser = function() {
     var config = {
@@ -31,6 +31,11 @@ titlesApp
 
   $scope.userIsAdmin = function() {
     return userService.getUser().is_admin;
+  };
+
+  $scope.showDiscuss = function() {
+    $rootScope.$broadcast('toggleDiscuss');
+    console.log("show discuss");
   };
 
 }]);

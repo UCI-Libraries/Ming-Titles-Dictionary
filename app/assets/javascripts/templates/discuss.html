@@ -1,0 +1,61 @@
+<div pageslide ps-size="400px" ps-open="checked" id="discuss">
+    <div class="discuss-content" style="padding:20px">
+        <h2>Hot Topics for Discussion</h2>
+        <p ng-if="!postsPresent()" class="placeholder"><em>There are currently no featured posts</em></p>
+        <button type="button" class="btn btn-default row" ng-click="isCollapsed = !isCollapsed">Add a new discussion topic</button>
+        <br>
+        <div uib-collapse="isCollapsed" class="row add-discuss-topic">
+          <div class="well well-lg">
+
+            <form class="titles-form form-horizontal" ng-submit="postDiscussionPost(formData, myForm)" name="myForm">
+              <div class="form-group">
+                <div class="col-md-12">
+                  <label class="control-label" for="title">
+                    Title:&nbsp;</label>
+                  <textarea class="form-control" rows="1" id="discussion_post" name="title" ng-model="formData.title" required/></textarea>
+                  <span class="form-error" ng-show="myForm.title.$error.required && myForm.title.$dirty">title cannot be blank</span>
+                </div>
+                <div class="col-md-12">
+                  <label class="control-label" for="post">
+                    Post:&nbsp;</label>
+                  <textarea class="form-control" rows="3" id="discussion_post" name="post" ng-model="formData.post" required/></textarea>
+                  <span class="form-error" ng-show="myForm.post.$error.required && myForm.post.$dirty">post cannot be blank</span>
+                </div>
+
+                <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
+                <button type="button" ng-click="resetPostForm()" class="btn btn-default pull-right">Clear</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <ul ng-repeat="post in posts | orderBy: 'date_created'">
+          <li class="post">
+            <article ng-if="post.is_active">
+              <div class="post-title">
+                <span class="post-date">{{post.formatted_date}}:&nbsp;</span>
+                <span ng-bind-html="post.title"></span>
+                <span ng-show="userCanArchive()">
+                  <a class="fa fa-archive" ng-click="archivePost(post.id)"></a>
+                </span>
+                <br/>
+              </div>
+              <div class="post-text">
+                <span ng-bind-html="post.post"></span><br/>
+              </div>
+            </article>
+            <div ng-repeat="comment in post.discussion_comments">
+              <span><em>&nbsp;&nbsp;{{comment.post}}</em></span>
+              <span ng-if="userCanDelete(comment)">
+                <a ng-click="deleteComment(comment.id)" class="fa fa-trash"></a>
+              </span>
+            </div>
+          </li>
+        </ul>
+
+
+
+    </div>
+    <div class="discuss-close">
+      <button ng-click="toggle()" class="button form-control" >Close</button>
+    </div>
+</div>

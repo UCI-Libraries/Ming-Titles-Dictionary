@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   resources :pinyin_comments
   resources :title_comments
   resources :translations
+  resources :discussion_posts, :only => [:show, :index, :create, :update, :destroy], :defaults => { :format => 'json' }
+  resources :discussion_comments, :only => [:show, :index, :create, :update, :destroy], :defaults => { :format => 'json' }
 
   get 'api/institutions/all_with_ancestry' => 'institutions#all_with_ancestry'
+  get 'api/institutions/' => 'institutions#index'
   get 'api/titles' => 'titles#index'
   post 'api/titles' => 'titles#create'
   get 'api/titles/institution/:id' => 'titles#titles_by_institution'

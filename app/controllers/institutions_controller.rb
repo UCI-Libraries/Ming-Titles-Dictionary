@@ -5,6 +5,12 @@ class InstitutionsController < ApplicationController
   # GET /institutions.json
   def index
     @institutions = Institution.all
+
+    @institutions = Institution.roots if params[:roots]
+    @institutions = Institution.find(params[:parent_id]).children if params[:parent_id]
+    @isntitutions = Institution.all_with_ancestry if params[:with_ancestry]
+
+    render json: @institutions
   end
 
   # GET /institutions/1

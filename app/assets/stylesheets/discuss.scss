@@ -1,0 +1,78 @@
+html {
+    overflow-x: hidden;
+}
+
+body.ng-pageslide-body-open::before {
+    content: '.';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: yellow;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.5;
+    transition: opacity 1s;
+    opacity: 0.5;
+    pointer-events: all;
+}
+
+body.ng-pageslide-body-closed::before {
+    transition: opacity 1s;
+    content: '.';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: red;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ng-pageslide {
+  height: 900px;
+  width: 100%;
+  margin-top: 120px;
+  font-size: large;
+  background-color: $uci-grey;
+}
+
+.add-discuss-topic {
+  padding:10px  0 ;
+}
+
+
+.discuss-content {
+  height: calc(100% - 120px);
+  top: 0;
+  bottom:0;
+  position: relative;
+  overflow-y: scroll;
+  button {
+    margin-left: 10px;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.discuss-close {
+  height: 30px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1010;
+  margin: 10px;
+}
+
+.post-title {
+  font-size: 1em;
+  font-weight: bold;
+}
