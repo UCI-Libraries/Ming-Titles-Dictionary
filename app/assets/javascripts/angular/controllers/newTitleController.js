@@ -28,6 +28,8 @@ titlesApp
 
   $scope.fetchChildren = function(institution, rank) {
     if (institution.id && rank === 2) {
+      $scope.institutionsTwo = [];
+      $scope.institutionsThree = [];
       $http({
           url: 'api/institutions',
           method: "GET",
@@ -36,6 +38,7 @@ titlesApp
           $scope.institutionsTwo = response.data;
        });
     } else if (institution.id && rank === 3) {
+      $scope.institutionsThree = [];
       $http({
           url: 'api/institutions',
           method: "GET",
