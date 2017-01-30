@@ -17,7 +17,6 @@ titlesApp
         method: "GET",
         params: {roots: true}
      }).then(function(response) {
-        console.log(response.data);
         $scope.institutionsOne = response.data;
       });
   }
