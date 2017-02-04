@@ -14,10 +14,10 @@
     <div class="collapse navbar-collapse" id="nav-right">
       <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a ng-click="showDiscuss()" class="nav-link about" ui-sref-active="active">Moose</a>
+            <a ng-show="userIsSignedIn()" ng-click="showDiscuss()" class="nav-link about" ui-sref-active="active"><strong>News</strong></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link about" ui-sref="about" ui-sref-active="active">About</a>
+            <a class="nav-link" ui-sref="about" ui-sref-active="active">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" ui-sref="contributors">Contributors</a>
@@ -53,3 +53,4 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<discuss></discuss>
