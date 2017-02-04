@@ -18,6 +18,11 @@ class TitlesController < ApplicationController
     render json: @titles, include: [translations: {include: :user}]
   end
 
+  def stats
+    @total = Title.where(translation_count: 0).count
+    render json: { total_untranslated: @total, total_titles: Title.count }
+  end
+
   # GET /titles/1
   # GET /titles/1.json
   def show
@@ -41,7 +46,7 @@ class TitlesController < ApplicationController
   # POST /titles.json
   def create
     inst1 = Institution.find_by_name(params[:institution_one]) || Institution.create(name: params[:institution_one])
-    
+
     if params[:institution_two]
       inst2 = Institution.find_by_name(params[:institution_two]) || Institution.create(name: params[:institution_two], parent: inst1)
     end

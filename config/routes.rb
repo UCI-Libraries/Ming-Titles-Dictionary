@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'api/titles/institution/:id' => 'titles#titles_by_institution'
   get 'api/archived_titles' => 'titles#archived'
   get 'api/titles/:id' => 'titles#show'
+  get 'api/stats' => 'titles#stats'
   get 'api/pinyin_comments' => 'pinyin_comments#index'
   get 'api/title_comments' => 'title_comments#index'
   get 'api/user/:id/translations' => 'users#show_translations'

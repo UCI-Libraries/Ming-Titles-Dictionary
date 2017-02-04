@@ -1,4 +1,4 @@
-titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootScope', '$state', function($scope, Auth, userService, $rootScope, $state){
+titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootScope', '$state', '$http', function($scope, Auth, userService, $rootScope, $state, $http){
 
   $scope.title = "Ming Government Official Titles: A Crowd-Translation Project | 明代職官中英辭典共譯共享";
 
@@ -8,7 +8,15 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootS
     }, function(error) {
         console.log("no session");
     });
+    getStats();
   };
+
+  function getStats() {
+    $http.get('api/stats').then(function(response) {
+      $scope.totalTitles = response.data.total_titles;
+      $scope.untranslated = response.data.total_untranslated;
+    });
+  }
 
   init();
 
