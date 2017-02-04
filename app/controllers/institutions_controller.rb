@@ -4,7 +4,6 @@ class InstitutionsController < ApplicationController
   # GET /institutions
   # GET /institutions.json
   def index
-    p params
     @institutions = Institution.all
 
     @institutions = Institution.roots if params[:roots]
