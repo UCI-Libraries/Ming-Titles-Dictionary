@@ -5,6 +5,7 @@ titlesApp
      transclude: true,
      scope: {
      },
+     controller: 'faqController',
      templateUrl: 'faq.html'
    };
  });
