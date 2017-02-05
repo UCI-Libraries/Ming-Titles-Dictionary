@@ -1,5 +1,5 @@
 titlesApp
-  .controller('discussController', ['$scope', '$http', 'DiscussionPost', 'Auth', function($scope, $http, DiscussionPost, Auth){
+  .controller('discussController', ['$scope', '$http', 'DiscussionPost', 'DiscussionComment', 'Auth', function($scope, $http, DiscussionPost, DiscussionComment, Auth){
 
   var init = function() {
     $scope.posts = [];
@@ -10,7 +10,6 @@ titlesApp
     $http({
         url: '/discussion_posts',
         method: "GET",
-        params: { is_active: true }
      }).then(function(response) {
        console.log(response, response.data);
        response.data.forEach( function(post) {
@@ -46,6 +45,20 @@ titlesApp
     // ).then(function(response) {
     //   console.log("done deleting");
     // });
+  };
+
+  $scope.postDiscussionComment = function(data, form, postId) {
+    var comment = new DiscussionComment();
+    Auth.currentUser().then(function(user) {
+      comment.post = data.comment;
+      comment.user_id = user.id;
+      comment.post_id = postId;
+      comment.save().then(function() {
+        getTopics();
+      });
+    }, function(error) {
+      console.log("no session, translation cannot be saved");
+    });
   };
 
   $scope.postDiscussionPost = function(data, form) {

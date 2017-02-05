@@ -9,6 +9,7 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootS
         console.log("no session");
     });
     getStats();
+    // $scope.numDays = 5;
   };
 
   function getStats() {

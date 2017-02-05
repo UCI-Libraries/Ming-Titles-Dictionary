@@ -61,6 +61,6 @@ class DiscussionCommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_comment_params
-      params.require(:discussion_comment).permit(:post_id, :post)
+      params.require(:discussion_comment).permit(:post_id, :post, :user_id)
     end
 end
