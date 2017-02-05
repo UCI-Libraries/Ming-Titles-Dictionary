@@ -13,9 +13,7 @@ titlesApp.factory('Translation', ['$http', function($http) {
   // an instance method to create a new Translation
   Translation.prototype.save = function() {
     var translation = this;
-    // console.log('TRANSLATION - - - - - ', translation);
     return $http.post('/translations.json', translation).then(function(response) {
-      // console.log('RESPONSE TO POST - translation/new', response);
       translation.id = response.data.id;
       return translation;
     });
@@ -23,10 +21,7 @@ titlesApp.factory('Translation', ['$http', function($http) {
 
   Translation.prototype.edit = function() {
     var translation = this;
-    // console.log('TRANSLATION - - - - - ', translation);
     return $http.put('/translations/'+ translation.id +'.json' , translation).then(function(response) {
-      console.log('RESPONSE TO POST - translation/edit', response);
-      // translation.id = response.data.id;
       return translation;
     });
   };
