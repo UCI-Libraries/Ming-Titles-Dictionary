@@ -21,15 +21,9 @@ class MyMailer < Devise::Mailer
   end
 
   def notify_superadmin_new_translation(translation_id)
-    puts "???????"
-    puts translation_id
     #superadmin is hardcoded here:
     @user = User.find_by_id(1)
     @translation = Translation.find_by_id(translation_id)
-    puts @translation
-    puts @translation.title
-    puts @translation.translation_text
-    puts @translation.user
     mail(to: @user.email, subject: 'New Translation Submitted')
     #AC 11042016 hardcoded 2 other superadmins
     #@user = User.find_by_id(6)
@@ -43,7 +37,7 @@ class MyMailer < Devise::Mailer
     @admin = User.find_by_id(1)
     @scholar =  User.find_by_id(id)
     mail(to: @admin.email, subject: 'New Scholar Application')
-    #AC 11042016 hardcoded 2 other superadmins	
+    #AC 11042016 hardcoded 2 other superadmins
 #    @admin = User.find_by_id(6)
  #   @scholar =  User.find_by_id(id)
  #   mail(to: @admin.email, subject: 'New Scholar Application')
