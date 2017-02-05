@@ -35,7 +35,6 @@ titlesApp
 
   $scope.showDiscuss = function() {
     $rootScope.$broadcast('toggleDiscuss');
-    console.log("show discuss");
   };
 
 }]);

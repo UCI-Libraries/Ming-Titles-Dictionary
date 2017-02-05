@@ -6,7 +6,6 @@ titlesApp.factory('Translation', ['$http', function($http) {
 
   Translation.delete = function(id) {
     return $http.delete('/translations/' + id + '.json').then(function(response) {
-      console.log(response);
       return new Translation(response.data);
     });
   };

@@ -1,5 +1,5 @@
 titlesApp
-  .controller('discussController', ['$scope', '$http', 'DiscussionPost', 'Auth', function($scope, $http, DiscussionPost, Auth){
+  .controller('discussController', ['$scope', '$http', 'DiscussionPost', 'DiscussionComment', 'Auth', 'userService', function($scope, $http, DiscussionPost, DiscussionComment, Auth, userService){
 
   var init = function() {
     $scope.posts = [];
@@ -10,12 +10,12 @@ titlesApp
     $http({
         url: '/discussion_posts',
         method: "GET",
-        params: { is_active: true }
      }).then(function(response) {
-       console.log(response, response.data);
        response.data.forEach( function(post) {
-         console.log(post);
          post.formatted_date = formatTimestamp(post.created_at);
+         post.discussion_comments.forEach( function(comment) {
+           comment.formatted_date = formatTimestamp(comment.created_at);
+         });
        });
       $scope.posts = response.data;
     });
@@ -36,16 +36,31 @@ titlesApp
   $scope.archivePost = function(postId) {
     $http.put('discussion_posts/'+ postId, { is_active: false }
     ).then(function(response) {
-      console.log("done archiving");
+      getTopics();
     });
   };
 
-  $scope.deleteComment = function(commentId) {
-    console.log("delete inactive");
-    // $http.delete('discussion_comments/'+ commentId
-    // ).then(function(response) {
-    //   console.log("done deleting");
-    // });
+  $scope.deleteComment = function(comment) {
+    $http.delete('discussion_comments/'+ comment.id
+    ).then(function() {
+      getTopics();
+    });
+  };
+
+  $scope.postDiscussionComment = function(data, form, postId) {
+    var comment = new DiscussionComment();
+    Auth.currentUser().then(function(user) {
+      comment.post = data.comment;
+      comment.user_id = user.id;
+      comment.post_id = postId;
+      comment.save().then(function() {
+        data.comment = "";
+        form.$setPristine(true);
+        getTopics();
+      });
+    }, function(error) {
+      console.log("no session, translation cannot be saved");
+    });
   };
 
   $scope.postDiscussionPost = function(data, form) {
@@ -55,6 +70,9 @@ titlesApp
       post.title = data.title;
       post.user_id = user.id;
       post.save().then(function() {
+        data.post = "";
+        data.title = "";
+        form.$setPristine(true);
         getTopics();
         $scope.isCollapsed = true;
       });
@@ -68,11 +86,19 @@ titlesApp
   };
 
   $scope.userCanArchive = function() {
-    return true;
+    var currentUser = userService.getUser();
+    if (currentUser.super_admin === true) {
+      return true;
+    }
+    return false;
   };
 
   $scope.userCanDelete = function(comment) {
-    return true;
+    var currentUser = userService.getUser();
+    if (currentUser.id === comment.user_id) {
+      return true;
+    }
+    return false;
   };
 
   $scope.toggle = function() {
@@ -83,16 +109,15 @@ titlesApp
     $scope.$broadcast('$locationChangeStart');
   };
 
-  $scope.onopen = function () {
+  $scope.onopen = function() {
     alert('Open');
   };
 
-  $scope.onclose = function () {
+  $scope.onclose = function() {
     alert('Close');
   };
 
   $scope.$on('toggleDiscuss', function() {
     $scope.checked = !$scope.checked;
   });
-
 }]);

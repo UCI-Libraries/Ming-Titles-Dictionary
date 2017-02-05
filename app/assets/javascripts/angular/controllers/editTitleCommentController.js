@@ -10,7 +10,6 @@ titlesApp
     var comment = new TitleComment();
     comment.comment_text = data;
     comment.edit($scope.current_title_comment.id).then(function(response) {
-      // console.log(response);
       $scope.dismiss();
     });
   };
