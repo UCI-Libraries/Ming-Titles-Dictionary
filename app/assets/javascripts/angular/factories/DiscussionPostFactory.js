@@ -6,7 +6,6 @@ titlesApp.factory('DiscussionPost', ['$http', function($http) {
 
   DiscussionPost.delete = function(id) {
     return $http.delete('/discussion_posts/' + id + '.json').then(function(response) {
-      console.log(response);
       return new DiscussionPost(response.data);
     });
   };

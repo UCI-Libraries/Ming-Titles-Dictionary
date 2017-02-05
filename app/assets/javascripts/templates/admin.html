@@ -9,6 +9,7 @@
         <li ng-click="showExport()" ng-class="{active: exportAuth}"><a>Export Data</a></li>
         <li ng-click="showArchived()" ng-class="{active: archived}"><a>Archived Titles</a></li>
         <li ng-show="isSuperAdmin" ng-click="showNewTitle()" ng-class="{active: newTitle}"><a>Add Title</a></li>
+        <li ng-show="isSuperAdmin" ng-click="showArchivedPosts()" ng-class="{active: archivedPost}"><a>Archived Posts</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
@@ -29,5 +30,35 @@
   </div>
   <div ng-show="newTitle" class="container">
     <new-title-form></new-title-form>
+  </div>
+  <div ng-show="archivedPost" class="container">
+    <div class="discuss-content" style="padding:20px">
+      <p ng-if="!postsPresent()" class="placeholder"><em>There are currently no archived discussion posts</em></p>
+      <ul ng-repeat="post in posts | orderBy: 'date_created':true">
+        <li  ng-if="!post.is_active" class="post">
+          <article>
+            <div class="post-title">
+              <span class="post-date">{{post.formatted_date}}:&nbsp;</span>
+              <span ng-bind-html="post.title"></span>
+              <span>
+                &nbsp;<a class="fa fa-archive" ng-click="unarchivePost(post.id)" title="Unarchive"></a>
+              </span>
+              <br/>
+            </div>
+            <div class="post-text">
+              <span ng-bind-html="post.post"></span><br/>
+            </div>
+          </article>
+          <div ng-if="post.discussion_comments.length > 0"><h5>Comments</h5></div>
+          <div class="comment-block" ng-repeat="comment in post.discussion_comments">
+            <span class="comment-date">{{comment.formatted_date}}:&nbsp;</span>
+            <span><em>&nbsp;&nbsp;{{comment.post}}</em></span>
+            <span ng-if="userCanDelete(comment)">
+              &nbsp;&nbsp;<a ng-click="deleteComment(comment)" class="fa fa-trash" title="Delete"></a>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

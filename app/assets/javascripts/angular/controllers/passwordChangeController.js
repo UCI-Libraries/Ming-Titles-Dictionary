@@ -8,7 +8,6 @@ titlesApp
       $http.put('api/users/change_password', {
         "password": data.password
       }).then(function(response) {
-        console.log("Approved!", response);
         if (response.data.response === "password updated") {
           $scope.approved = true;
           $scope.formData = null;
@@ -17,4 +16,3 @@ titlesApp
       });
   };
 }]);
-

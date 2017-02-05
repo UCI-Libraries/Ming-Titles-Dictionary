@@ -38,7 +38,7 @@ body.ng-pageslide-body-closed::before {
   width: 100%;
   margin-top: 120px;
   font-size: large;
-  background-color: $uci-grey;
+  background-color: #c6beb5;
 }
 
 .add-discuss-topic {
@@ -63,8 +63,23 @@ body.ng-pageslide-body-closed::before {
     }
   }
   a {
+    color: $uci-header-blue;
     text-decoration: none;
     margin: 0, 5px;
+  }
+  .post-text {
+    margin-left: 20px;
+  }
+  .comment-block {
+    // margin: 15px 0;
+    margin-top: 0;
+    font-size: 13px;
+    p {
+      margin-top: 8px;
+    }
+    .comment-date {
+      opacity: 0.7;
+    }
   }
 }
 

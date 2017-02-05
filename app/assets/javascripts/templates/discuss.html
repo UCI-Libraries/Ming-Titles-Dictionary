@@ -1,8 +1,10 @@
 <div pageslide ps-size="400px" ps-open="checked" id="discuss">
     <div class="discuss-content" style="padding:20px">
-        <h2>Hot Topics for Discussion</h2>
+        <div class="translation-subhead">
+          <h3>Hot Topics for Discussion</h3>
+        </div>
         <p ng-if="!postsPresent()" class="placeholder"><em>There are currently no featured posts</em></p>
-        <button type="button" class="btn btn-default row" ng-click="isCollapsed = !isCollapsed">Add a new discussion topic</button>
+        <button type="button" class="btn btn-default row" ng-click="isCollapsed = !isCollapsed" style="margin:10px">Add a new discussion topic</button>
         <br>
         <div uib-collapse="isCollapsed" class="row add-discuss-topic">
           <div class="well well-lg">
@@ -21,19 +23,19 @@
                   <span class="form-error" ng-show="myForm.post.$error.required && myForm.post.$dirty">post cannot be blank</span>
                 </div>
                 <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
-                <button type="button" ng-click="resetPostForm()" class="btn btn-default pull-right">Clear</button>
+                <button type="button" ng-click="isCollapsed = !isCollapsed; formData.post = ''; formData.title =''; myForm.$setPristine(true)" class="btn btn-default pull-right">Clear</button>
               </div>
             </form>
           </div>
         </div>
         <ul ng-repeat="post in posts | orderBy: 'date_created':true">
-          <li class="post">
-            <article ng-if="post.is_active">
+          <li  ng-if="post.is_active" class="post">
+            <article>
               <div class="post-title">
                 <span class="post-date">{{post.formatted_date}}:&nbsp;</span>
                 <span ng-bind-html="post.title"></span>
                 <span ng-show="userCanArchive()">
-                  :&nbsp;<a class="fa fa-archive" ng-click="archivePost(post.id)"></a>
+                  &nbsp;<a class="fa fa-archive" ng-click="archivePost(post.id)" title="Archive"></a>
                 </span>
                 <br/>
               </div>
@@ -41,7 +43,15 @@
                 <span ng-bind-html="post.post"></span><br/>
               </div>
             </article>
-            <div><a class="fa fa-plus" ng-click="post.isCollapsed = !post.isCollapsed">&nbsp;&nbsp;Add Comment</a></div>
+            <div ng-if="post.discussion_comments.length > 0"><h5>Comments</h5></div>
+            <div class="comment-block" ng-repeat="comment in post.discussion_comments">
+              <span class="comment-date">{{comment.formatted_date}}:&nbsp;</span>
+              <span><em>&nbsp;&nbsp;{{comment.post}}</em></span>
+              <span ng-if="userCanDelete(comment)">
+                &nbsp;&nbsp;<a ng-click="deleteComment(comment)" class="fa fa-trash" title="Delete"></a>
+              </span>
+            </div>
+            <div><a class="fa fa-plus comment-block" ng-click="post.isCollapsed = !post.isCollapsed">&nbsp;&nbsp;Add Comment</a></div>
             <div uib-collapse="!post.isCollapsed" class="row add-discuss-topic">
               <div class="well well-lg">
                 <form class="titles-form form-horizontal" ng-submit="postDiscussionComment(formData, myForm, post.id)" name="myForm">
@@ -57,12 +67,6 @@
                   </div>
                 </form>
               </div>
-            </div>
-            <div ng-repeat="comment in post.discussion_comments">
-              <span><em>&nbsp;&nbsp;{{comment.post}}</em></span>
-              <span ng-if="userCanDelete(comment)">
-                <a ng-click="deleteComment(comment.id)" class="fa fa-trash"></a>
-              </span>
             </div>
           </li>
         </ul>
