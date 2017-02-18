@@ -22,9 +22,9 @@ class MyMailer < Devise::Mailer
 
   def notify_superadmin_new_translation(translation_id)
     #superadmin is hardcoded here:
-    @user = User.find_by_id(1)
+    @users = User.where(super_admin: true)
     @translation = Translation.find_by_id(translation_id)
-    mail(to: @user.email, subject: 'New Translation Submitted')
+    @users.each do { |u| mail(to: u.email, subject: 'New Translation Submitted') }
     #AC 11042016 hardcoded 2 other superadmins
     #@user = User.find_by_id(6)
     #mail(to: @user.email, subject: 'New Translation Submitted')

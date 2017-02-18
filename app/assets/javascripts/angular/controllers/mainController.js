@@ -9,10 +9,15 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootS
         console.log("no session");
     });
     getStats();
-    // $scope.numDays = 5;
   };
 
   function getStats() {
+    var a = moment([2017, 5, 06]);
+    console.log(a);
+    var b = moment();
+    var diffInDays = a.diff(b, 'days');
+    $scope.countdown = diffInDays;
+
     $http.get('api/stats').then(function(response) {
       $scope.totalTitles = response.data.total_titles;
       $scope.untranslated = response.data.total_untranslated;

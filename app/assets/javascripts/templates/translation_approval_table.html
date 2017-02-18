@@ -22,6 +22,8 @@
           <td title="'Flagged'" filter="{ flag: 'select'}" sortable="'flag'" ng-click="setFlag(translation, translation.flag)" filter-data="flaggedFilter">
               <i class="fa fa-lg fa-flag"  ng-class="{'flagged': translation.flag}" aria-hidden="true"></i></td>
           <td title="'Status'" filter="{ status: 'select'}" filter-data="statusFilter" sortable="'status'">
+              Assign</td>
+          <td title="'Status'" filter="{ status: 'select'}" filter-data="statusFilter" sortable="'status'">
               {{translation.status}}</td>
           <td title="'Approve/Revoke'">
               <button ng-show="!translation.approved" ng-click="approveTranslation(translation)">Approve Translation</button><button ng-show="translation.approved" ng-click="revokeTranslation(translation)">Set as Unapproved</button></td>
