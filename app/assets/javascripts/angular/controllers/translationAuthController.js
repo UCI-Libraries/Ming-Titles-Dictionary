@@ -19,10 +19,6 @@ titlesApp
         $scope.assignedTranslation = translation;
       };
 
-      $scope.assign = function (thing) {
-        console.log(thing);
-      };
-
       function getTranslations() {
         $http.get('translations/').then(function(response) {
           $scope.data = setNestedAttrs(response.data);
@@ -63,10 +59,6 @@ titlesApp
           var url = $state.href('titles', {"id": id});
           window.open(url,'_blank');
         }
-      };
-
-      $scope.assign = function(translation) {
-        console.log(translation);
       };
 
       init();

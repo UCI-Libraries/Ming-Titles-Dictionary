@@ -20,7 +20,6 @@ titlesApp
   };
 
   $scope.assignTranslation = function(data) {
-    console.log("data", data);
     $http({
         url: 'admin/assign',
         method: "GET",
@@ -30,7 +29,8 @@ titlesApp
           translation_id: $scope.assignedTranslation.id
         }
      }).then(function(response) {
-        console.log(response);
+        $scope.resetForm();
+        $scope.dismiss();
      });
   };
 

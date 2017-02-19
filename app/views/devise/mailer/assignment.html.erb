@@ -4,12 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Greetings, <%= @assignee.fname %>!</h1>
-    <h3>Ming Government Official Titles: A Crowd-Translation Project</h3>
+    <h3>You have been assigned a new translation to review!</h3>
     <p>
-      Thank you for your commitment to making contributions to the crowd-translation of Ming Government Official Titles, a Mellon-funded project through the Council on East Asian Libraries (CEAL)!
-      <br>
-      Please use the credentials you used to create you account to login at http://mingofficialtitles.lib.uci.edu. Once logged in, you will be able to browse the official titles listed, contribute English translations for selected official titles, comment on others’ translations, see summaries of your existing contributions, and more.
+      Translation: <%= @translation.translation_text %>
+      Link to title: http://mingofficialtitles.lib.uci.edu/#/titles/<%= @translation.id %>
+      Message from assigning admin: <%= @message %>
     </p>
     <p>Thanks and have a great day!</p>
   </body>

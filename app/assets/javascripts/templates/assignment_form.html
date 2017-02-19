@@ -8,23 +8,23 @@
       <div class="modal-body">
         <form class="titles-form form-horizontal" ng-submit="assignTranslation(formData, myForm)" name="myForm">
           <div class="form-group">
-            <label class="col-md-12" for="institution1">
+            <label class="col-md-12" for="assignee">
               <span class="redfont">*&nbsp;</span>
               Assignee (required):&nbsp;</label>
-            <div class="col-md-9">
+            <div class="col-md-12">
               <select id="assignee" name="assignee" class="form-control" ng-model="formData.assignee" ng-options="admin.fullName for admin in admins" required>
                 <option value='' disabled selected>Please Choose</option>
               </select>
               <span class="form-error" ng-show="myForm.assignee.$error.required && myForm.assignee.$dirty">required</span>
             </div>
-            <label class="col-md-3 control-label" for="message">
+            <label class="col-md-12" for="message">
               <span class="redfont">*&nbsp;</span>
               Message for assignee:&nbsp;</label>
-            <div class="col-md-9">
+            <div class="col-md-12">
               <textarea class="form-control" rows="4" id="translation" name="message" ng-model="formData.message" required/></textarea>
               <span class="form-error" ng-show="myForm.message.$error.required && myForm.message.$dirty">message cannot be blank</span>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
               <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
               <button type="button" ng-click="resetForm()" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
             </div>
