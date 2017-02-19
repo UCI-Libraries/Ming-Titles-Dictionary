@@ -22,6 +22,11 @@
                   <textarea class="form-control" rows="3" id="discussion_post" name="post" ng-model="formData.post" required/></textarea>
                   <span class="form-error" ng-show="myForm.post.$error.required && myForm.post.$dirty">post cannot be blank</span>
                 </div>
+                <div class="col-md-12">
+                  <label class="control-label" for="titleId">
+                    Title #:&nbsp;</label>
+                  <input class="form-control" rows="3" id="titleId" name="titleId" ng-model="formData.titleId"/></input>
+                </div>
                 <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Submit</button>
                 <button type="button" ng-click="isCollapsed = !isCollapsed; formData.post = ''; formData.title =''; myForm.$setPristine(true)" class="btn btn-default pull-right">Clear</button>
               </div>
@@ -41,6 +46,7 @@
               </div>
               <div class="post-text">
                 <span ng-bind-html="post.post"></span><br/>
+                <span ng-if="post.title_id > 0" ng-click="seeTitle(post.title_id)">Link: {{post.title_id}}</span>
               </div>
             </article>
             <div ng-if="post.discussion_comments.length > 0"><h5>Comments</h5></div>

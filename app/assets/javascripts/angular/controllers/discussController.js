@@ -69,9 +69,11 @@ titlesApp
       post.post = data.post;
       post.title = data.title;
       post.user_id = user.id;
+      post.title_id = data.titleId;
       post.save().then(function() {
         data.post = "";
         data.title = "";
+        data.titleId = "";
         form.$setPristine(true);
         getTopics();
         $scope.isCollapsed = true;
