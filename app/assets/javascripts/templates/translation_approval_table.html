@@ -19,8 +19,8 @@
               {{translation.explanation}}</td>
           <td title="'Other Scholars'" filter="{ scholars: 'text'}" sortable="'scholars'" ng-click="seeTitle(translation.title.id)">
               {{translation.scholars}}</td>
-          <td title="'Flagged'" filter="{ flag: 'select'}" sortable="'flag'" ng-click="setFlag(translation, translation.flag)" filter-data="flaggedFilter">
-              <i class="fa fa-lg fa-flag"  ng-class="{'flagged': translation.flag}" aria-hidden="true"></i></td>
+          <td title="'Assign'" ng-click="logCurrentTranslationToAssign(translation)" >
+              <i class="fa fa-lg fa-envelope"  data-toggle="modal" data-target="#assignmentFormModal" aria-hidden="true"></i></td>
           <td title="'Status'" filter="{ status: 'select'}" filter-data="statusFilter" sortable="'status'">
               {{translation.status}}</td>
           <td title="'Approve/Revoke'">
@@ -45,3 +45,4 @@
       <rect  x='47' y='44' width='6' height='12' rx='10' ry='10' fill='rgba(34,57,91,0.799)' transform='rotate(330 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.9166666666666666s' repeatCount='indefinite'/></rect></svg>
   </div>
 </div>
+<assignment-form></assignment-form>

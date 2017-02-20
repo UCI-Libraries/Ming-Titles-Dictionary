@@ -1,5 +1,5 @@
 titlesApp
-  .controller('translationApprovalController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', '$state', 'Translation', function($scope, $http, $stateParams, titlesService, NgTableParams, $state, Translation){
+  .controller('translationApprovalController', ['$scope', '$http', '$stateParams', 'titlesService', 'NgTableParams', '$state', 'Translation', '$uibModal', function($scope, $http, $stateParams, titlesService, NgTableParams, $state, Translation, $uibModal){
 
       var init = function() {
         $scope.loading = true;
@@ -14,6 +14,10 @@ titlesApp
       $scope.statusFilter = [{title: 'approved', id: 'approved'},{title: 'unapproved', id: 'unapproved'}, {title: 'new', id: 'new'}];
 
       $scope.flaggedFilter = [{title: 'flagged', id: true},{title: 'unflagged', id: false}];
+
+      $scope.logCurrentTranslationToAssign = function(translation) {
+        $scope.assignedTranslation = translation;
+      };
 
       function getTranslations() {
         $http.get('translations/').then(function(response) {
@@ -55,17 +59,6 @@ titlesApp
           var url = $state.href('titles', {"id": id});
           window.open(url,'_blank');
         }
-      };
-
-      $scope.setFlag = function(translation, flag) {
-        $http.put('admin/translations/'+ translation.id, {"flag": !flag}).then(function(response) {
-          $scope.data.forEach( function(t) {
-            if (t.id === translation.id) {
-              t.flag = !flag;
-            }
-          });
-          $scope.tableParams.settings({dataset: $scope.data});
-        });
       };
 
       init();

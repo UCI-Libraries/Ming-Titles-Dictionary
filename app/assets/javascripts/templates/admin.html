@@ -53,9 +53,9 @@
           <div class="comment-block" ng-repeat="comment in post.discussion_comments">
             <span class="comment-date">{{comment.formatted_date}}:&nbsp;</span>
             <span><em>&nbsp;&nbsp;{{comment.post}}</em></span>
-            <span ng-if="userCanDelete(comment)">
+            <!-- <span ng-if="userCanDelete(comment)">
               &nbsp;&nbsp;<a ng-click="deleteComment(comment)" class="fa fa-trash" title="Delete"></a>
-            </span>
+            </span> -->
           </div>
         </li>
       </ul>

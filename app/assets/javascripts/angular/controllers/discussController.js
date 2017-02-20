@@ -1,5 +1,5 @@
 titlesApp
-  .controller('discussController', ['$scope', '$http', 'DiscussionPost', 'DiscussionComment', 'Auth', 'userService', function($scope, $http, DiscussionPost, DiscussionComment, Auth, userService){
+  .controller('discussController', ['$scope', '$http', '$state', 'DiscussionPost', 'DiscussionComment', 'Auth', 'userService', function($scope, $http, $state, DiscussionPost, DiscussionComment, Auth, userService){
 
   var init = function() {
     $scope.posts = [];
@@ -69,9 +69,11 @@ titlesApp
       post.post = data.post;
       post.title = data.title;
       post.user_id = user.id;
+      post.title_id = data.titleId;
       post.save().then(function() {
         data.post = "";
         data.title = "";
+        data.titleId = "";
         form.$setPristine(true);
         getTopics();
         $scope.isCollapsed = true;
@@ -120,4 +122,8 @@ titlesApp
   $scope.$on('toggleDiscuss', function() {
     $scope.checked = !$scope.checked;
   });
+
+  $scope.seeTitle = function(id) {
+    $state.go('titles', {"id": id});
+  };
 }]);

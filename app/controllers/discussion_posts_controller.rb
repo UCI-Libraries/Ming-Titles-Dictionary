@@ -20,6 +20,7 @@ class DiscussionPostsController < ApplicationController
   # POST /discussion_posts.json
   def create
     p discussion_post_params
+    p "SPOIKOSIOADS"
     @discussion_post = DiscussionPost.new(discussion_post_params)
 
     respond_to do |format|
@@ -65,6 +66,6 @@ class DiscussionPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_post_params
-      params.require(:discussion_post).permit(:user_id, :title, :post, :is_active)
+      params.require(:discussion_post).permit(:title_id, :user_id, :title, :post, :is_active)
     end
 end
