@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/assign'
+
   root to: "home#index"
 
   devise_for :users
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
   get 'api/stats' => 'titles#stats'
   get 'api/pinyin_comments' => 'pinyin_comments#index'
   get 'api/title_comments' => 'title_comments#index'
+  get 'api/users' => 'users#index'
   get 'api/user/:id/translations' => 'users#show_translations'
   get 'api/user/:id/comments' => 'users#show_comments'
   get 'api/users/contributors/:has_contributed' => 'users#contributors'
@@ -46,6 +49,7 @@ Rails.application.routes.draw do
   get 'admin/institutions_export' => 'institutions#export'
   get 'admin/pinyin_comments_export' => 'pinyin_comments#export'
   get 'admin/title_comments_export' => 'title_comments#export'
+  get 'admin/assign' => 'notifications#assign'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

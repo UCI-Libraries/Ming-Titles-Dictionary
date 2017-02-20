@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>You have been assigned a new translation to review!</h3>
+    <p>
+      Translation: <%= @translation.translation_text %>
+      Link to title: http://mingofficialtitles.lib.uci.edu/#/titles/<%= @translation.id %>
+      Message from assigning admin: <%= @message %>
+    </p>
+    <p>Thanks and have a great day!</p>
+  </body>
+</html>
