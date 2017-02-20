@@ -46,7 +46,7 @@
               </div>
               <div class="post-text">
                 <span ng-bind-html="post.post"></span><br/>
-                <span ng-if="post.title_id > 0" ng-click="seeTitle(post.title_id)">Link: {{post.title_id}}</span>
+                <a class="discuss-link" ng-if="post.title_id > 0" ng-click="seeTitle(post.title_id)">Go to translation page</a>
               </div>
             </article>
             <div ng-if="post.discussion_comments.length > 0"><h5>Comments</h5></div>

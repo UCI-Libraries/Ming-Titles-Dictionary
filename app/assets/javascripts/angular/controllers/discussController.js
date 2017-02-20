@@ -1,5 +1,5 @@
 titlesApp
-  .controller('discussController', ['$scope', '$http', 'DiscussionPost', 'DiscussionComment', 'Auth', 'userService', function($scope, $http, DiscussionPost, DiscussionComment, Auth, userService){
+  .controller('discussController', ['$scope', '$http', '$state', 'DiscussionPost', 'DiscussionComment', 'Auth', 'userService', function($scope, $http, $state, DiscussionPost, DiscussionComment, Auth, userService){
 
   var init = function() {
     $scope.posts = [];
@@ -122,4 +122,8 @@ titlesApp
   $scope.$on('toggleDiscuss', function() {
     $scope.checked = !$scope.checked;
   });
+
+  $scope.seeTitle = function(id) {
+    $state.go('titles', {"id": id});
+  };
 }]);
