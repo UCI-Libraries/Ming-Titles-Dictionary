@@ -66,6 +66,8 @@ body.ng-pageslide-body-closed::before {
     color: $uci-header-blue;
     text-decoration: none;
     margin: 0, 5px;
+    font-size: 0.7em;
+    cursor: pointer;
   }
   .post-text {
     margin-left: 20px;

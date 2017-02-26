@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all.order("id")
+    @users = @users.where(is_admin: params[:is_admin]) if params.key?(:is_admin)
     render json: @users
   end
 

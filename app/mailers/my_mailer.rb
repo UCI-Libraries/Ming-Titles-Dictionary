@@ -24,7 +24,7 @@ class MyMailer < Devise::Mailer
     #superadmin is hardcoded here:
     @users = User.where(super_admin: true)
     @translation = Translation.find_by_id(translation_id)
-    @users.each do { |u| mail(to: u.email, subject: 'New Translation Submitted') }
+    @users.each { |u| mail(to: u.email, subject: 'New Translation Submitted') }
     #AC 11042016 hardcoded 2 other superadmins
     #@user = User.find_by_id(6)
     #mail(to: @user.email, subject: 'New Translation Submitted')
@@ -51,12 +51,10 @@ class MyMailer < Devise::Mailer
     mail(to: @user.email, subject: 'Congratulations! You have been accepted as a contributing scholar.')
   end
 
-#AC 11042016 trying to send password reset email
-
-  #def change_password(user)
-  #  @user = user
-  #  mail(to: @user.email, subject: 'Password reset complete.')
-  #end
-
-
+  def assignment(message, translation_id, user_id)
+    @translation = Translation.find(translation_id)
+    @assignee = User.find(user_id)
+    @message = message
+    mail(to: @assignee.email, subject: 'You have a new translation assignment')
+  end
 end
