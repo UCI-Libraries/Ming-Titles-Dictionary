@@ -59,12 +59,16 @@ titlesApp
     title.chinese_title = data.chineseTitle;
     title.pinyin_title = data.pinyinTitle;
     title.institution_one = data.institutionOne.name;
-    title.institution_two = data.institutionTwo.name;
-    title.institution_three = data.institutionThree.name;
+    if (data.institutionTwo.name) {
+      title.institution_two = data.institutionTwo.name;
+    }
+    if (data.institutionThree.name) {
+      title.institution_three = data.institutionThree.name;
+    }
     title.save().then(function() {
       $scope.resetTitleForm();
     }, function(error) {
-      console.log("no session, title cannot be saved");
+      console.log(error);
     });
   };
 
