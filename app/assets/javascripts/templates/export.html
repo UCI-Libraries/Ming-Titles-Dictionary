@@ -4,7 +4,7 @@
       <button lazy-load="true" type="button" ng-csv="getTranslationsArray" csv-header="['id', 'translation_text', 'explanation', 'user_id', 'title_id', 'created_at']" filename="translations.csv">Export Translations Table</button>
     </div>
     <div class="col-md-3 export-item">
-      <button lazy-load="true" type="button" ng-csv="getTitlesArray" csv-header="['id', 'chinese_title', 'pinyin_title', 'translation_count', 'institutions']" filename="titles.csv">Export Titles Table</button>
+      <button lazy-load="true" type="button" ng-csv="getTitlesArray" csv-header="['id', 'chinese_title', 'pinyin_title', 'translation_count', 'institution_1_name', 'institution_1_id', 'institution_2_name', 'institution_2_id', 'institution_3_name', 'institution_3_id']" filename="titles.csv">Export Titles Table</button>
     </div>
     <div class="col-md-3 export-item">
       <button lazy-load="true" type="button" ng-csv="getCommentsArray" csv-header="['id', 'translation_id', 'user_id', 'comment_text', 'created_at']" filename="comments.csv">Export Comments Table</button>

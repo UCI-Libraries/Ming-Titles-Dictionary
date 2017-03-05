@@ -61,6 +61,23 @@ titlesApp
         }
       };
 
+      $scope.setFlag = function(translation, flag) {
+        $http.put('admin/translations/'+ translation.id, {"flag": !flag}).then(function(response) {
+          $scope.data.forEach( function(t) {
+            if (t.id === translation.id) {
+              t.flag = !flag;
+            }
+          });
+          $scope.tableParams.settings({dataset: $scope.data});
+        });
+      };
+
+      $scope.dynamicPopover = {
+        content: 'Hello, World!',
+        templateUrl: 'popover.html',
+        title: 'Title'
+      };
+
       init();
 
 }]);
