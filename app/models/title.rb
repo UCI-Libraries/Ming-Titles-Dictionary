@@ -22,10 +22,32 @@ class Title < ApplicationRecord
   def self.to_csv_array
     attributes = %w(id chinese_title pinyin_title translation_count)
     array = []
-    all.each do |translation|
+    all.each do |title|
       hash = {}
-      attributes.each { |attr| hash[attr] = translation[attr]}
-      hash["institutions"] = "["+ translation.institutions.map { |i| i.id }.join(",") + "]"
+      attributes.each { |attr| hash[attr] = title[attr]}
+      if title.institutions[0]
+        hash["institution_1_name"] = title.institutions[0].name
+        hash["institution_1_id"] = title.institutions[0].id
+      else
+        hash["institution_1_name"] = nil
+        hash["institution_1_id"] = nil
+      end
+
+      if title.institutions[1]
+        hash["institution_2_name"] = title.institutions[1].name
+        hash["institution_2_id"] = title.institutions[1].id
+      else
+        hash["institution_2_name"] = nil
+        hash["institution_2_id"] = nil
+      end
+
+      if title.institutions[2]
+        hash["institution_3_name"] = title.institutions[2].name
+        hash["institution_3_id"] = title.institutions[2].id
+      else
+        hash["institution_3_name"] = nil
+        hash["institution_3_id"] = nil
+      end
       array << hash
     end
     array

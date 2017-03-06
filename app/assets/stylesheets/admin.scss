@@ -12,8 +12,16 @@
 
 }
 
-.fa-flag {
+.fa-flag, .fa-sticky-note {
   color: $uci-grey;
+}
+
+.fa-check {
+  color: rgb(82, 171, 67);
+}
+
+.fa-times {
+  color: rgb(145, 34, 34);
 }
 
 .flagged {
@@ -30,4 +38,8 @@
   width: 30px;
   margin-left: 40%;
   margin-right: 40%;
+}
+
+.popover {
+  padding-bottom: 10px;
 }
