@@ -1,1 +1,6 @@
-<div><textarea>editable field</textarea></div>
+<div>
+  <div ng-init="showEdit=true" ng-show="showEdit"><pre>{{translation.note}}</pre></div>
+  <textarea class="form-control" ng-model='translation.note' ng-hide="showEdit" ng-bind-html="translation.note"></textarea>
+  <a type="button" ng-show="showEdit" ng-click="showEdit=!showEdit" name="Save">Edit</a>
+  <button type="button" class="btn pull-right" ng-hide="showEdit" ng-click="showEdit=!showEdit; saveNote(translation)" name="Save">Save</button>
+</div>

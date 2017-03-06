@@ -22,7 +22,6 @@ titlesApp.factory('DiscussionComment', ['$http', function($http) {
   DiscussionComment.prototype.edit = function() {
     var discussionComment = this;
     return $http.put('/discussion_comments/'+ discussionComment.id +'.json' , discussionComment).then(function(response) {
-      console.log('RESPONSE TO POST - discussionComment/edit', response);
       return discussionComment;
     });
   };

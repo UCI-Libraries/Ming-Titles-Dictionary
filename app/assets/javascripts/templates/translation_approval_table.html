@@ -23,14 +23,14 @@
               <i class="fa fa-lg fa-envelope"  data-toggle="modal" data-target="#assignmentFormModal" aria-hidden="true"></i></td>
           <td title="'Flagged'" filter="{ flag: 'select'}" sortable="'flag'" ng-click="setFlag(translation, translation.flag)" filter-data="flaggedFilter">
               <i class="fa fa-lg fa-flag"  ng-class="{'flagged': translation.flag}" aria-hidden="true"></i></td>
-          <td title="'Note'" ng-click="logCurrentTranslationToAssign(translation)" >
-              <i class="fa fa-lg fa-sticky-note"  uib-popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" aria-hidden="true"></i></td>
-          <!-- <td title="'Button'" ng-click="button()" >
-              <button uib-popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" type="button" class="btn btn-default">Popover With Template</button></td> -->
+          <td title="'Note'">
+              <i class="fa fa-lg fa-sticky-note"  ng-class="{'flagged': translation.flag}" popover-placement="right" uib-popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" translation="translation" aria-hidden="true" ng-show="translation.flag"></i>
+              <i class="fa fa-lg fa-sticky-note"  ng-class="{'flagged': translation.flag}" ng-hide="translation.flag" aria-hidden="true" title="Translation note"></i></td>
           <td title="'Status'" filter="{ status: 'select'}" filter-data="statusFilter" sortable="'status'">
               {{translation.status}}</td>
-          <td title="'Approve/Revoke'">
-              <button ng-show="!translation.approved" ng-click="approveTranslation(translation)">Approve Translation</button><button ng-show="translation.approved" ng-click="revokeTranslation(translation)">Set as Unapproved</button></td>
+          <td title="'Action'">
+              <i class="fa fa-lg fa-check" ng-show="!translation.approved" ng-click="approveTranslation(translation)" title="Set as Approved"></i>
+              <i class="fa fa-lg fa-times" ng-show="translation.approved" ng-click="revokeTranslation(translation)" title="Set as Unapproved"></i></td>
 
       </tr>
   </table>

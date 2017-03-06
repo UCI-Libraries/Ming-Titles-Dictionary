@@ -25,7 +25,6 @@ titlesApp
     user.institution = data.institution;
     user.country = data.country;
     $http.put('api/users/update_profile' , user).then(function(response) {
-      // console.log('RESPONSE TO POST - users/edit', response);
       $scope.dismiss();
       return user;
     });

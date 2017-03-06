@@ -12,7 +12,7 @@
 
 }
 
-.fa-flag {
+.fa-flag, .fa-sticky-note {
   color: $uci-grey;
 }
 
@@ -30,4 +30,8 @@
   width: 30px;
   margin-left: 40%;
   margin-right: 40%;
+}
+
+.popover {
+  padding-bottom: 10px;
 }

@@ -15,6 +15,7 @@
 #  flag             :boolean          default(FALSE)
 #  reviewed         :boolean          default(FALSE)
 #  flagged          :boolean          default(FALSE)
+#  note             :text
 #
 
 require 'test_helper'

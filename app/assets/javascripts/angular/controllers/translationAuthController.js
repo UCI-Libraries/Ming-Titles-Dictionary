@@ -32,6 +32,11 @@ titlesApp
           title.chinese_title = title.title.chinese_title;
           title.pinyin_title = title.title.pinyin_title;
           title.translation_count = title.title.translation_count;
+
+          if (title.note) {
+            // title.note_edit = title.note.replace('<br />', '\n');
+          }
+
           title.status = "unapproved";
           if (title.approved === true ) {
             title.status = "approved";
@@ -73,9 +78,19 @@ titlesApp
       };
 
       $scope.dynamicPopover = {
-        content: 'Hello, World!',
         templateUrl: 'popover.html',
-        title: 'Title'
+        title: 'Notes'
+      };
+
+      $scope.saveNote = function(translation) {
+        var t = new Translation();
+        // var note = translation.note_edit.replace(/(\r\n|\n|\r)/gm, "<br />");
+        translation.note = translation.note;
+        t.id = translation.id;
+        t.note = note;
+        t.edit().then(function(response) {
+          console.log(response);
+        });
       };
 
       init();
