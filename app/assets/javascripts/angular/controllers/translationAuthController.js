@@ -84,10 +84,9 @@ titlesApp
 
       $scope.saveNote = function(translation) {
         var t = new Translation();
-        // var note = translation.note_edit.replace(/(\r\n|\n|\r)/gm, "<br />");
-        translation.note = translation.note;
+        console.log(translation);
         t.id = translation.id;
-        t.note = note;
+        t.note = translation.note;
         t.edit().then(function(response) {
           console.log(response);
         });
