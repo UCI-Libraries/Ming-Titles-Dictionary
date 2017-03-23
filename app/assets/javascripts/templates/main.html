@@ -1,13 +1,12 @@
 <div class="container">
   <h1 style="padding-bottom:30px;">Ming Government Official Titles</h1>
-  <p><strong class="highlight">{{untranslated}}</strong> official titles remaining to be translated out of <strong class="highlight">{{totalTitles}}</strong> titles in total. <strong class="highlight">{{countdown}}</strong> days to go before the project ends.</p>
+  <p ng-cloak><strong class="highlight">{{untranslated}}</strong> official titles remaining to be translated out of <strong class="highlight">{{totalTitles}}</strong> titles in total. <strong class="highlight">{{countdown}}</strong> days to go before the project ends.</p>
   <p ng-show="!userIsSignedIn()"><i>Log in before finding and clicking on a specific official title to contribute.</i></p>
   <br>
   <div class="row">
     <div class="col-md-2">
-      <institutions-menu></institutions-menu>
+      <institutions-menu ng-hide="smallScreen"></institutions-menu>
     </div>
-
     <div class="col-md-10">
       <div class="row">
         <titles-table></titles-table>

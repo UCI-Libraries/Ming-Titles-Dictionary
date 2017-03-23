@@ -1,4 +1,5 @@
-titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootScope', '$state', '$http', function($scope, Auth, userService, $rootScope, $state, $http){
+titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootScope', '$state', '$http', 'matchmedia', function($scope, Auth, userService, $rootScope, $state, $http, matchmedia){
+  $scope.smallScreen = matchmedia.isPhone();
 
   $scope.title = "Ming Government Official Titles: A Crowd-Translation Project | 明代職官中英辭典共譯共享";
 

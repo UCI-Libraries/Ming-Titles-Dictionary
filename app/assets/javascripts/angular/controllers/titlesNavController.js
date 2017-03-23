@@ -1,5 +1,6 @@
 titlesApp
-  .controller('titlesNavController', ['$rootScope', '$scope', 'Auth', '$state', 'userService', function($rootScope, $scope, Auth, $state, userService){
+  .controller('titlesNavController', ['$rootScope', '$scope', 'Auth', '$state', 'userService', 'matchmedia', function($rootScope, $scope, Auth, $state, userService, matchmedia){
+  $scope.smallScreen = matchmedia.isPhone();
 
   $scope.logOutUser = function() {
     var config = {

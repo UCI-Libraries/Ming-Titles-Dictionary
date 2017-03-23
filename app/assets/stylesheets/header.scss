@@ -103,6 +103,9 @@
     }
     .navbar-left,.navbar-right {
         float: none !important;
+        .navbar-brand {
+          font-size: 15px;
+        }
     }
     .navbar-toggle {
         display: block;
