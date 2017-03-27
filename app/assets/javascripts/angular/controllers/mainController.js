@@ -13,10 +13,11 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootS
   };
 
   function getStats() {
-    var a = moment([2017, 5, 06]);
+    var a = moment([2017, 6, 06]);
     var b = moment();
     var diffInDays = a.diff(b, 'days');
     $scope.countdown = diffInDays;
+    $scope.projectOver = diffInDays <= 0;
 
     $http.get('api/stats').then(function(response) {
       $scope.totalTitles = response.data.total_titles;
