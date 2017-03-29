@@ -18,11 +18,14 @@
           <td title="'Approved?'" filter="{ approved: 'select'}" filter-data="approvedFilter" sortable="'approved'">
               {{user.approved}}</td>
           <td title="'Approve/Revoke'">
-              <button ng-show="!user.approved" ng-click="approveUser(user)">Approve Scholar</button><button ng-show="user.approved" ng-click="revokeUser(user)">Revoke Access</button></td>
+              <button class="btn" ng-show="!user.approved" ng-click="approveUser(user)">Approve Scholar</button>
+              <button class="btn" ng-show="user.approved" ng-click="revokeUser(user)">Revoke Access</button></td>
           <td title="'Admin'">
-              <button ng-show="!user.is_admin" ng-click="makeAdmin(user)">Make Admin</button><button ng-show="user.is_admin" ng-click="revokeAdmin(user)">Revoke Admin</button></td>
+              <button class="btn" ng-show="!user.is_admin" ng-click="makeAdmin(user)" ng-disabled="!user.approved">Make Admin</button>
+              <button class="btn" ng-show="user.is_admin" ng-disabled="!user.approved" ng-click="revokeAdmin(user)">Revoke Admin</button></td>
           <td title="'SupAdmin'">
-              <button ng-show="!user.super_admin" ng-click="makeSAdmin(user)">Make SuperAdmin</button><button ng-show="user.super_admin"  ng-click="revokeSAdmin(user)">Revoke SuperAdmin</button></td>
+              <button class="btn" ng-show="!user.super_admin" ng-click="makeSAdmin(user)" ng-disabled="!user.approved">Make SuperAdmin</button>
+              <button class="btn" ng-show="user.super_admin" ng-disabled="!user.approved" ng-click="revokeSAdmin(user)">Revoke SuperAdmin</button></td>
 
       </tr>
   </table>
