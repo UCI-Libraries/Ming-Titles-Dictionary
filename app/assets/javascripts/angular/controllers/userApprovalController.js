@@ -15,37 +15,37 @@ titlesApp
     });
   }
   $scope.approveUser = function(user) {
-    $http.put('admin/approve_user/'+ user.id +'.json', {"approved": true}).then(function(response) {
+    $http.put('admin/approve_user/'+ user.id +'.json', {approved: true}).then(function(response) {
       getUsers();
     });
   };
 
   $scope.revokeUser = function(user) {
-    $http.put('admin/approve_user/'+ user.id +'.json', {"approved": false}).then(function(response) {
+    $http.put('admin/approve_user/'+ user.id +'.json', {approved: false, is_admin: false, super_admin: false}).then(function(response) {
       getUsers();
     });
   };
 
   $scope.makeAdmin = function(user) {
-    $http.put('admin/approve_admin/'+ user.id +'.json', {"is_admin": true}).then(function(response) {
+    $http.put('admin/approve_admin/'+ user.id +'.json', {is_admin: true}).then(function(response) {
       getUsers();
     });
   };
 
   $scope.revokeAdmin = function(user) {
-    $http.put('admin/approve_admin/'+ user.id +'.json', {"is_admin": false}).then(function(response) {
+    $http.put('admin/approve_admin/'+ user.id +'.json', {is_admin: false, super_admin: false}).then(function(response) {
       getUsers();
     });
   };
 
   $scope.makeSAdmin = function(user) {
-    $http.put('admin/approve_admin/'+ user.id +'.json', {"super_admin": true}).then(function(response) {
+    $http.put('admin/approve_admin/'+ user.id +'.json', {super_admin: true, is_admin: true}).then(function(response) {
       getUsers();
     });
   };
 
   $scope.revokeSAdmin = function(user) {
-    $http.put('admin/approve_admin/'+ user.id +'.json', {"super_admin": false}).then(function(response) {
+    $http.put('admin/approve_admin/'+ user.id +'.json', {super_admin: false}).then(function(response) {
       getUsers();
     });
   };

@@ -3,11 +3,11 @@
   <article>
     <h1>Frequently Asked Questions</h1>
     <div ng-repeat="topic in faqTopics">
-      <div class="faq-question">
+      <div ng-click="topic.isCollapsed = !topic.isCollapsed" class="faq-question">
         <strong>
           <a ng-if="!topic.isCollapsed" class="fa fa-plus"></a>
           <a ng-if="topic.isCollapsed" class="fa fa-minus"></a>
-          <span ng-click="topic.isCollapsed = !topic.isCollapsed">
+          <span>
           {{topic.question}}
           </span>
         </strong>

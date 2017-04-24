@@ -12,6 +12,10 @@
 
 }
 
+.mobile {
+  font-size: 5px;
+}
+
 .fa-flag, .fa-sticky-note {
   color: $uci-grey;
 }
@@ -42,4 +46,8 @@
 
 .popover {
   padding-bottom: 10px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }

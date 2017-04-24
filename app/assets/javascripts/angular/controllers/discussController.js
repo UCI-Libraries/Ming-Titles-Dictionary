@@ -97,7 +97,7 @@ titlesApp
 
   $scope.userCanDelete = function(comment) {
     var currentUser = userService.getUser();
-    if (currentUser.id === comment.user_id) {
+    if (currentUser.id === comment.user_id || currentUser.super_admin === true) {
       return true;
     }
     return false;
