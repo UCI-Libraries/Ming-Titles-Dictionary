@@ -1,0 +1,504 @@
+Series,official_pinyin,official_Chinese,official_translation,Institution 1,Institution 2,Institution 3
+3505,cheng xiang,丞相,Grand Councilor,中央中樞官署類,中書省門,
+3506,zhi sheng she ren,直省舍人,Drafter on Duty In the Secretariat ,中央中樞官署類,中書省門,
+3507,qiu guan,秋官,Autumn Support,中央中樞官署類,內閣門,
+3508,chun guan,春官,Spring Support,中央中樞官署類,內閣門,
+3509,xia guan,夏官,Summer Support,中央中樞官署類,內閣門,
+3510,dong guan,冬官,Winter Support,中央中樞官署類,內閣門,
+3511,zhong zai,冢宰,Minister of Personnel ,中央中樞官署類,六部門,吏部
+3512,feng luan,奉鑾,Director of the Music Office in the Ministry of Rites ,中央中樞官署類,六部門,禮部
+3513,he sheng lang,和聲郎,Director of the Music Office in the Ministry of Rites ,中央中樞官署類,六部門,禮部
+3514,fu lang,副郎,Vice Director of a Bureau in a Ministry,中央中樞官署類,六部門,
+3515,xiang guo,相國,Grand Councilor,中央中樞官署類,中書省門,
+3516,zuo xiang guo,左相國,Left Grand Councilor,中央中樞官署類,中書省門,
+3517,you xiang guo,右相國,Right Grand Councilor,中央中樞官署類,中書省門,
+3518,xun cha ma yu shi,巡茶馬御史,Horse Trade Censor,司法監察機構類,都察院門,御史
+3519,lang guan,郎官,Director of a Bureau or Vice Minister in a Ministry ,中央中樞官署類,六部門,
+3520,min ke guan li,民科管理,Manager of the Statistics Section in the Ministry of Revenue,中央中樞官署類,六部門,戶部
+3521,du zhi ke guan li,度支科管理,Manager of the General Accounts Section in the Ministry of Revenue,中央中樞官署類,六部門,戶部
+3522,jin ke guan li,金科管理,Manager of the Special Accounts Section in the Ministry of Revenue,中央中樞官署類,六部門,戶部
+3523,cang ke guan li,倉科管理,Manager of the Granaries Section in the Ministry of Revenue,中央中樞官署類,六部門,戶部
+3524,pai zhang,俳長,File Leader,中央中樞官署類,六部門,禮部
+3525,shao zai,少宰,Junior Steward,中央中樞官署類,六部門,吏部
+3526,shao wu,韶舞,Ceremonial Dancer,中央中樞官署類,六部門,禮部
+3527,zuo shao wu,左韶舞,Left Ceremonial Dancer,中央中樞官署類,六部門,禮部
+3528,you shao wu,右韶舞,Right Ceremonial Dancer,中央中樞官署類,六部門,禮部
+3529,li bu jiao fang si si yue,禮部教坊司司樂,Music Director of the Music Office in the Ministry of Rites ,中央中樞官署類,六部門,禮部
+3530,li bu jiao fang si zuo si yue,禮部教坊司左司樂,Left Music Director of the Music Office in the Ministry of Rites ,中央中樞官署類,六部門,禮部
+3531,li bu jiao fang si you si yue,禮部教坊司右司樂,Right Music Director of the Music Office in the Ministry of Rites ,中央中樞官署類,六部門,禮部
+3532,shou fu,首輔,Senior Grand Secretary,中央中樞官署類,內閣門,
+3533,shou kui,首揆,Senior Grand Secretary,中央中樞官署類,內閣門,
+3534,si cheng,司程,Monitor of Measurements,中央中樞官署類,六部門,工部
+3535,li bu si feng si lang zhong,吏部司封司郎中,Director of the Bureau of Honors of the Ministry of Personnel,中央中樞官署類,六部門,吏部
+3536,li bu si feng si yuan wai lang,吏部司封司員外郎,Vice Director of the Bureau of Honors of the Ministry of Personnel,中央中樞官署類,六部門,吏部
+3537,si kou,司寇,Minister of Justice,中央中樞官署類,六部門,刑部
+3538,si nong,司農,Minister of Revenue,中央中樞官署類,六部門,戶部
+3539,da si nong,大司農,Minister of Revenue,中央中樞官署類,六部門,戶部
+3540,tie ye suo da shi,鐵冶所大使,Commissioner of the Iron Smelting Offîce,中央中樞官署類,六部門,工部
+3541,tie ye suo fu shi,鐵冶所副使,Vice Commissioner of the Iron Smelting Offîce,中央中樞官署類,六部門,工部
+3542,zai fu,宰輔,Steward-bulwark of State,中央中樞官署類,內閣門,
+3543,tong shi,通事,Interpreter clerk,中央中樞官署類,寺監門,太常寺
+3544,ya qing,亞卿,Vice Minister of a Ministry,跨類官名類,,
+3545,yuan fu,元輔,Principal Support,中央中樞官署類,內閣門,
+3546,pan lu si pan lu,判錄司判錄,,中央中樞官署類,六部門,戶部
+3547,pan lu si fu pan,判錄司副判,,中央中樞官署類,六部門,戶部
+3548,pan lu si zheng,判錄司正,,中央中樞官署類,六部門,戶部
+3549,pan lu si fu,判錄司副,,中央中樞官署類,六部門,戶部
+3550,pan lu zuo si fu,判錄左司副,,中央中樞官署類,六部門,戶部
+3551,pan lu you si fu,判錄右司副,,中央中樞官署類,六部門,戶部
+3552,cha yan si ling,察言司令,Director of the Office of Investigation and Remonstrance,中央輔佐官署類,秘書門,通政使司
+3553,zhang li,掌曆,Calendar Clerk,中央輔佐官署類,寺監門,欽天監
+3554,yan sheng gong fu zhang shu,衍聖公府掌書,Secretary,中央輔佐官署類,寺監門,
+3555,zheng yi,正一,Taoist Patriarch,中央輔佐官署類,僧道官門,道錄司
+3556,zheng yan,正言,Exhorter,中央輔佐官署類,六科門,
+3557,zuo zheng yan,左正言,Left Exhorter,中央輔佐官署類,六科門,
+3558,you zheng yan,右正言,Right Exhorter,中央輔佐官署類,六科門,
+3559,ji jian,給諫,Submitter of Remonstrance,中央輔佐官署類,六科門,
+3560,ji yi si ling,稽疑司令,Director of the Religious Office,中央輔佐官署類,寺監門,欽天監
+3561,ji yi si cheng,稽疑司丞,Vice Director of the Religious Office,中央輔佐官署類,寺監門,欽天監
+3562,ji yi si zuo cheng,稽疑司左丞,Left Vice Director of the Religious Office,中央輔佐官署類,寺監門,欽天監
+3563,ji yi si you cheng,稽疑司右丞,Right Vice Director of the Religious Office,中央輔佐官署類,寺監門,欽天監
+3564,ji she,給舍,Supervising Secretaries and Secretariat Drafters,中央輔佐官署類,,
+3565,jiao shi lang,校事郎,Examiner,中央輔佐官署類,寺監門,欽天監
+3566,tong pan tai shi jian shi,通判太史監事,Vice Director of Astrology  in the early Ming Directorate of Astrology,中央輔佐官署類,寺監門,欽天監
+3567,qian pan tai shi jian shi,僉判太史監事,Assistant Director of Astrology in the early Ming Directorate of Astrology,中央輔佐官署類,寺監門,欽天監
+3568,wu guan zheng,五官正,,中央輔佐官署類,寺監門,欽天監
+3569,ling tai lang,靈臺郎,,中央輔佐官署類,寺監門,欽天監
+3570,bao zhang zheng,保章正,Director of Calendrical Calculations,中央輔佐官署類,寺監門,欽天監
+3571,bao zhang fu,保章副,Vice Director of Calendrical Calculations,中央輔佐官署類,寺監門,欽天監
+3572,qie hu zheng,挈壺正,Supervisor of Water Clocks,中央輔佐官署類,寺監門,欽天監
+3573,tai shi yuan tong zhi,太史院同知,,中央輔佐官署類,寺監門,欽天監
+3574,tai shi yuan yuan pan,太史院院判,Administrative Assistant of the Astrological Commission,中央輔佐官署類,寺監門,欽天監
+3575,yu yang si,雨暘司,,中央輔佐官署類,寺監門,欽天監
+3576,shi xu lang,時敍郎,,中央輔佐官署類,寺監門,欽天監
+3577,ji hou lang,紀候郎,,中央輔佐官署類,寺監門,欽天監
+3578,si tian jian jian ling,司天監令,,中央輔佐官署類,寺監門,欽天監
+3579,si tian jian jian cheng,司天監丞,,中央輔佐官署類,寺監門,欽天監
+3580,si tian jian zhu bu,司天監主簿,,中央輔佐官署類,寺監門,欽天監
+3581,si tian jian zhu shi,司天監主事,,中央輔佐官署類,寺監門,欽天監
+3582,si tian jian jian hou,司天監監候,Astronomical Observer of the Directorate of Astronomy,中央輔佐官署類,寺監門,欽天監
+3583,si tian jian jian chen,司辰,Timekeeper,中央輔佐官署類,寺監門,欽天監
+3584,hui hui si tian jian jian ling,回回司天監監令,Director of the Directorate of Moslem Astronomy,中央輔佐官署類,寺監門,欽天監
+3585,hui hui si tian jian shao jian,回回司天監少監,Vice Director of the Directorate of Moslem Astronomy,中央輔佐官署類,寺監門,欽天監
+3586,hui hui si tian jian jian cheng,回回司天監監丞,Secretary of the Directorate of Moslem Astronomy,中央輔佐官署類,寺監門,欽天監
+3587,qin tian jian jian ling,欽天監令,,中央輔佐官署類,寺監門,欽天監
+3588,qin tian jian shao jian,欽天監少監,,中央輔佐官署類,寺監門,欽天監
+3589,zheng yi da fu,正儀大夫,,中央輔佐官署類,寺監門,欽天監
+3590,fen shuo da fu,分朔大夫,,中央輔佐官署類,寺監門,欽天監
+3591,si xuan da fu,司玄大夫,,中央輔佐官署類,寺監門,欽天監
+3592,ping zhi lang,平秩郎,,中央輔佐官署類,寺監門,欽天監
+3593,si zheng lang,司正郎,,中央輔佐官署類,寺監門,欽天監
+3594,qie hu lang,挈壺郎,,中央輔佐官署類,寺監門,欽天監
+3595,jian hou,監候,Astronomical Observer,中央輔佐官署類,寺監門,欽天監
+3596,mu jian ling,牧監令,,中央輔佐官署類,寺監門,太僕寺
+3597,mu jian cheng,牧監丞,,中央輔佐官署類,寺監門,太僕寺
+3598,jian shi,監試,Examination Overseer,中央輔佐官署類,考官門,會試官
+3599,jian yue guan,檢閱官,Editorial Examiner,中央輔佐官署類,秘書門,翰林院
+3600,zhi xue shi,直學士,Auxiliary Academician,中央輔佐官署類,秘書門,翰林院
+3601,jiu guan tong shi shi,九關通事使,Transmission Commissioner for the Capital Gates,中央輔佐官署類,寺監門,鴻臚寺
+3602,shi yi shi,侍儀使,Commissioner of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3603,yin jin shi,引進使,,中央輔佐官署類,寺監門,鴻臚寺
+3604,feng ban du zhi,奉班都知,Protocol Officer of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3605,tong zan,通贊,,中央輔佐官署類,寺監門,鴻臚寺
+3606,tong shi she ren,鴻臚寺通事舍人,,中央輔佐官署類,寺監門,鴻臚寺
+3607,dian ting yi li si shi,殿庭儀禮司使,Commissioner of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3608,dian ting yi li si fu,殿庭儀禮司副,Vice Commissioner of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3609,dian ting yi li si cheng feng,殿庭儀禮司承奉,,中央輔佐官署類,寺監門,鴻臚寺
+3610,dian ting yi li si ming zan,殿庭儀禮司鳴贊,,中央輔佐官署類,寺監門,鴻臚寺
+3611,dian ting yi li si xu ban,殿庭儀禮司序班,,中央輔佐官署類,寺監門,鴻臚寺
+3612,jiu guan tong shi shi fu,九關通事使副,,中央輔佐官署類,寺監門,鴻臚寺
+3613,dian ting yi li si zheng,殿庭儀禮司正,Commissioner of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3614,dian ting yi li si zuo si fu,殿庭儀禮司左司副,Left Vice Commissioner of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3615,dian ting yi li si you si fu,殿庭儀禮司右司副,Right Vice Commissioner of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3616,dian ting yi li si si yi,殿庭儀禮司司儀,Ceremonials Official of the Palace Ceremonial Office,中央輔佐官署類,寺監門,鴻臚寺
+3617,dian ting yi li si zuo si cheng,殿庭儀禮司左司丞,,中央輔佐官署類,寺監門,鴻臚寺
+3618,dian ting yi li si you si cheng,殿庭儀禮司右司丞,,中央輔佐官署類,寺監門,鴻臚寺
+3619,feng si,奉祀,Sacrificer,中央輔佐官署類,寺監門,太常寺
+3620,xie lv lang,協律郎,Chief Musician,中央輔佐官署類,寺監門,太常寺
+3621,xiu zhuan guan,修撰官,Senior Compiler,中央輔佐官署類,秘書門,翰林院
+3622,xu ban,序班,Usher,中央輔佐官署類,寺監門,鴻臚寺
+3623,yi xue ti ju si ti ju,醫學提舉司提舉,Supervisor of the Supervisorate of Medicines ,中央輔佐官署類,寺監門,太醫院
+3624,yi xue ti ju si tong ti ju,醫學提舉司同提舉,,中央輔佐官署類,寺監門,太醫院
+3625,yi xue ti ju si fu ti ju,醫學提舉司副提舉,,中央輔佐官署類,寺監門,太醫院
+3626,yi xue jiao shou,醫學教授,,中央輔佐官署類,寺監門,太醫院
+3627,yi xue ti ju si xue zheng,醫學提舉司學正,Superintendent of Medical Education,中央輔佐官署類,寺監門,太醫院
+3628,yi xue ti ju si yi guan,醫學提舉司醫官,Superintendent of Medical Education,中央輔佐官署類,寺監門,太醫院
+3629,yi xue ti ju si ti ling,醫學提舉司提領,Superintendent of Medical Education,中央輔佐官署類,寺監門,太醫院
+3630,tai yi jian shao jian,太醫監少監,,中央輔佐官署類,寺監門,太醫院
+3631,tai yi jian jian chen,太醫監監臣,,中央輔佐官署類,寺監門,太醫院
+3632,tai yi yuan tong zhi,太醫院同知,,中央輔佐官署類,寺監門,太醫院
+3633,tai yi yuan dian bu,太醫院典簿,,中央輔佐官署類,寺監門,太醫院
+3634,fu hui min yao ju ti ling,府惠民藥局提領,,中央輔佐官署類,寺監門,太醫院
+3635,zhou xian hui min yao ju guan yi,州惠民藥局官醫,,中央輔佐官署類,寺監門,太醫院
+3636,zhou xian hui min yao ju guan yi,縣惠民藥局官醫,,中央輔佐官署類,寺監門,太醫院
+3637,yu yi ju shang yao,御醫局尚藥,,中央輔佐官署類,寺監門,太醫院
+3638,yu yi ju feng yu,御醫局奉御,,中央輔佐官署類,寺監門,太醫院
+3639,yu yi ju zhi zhang,御醫局直長,,中央輔佐官署類,寺監門,太醫院
+3640,yu yi ju yao tong,御醫局藥童,,中央輔佐官署類,寺監門,太醫院
+3641,tai yi yuan ling,太醫院令,,中央輔佐官署類,寺監門,太醫院
+3642,tai yi yuan cheng,太醫院丞,,中央輔佐官署類,寺監門,太醫院
+3643,xue lu,學錄,Instructor Third-class,中央輔佐官署類,寺監門,國子監
+3644,hua gong,畫工,Artisan Painter,中央輔佐官署類,秘書門,翰林院
+3645,hua shi,畫士,Court Painter,中央輔佐官署類,秘書門,翰林院
+3646,yi guan,醫官,Medical Official,中央輔佐官署類,寺監門,太醫院 
+3647,yi sheng,醫生,Student of General Medicine,中央輔佐官署類,寺監門,太醫院 
+3648,yi shi,醫士,Physician,中央輔佐官署類,寺監門,太醫院 
+3649,yi zi sheng,譯字生,Apprentice Translator in the Translators Institute ,中央輔佐官署類,寺監門,太常寺
+3650,ri guan,日官,Astrologer,中央輔佐官署類,寺監門,欽天監
+3651,kao gong jian ling,考功監令,Director of the Directorate of Personnel Evaluation,中央輔佐官署類,秘書門,考功監
+3652,kong mu,孔目,Clerk in the Hanlin Academy ,中央輔佐官署類,秘書門,翰林院
+3653,shang lin yuan jian liang mu shu lu shi,上林苑監良牧署錄事,Office Manager of the Office of Husbandry in the Directorate of Imperial Parks,中央輔佐官署類,寺監門,上林苑監
+3654,shang lin yuan jian fan yu shu lu shi,上林苑監蕃育署錄事,,中央輔佐官署類,寺監門,上林苑監
+3655,shang lin yuan jian lin heng shu lu shi,上林苑監林衡署錄事,Office Manager of the Office of Fruits and Flowers in the the Directorate of Imperial Parks,中央輔佐官署類,寺監門,上林苑監
+3656,shang lin yuan jian jia shu shu lu shi,上林苑監嘉蔬署錄事,,中央輔佐官署類,寺監門,上林苑監
+3657,lian guan,簾官,Examination Aides,中央輔佐官署類,考官門,考試官
+3658,nei lian guan,内簾官,Inner Examiners,中央輔佐官署類,考官門,考試官
+3659,mi shu jian,秘書監,Director of the Palace Library,中央輔佐官署類,秘書門,翰林院
+3660,mi shu jian cheng,秘書監丞,,中央輔佐官署類,秘書門,翰林院
+3661,mi shu jian zhi zhang,秘書監直長,,中央輔佐官署類,秘書門,翰林院
+3662,mi shu jian ling,秘書監令,,中央輔佐官署類,秘書門,翰林院
+3663,bo shi,博士,Erudite,中央輔佐官署類,寺監門,
+3664,seng guan,僧官,Buddhist Authorities,中央輔佐官署類,僧道官門,僧錄司
+3665,shan shi,善世,Buddhist Patriarch,中央輔佐官署類,僧道官門,僧錄司
+3666,you shan shi,右善世,Right Buddhist Patriarch,中央輔佐官署類,僧道官門,僧錄司
+3667,shi jiang,侍講,Expositor-in-waiting,中央輔佐官署類,秘書門,翰林院
+3668,shi yi,拾遺,Reminder,中央輔佐官署類,秘書門,通政使司
+3669,zuo shi yi,左拾遺,Left Reminder,中央輔佐官署類,秘書門,通政使司
+3670,you shi yi,右拾遺,Right Reminder,中央輔佐官署類,秘書門,通政使司
+3671,bu que,補闕,Rectifier of Omissions,中央輔佐官署類,秘書門,通政使司
+3672,tong zheng qing,通政卿,Commissioner of the Office of Transmission,中央輔佐官署類,秘書門,通政使司
+3673,tong zheng shao qing,通政少卿,Assistant Transmission Commissioner in the Office of Transmission,中央輔佐官署類,秘書門,通政使司
+3674,shi guan,史官,Historiographer,中央輔佐官署類,秘書門,翰林院
+3675,shi guan,試官,Examination Official,中央輔佐官署類,考官門,考試官
+3676,shi shu,侍書,Court Calligrapher,中央輔佐官署類,秘書門,翰林院
+3677,shu xie,書寫,Copier,中央輔佐官署類,秘書門,翰林院
+3678,zou chai,奏差,Agent ,中央輔佐官署類,寺監門,
+3679,zhi yin,知印,,中央輔佐官署類,寺監門,
+3680,jian yuan zuo si jian,諫院左司諫,,中央輔佐官署類,六科門,
+3681,jian yuan you si jian,諫院右司諫,,中央輔佐官署類,六科門,
+3682,si yi,司儀,Ceremonials Official,中央輔佐官署類,寺監門,鴻臚寺
+3683,si yi shu ming zan,司儀署鳴贊,,中央輔佐官署類,寺監門,鴻臚寺
+3684,si yi shu xu ban,司儀署序班,,中央輔佐官署類,寺監門,鴻臚寺
+3685,si bin shu ming zan,司賓署鳴贊,,中央輔佐官署類,寺監門,鴻臚寺
+3686,si bin shu xu ban,司賓署序班,,中央輔佐官署類,寺監門,鴻臚寺
+3687,xu ban,序班,,中央輔佐官署類,寺監門,鴻臚寺
+3688,si shi,司筮 ,Augur,中央輔佐官署類,寺監門,欽天監
+3689,si wen jian ling,司文監令,Director of the Directorate for Documents ,中央輔佐官署類,秘書門,中書科
+3690,si wen jian cheng,司文監丞,Vice Director of the Directorate for Documents ,中央輔佐官署類,秘書門,中書科
+3691,tai zhu,太祝,Great Supplicator,中央輔佐官署類,寺監門,太常寺
+3692,tai yi,太醫,Palace Physician,中央輔佐官署類,寺監門,太醫院
+3693,tai pu qing,太僕卿,Chief Minister of the Court of the Imperial Stud ,中央輔佐官署類,寺監門,太僕寺
+3694,dian shu,典書,Library Clerk,中央輔佐官署類,寺監門,國子監
+3695,dian shu,典署,Manager,中央輔佐官署類,寺監門,上林苑監
+3696,zong cai,總裁,Director-general,中央輔佐官署類,秘書門,史官
+3697,du juan guan,讀卷官,Palace Examination Grader,中央輔佐官署類,考官門,殿試官
+3698,wai lian guan,外簾官,Outer Aides,中央輔佐官署類,考官門,考試官
+3699,wu guan bao zhang zheng,五官保章正,Directors of Calendrical Calculations in the Five Offices,中央輔佐官署類,寺監門,欽天監
+3700,wu guan qie hu zheng,五官挈壺正,Supervisors of Water Clocks in the Five Offices,中央輔佐官署類,寺監門,欽天監
+3701,wu guan si chen,五官司晨,Timekeepers in the Five Offices,中央輔佐官署類,寺監門,欽天監
+3702,wu guan jian hou,五官監候,Astrological Observers in the Five Offices,中央輔佐官署類,寺監門,欽天監
+3703,wu guan si li,五官司曆,Manager of the Calendar in the Directorate of Astronomy,中央輔佐官署類,寺監門,欽天監
+3704,nan jing qin tian jian wu guan zheng,南京欽天監五官正,,中央輔佐官署類,寺監門,欽天監
+3705,ying feng,應奉,Provisioner,中央輔佐官署類,秘書門,翰林院
+3706,yu yi,御醫,Imperial Physician in the Imperial Academy of Medicine,中央輔佐官署類,寺監門,太醫院
+3707,yuan shi,元士,Paramount Serviceman,中央輔佐官署類,六科門,
+3708,yuan shi,源士,Supervising Secretaries,中央輔佐官署類,六科門,
+3709,bing ma zhi hui si du zhi hui,兵馬指揮司都指揮,,京衛京營與中央軍事官署類,五城兵馬指揮司門,
+3710,bing ma zhi hui si fu du zhi hui,兵馬指揮司副都指揮,,京衛京營與中央軍事官署類,五城兵馬指揮司門,
+3711,bing ma zhi hui si zhi shi,兵馬指揮司知事,,京衛京營與中央軍事官署類,五城兵馬指揮司門,
+3712,bing ma si bing ma,兵馬司兵馬,,京衛京營與中央軍事官署類,五城兵馬指揮司門,
+3713,bing ma si fu bing ma,兵馬司副兵馬,,京衛京營與中央軍事官署類,五城兵馬指揮司門,
+3714,hu wei,護衛,Escort Guard,京衛京營與中央軍事官署類,京衛門,諸京衛
+3715,yi luan si da shi,儀鸞司大使,Director of the Imperial Regalia Office,京衛京營與中央軍事官署類,京衛門,錦衣衛
+3716,yi luan si fu shi,儀鸞司副使,Vice Director of the Imperial Regalia Office,京衛京營與中央軍事官署類,京衛門,錦衣衛
+3717,rong zheng ting shou ling guan,戎政廳首領官,Superintendent of the Military Headquarters for the Capital Training Divisions,京衛京營與中央軍事官署類,京營門,諸京營
+3718,rong zheng fu zong du,戎政府總督,Supreme Commander of the Military Headquarters for the Capital Training Divisions,京衛京營與中央軍事官署類,京營門,諸京營
+3719,lao jia,老家,Oldster,京衛京營與中央軍事官署類,京營門,諸京營
+3720,xie tong shou bei,協同守備,Vice Commandant,南京官署類,南京軍事官署門,南京守備
+3721,cao jiang,操江,River Controller,南京官署類,南京司法監察門,南京都察院
+3722,cha guan,察官,Surveillance Official,司法監察機構類,都察院門,御史
+3723,zhang xian,掌憲,Censor-in-chief ,司法監察機構類,都察院門,御史
+3724,qi pai guan,旗牌官,Imperial Agent,司法監察機構類,都察院門,總督巡撫官
+3725,jian cha du yu shi,监察都御史,Chief Investigating Censor,司法監察機構類,都察院門,
+3726,jian yun,監運,Supervisor of Transport,司法監察機構類,都察院門,
+3727,qian du yu shi,僉都御史,Assistant Censor-in-chief of the Censorate ,司法監察機構類,都察院門,
+3728,qian yuan,僉院,Assistant Censor-in-chief of the Censorate ,司法監察機構類,都察院門,
+3729,jing lve shi,經略使,Military Commissioner,司法監察機構類,都察院門,總督巡撫官
+3730,er mu guan,耳目官,Ear and Eye Officials,司法監察機構類,都察院門,御史
+3731,xian zhang,憲長,Censor-in-chief ,司法監察機構類,都察院門,
+3732,xian chen,憲臣,Censor-in-chief ,司法監察機構類,都察院門,
+3733,xun cheng yu shi,巡城御史,Ward-inspecting Censor,司法監察機構類,都察院門,御史
+3734,xun jiang yu shi,巡江御史,River-patrol Censor,司法監察機構類,都察院門,御史
+3735,xun fu,巡撫,Grand Coordinator,司法監察機構類,都察院門,御史
+3736,xun shi huang cheng yu shi,巡皇城御史,Ward-inspecting Censors of the Imperial Capital Wards,司法監察機構類,都察院門,御史
+3737,xun cang yu shi,巡倉御史,Granary-inspecting Censor,司法監察機構類,都察院門,御史
+3738,xun cao yu shi,巡漕御史,Transport-control Censor,司法監察機構類,都察院門,御史
+3739,guan quan zhu shi,管泉主事,Waterways Manager,司法監察機構類,都察院門,京畿都漕運司
+3740,ping shi,評事,Case Reviewer,司法監察機構類,大理寺門,
+3741,shen xing,審刑,Punishment Reviewer,司法監察機構類,大理寺門,
+3742,zuo shen xing,左審刑,Left Punishment Reviewer,司法監察機構類,大理寺門,
+3743,you shen xing,右審刑,Right Punishment Reviewer,司法監察機構類,大理寺門,
+3744,xiang yi,詳議,Evaluator of the Punishment Reviewing Office,司法監察機構類,大理寺門,
+3745,zuo xiang yi,左詳議,Left Evaluator of the Punishment Reviewing Office,司法監察機構類,大理寺門,
+3746,you xiang yi,右詳議,Right Evaluator of the Punishment Reviewing Office,司法監察機構類,大理寺門,
+3747,shi yu,侍御,Attendant Censor,司法監察機構類,御史臺門,
+3748,shua juan yu shi,刷卷御史,Record Checking Censor,司法監察機構類,都察院門,御史
+3749,du cha yuan si wu ting si wu,都察院司務廳司務,Manager of the General Services Office in the Censorate,司法監察機構類,都察院門,
+3750,du cha yuan jing li si jing li,都察院經歷司經歷,,司法監察機構類,都察院門,
+3751,du cha yuan jing li si du shi,都察院經歷司都事,,司法監察機構類,都察院門,
+3752,du cha yuan zhao mo suo zhao mo,都察院照磨所照磨,,司法監察機構類,都察院門,
+3753,du cha yuan zhao mo suo jian jiao,都察院照磨所檢校,,司法監察機構類,都察院門,
+3754,du cha yuan si yu si si yu,都察院司獄司司獄,,司法監察機構類,都察院門,
+3755,da li si si wu ting si wu,大理寺司務廳司務,Manager of the General Services Office in the Court of Judicial Review,司法監察機構類,大理寺門,
+3756,tai zhang,臺長,Head of the Censorate,司法監察機構類,都察院門,
+3757,tai jian,臺諫,Censors and Remonstrators,司法監察機構類,都察院門,御史
+3758,ti xue yu shi,提學御史,Education-intendant Censor,司法監察機構類,都察院門,御史
+3759,dian zhong yu shi,殿中御史,Palace Censor,司法監察機構類,都察院門,
+3760,cao yun shi,漕運使,Transport Commissioner,司法監察機構類,都察院門,京畿都漕運司
+3761,cao yun zong du,漕運總督,Director-general of Grain Transport,司法監察機構類,都察院門,總督巡撫官
+3762,zong zhi,總制,Regulator-general,司法監察機構類,都察院門,總督巡撫官
+3763,zong he,總河,Director-general of the Grand Canal,司法監察機構類,都察院門,總督巡撫官
+3764,zong li he cao,總理河漕,Superintendent of the Grand Canal and of Grain Transport,司法監察機構類,都察院門,總督巡撫官
+3765,du tang,都堂,Executive Censors,司法監察機構類,都察院門,總督巡撫官
+3766,wu cheng yu shi,五城御史,Ward-inspecting Censors of the Five Wards,司法監察機構類,都察院門,御史
+3767,du ping shi,都評事,,司法監察機構類,大理寺門,
+3768,fu du ping shi,副都評事,,司法監察機構類,大理寺門,
+3769,du dian bu,都典簿,,司法監察機構類,大理寺門,
+3770,cheng bu,丞簿,Horse Recorder,地方官署類,縣官門,縣官
+3771,jia zhang,甲長,Tithing Chief,地方官署類,縣官門,縣官
+3772,jia shou,甲首,Tithing Chief,地方官署類,縣官門,縣官
+3773,zhi zhong,治中,Vice Prefect,地方官署類,京府門,
+3774,jun shou,郡守,Provincial Administration Commissioner,地方官署類,省官門,承宣布政使司
+3775,jun zuo,郡佐,Commandery Assistant,地方官署類,,
+3776,fang mian,方面,Regional Supervisor,地方官署類,,
+3777,fang mian guan,方面官,Regional Supervisor,地方官署類,省官門,
+3778,xian guan,縣官,District Official,地方官署類,縣官門,縣官
+3779,xian zuo,縣佐,District Assistants,地方官署類,縣官門,縣官
+3780,xian yin,縣尹,District Magistrate ,地方官署類,縣官門,縣官
+3781,xue zheng,學政,Provincial-level Education Intendant,地方官署類,省官門,提刑按察使司
+3782,xue guan,學官,Educational Official,地方官署類,,
+3783,xue shi,學師,Schoolmaster,地方官署類,,
+3784,xun he qian shi,巡河僉事,,地方官署類,省官門,提刑按察使司
+3785,huo jia,火甲,Fire Captain,地方官署類,,
+3786,yi zai,邑宰,District Magistrate ,地方官署類,縣官門,縣官
+3787,ru xue ti ju,儒學提舉,Supervisor of Confucian Schools,地方官署類,省官門,行中書省
+3788,guan jiang,管匠,Crafts Foreman,地方官署類,京府門,順天府
+3789,guan liang,管糧,Tax Manager,地方官署類,京府門,順天府
+3790,li zhang,里長,Community Head,地方官署類,縣官門,縣官
+3791,li xu,里胥,Village (Community) Functionaries,地方官署類,縣官門,縣官
+3792,li lao,里老,Community Elder,地方官署類,縣官門,縣官
+3793,liang zhang,糧長,Tax Captain,地方官署類,縣官門,縣官
+3794,bao zhang,保長,Security Group Head,地方官署類,縣官門,縣官
+3795,bao zheng,保正,Security Group Head,地方官署類,縣官門,縣官
+3796,shou ling,守令,Prefects and District Magistrates,地方官署類,,
+3797,tai shou,太守,Prefect,地方官署類,,
+3798,dao yuan,道員,Circuit Intendant,地方官署類,省官門,各道
+3799,ti diao xue xiao guan,提調學校官,Supervisor of Education,地方官署類,府官門,府官
+3800,can zheng,參政,Administration Vice Commissioner,地方官署類,省官門,承宣布政使司
+3801,zong jia,總甲,Head of an urban Precinct or Neighborhood,地方官署類,縣官門,縣官
+3802,yin,尹,Governor of a Metropolitan Area or of the Prefecture,地方官署類,,
+3803,zhen shou,鎮守,Grand Defender,地方軍事與治安機構類,地區軍官門,總兵官
+3804,fan yi du zhi hui shi,番夷都指揮使 ,Commander-in-chief of Frontier Natives,地方軍事與治安機構類,番夷都指揮使司門,諸藩夷都司
+3805,xie tong du yun can jiang,協同督運參將,Assistant Grain Transport Commander,地方軍事與治安機構類,地區軍官門,總兵官
+3806,yi wei si zheng,儀衞司正,,地方軍事與治安機構類,王府護衞門,王府儀衞司
+3807,yi wei si fu,儀衞司副,,地方軍事與治安機構類,王府護衞門,王府儀衞司
+3808,yi zhang si li mu,儀仗司吏目,,地方軍事與治安機構類,王府護衞門,王府儀衞司
+3809,dian zhang,典仗,Manager of Ceremonial Regalia,地方軍事與治安機構類,王府護衞門,王府儀衞司
+3810,wan fu,萬夫長,Brigade Commander,地方軍事與治安機構類,,
+3811,wan hu,萬戶,Brigade Commander,地方軍事與治安機構類,,
+3812,zuo zhu guo,左柱國,Left Pillar of State,文武散階勛爵類,武勛階門,
+3813,feng guo zhong wei,奉國中尉,Supporter-commandant of the State,文武散階勛爵類,武散階門,
+3814,fu guo zhong wei,輔國中尉,Bulwark-commandant of the State,文武散階勛爵類,武散階門,
+3815,xiao wei,校尉,Commandant,文武散階勛爵類,武散階門,
+3816,te jin zi zheng shang qing,特進資政上卿,Specially Promoted Senior Minister for Aid in Governance,文武散階勛爵類,勛爵門,
+3817,zi zheng qing,資政卿,Ministers of Ministries,文武散階勛爵類,勛爵門,
+3818,zi zheng ya qing,資政亞卿,Vice Ministers of Ministries ,文武散階勛爵類,勛爵門,
+3819,zi zheng zhong da fu,資政中大夫,Director in a Bureau of a Ministry ,文武散階勛爵類,勛爵門,
+3820,zi zheng da fu,資政大夫,Vice Director in a Bureau of a Ministry ,文武散階勛爵類,勛爵門,
+3821,jia zheng zhong shi,嘉政中士,Supervising Secretary,文武散階勛爵類,勛爵門,
+3822,cha ma si da shi,茶馬司大使,,牧盐舶政類,馬政門,茶馬司
+3823,cha ma si fu shi,茶馬司副使,,牧盐舶政類,馬政門,茶馬司
+3824,cha ma si ling,茶馬司令,,牧盐舶政類,馬政門,茶馬司
+3825,cha ma si cheng,茶馬司丞,,牧盐舶政類,馬政門,茶馬司
+3826,qing yuan yu min si da shi,慶遠裕民司大使,Commissioner-in-chief of the Horse Trading Office,牧盐舶政類,馬政門,茶馬司
+3827,qing yuan yu min si fu shi,慶遠裕民司副使,Vice Commissioner of the Horse Trading Office,牧盐舶政類,馬政門,茶馬司
+3828,qun zhang,羣長,Herd Director,牧盐舶政類,馬政門,
+3829,yan ma si ling,鹽馬司令,Director of the Office for the Exchange of Salt and Horses,牧盐舶政類,鹽課鹽運門,鹽課提舉司
+3830,yan ma si cheng,鹽馬司丞,Vice Director of the Office for the Exchange of Salt and Horses,牧盐舶政類,鹽課鹽運門,鹽課提舉司
+3831,yan ma si da shi,鹽馬司大使,Commissione of the Office for the Exchange of Salt and Horses,牧盐舶政類,鹽課鹽運門,鹽課提舉司
+3832,yan ma si fu shi,鹽馬司副使,Vice Commissione of the Office for the Exchange of Salt and Horses,牧盐舶政類,鹽課鹽運門,鹽課提舉司
+3833,yuan yu zhang,苑圉長,Director of the Horse Station,牧盐舶政類,馬政門,苑馬寺
+3834,zhong shi,中使,Imperial Commissioner,皇族宮廷類,宦官門,
+3835,zhong shi si zheng,中使司正,,皇族宮廷類,宦官門,
+3836,zhong shi si fu,中使司副,,皇族宮廷類,宦官門,
+3837,cheng fei,成妃,Complete Consort,皇族宮廷類,帝后門,內命婦
+3838,duan fei,端妃,Upright Consort,皇族宮廷類,帝后門,內命婦
+3839,zhang yin tai jian,掌印太監,Seal-holding Director,皇族宮廷類,宦官門,
+3840,chang sui,長隨,Long-term follower,皇族宮廷類,宦官門,
+3841,zheng zi,正字,Proofreader,皇族宮廷類,皇太子與東宮門,皇太子宫
+3842,wang fu cheng feng,王府承奉,,皇族宮廷類,宦官門,
+3843,wang fu cheng feng fu,王府承奉副,,皇族宮廷類,宦官門,
+3844,zhi shi,直史,Secretary,皇族宮廷類,宗室門,郡王府
+3845,zuo zhi shi,左直史,Left Secretary,皇族宮廷類,宗室門,郡王府
+3846,you zhi shi,右直史,Right Secretary,皇族宮廷類,宗室門,郡王府
+3847,qing ji lang,清紀郎,Recorder of Misdeeds,皇族宮廷類,皇太子與東宮門,詹事府
+3848,jun wang,郡王,Commandery Prince,皇族宮廷類,宗室門,
+3849,jun wang shi zi,郡王世子,Heir of the Commandery Prince,皇族宮廷類,宗室門,
+3850,fei,妃,Consort,皇族宮廷類,帝后門,內命婦
+3851,xian zhu,縣主,Daughters of Commandery Princes ,皇族宮廷類,宗室門,
+3852,xi ma,洗馬,Librarian in the Editorial Service of the Heir Apparent,皇族宮廷類,皇太子與東宮門,詹事府 
+3853,yi zhang si li mu,儀仗司吏目,single Clerk of the Insignia Office in a Princely Establishment ,皇族宮廷類,宗室門,王府長史司
+3854,gong bao,宮保,Junior Guardian of the Heir Apparent ,皇族宮廷類,皇太子與東宮門,三師三少
+3855,gong shi,宮師,Junior Preceptor of the Heir Apparent,皇族宮廷類,皇太子與東宮門,三師三少
+3856,liu shang,六尚,Six Matrons,皇族宮廷類,女官門,
+3857,mu zheng,牧正,Pasturage Director,皇族宮廷類,宗室門,王相府
+3858,wang xiang fu can jun,王相府參軍,,皇族宮廷類,宗室門,王相府
+3859,wang xiang fu lu shi,王相府錄事,,皇族宮廷類,宗室門,王相府
+3860,wang xiang fu shen li zheng,王相府審理正,,皇族宮廷類,宗室門,王相府
+3861,wang xiang fu shen li fu,王相府審理副,,皇族宮廷類,宗室門,王相府
+3862,wang xiang fu dian ci fu,王相府典祠副,,皇族宮廷類,宗室門,王相府
+3863,wang xiang fu dian bao fu,王相府典寶副,,皇族宮廷類,宗室門,王相府
+3864,wang xiang fu dian yi fu,王相府典儀副,,皇族宮廷類,宗室門,王相府
+3865,wang xiang fu dian shan fu,王相府典膳副,,皇族宮廷類,宗室門,王相府
+3866,wang xiang fu dian fu fu,王相府典服副,,皇族宮廷類,宗室門,王相府
+3867,wang xiang fu gong fu,王相府工副,,皇族宮廷類,宗室門,王相府
+3868,wang xiang fu yi fu,王相府醫副,,皇族宮廷類,宗室門,王相府
+3869,wang xiang fu mu fu,王相府牧副,,皇族宮廷類,宗室門,王相府
+3870,nei zheng si zheng,內正司正,Director of Eunuch Rectification Office,皇族宮廷類,宦官門,
+3871,nei zheng si fu,內正司副,Vice Director of Eunuch Rectification Office,皇族宮廷類,宦官門,
+3872,nei shi guan,內侍官,palace eunuchs,皇族宮廷類,宦官門,
+3873,ban jiang,伴講,Lecturer-companion,皇族宮廷類,宗室門,親王府
+3874,ban shu,伴書,Secretary-companion,皇族宮廷類,宗室門,親王府
+3875,ban du,伴讀,Reader-companion,皇族宮廷類,宗室門,親王府
+3876,pin,嬪,Concubine,皇族宮廷類,帝后門,內命婦
+3877,bin fu,賓輔,Companion,皇族宮廷類,宗室門,親王府
+3878,bin you,賓友,Companion,皇族宮廷類,宗室門,郡王府
+3879,shang zong,上宗,Supervisor of the Imperial Clan,皇族宮廷類,宗室門,宗人府
+3880,shi zi,適子,Son by the Principal Wife,皇族宮廷類,,
+3881,shou ling,守陵,Mausoleum Manager,皇族宮廷類,宦官門,外差宦官
+3882,shou ling tai jian,守陵太監,Eunuch Protector of the Mausoleum,皇族宮廷類,宦官門,外差宦官
+3883,shu zong,庶宗,Ordinary Imperial Clansman,皇族宮廷類,宗室門,
+3884,si zhen,司珍,Directress of Rarities,皇族宮廷類,女官門,尚功局
+3885,gong zheng si si zheng,宮正司司正,Directress oi Palace Surveillance,皇族宮廷類,女官門,宮正司
+3886,si ji,司籍,Directress of the Library,皇族宮廷類,女官門,尚儀局
+3887,si ji,司記,Directress of Records,皇族宮廷類,女官門,尚功局
+3888,si zhi lang,司直郎,Rectifier,皇族宮廷類,皇太子與東宮門,詹事府
+3889,you si zhi lang,右司直郎,Right Rectifier,皇族宮廷類,皇太子與東宮門,詹事府
+3890,you chun fang si zhi lang,右春坊司直郎,Rectifier in the Right Secretariat of the Heir Apparent,皇族宮廷類,皇太子與東宮門,詹事府
+3891,si yi,司衣,Directress of Clothing,皇族宮廷類,,
+3892,si yu,司輿,Directress of Transport,皇族宮廷類,女官門,尚寢局
+3893,tai fei,太妃,Great Consort,皇族宮廷類,帝后門,內命婦
+3894,tai hou,太后,Empress Dowager,皇族宮廷類,帝后門,
+3895,tai zi san shao,太子三少,Three Junior Counselors of the Heir Apparent,皇族宮廷類,皇太子與東宮門,三師三少
+3896,tai zi san shi,太子三師,Three Preceptors of the Heir Apparent,皇族宮廷類,皇太子與東宮門,三師三少
+3897,tie xing guan,貼刑官,Eunuchs of the Eastern Depot ,皇族宮廷類,宦官門,司禮監
+3898,zhan shi fu zi de yuan dian ji,詹事府資德院典籍,Archivist,皇族宮廷類,皇太子與東宮門,詹事府 
+3899,si zhi,司製,Manager of Sewing,皇族宮廷類,女官門,尚功局
+3900,dian yao,典藥,Pharmacist,皇族宮廷類,宗室門,郡王府
+3901,zong ren,宗人,Assistant Director of the Court of the Imperial Clan,皇族宮廷類,宗室門,宗人府
+3902,zong bo,宗伯,Clansman Earl,皇族宮廷類,宗室門,宗人府
+3903,dong gong san shao,東宮三少,Three Junior Counselors of the Heir Apparent,皇族宮廷類,皇太子與東宮門,三師三少
+3904,dong gong san shi,東宮三師 ,Three Preceptors of the Heir Apparent,皇族宮廷類,皇太子與東宮門,三師三少
+3905,dong gong san tai,東宮三太,Three Grand Attendants in the Eastern Palace,皇族宮廷類,皇太子與東宮門,三師三少
+3906,zi yi guan,諮議官,Adviser,皇族宮廷類,宗室門,王相府
+3907,zi shan,資善,Assister toward Goodness,皇族宮廷類,皇太子與東宮門,詹事府 
+3908,zi de,資德,Assister toward Virtue,皇族宮廷類,皇太子與東宮門,詹事府 
+3909,wang fu,王傅,Princely Mentor ,皇族宮廷類,宗室門,王相府
+3910,yu de,諭德,Adviser in the Establishment of the Heir Apparent,皇族宮廷類,皇太子與東宮門,詹事府
+3911,yu yao fang ti du tai jian,御藥房提督太監,Superintendent Palace Eunuch of the Imperial Dispensary,皇族宮廷類,宦官門,
+3912,yu yao fang ti du tai jian zheng,御藥房提督太監正,Superintendent Palace Eunuch of the Imperial Dispensary,皇族宮廷類,宦官門,
+3913,yu yao fang ti du tai jian fu,御藥房提督太監副,Superintendent Palace Eunuch of the Imperial Dispensary,皇族宮廷類,宦官門,
+3914,zong ren fu jing li si jing li,宗人府經歷司經歷,,皇族宮廷類,宗室門,宗人府
+3915,ya li,牙吏/衙吏,Headquarters Functionary,跨類官名類,,
+3916,zhang li,長吏,Senior Subalterns,跨類官名類,,
+3917,zhang yin,掌印,Keeper of the Seal or Seal-holder,跨類官名類,,
+3918,zhang yin guan,掌印官,Seal-holding Official,跨類官名類,,
+3919,zhao mo,照磨,Record Keeper,跨類官名類,,
+3920,cheng feng,承奉,Attendant,跨類官名類,,
+3921,ji shi,記室,Record Keeper,跨類官名類,,
+3922,jian zheng,監正,Supervisor,跨類官名類,,
+3923,jian cheng,監丞,Proctor,跨類官名類,,
+3924,jian guan,諫官,Remonstrance Official,跨類官名類,,
+3925,jian ling,監令,Director,跨類官名類,,
+3926,wei zhang,衛長,,跨類官名類,,
+3927,zhi zhang,直長,Foreman,跨類官名類,,
+3928,zhi yin,知印,Seal-keeper,跨類官名類,,
+3929,feng xian guan,風憲官,Guardians of the Customs and Laws,跨類官名類,,
+3930,hou xuan,候選,Expectant Appointee,跨類官名類,,
+3931,yan guan,言官,Speaking Official,跨類官名類,,
+3932,xiao li,小吏,Suboflficial functionary,跨類官名類,,
+3933,xie li,協理,Assistant Manager or Vice Director,跨類官名類,,
+3934,xu li,胥吏,Subofficial Functionary,跨類官名類,,
+3935,yi wei,儀衛,Ceremonial Guard,跨類官名類,,
+3936,ku da shi,庫大使,Storehouse Commissioner-in-chief,跨類官名類,,
+3937,guan zheng,觀政,Observer,跨類官名類,,
+3938,guan he,管河,Controller of Waterways,跨類官名類,,
+3939,guan li,管理,Manager,跨類官名類,,
+3940,li mu,吏目,Clerk,跨類官名類,,
+3941,nei jian,內監,Eunuch,跨類官名類,,
+3942,bai guan,稗官,Petty Ofticial,跨類官名類,,
+3943,bai jiang,稗將,Assistant General,跨類官名類,,
+3944,shan zhang,山長,Dean,跨類官名類,,
+3945,shao jian,少監,Vice Director,跨類官名類,,
+3946,shao qing,少卿,Vice Minister,跨類官名類,,
+3947,shao ling,少令,Vice Director,跨類官名類,,
+3948,shi lang,侍郎,Vice Minister,跨類官名類,,
+3949,shi cong,侍從,Attendant,跨類官名類,,
+3950,shou ling guan,首領官,Staff Supervisor,跨類官名類,,
+3951,shu zheng,署正,Office Director,跨類官名類,,
+3952,si yue,司樂,,跨類官名類,,
+3953,shu ban,書辦,Clerical Subofficial,跨類官名類,,
+3954,shuai,帥,Commander,跨類官名類,,
+3955,si zhang,司仗,Swordsman/Directress of the Clothing office,跨類官名類,,
+3956,si ji,司計,Account Keeper/Directress of Accounts,跨類官名類,,
+3957,si guan,司官,Administrative Associates,跨類官名類,,
+3958,si yu,司獄,Warder,跨類官名類,,
+3959,si yue,司樂,Directress of Music,跨類官名類,,
+3960,da shi,大使,Commissioner-in-chief ,跨類官名類,,
+3961,da shuai,大帥,Grand Marshal,跨類官名類,,
+3962,tai sheng,臺省,Censors and Supervising Secretaries,跨類官名類,,
+3963,dao cong,導從,Guides and Followers,跨類官名類,,
+3964,ti ju,提舉,Supervisor,跨類官名類,,
+3965,dian shan,典膳,Manager of Foods,跨類官名類,,
+3966,can jun shi,參軍事,Adjutant or Administrator,跨類官名類,,
+3967,zuo ling,佐領,Staff Administrator,跨類官名類,,
+3968,zong jian,總監,Supervisor-general,跨類官名類,,
+3969,cong guan,從官,Supporting Official,跨類官名類,,
+3970,tu guan,土官,Aboriginal Official,跨類官名類,,
+3971,dong zhu,洞主,Dean,跨類官名類,,
+3972,tong shi she ren,通事舍人,Secretarial Receptionist,跨類官名類,,
+3973,you cheng,右丞,Right Aide,跨類官名類,,
+3974,zuo cheng,左丞,Left Aide,跨類官名類,,
+3975,yuan shuai,元帥,Marshal,跨類官名類,,
+3976,yuan wai,員外,Supernumerary,跨類官名類,,
+3977,wang fu wei yi si si zhang,王府儀衛司司仗,Swordsman,皇族宮廷類,宗室門,王府長史司
+3978,wang fu cang fu shi,王府倉副使,,皇族宮廷類,宗室門,王府長史司
+3979,wang fu ku fu shi,王府庫副使,,皇族宮廷類,宗室門,王府長史司
+3980,wang fu gong zheng suo gong fu,王府工正所工副,,皇族宮廷類,宗室門,王府長史司
+3981,huang men guan men fu,皇門官門副,,皇族宮廷類,宦官門,內使監
+3982,chun gong men guan fu,春宮門官副,,皇族宮廷類,宦官門,內使監
+3983,shang ran ju ju fu,尚染局局副,,皇族宮廷類,宦官門,尚染局
+3984,shang jiu ju ju fu,尚酒局局副,,皇族宮廷類,宦官門,尚酒局
+3985,shang cu ju ju fu,尚醋局局副,,皇族宮廷類,宦官門,尚醋局
+3986,shang mian ju ju fu,尚麵局局副,,皇族宮廷類,宦官門,尚麵局
+3987,yu yong si si fu,御用司司副,,皇族宮廷類,宦官門,御用司
+3988,wang fu liang yi suo liang yi fu,王府良醫所良醫副,,皇族宮廷類,宗室門,王府長史司
+3989,wang fu shen li suo shen li fu,王府審理所審理副,,皇族宮廷類,宗室門,王府長史司
+3990,wang fu dian yi suo dian yi fu ,王府典儀所典儀副,,皇族宮廷類,宗室門,王府長史司
+3991,wang fu dian bao suo dian bao fu,王府典寶所典寶副,,皇族宮廷類,宗室門,王府長史司
+3992,wang fu dian shan suo dian shan fu,王府典膳所典膳副,,皇族宮廷類,宗室門,王府長史司
+3993,yu ma si si fu,御馬司司副,,皇族宮廷類,宦官門,御馬司
+3994,wang fu feng ci suo feng ci zheng,王府奉祠所奉祠正,,皇族宮廷類,宗室門,王府長史司
+3995,wang fu feng ci suo feng ci fu,王府奉祠所奉祠副,,皇族宮廷類,宗室門,王府長史司
+3996,wang fu liang yi suo liang yi zheng,王府良醫所良醫正,,皇族宮廷類,宗室門,王府長史司
+3997,wang fu shen li suo shen li zheng,王府審理所審理正,,皇族宮廷類,宗室門,王府長史司
+3998,wang fu dian yi suo dian yi zheng,王府典儀所典儀正,,皇族宮廷類,宗室門,王府長史司
+3999,wang fu dian bao suo dian bao zheng,王府典寶所典寶正,,皇族宮廷類,宗室門,王府長史司
+4000,wang fu dian shan suo dian shan zheng,王府典膳所典膳正,,皇族宮廷類,宗室門,王府長史司
+4001,tai huang tai fei,太皇太妃,,皇族宮廷類,帝后門,內命婦
+4002,huang tai fei,皇太妃,,皇族宮廷類,帝后門,內命婦
+4003,shu nv,淑女,,皇族宮廷類,帝后門,內命婦
+4004,qin wang,親王,Imperial Prince,皇族宮廷類,宗室門,
+4005,da han jiang jun,大漢將軍,Elite Guard,京衛京營與中央軍事官署類,京衛門,錦衣衛
+4006,xian he po suo ba guan,縣河泊所壩官,,地方官署類,縣官門,縣官
+4007,ba guan,壩官,,地方官署類,縣官門,縣官
