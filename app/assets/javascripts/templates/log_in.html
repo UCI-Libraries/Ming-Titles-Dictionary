@@ -60,11 +60,15 @@
             </div>
 
             <div class="row">
-              <a class="pull-right login-link" ng-click="logInResetView()">Log In</a>
+              <a class="pull-right login-link" ng-click="logInResetView()">
+                <span ng-if="!resetSent">Log In</span>
+                <span ng-if="resetSent">A link to reset your password has been sent to your email account. Thank you!</span>
+              </a>
             </div>
 
-            <button type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Send Password Reset Instructions</button>
-            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+            <button ng-if="!resetSent" type="submit" class="btn pull-right" ng-disabled="!myForm.$valid">Send Password Reset Instructions</button>
+
+            <button type="button" ng-click="logInResetView()" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
           </div>
 
 

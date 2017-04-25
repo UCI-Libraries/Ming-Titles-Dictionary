@@ -4,6 +4,7 @@ titlesApp
   $scope.errors = "";
 
   $scope.passwordReset = false;
+  $scope.resetSent = false;
   $scope.logIn = true;
 
   $scope.passwordResetView = function() {
@@ -14,6 +15,7 @@ titlesApp
   $scope.logInResetView = function() {
     $scope.passwordReset = false;
     $scope.logIn = true;
+    $scope.resetSent = false;
   };
 
   $scope.logInUser = function(data) {
@@ -48,11 +50,12 @@ titlesApp
 
   $scope.resetPass = function(data, form) {
     var parameters = {
-      email: 'clairewoods@gmail.com'
+      email: data.email
     };
 
     Auth.sendResetPasswordInstructions(parameters).then(function(response) {
-        // Sended email if user found otherwise email not sended...
+        // Send email if user found otherwise log errors...
+        $scope.resetSent = true;
     }, function(error) {
         console.log("FAILED", error);
         if (error.data.errors.email) {
