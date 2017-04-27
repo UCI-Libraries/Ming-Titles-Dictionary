@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:contributors]
 
   # GET /users
   # GET /users.json
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def contributors
     # 2 is the Charles Hucker ID from our seed data
-    @users = User.where(has_contributed: params[:has_contributed]).where.not(id: [2, 4, 5])
+    @users = User.where(has_contributed: true).where.not(id: [2, 4, 5])
     render json: @users
   end
 
@@ -43,18 +43,6 @@ def change_password
       render json: {response: "password update failed"}
     end
   end
-
-
-#  def change_password
-#    @user = User.find(current_user.id)
-#    if @user.update(user_params)
-      # Sign in the user by passing validation in case their password changed
- #     bypass_sign_in(@user)
- ##     render json: {response: "password updated"}
- #   else
- #     render json: {response: "password update failed"}
- #   end
- # end
 
   def update_profile
     @user = User.find(current_user.id)

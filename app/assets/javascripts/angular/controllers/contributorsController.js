@@ -7,7 +7,7 @@ titlesApp
   };
 
   function getContributors() {
-    $http.get('api/users/contributors/true').then(function(response) {
+    $http.get('api/users/contributors').then(function(response) {
       $scope.contributors = response.data;
     });
   }

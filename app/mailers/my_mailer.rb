@@ -21,29 +21,15 @@ class MyMailer < Devise::Mailer
   end
 
   def notify_superadmin_new_translation(translation_id)
-    #superadmin is hardcoded here:
     @users = User.where(super_admin: true)
     @translation = Translation.find_by_id(translation_id)
     @users.each { |u| mail(to: u.email, subject: 'New Translation Submitted') }
-    #AC 11042016 hardcoded 2 other superadmins
-    #@user = User.find_by_id(6)
-    #mail(to: @user.email, subject: 'New Translation Submitted')
-    #@user = User.find_by_id(7)
-    #mail(to: @user.email, subject: 'New Translation Submitted')
   end
 
   def notify_superadmin_new_scholar(id)
-    #superadmin is hardcoded here:
     @admin = User.find_by_id(1)
     @scholar =  User.find_by_id(id)
     mail(to: @admin.email, subject: 'New Scholar Application')
-    #AC 11042016 hardcoded 2 other superadmins
-#    @admin = User.find_by_id(6)
- #   @scholar =  User.find_by_id(id)
- #   mail(to: @admin.email, subject: 'New Scholar Application')
- #   @admin = User.find_by_id(7)
- #   @scholar =  User.find_by_id(id)
- #   mail(to: @admin.email, subject: 'New Scholar Application')
   end
 
   def acceptance(user)
@@ -55,6 +41,6 @@ class MyMailer < Devise::Mailer
     @translation = Translation.find(translation_id)
     @assignee = User.find(user_id)
     @message = message
-    mail(to: @assignee.email, subject: 'You have a new translation assignment')
+    mail(to: @assignee.email, cc: current_user.email, subject: '#{@assignee.fname} #{@assignee.lname} - You have a new translation assignment (#{@translation.id.to_s})')
   end
 end

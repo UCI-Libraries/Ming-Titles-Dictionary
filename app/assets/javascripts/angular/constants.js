@@ -6,7 +6,7 @@ titlesApp
    },
    {
      question: 'Question 2: What is the time frame during which I can make contributions through the crowd-translation system? 我能通過該系統參與眾包翻譯的時間段是什麼？',
-     answer: 'Answer: The crowd-translation system will be open from November 7th, 2016 through July 6th, 2017.  眾包翻譯系統將在2016年11月7日至2017年7日6日期間運行。'
+     answer: 'Answer: The crowd-translation system will be open from November 7th, 2016 through July 6th, 2017.  眾包翻譯系統將在2016年11月7日至2017年7月6日期間運行。'
    },
    {
      question: 'Question 3: What can we expect from the crowd-translation project?  項目的最終成果和用途是什麼？',

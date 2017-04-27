@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'api/users' => 'users#index'
   get 'api/user/:id/translations' => 'users#show_translations'
   get 'api/user/:id/comments' => 'users#show_comments'
-  get 'api/users/contributors/:has_contributed' => 'users#contributors'
+  get 'api/users/contributors' => 'users#contributors'
   put 'api/users/change_password' => 'users#change_password'
   put 'api/users/update_profile' => 'users#update_profile'
 
