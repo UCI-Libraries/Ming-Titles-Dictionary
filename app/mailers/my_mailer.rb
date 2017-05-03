@@ -37,10 +37,10 @@ class MyMailer < Devise::Mailer
     mail(to: @user.email, subject: 'Congratulations! You have been accepted as a contributing scholar.')
   end
 
-  def assignment(message, translation_id, user_id)
+  def assignment(message, translation_id, user_id, current_user)
     @translation = Translation.find(translation_id)
     @assignee = User.find(user_id)
     @message = message
-    mail(to: @assignee.email, cc: current_user.email, subject: '#{@assignee.fname} #{@assignee.lname} - You have a new translation assignment (#{@translation.id.to_s})')
+    mail(to: @assignee.email, cc: current_user.email, subject: "#{@assignee.fname} #{@assignee.lname} - You have a new translation assignment (#{@translation.id.to_s})")
   end
 end
