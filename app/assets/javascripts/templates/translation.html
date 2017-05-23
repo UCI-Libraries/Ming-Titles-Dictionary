@@ -9,12 +9,53 @@
           Comment on Chinese title
         </a>
       </h1>
+      
+ <div class="title-comment-subhead">
+      <h4 class="title-comment-title">Comments on the Chinese title:</h4>
+    </div>
+    <div class="unofficial-translations" ng-repeat="comment in title.title_comments">
+      <div class="translation">
+        <div class="title-comment-block">
+          <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
+          <p>Comment: {{comment.comment_text}}</p>
+          <span ng-show="userCanDelete(comment)" ng-click="deleteTitleComment(comment.id)">
+            <a>Delete</a>
+          </span>&nbsp;&nbsp;&nbsp;
+          <span ng-show="userCanEdit(comment)">
+            <a data-toggle="modal" ng-click="logCurrentTitleComment(comment)" data-target="#editTitleCommentModal">Edit</a>
+          </span>
+        </div>
+      </div>
+    </div>
+ <div class="translation placeholder" ng-show="noTitleComments()"><em>Currently there are no comments on the Chinese title</em></div>
+
+   
       <h2>
         Pinyin Title:&nbsp;{{title.pinyin_title}}
         <a class="comment-link" data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newPinyinCommentModal">
           Comment on Pinyin title
         </a>
       </h2>
+ 
+ <div class="title-comment-subhead">
+      <h4 class="title-comment-title">Comments on the Pinyin title:</h4>
+    </div>
+    <div class="unofficial-translations" ng-repeat="comment in title.pinyin_comments">
+      <div class="translation">
+        <div class="title-comment-block">
+          <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
+          <p>Comment: {{comment.comment_text}}</p>
+          <span ng-show="userCanDelete(comment)" ng-click="deletePinyinComment(comment.id)">
+            <a>Delete</a>
+          </span>&nbsp;&nbsp;&nbsp;
+          <span ng-show="userCanEdit(comment)">
+            <a data-toggle="modal" ng-click="logCurrentPinyinComment(comment)" data-target="#editPinyinCommentModal">Edit</a>
+          </span>
+        </div>
+      </div>
+    </div>
+<div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Pinyin title</em></div>      
+      
       <div class="institution-block">
         <h4>Institutions:</h4>
         <div>
@@ -123,44 +164,6 @@
         Add a new translation
       </a>
     </div>
-
-    <div class="title-comment-subhead">
-      <h4 class="title-comment-title">Comments on the Pinyin title:</h4>
-    </div>
-    <div class="unofficial-translations" ng-repeat="comment in title.pinyin_comments">
-      <div class="translation">
-        <div class="title-comment-block">
-          <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
-          <p>Comment: {{comment.comment_text}}</p>
-          <span ng-show="userCanDelete(comment)" ng-click="deletePinyinComment(comment.id)">
-            <a>Delete</a>
-          </span>&nbsp;&nbsp;&nbsp;
-          <span ng-show="userCanEdit(comment)">
-            <a data-toggle="modal" ng-click="logCurrentPinyinComment(comment)" data-target="#editPinyinCommentModal">Edit</a>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Pinyin title</em></div>
-
-    <div class="title-comment-subhead">
-      <h4 class="title-comment-title">Comments on the Chinese title:</h4>
-    </div>
-    <div class="unofficial-translations" ng-repeat="comment in title.title_comments">
-      <div class="translation">
-        <div class="title-comment-block">
-          <span class="comment-date">Posted:&nbsp;{{comment.formatted_date}}</span><br/>
-          <p>Comment: {{comment.comment_text}}</p>
-          <span ng-show="userCanDelete(comment)" ng-click="deleteTitleComment(comment.id)">
-            <a>Delete</a>
-          </span>&nbsp;&nbsp;&nbsp;
-          <span ng-show="userCanEdit(comment)">
-            <a data-toggle="modal" ng-click="logCurrentTitleComment(comment)" data-target="#editTitleCommentModal">Edit</a>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="translation placeholder" ng-show="noPinyinComments()"><em>Currently there are no comments on the Chinese title</em></div>
 
 
     <new-translation-form></new-translation-form>
