@@ -83,6 +83,10 @@ titlesApp
     return $scope.translations.unofficial.length === 0;
   };
 
+  $scope.noTitleComments = function() {
+    return $scope.title_comments.length === 0;
+  };    
+    
   $scope.noPinyinComments = function() {
     return $scope.pinyin_comments.length === 0;
   };
