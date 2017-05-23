@@ -9,7 +9,7 @@
               {{translation.chinese_title}}</td>
           <td title="'Pinyin Title'" filter="{ pinyin_title: 'text'}" sortable="'pinyin_title'" ng-click="seeTitle(translation.title.id)">
               {{translation.pinyin_title}}</td>
-          <td title="'# of TRs/Title'" filter="{ translation_count: 'number'}" sortable="'translation_count'" ng-click="seeTitle(translation.title.id)">
+          <td title="'# of TRs/Title'" filter="{ translation_count: 'number'}" sortable="'translation_count + pinyin_title'" ng-click="seeTitle(translation.title.id)">
               {{translation.translation_count}}</td>
           <td title="'# of CMTs/TR'" sortable="'comments.length'">
               {{translation.comments.length}}</td>
