@@ -13,7 +13,7 @@ titlesApp.controller('mainController', ['$scope', 'Auth', 'userService', '$rootS
   };
 
   function getStats() {
-    var a = moment([2017, 6, 06]);
+    var a = moment([2017, 6, 08]);
     var b = moment();
     var diffInDays = a.diff(b, 'days');
     $scope.countdown = diffInDays;
