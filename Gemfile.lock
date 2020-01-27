@@ -75,7 +75,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
-    ffi (1.9.14)
+    ffi (1.12.1)
     font-awesome-sass (4.6.2)
       sass (>= 3.2)
     foreman (0.82.0)
