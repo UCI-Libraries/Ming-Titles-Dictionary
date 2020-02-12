@@ -20,7 +20,7 @@ class Title < ApplicationRecord
   has_many :title_comments, dependent: :destroy
 
   def self.to_csv_array
-    attributes = %w(id chinese_title pinyin_title translation_count)
+    attributes = %w(id cbdb_id chinese_title pinyin_title translation_count alternate_chinese_title alternate_pinyin_title)
     array = []
     all.each do |title|
       hash = {}
