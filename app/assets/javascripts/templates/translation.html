@@ -4,7 +4,8 @@
     <div class="placeholder" ng-show="titleIsArchived()"><em>This title has been archived</em></div>
     <div class="chinese-title">
       <h1>
-        Chinese Title:&nbsp;{{title.chinese_title}}&nbsp;({{title.starting_date}}-{{title.ending_date}})
+        Chinese Title:&nbsp;{{title.chinese_title}}&nbsp;
+        <span ng-if="title.starting_date!=null || title.ending_date!=null"><em>({{title.starting_date}}-{{title.ending_date}})</em></span>
         <a class="comment-link" data-toggle="modal" ng-click="logCurrentTranslation(translation)" data-target="#newTitleCommentModal">
           Comment on Chinese title
         </a>
@@ -31,7 +32,6 @@
 
     <h5>
       Historical changes:&nbsp;{{title.historical_changes}}
-      <span class="historicalchanges placeholder" ng-show="noHistoricalChanges()"><em>None available</em></span>
     </h5>
  
       <h2>
@@ -62,11 +62,9 @@
       
        <h5>
           Alternate Chinese Title:&nbsp;{{title.alternate_chinese_title}}
-          <span class="altchntitle placeholder" ng-show="noAltChnTitle()"><em>None available</em></span>
         </h5>
         <h5>
           Alternate Pinyin Title:&nbsp;{{title.alternate_pinyin_title}}
-          <span class="altpintitle placeholder" ng-show="noAltPinTitle()"><em>None available</em></span>
         </h5>
       
       <div class="institution-block">
