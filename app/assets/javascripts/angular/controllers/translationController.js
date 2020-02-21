@@ -90,18 +90,6 @@ titlesApp
   $scope.noPinyinComments = function() {
     return $scope.pinyin_comments.length === 0;
   };
-
-  $scope.noHistoricalChanges = function() {
-    return $scope.historical_changes.length === 0;
-  };
-
-  $scope.noAltChnTitle = function() {
-    return $scope.alternate_chinese_title.length === 0;
-  };
-
-  $scope.noAltPinTitle = function() {
-    return $scope.alternate_pinyin_title.length === 0;
-  };  
     
   $scope.logCurrentTranslation = function(translation) {
     $scope.current_translation = translation;
