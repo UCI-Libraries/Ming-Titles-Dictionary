@@ -25,6 +25,13 @@ titlesApp
           for (var i = 0; i < response.data.length; i++) {
             response.data[i].num_translations = 0; //initialization of new property
             response.data[i].num_translations = response.data[i].translations.length;  //set the data from nested obj into new property
+            
+            response.data[i].approved_translation = "No Approved Translation Available"; //initialization of new property
+			      response.data[i].translations.forEach(function(translation)  {
+              if (translation.approved) {
+               response.data[i].approved_translation = translation.translation_text
+              }
+		 	      }) 
           }
           titlesService.titles[inst] = response.data;
           $scope.tableParams.settings({dataset: response.data});
