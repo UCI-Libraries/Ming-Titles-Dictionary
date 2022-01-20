@@ -321,6 +321,9 @@
                     return result;
                 }, {});
                 var filterFn = getFilterFn(params);
+		if(keyContainsTitle(filter)){
+                    return filterData(data,parsedFilter);
+                }    
                 return filterFn.call(params, data, parsedFilter, params.settings().filterOptions.filterComparator);
             }
 
@@ -371,6 +374,30 @@
     }
 })();
 
+function keyContainsTitle(filter){
+    if(filter && Object.keys(filter).length === 1){
+
+        if(Object.keys(filter)[0].includes('chinese_title') || Object.keys(filter)[0].includes('pinyin_title')){
+            return true;
+        }
+    }
+    return false;
+}
+
+function filterData(data, parsedFilter){
+    var filtered = [];
+    var filter_key = Object.keys(parsedFilter)[0].includes('pinyin_title') ? 'pinyin_title' : 'chinese_title';
+    for(var i=0;i<data.length;i++){
+        if((data[i][filter_key] && data[i][filter_key].includes(parsedFilter[filter_key])) ||
+        (data[i]['alternate_'+filter_key] && data[i]['alternate_'+filter_key].includes(parsedFilter[filter_key]))){
+            filtered.push(data[i]);
+        }
+    }
+    return filtered;
+}	
+	
+	
+	
 /**
  * ngTable: Table + Angular JS
  *
