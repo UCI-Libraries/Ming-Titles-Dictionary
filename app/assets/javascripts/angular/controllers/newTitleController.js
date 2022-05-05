@@ -26,7 +26,7 @@ titlesApp
   $scope.titleSaved = false;
 
   $scope.fetchChildren = function(institution, rank) {
-    if (institution.id && rank === 2) {
+    if (institution && institution.id && rank === 2) {
       $scope.institutionsTwo = [];
       $scope.institutionsThree = [];
       $http({
@@ -36,7 +36,7 @@ titlesApp
        }).then(function(response) {
           $scope.institutionsTwo = response.data;
        });
-    } else if (institution.id && rank === 3) {
+    } else if (institution && institution.id && rank === 3) {
       $scope.institutionsThree = [];
       $http({
           url: 'api/institutions',
@@ -59,10 +59,10 @@ titlesApp
     title.chinese_title = data.chineseTitle;
     title.pinyin_title = data.pinyinTitle;
     title.institution_one = data.institutionOne.name;
-    if (data.institutionTwo.name) {
+    if (data.institutionTwo && data.institutionTwo.name) {
       title.institution_two = data.institutionTwo.name;
     }
-    if (data.institutionThree.name) {
+    if (data.institutionThree && data.institutionThree.name) {
       title.institution_three = data.institutionThree.name;
     }
     title.save().then(function() {
